@@ -1,0 +1,13 @@
+@use 'fonts';
+@use 'variables';
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-text);
+  h1{
+    font-family: var(--font-heading);
+    font-weight: 900;
+  }
+  
+}
