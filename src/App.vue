@@ -1,13 +1,15 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import TheCover from './components/TheCover.vue';
 </script>
 
 <template>
   <div>
-    <h1>Hello sass!</h1>
-    <p>It works!</p>
+    <TheCover />
+    <section class="about">
+      <h1 class="section-title">Hello there!</h1>
+    </section>
   </div>
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -21,5 +23,6 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style lang="scss">
+
 @import "./assets/scss/style.scss";
 </style>

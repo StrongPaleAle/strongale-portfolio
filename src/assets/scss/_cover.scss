@@ -1,0 +1,36 @@
+
+#cover{
+    overflow-x: clip;
+    height: 100vh;
+    position: relative;
+
+    .cover-layer{
+    
+        width: 100vw;
+        height: 100vh;
+
+        svg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(6) rotate(15deg);
+            transform-origin: center;
+            filter: drop-shadow(0 0 1rem var(--black-shadow));
+            &.cover-layer-overlay{
+                opacity: 0.2;
+            }
+        }
+        @for $i from 1 through 15{
+            &#mask-#{$i} {
+              svg{
+                --initial-scale: calc(0.05 + (#{$i} * #{$i} / 45));
+                transform: translate(-50%, -50%) scale(var(--initial-scale)) rotate(calc(30deg - (2 * #{$i}deg)));
+                &.cover-layer-overlay{
+                    opacity: calc(0.067 * #{$i});
+                }
+              }
+            }
+          }
+        
+      }
+}

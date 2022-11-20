@@ -3,7 +3,10 @@
     --deep-purple: #2E234C;
     --white: #FAFAF0;
 
+    --black-shadow: #1C0D1733;
+
     --font-text: 'Roboto Mono', monospace;
     --font-heading: 'Rubik', sans-serif;
   }
   
+  $black: var(--black) !default;
