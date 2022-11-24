@@ -67,21 +67,21 @@ const masks = [
 </script>
 <template>
     <section id="cover">
-        <div class="cover-layer"
-        v-for="mask in masks"
+        <div class="cover-layer">
+        <svg  viewBox="0 0 401 284" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:0;" 
+            v-for="mask in masks"
             :key="mask.id"
-            :id="'mask-'+mask.id"
-        >
-        <svg  viewBox="0 0 401 284" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:0;">
+            :id="'mask-'+mask.id">
+            <g>
+                <path class="cover-layer-background" :d="mask.svgcode"/>
+                <!-- <path class="cover-layer-overlay" :d="mask.svgcode"/> -->
+            </g>
             
-            <path :d="mask.svgcode" style="fill:var(--black);  stroke: var(--black);"/>
+            
                 
         </svg>
-        <svg  class="cover-layer-overlay" viewBox="0 0 401 284" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:0;">
+        
             
-            <path :d="mask.svgcode" style="fill:var(--deep-purple); stroke: var(--deep-purple);"/>
-                
-        </svg>
     
         </div>
     </section>
