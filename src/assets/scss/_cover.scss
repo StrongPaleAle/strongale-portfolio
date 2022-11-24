@@ -1,3 +1,6 @@
+#wrapper{
+  overflow-y: clip;
+}
 #cover{
     overflow-x: clip;
     height: 100vh;
@@ -7,7 +10,7 @@
     --modifier: 20;
     --time-modifier: 20s;
     .cover-layer{
-        perspective: 30px;
+        perspective: 50px;
         width: 100vw;
         height: 100vh;
         transform-style: preserve-3d;
@@ -16,36 +19,40 @@
             top: 50%;
             left: 50%;
             //opacity: 0;
-            transform-style: preserve-3d;
+            
             //transform: translate(-50%, -50%);
             transform-origin: center;
             will-change: transform; 
             //background-color: var(--bg-shadow);
             g{
-              transform-origin: center;
+              
+              position: relative;
               //prospective: 2px;
+              z-index: 0;
               path{
                 
-                position: relative;
-                transform-origin: center;
-                fill: var(--bg-dark); 
-                filter: drop-shadow(0 0 0.5rem var(--bg-shadow));
+                
+                
+                
+                //filter: drop-shadow(0 0 0.25rem var(--bg-shadow));
                 //stroke: var(--bg-dark);
-                z-index: 1;
+                
                 
                 //
                 //
-                &.cover-layer-overlay{
-                    //opacity: 0;
-                    will-change: opacity; 
-                    transform: translateZ(1px);
-                    fill: var(--bg-light); 
-                    //stroke: var(--bg-light);
-                    z-index: -1;
-                    
-                    
-                }
+                
               }
+              &.cover-layer-overlay{
+                //opacity: 0;
+                will-change: opacity; 
+                
+                
+                //stroke: var(--bg-light);
+                z-index: 1;
+                
+                
+                
+            }
             }
             
             
@@ -57,23 +64,25 @@
             --initial-scale: calc(0.05 + (#{$i} * #{$i} / (var(--slices) * 3)));
             --scale-start: calc(0.05 + (1 * 1 / (var(--slices) * 3)));
             --scale-end: calc(0.05 + (var(--slices) * var(--slices) / (var(--slices) * 3)));
-            animation: cover-layer-anim calc(var(--slices) * var(--time-modifier)) calc((var(--slices) * var(--time-modifier)) - (#{$i}s * var(--modifier))) linear infinite;
-            
             opacity: 0;
             //transform: translate(-50%, -50%) scale3d(var(--initial-scale),var(--initial-scale),var(--initial-scale)) rotate(calc(30deg - (2 * #{$i}deg)));
+            animation: cover-layer-anim calc(var(--slices) * var(--time-modifier)) calc((var(--slices) * var(--time-modifier)) - (#{$i}s * var(--modifier))) linear infinite;
+            
+            
+            //
             g{
-              
+              position: relative;
               path{
                 //transform: translateZ(-1px);
-                animation: cover-layer-opacity calc(var(--slices) * var(--time-modifier)) calc((var(--slices) * var(--time-modifier)) - (#{$i}s * var(--modifier))) ease-in infinite;
-                // &.cover-layer-overlay{
-                //     //transform: translateZ(1px); //opacity: calc(0.067 * #{$i});
-                //   opacity: 0;
-                //   animation: cover-layer-opacity 45002ms calc(45s - (#{$i}s * 3)) ease-in infinite;
-                // }
+                //animation: cover-layer-opacity calc(var(--slices) * var(--time-modifier)) calc((var(--slices) * var(--time-modifier)) - (#{$i}s * var(--modifier))) ease-in infinite;
+                
               }
               //transform: scale3d(var(--initial-scale),var(--initial-scale),var(--initial-scale)) rotate(calc(30deg - (2 * #{$i}deg)));
-              
+              &.cover-layer-overlay{
+                //transform: translateZ(1px); //opacity: calc(0.067 * #{$i});
+              opacity: 1;
+              animation: cover-layer-opacity calc(var(--slices) * var(--time-modifier)) calc((var(--slices) * var(--time-modifier)) - (#{$i}s * var(--modifier))) ease-in infinite;
+            }
             }
             
             
@@ -84,42 +93,60 @@
 
 @keyframes cover-layer-anim{
     0%{
-        transform: translate3d(-50%, -50%, -20px) scale(0.25) rotate(600deg);
-        opacity: 1;
+        transform: translate3d(-50%, -50%, 0px) scale(0.25) rotate(600deg);
+        opacity: 0;
         
 
        
         
     }
-    100%{
-        transform: translate3d(-50%, -50%, 25px) scale(1) rotate(0deg);
+    2%{
+        opacity: 1;
+        filter: blur(0.25rem);
+    }
+    70%{
+      filter: blur(0);  
+      //transform: translate3d(-50%, -50%, 35px) scale(1.5) rotate(0deg);
+    }
+    98%{
+        
         opacity: 1;
         
+        
+    }
+    99%{
+      opacity: 0;
+      
+    }
+    100%{
+        transform: translate3d(-50%, -50%, 50px) scale(2) rotate(-140deg);
+        opacity: 0;
+        filter: blur(0.125rem);
     }
 }
 @keyframes cover-layer-opacity{
     0%{
-      fill: var(--bg-dark);
+      //fill: var(--bg-dark);
       opacity: 1;
-      filter: blur(0.125rem) drop-shadow(0 0 0.5rem var(--bg-shadow));
+      //filter: blur(0.25rem) //drop-shadow(0 0 0.25rem var(--bg-shadow));
     }
-    80%{
+    // 70%{
       
-      filter: blur(0)  drop-shadow(0 0 0.5rem var(--bg-shadow));
-    }
-    90%{
+    //   filter: blur(0)  //drop-shadow(0 0 0.25rem var(--bg-shadow));
+    // }
+    // 90%{
       
-      opacity: 1;
-      filter: blur(0)  drop-shadow(0 0 0.5rem var(--bg-shadow));
-    }
+    //   opacity: 1;
+    //   //filter: blur(0)  //drop-shadow(0 0 0.25rem var(--bg-shadow));
+    // }
     
-    99%{
-      fill: var(--bg-light);
-      opacity: 1;
+    95%{
+      //
+      opacity: 0;
     }
     100%{
-      fill: var(--bg-light);
+      //fill: var(--bg-light);
       opacity: 0;
-      filter: blur(0.05rem) drop-shadow(0 0 0.5rem var(--bg-shadow));
+      //filter: blur(0.125rem) //drop-shadow(0 0 0.25rem var(--bg-shadow));
     }
   }

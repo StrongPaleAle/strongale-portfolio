@@ -72,11 +72,13 @@ const masks = [
             v-for="mask in masks"
             :key="mask.id"
             :id="'mask-'+mask.id">
-            <g>
-                <path class="cover-layer-background" :d="mask.svgcode"/>
-                <!-- <path class="cover-layer-overlay" :d="mask.svgcode"/> -->
+            <g class="cover-layer-background">
+                <path  :d="mask.svgcode" fill="var(--bg-light)"/>
+                
             </g>
-            
+            <g class="cover-layer-overlay">
+                <path  :d="mask.svgcode" fill="var(--bg-dark)"/>
+            </g>
             
                 
         </svg>

@@ -5,7 +5,7 @@ import TheCover from './components/TheCover.vue';
 </script>
 
 <template>
-  <div>
+  <div id="wrapper">
     <TheCover />
     <section class="about">
       <h1 class="section-title">Hello there!</h1>
