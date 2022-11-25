@@ -1,0 +1,36 @@
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+  font-family: var(--font-text);
+  background-image: linear-gradient(var(--bg-dark) 0%, var(--bg-dark) 50%, var(--bg-light) 100%);
+  
+}
+* + * {
+  margin: 0 0 1em;
+}
+.heading{
+  font-family: var(--font-heading);
+  font-weight: 900;
+}
+section{
+  position: relative;
+  padding: 2rem 0;
+}
+#wrapper {
+  overflow-y: clip;
+}
+.text-huge{
+  font-size: clamp(2rem, calc(4.5vw + 1rem), 5rem);
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  
+}
+.text-large{
+  font-size: clamp(1.25rem, calc(2.5vw + 1rem), 1.5rem);
+}
+
+.about{
+  position: relative;
+  height: 100vh;
+  
+}
