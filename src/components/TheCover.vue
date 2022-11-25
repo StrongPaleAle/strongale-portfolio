@@ -67,24 +67,22 @@ const masks = [
 </script>
 <template>
     <section id="cover">
-        <div class="cover-layer">
-        <svg  viewBox="0 0 401 284" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:0;" 
-            v-for="mask in masks"
+        <div class="cover-layer-wrapper">
+            <div class="cover-layer"
+             v-for="mask in masks"
             :key="mask.id"
-            :id="'mask-'+mask.id">
-            <g class="cover-layer-background">
-                <path  :d="mask.svgcode" fill="var(--bg-light)"/>
-                
-            </g>
-            <g class="cover-layer-overlay">
-                <path  :d="mask.svgcode" fill="var(--bg-dark)"/>
-            </g>
-            
-                
-        </svg>
-        
-            
-    
+            :id="'mask-'+mask.id"
+            >
+                <svg class="cover-layer-background" viewBox="0 0 401 284" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:0;">
+                        <path :d="mask.svgcode" fill="var(--bg-light)"/>
+                </svg>
+            </div>
+        </div>
+        <div class="cover-content">
+            <h1 class="cover-title | heading | text-huge">Hello there!</h1>
+            <p class="cover-subtitle | text-large">
+                My name is <span class="text-accent ">Alessio</span>. I'm a web developer
+            </p>
         </div>
     </section>
 </template>

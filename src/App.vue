@@ -8,7 +8,7 @@ import TheCover from './components/TheCover.vue';
   <div id="wrapper">
     <TheCover />
     <section class="about">
-      <h1 class="section-title">Hello there!</h1>
+      
     </section>
   </div>
   <!-- <div>
@@ -24,5 +24,5 @@ import TheCover from './components/TheCover.vue';
 
 <style lang="scss">
 
-@import "./assets/scss/style.scss";
+@import "./scss/style.scss";
 </style>
