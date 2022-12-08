@@ -5,7 +5,7 @@ body {
   background-image: linear-gradient(var(--bg-dark) 0%, var(--bg-dark) 50%, var(--bg-light) 100%);
   
 }
-* + * {
+.flow > * + * {
   margin: 0 0 1em;
 }
 .heading{

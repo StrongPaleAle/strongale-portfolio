@@ -79,9 +79,13 @@ const masks = [
             </div>
         </div>
         <div class="cover-content">
-            <h1 class="cover-title | heading | text-huge">Hello there!</h1>
+            <h1 class="cover-title | heading | text-huge">
+                <span class="block">Hi there!</span>
+                <span class="block">my name is </span>
+                <span class="text-accent-box">Alessio</span> 
+            </h1>
             <p class="cover-subtitle | text-large">
-                My name is <span class="text-accent ">Alessio</span>. I'm a web developer
+               I'm a web developer
             </p>
         </div>
     </section>

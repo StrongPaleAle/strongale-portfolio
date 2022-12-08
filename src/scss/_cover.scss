@@ -69,17 +69,20 @@
 
       #mask-#{$i} {
 
-        --initial-scale: calc(0.05 + (#{$i} * #{$i} / (var(--slices) * 3)));
-        --scale-start: calc(0.05 + (1 * 1 / (var(--slices) * 3)));
-        --scale-end: calc(0.05 + (var(--slices) * var(--slices) / (var(--slices) * 3)));
-
+        --initial-scale: calc(0.25 + (((2.17 - 0.25) * #{$i}) / var(--slices)));
+        --initial-rotation: calc((560 - ((600 * #{$i}) / var(--slices))) * 1deg);
+        --initial-translateZ: calc(((45 * #{$i}) / var(--slices)) * 1px);
+        
         --animation-duration: calc(var(--slices) * var(--time-modifier));
         --animation-delay: calc((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier)));
+
         transform-style: preserve-3d;
         backface-visibility: hidden;
-        opacity: 0;
-        will-change: transform, opacity, filter;
-        animation: cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
+        opacity: 1;
+        will-change: transform, opacity;
+        transform: translate3d(-50%, -50%, var(--initial-translateZ)) scale(var( --initial-scale)) rotate(var(--initial-rotation));
+        animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
+        
 
 
         svg{
@@ -95,6 +98,8 @@
           height: 100%;
           z-index: 0;
           inset: 0;
+          border-radius: 50%;
+         
           //background-color: var(--bg-shadow);
           background-image: radial-gradient(var(--bg-transparent), var(--bg-dark));
           
@@ -105,22 +110,43 @@
     }
   }
 }
+@keyframes start-cover-svgs-transform {
+  0% {
+    transform: translate3d(-50%, -50%, var(--initial-translateZ)) scale(var( --initial-scale)) rotate(var(--initial-rotation));
+    
+  }
+  
+  98% {
+    opacity: 1;
+    
+  }
+  
+  99% {
+    opacity: 0;
+    
+
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 45px) scale(2.2) rotate(-60deg);
+    opacity: 0;
+    
+  }
+}
 
 @keyframes cover-svgs-transform {
   0% {
     transform: translate3d(-50%, -50%, 0px) scale(0.25) rotate(600deg);
     opacity: 0;
-    filter: blur(0.25rem);
+    
   }
-  5%{
+  2%{
     opacity: 1;
     
   }
-  80% {
-    filter: blur(0);
-  }
+  
   90% {
-    filter: blur(0);
+    
     transform: translate3d(-50%, -50%, 40px) scale(2) rotate(0deg);
   }
   
@@ -131,41 +157,13 @@
   
   99% {
     opacity: 0;
-    filter: blur(0.025rem);
+    
 
   }
 
   100% {
     transform: translate3d(-50%, -50%, 45px) scale(2.2) rotate(-60deg);
     opacity: 0;
-    filter: blur(0.07rem);
-  }
-}
-
-@keyframes cover-layer-opacity {
-  0% {
-    transform: translateZ(1px);
-    opacity: 1;
-  }
-
-  95% {
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateZ(41px);
-    opacity: 0;
     
-  }
-}
-@keyframes cover-path-blur {
-  0% {
-    filter: blur(0);
-  }
-  70% {
-    filter: blur(0);
-  }
-  100% {
-    filter: blur(0.125rem);
   }
 }
