@@ -35,26 +35,24 @@
         LogoWrapper.value?.appendChild(renderer.domElement)
 
         camera = new PerspectiveCamera( 50, sizes.width / sizes.height, 0.1);
-        camera.position.set( 15, 15, 30 );
+        camera.position.set( 15, 8, 1);
         console.log(typeof camera);
         // controls
 
         controls = new OrbitControls( camera, renderer.domElement );
-        controls.listenToKeyEvents( window ); // optional
+        //controls.listenToKeyEvents( window ); // optional
 
         //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 
         controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
         controls.dampingFactor = 0.05;
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 8.0;
+        controls.autoRotateSpeed = 6.0;
         controls.screenSpacePanning = false;
         controls.enablePan = false;
-        controls.minPolarAngle = Math.PI / 2;
+        controls.enableZoom = false;
 
-        controls.minDistance = 15;
-        controls.maxDistance = 15;
-        controls.maxPolarAngle = Math.PI / 2;
+        
 
         
 

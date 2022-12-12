@@ -21,5 +21,11 @@ section{
 .about{
   position: relative;
   height: 100vh;
-  
+  &::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(transparent, var(--bg-light) 30%);
+    z-index: 4;
+  }
 }
