@@ -1,0 +1,43 @@
+.heading{
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+  .text-huge{
+    font-size: clamp(2rem, calc(5vw + 1rem), 5rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    
+  }
+  .text-large{
+    font-size: clamp(1.15rem, calc(2.5vw + 1rem), 1.25rem);
+  }
+  .text-accent{
+    color: var(--accent-color);
+  }
+  .text-box{
+    color: var(--bg-light);
+  }
+  .lp-loose{
+    letter-spacing: 0.05em;
+  }
+  .lh-loose{
+    line-height: 1.5;
+  }
+
+  .text-box{
+    color: var(--text-negative);
+    background-color: var(--text-color);
+    padding-inline: 0.1em;
+    line-height: 1;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    &[data-variant="accent"]{
+        background-color: var(--accent-color);
+      }
+  }
+  
+
+  strong{
+    color: var(--accent-color);
+  }
+  

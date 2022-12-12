@@ -6,7 +6,7 @@
   --viridian: #408666; //Viridian Green
   --green: #44B349; //Green
   --bright-green: #5CFF23; //Bright Green
-  --light-green: #B5FF9A; //Mint Green
+  --light-green: #c9fdb6; //Mint Green
   --nyanza: #E7FFE2; //Nyanza
   --white: #F4FCF3; //Honeydew
 
@@ -26,26 +26,29 @@
   --bg-shadow: var(--black-shadow);
   --bg-transparent: var(--black-transparent);
   --text-color: var(--white);
-  --accent: var(--bright-green);
+  --text-negative: var(--black);
+  --accent-color: var(--bright-green);
 
   @media screen and (prefers-color-scheme: light) {
 
     --bg-dark: var(--light-green);
-    --bg-light: var(--nyanza);
+    --bg-light: var(--white);
     --bg-shadow: var(--green-shadow);
     --bg-transparent: var(--green-transparent);
     --text-color: var(--deep-purple);
-    --accent: var(--magenta);
+    --text-negative: var(--white);
+    --accent-color: var(--magenta);
     
   }
 }
 html[data-theme="light"]{
   --bg-dark: var(--light-green);
-  --bg-light: var(--nyanza);
+  --bg-light: var(--white);
   --bg-shadow: var(--green-shadow);
   --bg-transparent: var(--green-transparent);
   --text-color: var(--deep-purple);
-  --accent: var(--magenta);
+  --text-negative: var(--white);
+  --accent-color: var(--magenta);
 }
 html[data-theme="dark"]{
   --bg-dark: var(--black);
@@ -53,6 +56,7 @@ html[data-theme="dark"]{
   --bg-shadow: var(--black-shadow);
   --bg-transparent: var(--black-transparent);
   --text-color: var(--white);
-  --accent: var(--bright-green);
+  --text-negative: var(--black);
+  --accent-color: var(--bright-green);
 }
   

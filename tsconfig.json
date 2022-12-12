@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es2015",
     "useDefineForClassFields": true,
-    "module": "ESNext",
+    "module": "AMD",
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "noImplicitAny": false,
+    "lib": ["es2015", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "paths": { "@/*":["./src/*"] }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
