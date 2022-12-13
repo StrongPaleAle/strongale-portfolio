@@ -4,9 +4,10 @@
   position: relative;
   display: grid;
   place-items: center;
-  --slices: 10;
+  --slices: 15;
   --modifier: 15;
   --time-modifier: 15s;
+  --animation-duration: calc(var(--slices) * var(--time-modifier));
 
   .cover-container{
     position: relative;
@@ -67,14 +68,15 @@
     z-index: 2;
   }
   .cover-layer-wrapper {
-    perspective: 50px;
+    perspective: 58px;
     position: absolute;
     inset: 0;
     width: 100vw;
     height: 100vh;
     transform-style: preserve-3d;
-    transform:translate3d(0,0,0);
+    transform: translate3d(0,0,0) scale(0.25);
     backface-visibility: hidden;
+    animation: wrapper-rotation calc(var(--animation-duration) / 2) linear  infinite;
     
     .cover-layer {
       width: 401px;
@@ -83,6 +85,9 @@
       top: 50%;
       left: 50%;
       transform-origin: center;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      opacity: 1;
       
 
       svg {
@@ -90,66 +95,70 @@
         transform-origin: center;
         width: 100%;
         z-index: 1;
-
-        
+        overflow: hidden;
+        //filter: drop-shadow(0 0 0.15rem var(--bg-shadow));
+        backface-visibility: hidden;
       }
+      &:before{
+        content: '';
+        
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        z-index: 0;
+        inset: 10px;
+        border-radius: 50%;
+        
+        //background-color: var(--bg-dark);
+        background-image: radial-gradient(var(--bg-shadow), var(--bg-dark));
+        
+      
+      }
+      // &:after{
+      //   content: '';
+        
+      //   position: absolute;
+      //   width: 101%;
+      //   height: 101%;
+      //   z-index: 2;
+      //   inset: -1%;
+      //   border-radius: 50%;
+        
+      //   background-image: radial-gradient(transparent 60%, var(--bg-light) 90%);
+        
+        
+      
+      // }
       
 
 
     }
-    .cover-layer-shadow{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      inset: 0;
-      background-image: radial-gradient(var(--bg-dark), var(--bg-shadow));
+    // .cover-layer-shadow{
+    //   position: absolute;
+    //   width: 90%;
+    //   height: 90%;
+    //   z-index: 1;
+    //   inset: 10px;
+    //   background-image: radial-gradient(var(--bg-dark), var(--bg-shadow));
       
-      //background-color: var(--bg-shadow);
-    }
+    //   //background-color: var(--bg-shadow);
+    // }
 
-    @for $i from 1 through 10 {
-
+    @for $i from 1 through 15 {
 
       #mask-#{$i} {
 
-        --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
-        --initial-rotation: calc((400 - ((400 * #{$i}) / var(--slices))) * 1deg);
-        --initial-translateZ: calc(((45 * #{$i}) / var(--slices)) * 1px);
+        // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
+        --initial-rotation: calc((480 - ((480 * #{$i}) / var(--slices))) * 1deg);
+        --initial-translateZ: calc((((75 * #{$i}) / var(--slices)) - 20) * 1px);
         
-        --animation-duration: calc(var(--slices) * var(--time-modifier));
+        
         --animation-delay: calc((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier)));
 
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        opacity: 1;
+        transform: translate(-50%, -50%) translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
         will-change: transform, opacity;
-        transform: translate3d(-50%, -50%, var(--initial-translateZ)) scale(var( --initial-scale)) rotate(var(--initial-rotation));
-        animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
-        
-
-
-        svg{
-  
-          transform-style: preserve-3d;
-          backface-visibility: hidden;
-      
-        }
-        &:before{
-          content: '';
-          
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          z-index: 0;
-          inset: 0;
-          border-radius: 50%;
+        animation: start-cover-svgs-transform var(--animation-delay) ease-out 0s ,cover-svgs-transform var(--animation-duration) ease-out  var(--animation-delay) infinite;
          
-          //background-color: var(--bg-shadow);
-          background-image: radial-gradient(var(--bg-transparent), var(--bg-dark));
-          
-        
-        }
       
       }
     }
@@ -157,11 +166,11 @@
 }
 @keyframes start-cover-svgs-transform {
   0% {
-    transform: translate3d(-50%, -50%, var(--initial-translateZ)) scale(var( --initial-scale)) rotate(var(--initial-rotation));
+    transform: translate(-50%, -50%) translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
     
   }
   
-  98% {
+  95% {
     opacity: 1;
     
   }
@@ -173,7 +182,7 @@
   }
 
   100% {
-    transform: translate3d(-50%, -50%, 45px) scale(2) rotate(-20deg);
+    transform: translate(-50%, -50%)  translateZ(55px) rotate(var(--initial-rotation));
     opacity: 0;
     
   }
@@ -181,7 +190,7 @@
 
 @keyframes cover-svgs-transform {
   0% {
-    transform: translate3d(-50%, -50%, 0px) scale(0.25) rotate(400deg);
+    transform: translate(-50%, -50%)  translateZ(-20px) rotate(var(--initial-rotation));
     opacity: 0;
     
   }
@@ -190,12 +199,8 @@
     
   }
   
-  // 90% {
-    
-  //   transform: translate3d(-50%, -50%, 40px) scale(1.9) rotate(0deg);
-  // }
   
-  98% {
+  95% {
     opacity: 1;
     
   }
@@ -207,8 +212,16 @@
   }
 
   100% {
-    transform: translate3d(-50%, -50%, 45px) scale(2) rotate(-20deg);
+    transform: translate(-50%, -50%)  translateZ(55px) rotate(var(--initial-rotation));
     opacity: 0;
     
+  }
+}
+@keyframes wrapper-rotation{
+  0%{
+    transform: rotate(200deg);
+  }
+  100%{
+    transform: rotate(-160deg);
   }
 }
