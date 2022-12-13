@@ -30,7 +30,7 @@
         
 
         scene = new Scene();
-        renderer = new WebGLRenderer({canvas: logoCanvas.value as unknown as HTMLCanvasElement, antialias: true, alpha: true});
+        renderer = new WebGLRenderer({canvas: logoCanvas.value as unknown as HTMLCanvasElement, antialias: false, alpha: true});
         renderer.setSize(sizes.width, sizes.height);
         LogoWrapper.value?.appendChild(renderer.domElement)
 
@@ -47,7 +47,7 @@
         controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
         controls.dampingFactor = 0.05;
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 6.0;
+        controls.autoRotateSpeed = 2.0;
         controls.screenSpacePanning = false;
         controls.enablePan = false;
         controls.enableZoom = false;

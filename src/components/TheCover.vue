@@ -77,6 +77,7 @@ const masks = [
                 <svg class="cover-layer-background" viewBox="0 0 401 284">
                         <path :d="mask.svgcode" fill="var(--bg-light)"/>
                 </svg>
+                <div class="cover-layer-shadow"></div>
             </div>
         </div>
         <div class="cover-container">

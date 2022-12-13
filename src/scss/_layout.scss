@@ -26,7 +26,7 @@ section{
     position: absolute;
     inset: 0;
     background-image: linear-gradient(transparent, var(--bg-dark) 50%);
-    backdrop-filter: blur(2px);
+    
     z-index: 4;
   }
 }
