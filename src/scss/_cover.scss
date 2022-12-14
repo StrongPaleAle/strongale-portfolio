@@ -2,16 +2,18 @@
   overflow-x: clip;
   height: 100vh;
   position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   --slices: 15;
   --modifier: 15;
   --time-modifier: 15s;
   --animation-duration: calc(var(--slices) * var(--time-modifier));
+  --clip: path('');
 
   .cover-container{
     position: relative;
-    z-index: 3;
+    z-index: 2;
     display: flex;
     flex-flow: wrap-reverse;
     width: 100%;
@@ -68,45 +70,50 @@
   //   z-index: 2;
   // }
   .cover-layer-wrapper {
-    perspective: 112px;
+    perspective: 45px;
     position: absolute;
+    z-index: -1;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 50vmin;
+    height: 50vmin;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
-    animation: wrapper-rotation var(--animation-duration) linear  infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.75);
+    //backface-visibility: hidden;
+    //will-change: transform;
+    //animation: wrapper-rotation var(--animation-duration) linear  infinite;
     
     .cover-layer {
-      width: 401px;
-      height: 284px;
+      
       position: absolute;
-      top: 50%;
-      left: 50%;
+      inset: 0;
       transform-origin: center;
-      transform-style: preserve-3d;
+      //transform-style: preserve-3d;
       backface-visibility: hidden;
       opacity: 1;
       
 
-      svg {
+      .cover-layer-mask{
         position: absolute;
-        
         width: 100%;
-        z-index: 1;
-        color-rendering: optimizeSpeed;
-        shape-rendering: optimizeSpeed;
+        height: 100%;
+        background-color: var(--bg-light);
+        inset: 0;
+        
+        
+        //shape-rendering: optimizeSpeed;
         //filter: drop-shadow(0 0 0.15rem var(--bg-shadow));
         
       }
-      & .cover-layer-shadow{
+      .cover-layer-shadow{
         
         
         position: absolute;
-        width: 90%;
-        height: 90%;
-        z-index: 0;
-        inset: 10px;
+        width: 98%;
+        height: 68%;
+        //z-index: -1;
+        inset: 16% 2%;
         border-radius: 50%;
         opacity: 0.65;
         //background-color: var(--bg-dark);
@@ -149,15 +156,19 @@
       #mask-#{$i} {
 
         // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
-        --initial-rotation: calc((600 - ((600 * #{$i}) / var(--slices))) * 1deg);
-        --initial-translateZ: calc((((120 * #{$i}) / var(--slices)) - 8) * 1px);
+        --initial-rotation: calc((360 - ((360 * #{$i}) / var(--slices))) * 1deg);
+        --initial-translateZ: calc(((3 * var(--slices)) - (#{$i} * 3)) * 1px);
+        --clip: url(#maskpath-#{$i});
         
-        
-        --animation-delay: calc((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier)));
+        --animation-delay: calc(225s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
 
-        transform: translate(-50%, -50%) translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
-        will-change: transform, opacity;
+        transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
+        will-change: transform;
         animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
+        .cover-layer-mask{
+          clip-path: var(--clip);
+        }
+        
          
       
       }
@@ -166,54 +177,29 @@
 }
 @keyframes start-cover-svgs-transform {
   0% {
-    transform: translate(-50%, -50%) translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
+    transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
     
   }
   
-  95% {
-    opacity: 1;
-    
-  }
   
-  99% {
-    opacity: 0;
-    
-
-  }
-
   100% {
-    transform: translate(-50%, -50%)  translateZ(112px) rotate(var(--initial-rotation));
-    opacity: 0;
+    transform: translateZ(42px) rotate(336deg);
+    
     
   }
 }
 
 @keyframes cover-svgs-transform {
   0% {
-    transform: translate(-50%, -50%)  translateZ(0px) rotate(var(--initial-rotation));
-    opacity: 0;
+    transform: translateZ(0px) rotate(1deg);
     
-  }
-  2%{
-    opacity: 1;
     
   }
   
   
-  95% {
-    opacity: 1;
-    
-  }
-  
-  99% {
-    opacity: 0;
-    
-
-  }
-
   100% {
-    transform: translate(-50%, -50%)  translateZ(112px) rotate(var(--initial-rotation));
-    opacity: 0;
+    transform: translateZ(42px) rotate(336deg);
+    
     
   }
 }
