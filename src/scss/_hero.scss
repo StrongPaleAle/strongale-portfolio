@@ -1,0 +1,55 @@
+#hero{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+
+    .cover-container{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: wrap-reverse;
+        width: 100%;
+        padding: 16px;
+        gap: 10vw;
+        justify-content: center;
+        align-items: center;
+        .cover-logo{
+          
+          //max-height: 50vh;
+          #SvgLogo{
+            display: none
+          }
+          #logo-wrapper{
+            width:  max(300px, 25vw);
+            height: max(300px, 25vw);
+          }
+        }
+      }
+      .cover-content{
+        
+        
+        .cover-title{
+          @extend .border-t-accent;
+         
+          text-align: center;
+          
+          &-second{
+            
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            line-height: 1;
+            font-size: 0.5em;
+            margin-bottom: 0.25em;
+            text-transform: none;
+          }
+          &-third{
+            font-size: 1.1em;
+            display: block;
+           
+          }
+        }
+      }
+}

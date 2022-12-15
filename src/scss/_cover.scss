@@ -1,62 +1,19 @@
 #cover {
   overflow-x: clip;
   height: 100vh;
-  position: relative;
-  z-index: 1;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
   --slices: 15;
   --modifier: 15;
   --time-modifier: 15s;
   --animation-duration: calc(var(--slices) * var(--time-modifier));
   --clip: path('');
 
-  .cover-container{
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-flow: wrap-reverse;
-    width: 100%;
-    padding: 16px;
-    gap: 10vw;
-    justify-content: center;
-    align-items: center;
-    .cover-logo{
-      
-      //max-height: 50vh;
-      #SvgLogo{
-        display: none
-      }
-      #logo-wrapper{
-        width:  max(300px, 25vw);
-        height: max(300px, 25vw);
-      }
-    }
-  }
-  .cover-content{
-    
-    
-    .cover-title{
-      @extend .border-t-accent;
-     
-      text-align: center;
-      
-      &-second{
-        
-        font-weight: 400;
-        letter-spacing: 0.1em;
-        line-height: 1;
-        font-size: 0.5em;
-        margin-bottom: 0.25em;
-        text-transform: none;
-      }
-      &-third{
-        font-size: 1.1em;
-        display: block;
-       
-      }
-    }
-  }
+  
   // &::after{
   //   content: '';
   //   display: block;
@@ -70,12 +27,12 @@
   //   z-index: 2;
   // }
   .cover-layer-wrapper {
-    perspective: 45px;
+    perspective: 40px;
     position: absolute;
     z-index: -1;
     inset: 0;
-    width: 50vmin;
-    height: 50vmin;
+    width: 50vmax;
+    height: 50vmax;
     transform-style: preserve-3d;
     top: 50%;
     left: 50%;
