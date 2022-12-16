@@ -1,7 +1,8 @@
 <script setup lang="ts">
-    import {Scene, WebGLRenderer, PerspectiveCamera, MeshStandardMaterial, Group, ExtrudeGeometry, AmbientLight, PointLight, Mesh}  from 'three';
+    import {Scene, WebGLRenderer, PerspectiveCamera, MeshStandardMaterial, AmbientLight, PointLight, Color}  from 'three';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-	import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
+	//import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
+    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import { onMounted, ref} from 'vue';
 
     const LogoWrapper = ref<HTMLElement | null>(null);
@@ -31,11 +32,13 @@
 
         scene = new Scene();
         renderer = new WebGLRenderer({canvas: logoCanvas.value as unknown as HTMLCanvasElement, antialias: false, alpha: true});
+        renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize(sizes.width, sizes.height);
         LogoWrapper.value?.appendChild(renderer.domElement)
 
-        camera = new PerspectiveCamera( 50, sizes.width / sizes.height, 0.1);
-        camera.position.set( 15, 8, 1);
+        camera = new PerspectiveCamera( 45, sizes.width / sizes.height, 1, 100);
+        camera.position.set( - 1, 2, 2 );
+        
         console.log(typeof camera);
         // controls
 
@@ -51,49 +54,69 @@
         controls.screenSpacePanning = false;
         controls.enablePan = false;
         controls.enableZoom = false;
-
         
 
         
 
-        const material = new MeshStandardMaterial( { color: '#5CFF23' } )
-
-        //scene.add( sphere );
-        if (SvgLogo.value) {
-            svgString = SvgLogo.value.outerHTML.toString();
-        }
         
-        const svgLoader = new SVGLoader();
-        const svgData = svgLoader.parse(svgString);
-        const svgGroup = new Group();
-        svgGroup.scale.y *= -10;
-        svgGroup.scale.x *= 10;
-        svgData.paths.forEach((path:any, i:any) => {
-            const shapes = SVGLoader.createShapes(path);
 
-            // Each path has array of shapes
-            shapes.forEach((shape:any, j:any) => {
-                // Finally we can take each shape and extrude it
-                const geometry = new ExtrudeGeometry(shape, {
-                    depth: 2,
-                    bevelEnabled: true,
-					bevelThickness: 0.1,
-					bevelSize: 0.02,
-					bevelSegments: 5
+        let accentCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+        accentCSSColor = accentCSSColor.split(" ").pop();
+        
+        let accentColor = new Color(accentCSSColor);
+        
+        const loader = new GLTFLoader().setPath( '/assets/models/' );
+            loader.load( 'logo.gltf', function ( gltf ) {
+                const model = gltf.scene;
+                let newMaterial = new MeshStandardMaterial({color: accentColor});
+                model.traverse((o:any) => {
+                if (o.isMesh) o.material = newMaterial;
+                });
+                gltf.scene.scale.set(55, 55, 55);;
+                gltf.scene.position.y = -0.325;
+                gltf.scene.position.x = -0.7;
+                gltf.scene.position.z = -0.25;
+                scene.add( gltf.scene );
+
+                
+
+            } );
+        // //scene.add( sphere );
+        // if (SvgLogo.value) {
+        //     svgString = SvgLogo.value.outerHTML.toString();
+        // }
+        
+        // const svgLoader = new SVGLoader();
+        // const svgData = svgLoader.parse(svgString);
+        // const svgGroup = new Group();
+        // svgGroup.scale.y *= -10;
+        // svgGroup.scale.x *= 10;
+        // svgData.paths.forEach((path:any, i:any) => {
+        //     const shapes = SVGLoader.createShapes(path);
+
+        //     // Each path has array of shapes
+        //     shapes.forEach((shape:any, j:any) => {
+        //         // Finally we can take each shape and extrude it
+        //         const geometry = new ExtrudeGeometry(shape, {
+        //             depth: 2,
+        //             bevelEnabled: true,
+		// 			bevelThickness: 0.1,
+		// 			bevelSize: 0.02,
+		// 			bevelSegments: 5
 
                     
-                });
+        //         });
 
-                geometry.computeVertexNormals();
+        //         geometry.computeVertexNormals();
 
-                // Create a mesh and add it to the group
-                mesh = new Mesh(geometry, material);
-                mesh.position.set(-0.5, -0.5, -1);
-                svgGroup.add(mesh);
-            });
-        });
+        //         // Create a mesh and add it to the group
+        //         mesh = new Mesh(geometry, material);
+        //         mesh.position.set(-0.5, -0.5, -1);
+        //         svgGroup.add(mesh);
+        //     });
+        // });
         
-        scene.add( svgGroup );
+        // scene.add( svgGroup );
         // ambient light
 
 				scene.add( new AmbientLight( 0x222222 ) );
@@ -108,7 +131,7 @@
         
         scene.add( camera );
 
-        // const axesHelper = new THREE.AxesHelper( 10);
+        // const axesHelper = new AxesHelper( 1);
         // scene.add( axesHelper );
 
         window.addEventListener( 'resize', onWindowResize );

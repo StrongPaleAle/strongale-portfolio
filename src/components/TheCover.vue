@@ -5,7 +5,7 @@ import CoverLayer from './CoverLayer.vue';
 import MasksData from '../data/masks.json';
 
 const masks = ref<Partial<Mask>[]>(MasksData);
-
+let shadows = ref<number>(masks.value.length * 3);
 
 </script>
 <template>
@@ -17,6 +17,10 @@ const masks = ref<Partial<Mask>[]>(MasksData);
             :key="mask.id"
             :mask="mask"
             ></CoverLayer>
+            
+            
+            
+            
         </div>
         
     </section>

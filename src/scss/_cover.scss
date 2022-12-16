@@ -27,7 +27,7 @@
   //   z-index: 2;
   // }
   .cover-layer-wrapper {
-    perspective: 40px;
+    perspective: 400px;
     position: absolute;
     z-index: -1;
     inset: 0;
@@ -55,11 +55,11 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: var(--bg-light);
+        
         inset: 0;
         
         
-        //shape-rendering: optimizeSpeed;
+        shape-rendering: optimizeSpeed;
         //filter: drop-shadow(0 0 0.15rem var(--bg-shadow));
         
       }
@@ -72,9 +72,9 @@
         //z-index: -1;
         inset: 16% 2%;
         border-radius: 50%;
-        opacity: 0.65;
+        opacity: 0.6;
         //background-color: var(--bg-dark);
-        background-image: radial-gradient(var(--bg-shadow), var(--bg-dark) 80%);
+        background-image: radial-gradient(var(--bg-transparent), var(--bg-dark) 60%);
         
       
       }
@@ -114,20 +114,22 @@
 
         // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
         --initial-rotation: calc((360 - ((360 * #{$i}) / var(--slices))) * 1deg);
-        --initial-translateZ: calc(((3 * var(--slices)) - (#{$i} * 3)) * 1px);
+        --initial-translateZ: calc(((30 * var(--slices)) - (#{$i} * 30)) * 1px);
         --clip: url(#maskpath-#{$i});
         
         --animation-delay: calc(225s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
-
+        
         transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
         will-change: transform;
+        
         animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
-        .cover-layer-mask{
-          clip-path: var(--clip);
-        }
         
          
       
+      }
+      .cover-layer-mask{
+        background-color: var(--bg-light);
+        clip-path: var(--clip);
       }
     }
   }
@@ -138,10 +140,13 @@
     
   }
   
+  95%{
+    opacity: 1;
+  }
   
   100% {
-    transform: translateZ(42px) rotate(336deg);
-    
+    transform: translateZ(420px) rotate(336deg);
+    opacity: 0;
     
   }
 }
@@ -152,11 +157,13 @@
     
     
   }
-  
+  95%{
+    opacity: 1;
+  }
   
   100% {
-    transform: translateZ(42px) rotate(336deg);
-    
+    transform: translateZ(420px) rotate(336deg);
+    opacity: 0;
     
   }
 }
