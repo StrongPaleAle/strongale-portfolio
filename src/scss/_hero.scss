@@ -35,9 +35,12 @@
           @extend .border-t-accent;
          
           text-align: center;
-          
+          filter: drop-shadow(0 0 0.25rem var(--bg-dark));
+          &-first{
+            text-shadow: 0 0 0.25rem var(--bg-dark);
+          }
           &-second{
-            
+            text-shadow: 0 0 0.25rem var(--bg-dark);
             font-weight: 400;
             letter-spacing: 0.1em;
             line-height: 1;
@@ -48,6 +51,7 @@
           &-third{
             font-size: 1.1em;
             display: block;
+            //text-shadow: 0 0 0.25rem var(--bg-dark);
            
           }
         }

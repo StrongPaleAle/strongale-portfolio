@@ -7,7 +7,7 @@
   left: 0;
   z-index: -1;
   
-  --slices: 15;
+  --slices: 8;
   --modifier: 15;
   --time-modifier: 15s;
   --animation-duration: calc(var(--slices) * var(--time-modifier));
@@ -27,7 +27,7 @@
   //   z-index: 2;
   // }
   .cover-layer-wrapper {
-    perspective: 400px;
+    perspective: 230px;
     position: absolute;
     z-index: -1;
     inset: 0;
@@ -36,7 +36,7 @@
     transform-style: preserve-3d;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%);
     //backface-visibility: hidden;
     //will-change: transform;
     //animation: wrapper-rotation var(--animation-duration) linear  infinite;
@@ -68,13 +68,14 @@
         
         position: absolute;
         width: 98%;
-        height: 68%;
+        height: 98%;
         //z-index: -1;
-        inset: 16% 2%;
+        inset: 2%;
         border-radius: 50%;
-        opacity: 0.6;
-        //background-color: var(--bg-dark);
-        background-image: radial-gradient(var(--bg-transparent), var(--bg-dark) 60%);
+        opacity: 0.2;
+        mix-blend-mode: multiply;
+        background-color: var(--bg-dark);
+        //background-image: radial-gradient(var(--bg-dark), var(--bg-transparent) 10%, var(--bg-dark) 40%);
         
       
       }
@@ -108,16 +109,16 @@
     //   //background-color: var(--bg-shadow);
     // }
 
-    @for $i from 1 through 15 {
+    @for $i from 1 through 8 {
 
       #mask-#{$i} {
 
         // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
-        --initial-rotation: calc((360 - ((360 * #{$i}) / var(--slices))) * 1deg);
+        --initial-rotation: calc((280 - ((280 * #{$i}) / var(--slices))) * 1deg);
         --initial-translateZ: calc(((30 * var(--slices)) - (#{$i} * 30)) * 1px);
         --clip: url(#maskpath-#{$i});
         
-        --animation-delay: calc(225s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
+        --animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
         
         transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
         will-change: transform;
@@ -145,7 +146,7 @@
   }
   
   100% {
-    transform: translateZ(420px) rotate(336deg);
+    transform: translateZ(240px) rotate(250deg);
     opacity: 0;
     
   }
@@ -162,7 +163,7 @@
   }
   
   100% {
-    transform: translateZ(420px) rotate(336deg);
+    transform: translateZ(240px) rotate(250deg);
     opacity: 0;
     
   }

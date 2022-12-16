@@ -33,3 +33,16 @@ section{
     
   }
 }
+.card{
+  position: relative;
+  z-index: 3;
+  background-color: var(--bg-glass);
+  border-radius: 2px;
+  backdrop-filter: blur(0.5rem);
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem var(--bg-dark);
+  > p{
+    margin: 0;
+  }
+  
+}
