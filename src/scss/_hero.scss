@@ -1,12 +1,9 @@
 #hero{
     width: 100%;
-    min-height: 100vh;
-    position: relative;
     z-index: 1;
-    display: grid;
-    place-items: center;
+    
 
-    .cover-container{
+    .section-container{
         position: relative;
         z-index: 2;
         display: flex;
@@ -44,7 +41,6 @@
             font-weight: 400;
             letter-spacing: 0.1em;
             line-height: 1;
-            font-size: 0.5em;
             margin-bottom: 0.25em;
             text-transform: none;
           }
@@ -54,6 +50,10 @@
             //text-shadow: 0 0 0.25rem var(--bg-dark);
            
           }
+        }
+        .cover-subtitle{
+          text-transform: none;
+          font-weight: 500;
         }
       }
 }

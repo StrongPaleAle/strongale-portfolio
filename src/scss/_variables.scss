@@ -16,9 +16,11 @@
   --black-transparent:#1C0D1700;
   --black-shadow:#1C0D1722;
   --black-glass:#1C0D1755;
+  --purple-glass:#40398011;
   --green-shadow:#c9fdb633;
   --green-transparent:#c9fdb600;
   --white-glass:#F4FCF355;
+  --green-glass:#c9fdb655;
   
   --font-text: 'Roboto Mono', monospace;
   --font-heading: 'Rubik', sans-serif;
@@ -26,7 +28,8 @@
   --bg-dark: var(--black);
   --bg-light: var(--deep-purple);
   --bg-shadow: var(--black-shadow);
-  --bg-glass: var(--black-glass);
+  --dark-glass: var(--black-glass);
+  --light-glass: var(--purple-glass);
   --bg-transparent: var(--black-transparent);
   --text-color: var(--white);
   --text-negative: var(--black);
@@ -39,6 +42,7 @@
     --bg-shadow: var(--green-shadow);
     --bg-transparent: var(--green-transparent);
     --bg-glass: var(--white-glass);
+    --light-glass: var(--green-glass);
     --text-color: var(--deep-purple);
     --text-negative: var(--white);
     --accent-color: var(--magenta);
@@ -50,6 +54,7 @@ html[data-theme="light"]{
   --bg-light: var(--white);
   --bg-shadow: var(--green-shadow);
   --bg-glass: var(--white-glass);
+  --light-glass: var(--green-glass);
   --bg-transparent: var(--green-transparent);
   --text-color: var(--deep-purple);
   --text-negative: var(--white);
@@ -60,6 +65,7 @@ html[data-theme="dark"]{
   --bg-light: var(--deep-purple);
   --bg-shadow: var(--black-shadow);
   --bg-glass: var(--black-glass);
+  --light-glass: var(--purple-glass);
   --bg-transparent: var(--black-transparent);
   --text-color: var(--white);
   --text-negative: var(--black);

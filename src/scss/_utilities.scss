@@ -4,6 +4,44 @@
 .ws-nowrap{
     white-space: nowrap;
 }
-.border-t-accent{
-    border-top: 3px solid var(--accent-color);
+.m-block-0{
+    margin-block: 0;
 }
+.border-t-accent{
+    border-top: 6px solid var(--accent-color);
+    border-radius: 5px 15px;
+}
+.border-b-accent{
+    border-bottom: 6px solid var(--accent-color);
+    border-radius: 5px 15px;
+}
+.border-l-accent{
+    border-left: 6px solid var(--accent-color);
+}
+.border-r-accent{
+    border-right: 6px solid var(--accent-color);
+}
+.border-block-accent{
+    border-block: 6px solid var(--accent-color);
+    border-radius: 5px 15px;
+}
+.card{
+    position: relative;
+    z-index: 3;
+    background-color: var(--dark-glass);
+    border-radius: 2px;
+    backdrop-filter: blur(0.5rem);
+    padding: 1rem;
+    box-shadow: 0 0 0.5rem var(--bg-dark);
+    border-radius: 5px 15px;
+    > p{
+      margin: 0;
+      & + p{
+        margin-top: 1em;
+      }
+    }
+    &[data-variant="light"]{
+      background-color: var(--light-glass);
+      
+    }
+  }
