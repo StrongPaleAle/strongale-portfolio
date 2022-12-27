@@ -46,16 +46,17 @@
       position: absolute;
       inset: 0;
       transform-origin: center;
-      //transform-style: preserve-3d;
+      transform-style: preserve-3d;
       backface-visibility: hidden;
       opacity: 1;
+      will-change: transform, opacity;
       
 
       .cover-layer-mask{
         position: absolute;
         width: 100%;
         height: 100%;
-        
+        background-color: var(--bg-light);
         inset: 0;
         z-index: 1;
         
@@ -114,14 +115,14 @@
       #mask-#{$i} {
 
         // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
-        --initial-rotation: calc((280 - ((280 * #{$i}) / var(--slices))) * 1deg);
+        --initial-rotation: calc((180 - ((180 * #{$i}) / var(--slices))) * 1deg);
         --initial-translateZ: calc(((30 * var(--slices)) - (#{$i} * 30)) * 1px);
         --clip: url(#maskpath-#{$i});
         
         --animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
         
         transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
-        will-change: transform opacity;
+        
         
         animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
         
@@ -129,7 +130,7 @@
       
       }
       .cover-layer-mask{
-        background-color: var(--bg-light);
+        
         clip-path: var(--clip);
       }
     }
@@ -138,7 +139,7 @@
 @keyframes start-cover-svgs-transform {
   0% {
     transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
-    
+    opacity: 1;
   }
   
   95%{
@@ -146,7 +147,7 @@
   }
   
   100% {
-    transform: translateZ(240px) rotate(250deg);
+    transform: translateZ(240px) rotate(var(--initial-rotation));
     opacity: 0;
     
   }
@@ -154,8 +155,8 @@
 
 @keyframes cover-svgs-transform {
   0% {
-    transform: translateZ(0px) rotate(1deg);
-    
+    transform: translateZ(0px) rotate(var(--initial-rotation));
+    opacity: 1;
     
   }
   95%{
@@ -163,7 +164,7 @@
   }
   
   100% {
-    transform: translateZ(240px) rotate(250deg);
+    transform: translateZ(240px) rotate(var(--initial-rotation));
     opacity: 0;
     
   }
