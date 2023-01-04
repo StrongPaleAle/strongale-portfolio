@@ -5,7 +5,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   
   --slices: 8;
   --modifier: 15;
@@ -27,26 +27,30 @@
   //   z-index: 2;
   // }
   .cover-layer-wrapper {
-    perspective: 230px;
+    //perspective: 230px;
     position: absolute;
     z-index: -1;
     inset: 0;
-    width: 30vmax;
-    height: 30vmax;
-    transform-style: preserve-3d;
+    width: 55vmax;
+    height: 55vmax;
+    //transform-style: preserve-3d;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
+    isolation: isolate;
     //backface-visibility: hidden;
     //will-change: transform;
     //animation: wrapper-rotation var(--animation-duration) linear  infinite;
-    
+    @media (orientation: portrait) {
+      
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
     .cover-layer {
       
       position: absolute;
       inset: 0;
       transform-origin: center;
-      transform-style: preserve-3d;
+      //transform-style: preserve-3d;
       backface-visibility: hidden;
       opacity: 1;
       will-change: transform, opacity;
@@ -114,20 +118,21 @@
 
       #mask-#{$i} {
 
-        // --initial-scale: calc(0.25 + (((2 - 0.25) * #{$i}) / var(--slices)));
+        --initial-scale: #{$i - 0.75};
         --initial-rotation: calc((180 - ((180 * #{$i}) / var(--slices))) * 1deg);
         --initial-translateZ: calc(((30 * var(--slices)) - (#{$i} * 30)) * 1px);
         --clip: url(#maskpath-#{$i});
         --starting-Z: calc(#{$i} * 10px);
-        --starting-opacity: calc(1 / (#{$i} * 1.5));
-        --animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
-        
-        //transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
-        
-        transform: translateZ(var(--starting-Z)) rotate(360deg);
+        --starting-opacity: calc( 1 - (1 / (#{$i} * 0.5)));
+        //--animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
+        --delay: #{2 - 0.25 * $i}s;
+        --duration: calc(5s - #{3 - 0.05 * $i}s);
+        transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
+        opacity: 1;
+        //transform: translateZ(var(--starting-Z)) rotate(360deg);
         //animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
-        animation: new-start-cover-animation 10s ease-out forwards;
-        opacity: var(--starting-opacity);
+        //animation: new-start-cover-animation var(--duration) linear var(--delay);
+        
       
       }
       .cover-layer-mask{
@@ -139,14 +144,12 @@
 }
 @keyframes new-start-cover-animation {
   0% {
-    transform: translateZ(var(--starting-Z)) rotate(360deg);
+    transform: scale(0, 0) rotate(180deg);
     opacity: var(--starting-opacity);
   }
   
-  
-  
   100% {
-    transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
+    transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
     opacity: 1;
     
   }

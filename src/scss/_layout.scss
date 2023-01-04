@@ -14,7 +14,6 @@ body {
 
 section{
   position: relative;
-  padding: 2rem 0;
 }
 #wrapper {
   overflow-y: clip;
@@ -24,7 +23,7 @@ section{
   > * {
     position: relative;
     min-height: 100vh;
-    
+    z-index: 1;
   }
 }
 .section-wrapper{
@@ -36,7 +35,8 @@ section{
   isolation: isolate;
   
   .section-container{
-    max-width: 80%;
+    width: 100%;
+    max-width: 80rem;
   }
   .section-content {
     padding: 20px;
@@ -44,7 +44,7 @@ section{
 }
 .grid{
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: max-content 1fr;
   .section-title {
     margin: 0;
     .text-box{
@@ -53,6 +53,26 @@ section{
     
   }
   .section-content{
+    min-width: 320px;
+    &.border-block-accent{
+      border-top-left-radius: 0;
+    }
+  }
+}
+.flex{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  
+  .section-title {
+    margin: 0;
+    .text-box{
+      border-top-right-radius: 0;
+    }
+    
+  }
+  .section-content{
+    min-width: 320px;
     &.border-block-accent{
       border-top-left-radius: 0;
     }

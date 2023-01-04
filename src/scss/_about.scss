@@ -1,7 +1,11 @@
 #about{
-    
+    position: relative;
     z-index: 3;
-    transform: translateZ(0px);
     background-image: linear-gradient(transparent, var(--bg-dark) 85%);
-    
+    will-change: transform;
+    > *{
+      transform: translateZ(0px);
+      will-change: transform;
+   
+    }
   }

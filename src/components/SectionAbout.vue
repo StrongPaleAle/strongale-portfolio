@@ -2,11 +2,16 @@
 <template>
     <section id="about" class="section-wrapper">
         <div class="section-container">
-            <div class="grid ">
-            
-                <h2 class="section-title | heading text-huge lh-tight">
-                    <span class="about-title-text | text-box " data-variant="accent">About me</span>
-                </h2>
+            <div class="flex ">
+                <div class="section-sidebar">
+                    <h2 class="section-title | heading text-huge lh-tight">
+                        <span class="about-title-text | text-box " data-variant="accent">About me</span>
+                    </h2>
+                    <ul>
+                        <li><button>Summary</button></li>
+                    </ul>
+                </div>
+                
                 
                 <div class="section-content | content-text | border-block-accent">
                     
@@ -24,9 +29,7 @@
                 
                     
                 </div>
-                <div class="section-sidebar">
-                    <ul></ul>
-                </div>
+                
             </div>
         </div>
     </section>

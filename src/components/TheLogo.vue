@@ -39,7 +39,7 @@
         camera = new PerspectiveCamera( 45, sizes.width / sizes.height, 1, 100);
         camera.position.set( - 1, 2, 2 );
         
-        console.log(typeof camera);
+        //console.log(typeof camera);
         // controls
 
         controls = new OrbitControls( camera, renderer.domElement );
