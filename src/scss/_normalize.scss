@@ -283,3 +283,7 @@ Add the correct display in Chrome and Safari.
 summary {
 	display: list-item;
 }
+:where(ul:not(.list-style), ol:not(.list-style)) {
+	list-style: none;
+	padding: 0;
+}

@@ -6,7 +6,7 @@ import TheLogo from './TheLogo.vue';
 <section id="hero" class="section-wrapper">
         <div class="section-container">
             <div class="cover-content">
-                <div class="heading | text-huge">
+                <div class="heading | text-hero">
                     <h1 class="cover-title | m-block-0">
                         <span class="cover-title-first | block ws-nowrap lp-loose">Hi there!</span>
                         <span class="cover-title-second | text-half block">My name is</span>

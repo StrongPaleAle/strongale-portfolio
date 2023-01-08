@@ -1,5 +1,6 @@
 html{
   color-scheme: dark light;
+  text-rendering: optimizeLegibility;
 }
 body {
   background-color: var(--bg-light);
@@ -7,6 +8,13 @@ body {
   font-family: var(--font-text);
   //background-image: linear-gradient(var(--bg-dark) 0%, var(--bg-dark) 50%, var(--bg-light) 100%);
   
+}
+.cover-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-image: radial-gradient(transparent 15%, var(--bg-dark) 95%);
+  pointer-events: none;
 }
 .flow > * + * {
   margin: 0 0 1em;
@@ -36,7 +44,7 @@ section{
   
   .section-container{
     width: 100%;
-    max-width: 80rem;
+    max-width: 90rem;
   }
   .section-content {
     padding: 20px;
@@ -62,7 +70,7 @@ section{
 .flex{
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  
   
   .section-title {
     margin: 0;

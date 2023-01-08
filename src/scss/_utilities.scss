@@ -25,16 +25,34 @@
     border-block: 6px solid var(--accent-color);
     border-radius: 5px 15px;
 }
+button{
+    //font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: 2px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover, &[data-variant="accent"], &[data-active="true"]{
+      background-color: var(--accent-color);
+      color: var(--bg-light);
+    }
+  }
 .card{
     position: relative;
     z-index: 3;
     background-color: var(--dark-glass);
     border-radius: 2px;
     backdrop-filter: blur(0.5rem);
-    padding: 1rem;
+    padding: 1.5em;
     box-shadow: 0 0 0.5rem var(--bg-dark);
     border-radius: 5px 15px;
-    > p{
+    p{
       margin: 0;
       & + p{
         margin-top: 1em;

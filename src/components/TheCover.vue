@@ -17,6 +17,11 @@ const masksLength = masksObj.length;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+    gsap.to('.cover-overlay', {
+        duration: 2,
+        scale: 1.5,
+        ease: "none",
+    });
     masksObj.forEach((mask, index) => {
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.1;
@@ -41,9 +46,7 @@ onMounted(() => {
             trigger: 'body',
             start: 'top',
             end: 'bottom',
-            markers: true,
-            scrub: 2,
-            snap: 2 / 30
+            scrub: 2
             }
         });
         layerScroll.to(trigger, {
@@ -62,6 +65,7 @@ onMounted(() => {
 
 </script>
 <template>
+    <div class="cover-overlay"></div>
     <section id="cover">
         <div id="cover-layer-wrapper" class="cover-layer-wrapper">
             
