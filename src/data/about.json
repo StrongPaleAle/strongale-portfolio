@@ -1,28 +1,22 @@
-[
+[   
     {
         "id": 1,
         "title": "Summary",
-        "content": "<p>Inventive and passionate front-end focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI, and a11y oriented. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone. </p><p>Born in Lucca(IT), London based.<br>I grew up developing a marked curiosity, and empathy for nature, besides a DIY and problem-solving aptitude. </p><p>Enjoyer in interaction design, unusual interfaces, and innovative UX. Versatile, problem solver and a quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts and games.</p>"
-    },
-    {
-        "id": 2,
-        "title": "Education",
-        "content": "<p>Education Content</p>"
-    },
-    {
-        "id": 3,
-        "title": "Skills",
-        "content": "<p>Skills Content</p>"
-    },
-    {
-        "id": 4,
-        "title": "Work Experience",
-        "content": "<p>Work Content</p>"
-    },
-    {
-        "id": 5,
-        "title": "Hobbies",
-        "content": "<p>Hobbies Content</p>"
+        "slug": "summary",
+        "label": "Summary",
+        "sections": [
+            {
+                "id": "summary1",
+                
+                "blocks": [
+                    {   "type": "BlockText",
+                    "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
+                        "id": "summary1_block1",
+                        "title": "You can call me Ale"
+                        
+                    }
+                ]
+            }]
     }
     
 ]

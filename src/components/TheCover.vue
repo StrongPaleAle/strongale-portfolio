@@ -18,7 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     gsap.to('.cover-overlay', {
-        duration: 2,
+        duration: 1,
+        delay: 0.5,
         scale: 1.5,
         ease: "none",
     });

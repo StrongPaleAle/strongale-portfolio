@@ -8,21 +8,58 @@
       will-change: transform;
    
     }
+    
     .about-title-text {
       border-bottom-right-radius: 0;
     }
-  }
-  .tab-menu {
-    margin-top: 0;
-    padding-top: 40px;
-    button{
-      border-color: transparent;
-      border-radius: 0.15em 0 0 0.5em;
+    @media screen and (min-width: 1024px) and (max-width: 1400px){
+      .section-title{
+        font-size: clamp(2.5rem, calc(2.5vw + 1rem), 5.5rem);
+      }
+      .text-large{
+        font-size: clamp(1rem, calc(0.05vw + 1rem), 2.5rem);
+      }
     }
-    .tab-menu__item--active{
-      button{
+  }
+  
+  .tab-menu {
+    margin-block: 0;
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+    
+    button{
+      --border-radius: 0.5em 0.15em 0 0;
+      border-color: transparent;
+    }
+    &__container{
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 1em;
+        right: 0;
+        height: 6px;
         background-color: var(--accent-color);
-        color: var(--bg-light);
+        z-index: 1;
+      }
+      &::-webkit-scrollbar{
+        display: none;
+      }
+    }
+    &__item{
+      white-space: nowrap;
+      
+        
+      
+    }
+    @media screen and (min-width: 1024px){
+      flex-direction: column;
+      padding-top: 40px;
+      border-right: 6px solid var(--accent-color);
+      button{
+        --border-radius: 0.15em 0 0 0.5em;
       }
     }
   }

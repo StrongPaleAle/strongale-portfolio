@@ -32,15 +32,39 @@ button{
     letter-spacing: 0.1em;
     font-size: 1.1em;
     padding: 0.5em 1em;
-    border-radius: 0.5em;
-    border: 2px solid var(--accent-color);
-    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: var(--button-border);
+    background-color: var(--bg-button);
     color: var(--text-color);
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    &:hover, &[data-variant="accent"], &[data-active="true"]{
-      background-color: var(--accent-color);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    &:after, &:before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--border-radius);
+      background-color: var(--bg-button-active);
+      z-index: -1;
+      transform: translateX(100%);
+      transition: all 0.2s ease-in-out;
+    }
+    &:before{
+      
+      background-color: var(--bg-button-hover);
+      
+    }
+    &[data-variant="accent"], &[data-active="true"]{
       color: var(--bg-light);
+      &:after{
+        transform: translateX(0);
+      }
+    }
+    &:hover:not([data-active="true"]), &:focus:not([data-active="true"]){
+      &:before{
+        transform: translateX(0);
+      }
     }
   }
 .card{
@@ -49,9 +73,12 @@ button{
     background-color: var(--dark-glass);
     border-radius: 2px;
     backdrop-filter: blur(0.5rem);
-    padding: 1.5em;
+    padding: 0.75em;
     box-shadow: 0 0 0.5rem var(--bg-dark);
     border-radius: 5px 15px;
+    @media (min-width: 768px){
+      padding: 1.5em;
+    }
     p{
       margin: 0;
       & + p{
@@ -61,5 +88,14 @@ button{
     &[data-variant="light"]{
       background-color: var(--light-glass);
       
+    }
+  }
+  .lateral-scroll{
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      display: none;
     }
   }

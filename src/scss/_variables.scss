@@ -1,4 +1,6 @@
 :root{
+  // Colors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
   --black:#1C0D17; //xiketic
   --deep-purple:#2E234C; //Russian Violet
   --purple:#403980; //Dark Slate Blue
@@ -21,9 +23,6 @@
   --green-transparent:#c9fdb600;
   --white-glass:#F4FCF355;
   --green-glass:#c9fdb655;
-  
-  --font-text: 'Roboto Mono', monospace;
-  --font-heading: 'Rubik', sans-serif;
 
   --bg-dark: var(--black);
   --bg-light: var(--deep-purple);
@@ -48,27 +47,45 @@
     --accent-color: var(--magenta);
     
   }
-}
-html[data-theme="light"]{
-  --bg-dark: var(--light-green);
-  --bg-light: var(--white);
-  --bg-shadow: var(--green-shadow);
-  --bg-glass: var(--white-glass);
-  --light-glass: var(--green-glass);
-  --bg-transparent: var(--green-transparent);
-  --text-color: var(--deep-purple);
-  --text-negative: var(--white);
-  --accent-color: var(--magenta);
-}
-html[data-theme="dark"]{
-  --bg-dark: var(--black);
-  --bg-light: var(--deep-purple);
-  --bg-shadow: var(--black-shadow);
-  --bg-glass: var(--black-glass);
-  --light-glass: var(--purple-glass);
-  --bg-transparent: var(--black-transparent);
-  --text-color: var(--white);
-  --text-negative: var(--black);
-  --accent-color: var(--bright-green);
-}
+  html[data-theme="light"]{
+    --bg-dark: var(--light-green);
+    --bg-light: var(--white);
+    --bg-shadow: var(--green-shadow);
+    --bg-glass: var(--white-glass);
+    --light-glass: var(--green-glass);
+    --bg-transparent: var(--green-transparent);
+    --text-color: var(--deep-purple);
+    --text-negative: var(--white);
+    --accent-color: var(--magenta);
+  }
+  html[data-theme="dark"]{
+    --bg-dark: var(--black);
+    --bg-light: var(--deep-purple);
+    --bg-shadow: var(--black-shadow);
+    --bg-glass: var(--black-glass);
+    --light-glass: var(--purple-glass);
+    --bg-transparent: var(--black-transparent);
+    --text-color: var(--white);
+    --text-negative: var(--black);
+    --accent-color: var(--bright-green);
+  }
+  // Fonts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  --font-text: 'Roboto Mono', monospace;
+  --font-heading: 'Rubik', sans-serif;
+
+  // Utilities ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  --border-radius: 0.15em 0.05 0 0.5em;
+  --border-radius-small: 0.15em;
+  --border-radius-large: 0.05em 0.1em  0.05em 0.2em;
+  // Buttons ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  --bg-button: transparent;
+  --bg-button-hover: var(--bg-light);
+  --bg-button-active: var(--accent-color);
+  --button-border: 2px solid var(--accent-color);
   
+}
+
+

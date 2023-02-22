@@ -13,7 +13,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 99;
-  background-image: radial-gradient(transparent 15%, var(--bg-dark) 95%);
+  background-image: radial-gradient(transparent 45%, var(--bg-dark) 70%);
   pointer-events: none;
 }
 .flow > * + * {
@@ -37,8 +37,9 @@ section{
 .section-wrapper{
   position: relative;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem 10px;
   isolation: isolate;
   
@@ -47,7 +48,7 @@ section{
     max-width: 90rem;
   }
   .section-content {
-    padding: 20px;
+    padding: 0.5em;
   }
 }
 .grid{
@@ -71,7 +72,9 @@ section{
   display: flex;
   flex-flow: row wrap;
   
-  
+  > *{
+    max-width: 100%;
+  }
   .section-title {
     margin: 0;
     .text-box{
