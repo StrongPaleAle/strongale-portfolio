@@ -25,6 +25,19 @@
     border-block: 6px solid var(--accent-color);
     border-radius: 5px 15px;
 }
+.hide-scrollbar{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+}
+.overflow-text{
+  overflow: auto;
+  max-height: calc(100vh - 200px);
+  -webkit-mask-image: linear-gradient(to bottom,black 70%,transparent 100%);
+    mask-image: linear-gradient(to bottom,black 70%,transparent 100%);
+}
 button{
     //font-family: var(--font-heading);
     font-weight: 700;

@@ -27,7 +27,7 @@ export interface ListBlock extends Block {
 
 export type BlockTypes = TextBlock | GraphBlock | ListBlock;
 
-export interface TabSection {
+export interface BlockGroup {
   id: string;
   title?: string | undefined;
   blocks: Partial<BlockTypes>[];
@@ -38,5 +38,5 @@ export interface Tab {
   title: string;
   slug: string;
   label: string;
-  sections: TabSection[];
+  sections: BlockGroup[];
 }

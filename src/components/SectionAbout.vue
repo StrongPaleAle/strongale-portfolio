@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BlockText from './BlockText.vue';
+import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
 
@@ -28,7 +29,7 @@ onMounted(() => {
             }
         
     }, options);
-    aboutContainer ? observer.observe(aboutContainer): null;
+    //aboutContainer ? observer.observe(aboutContainer): null;
 });
 
 
@@ -86,16 +87,19 @@ function tabScroll(element) {
                 </div>
                 
                 
-                <div class="section-content | border-block-accent">
+                <div class="section-content ">
                     
-                    <div class="card lh-double | body-text" data-variant="light">
+                    <Card class="lh-loose | body-text" 
+                        :overflow="true" 
+                        data-variant="light"
+                        v-for="(tab, index)  in tabs"
+                        :key="index"
+                        v-show="index === selectedTab"
+                    >
 
-                        <div class="content-text">
+                        
 
-                            <div class="tab-container"
-                                v-for="(tab, index)  in tabs"
-                                :key="index"
-                                v-show="index === selectedTab">
+                            <div class="tab-container">
 
                                 <div class="tab-section"
                                     
@@ -134,10 +138,10 @@ function tabScroll(element) {
                         
                         
                         <!-- <p>I attended Lucca's Art High School, and in the meantime, I participated in various extracurricular activities such as student representative, marble sculpture, graphic design, 2d animation. Afterward, I graduated in Multimedia Arts at the Academy of Fine Arts of Carrara. During my years in Carrara, my passion for web development began.</p> -->
-                        </div>
+                        
                         
 
-                    </div>
+                    </Card>
                 
                     
                 </div>

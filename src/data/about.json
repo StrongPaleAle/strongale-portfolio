@@ -9,10 +9,31 @@
                 "id": "summary1",
                 
                 "blocks": [
-                    {   "type": "BlockText",
-                    "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
+                    {   
+                        "type": "BlockText",
+                        "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
                         "id": "summary1_block1",
                         "title": "You can call me Ale"
+                        
+                    }
+                ]
+            }]
+    },
+    {
+        "id": 2,
+        "title": "Education",
+        "slug": "education",
+        "label": "Education",
+        "sections": [
+            {
+                "id": "education1",
+                
+                "blocks": [
+                    {   
+                        "type": "BlockText",
+                        "content" : "<p>I have always been fascinated by the use of technologies in the creative domain. For this reason, while I attended a <strong>traditional art-focused high school</strong>, I started to learn things like graphic design and 2d animation. <br>Later, I decided to enrol in the <strong>Multimedia Arts</strong> course at the Academy of Fine Arts of Carrara. There I learned the basics of many new media art fields, like UI/UX design, Web development, photography, sound engineering, stop-motion, video art, filmmaking, and interactive installations.</p><p>During my first three years at Carrara, I discovered my talent and passion for web development. In 2014, I obtained a First level Diploma (Bachelor's degree equivalent) in Multimedia Arts, with a thesis about web and procrastination. The commission didn&rsquo;t know if I was serious or if I was trying to trick them, so they gave me a grade of 110/110 cum Laude.</p><p>After that, I decided to attend the specialisation in <strong>Net Art and Digital Cultures</strong>, also at the Academy of Fine Arts of Carrara. In this course, I focused my curriculum on UX/UI Design and Web development (experiencing the use of VR in Three.js, in my main project), but I also dabbled in guerrilla marketing, game design, pixel art animation, and 3D printing. I managed to pass all the exams of my curriculum with excellent grades. However, for personal reasons (some of them more severe than the ones that brought me to write about procrastination in my previous thesis), the date of the dissertation is still to be defined.</p><p>In the last 9 years, I have also improved my development knowledge and skills day after day. I've been using new techniques in each project, reading books, software documentation, and blogs, as well as following various courses, content creators, conferences, and online workshops.</p>",
+                        "id": "education1_block1",
+                        "title": "A mix of art and technology"
                         
                     }
                 ]
