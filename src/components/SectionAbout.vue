@@ -16,19 +16,25 @@ function selectTab(index: number) {
     selectedTab.value = index;
 }
 onMounted(() => {
-    const aboutContainer = document.querySelector('#about .section-container');
+    const aboutContainer = document.querySelector('#about .section-content');
+    const tabItems = document.querySelectorAll('#about .tab-item');
     selectTab(0);
     const options = {
+        root: aboutContainer,
         threshold: 1
     }
     const observer = new IntersectionObserver(function(element, observer) {
         
             if (element[0].isIntersecting) {
-                tabScroll(element[0].target);
-                observer.unobserve(element[0].target);
+                let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
+                selectTab(tabN);
             }
         
     }, options);
+
+    tabItems.forEach((item) => {
+        observer.observe(item);
+    });
     //aboutContainer ? observer.observe(aboutContainer): null;
 });
 
@@ -76,9 +82,9 @@ function tabScroll(element) {
                             <li class="tab-menu__item"
                                 v-for="(tab, index)  in tabs"
                                 :key="index" 
-                                @click="selectTab(index)">
+                                >
                                     
-                                <button  :data-active="index === selectedTab">{{ tab.title }}</button>
+                                <a class="button" :href="`#${tab.slug}`"  :data-active="index === selectedTab">{{ tab.title }}</a>
                             </li>
                             
                         </ul> 
@@ -87,62 +93,53 @@ function tabScroll(element) {
                 </div>
                 
                 
-                <div class="section-content ">
+                <div class="section-content | hide-scrollbar snap-y max-h-screen" data-variant="padded-screen">
                     
-                    <Card class="lh-loose | body-text" 
-                        :overflow="true" 
-                        data-variant="light"
+                    <div class="tab-item | h-screen lh-loose body-text" 
+                        data-variant="padded-screen" 
                         v-for="(tab, index)  in tabs"
+                        :id="tab.slug"
                         :key="index"
-                        v-show="index === selectedTab"
-                    >
+                        :data-tab="index"
+                        :data-active="index === selectedTab">
+                    
+                    
+                        <Card class="max-h-screen" :overflow="true" data-variant="card-light padded-screen">
+                            
+                            <div class="tab-section"
+                                
+                                v-for="(section, index)  in tab.sections"
+                                :id="section.id"
+                                :key="index" >
 
-                        
+                                <h3 class="text-accent heading uppercase lh-tight"
+                                    v-if="section.title" >
 
-                            <div class="tab-container">
+                                    {{ section.title }}
 
-                                <div class="tab-section"
-                                    
-                                    v-for="(section, index)  in tab.sections"
-                                    :id="section.id"
-                                    :key="index" >
+                                </h3>
+
+                                <div class="tab-section__content" 
+                                    v-for="block in section.blocks" >
 
                                     <h3 class="text-accent heading uppercase lh-tight"
-                                        v-if="section.title" >
+                                        v-if="block.title" >
 
-                                        {{ section.title }}
+                                        {{ block.title }}
 
                                     </h3>
 
-                                    <div class="tab-section__content" 
-                                        v-for="block in section.blocks" >
-
-                                        <h3 class="text-accent heading uppercase lh-tight"
-                                            v-if="block.title" >
-
-                                            {{ block.title }}
-
-                                        </h3>
-
-                                        
-                                        <BlockText v-if="block.type === 'BlockText'" :block="block"/>
-                                        
-
-                                    </div>
-                                
+                                    
+                                    <BlockText v-if="block.type === 'BlockText'" :block="block"/>
+                                    
 
                                 </div>
-                                
-                            </div>
                             
-                        
-                        
-                        <!-- <p>I attended Lucca's Art High School, and in the meantime, I participated in various extracurricular activities such as student representative, marble sculpture, graphic design, 2d animation. Afterward, I graduated in Multimedia Arts at the Academy of Fine Arts of Carrara. During my years in Carrara, my passion for web development began.</p> -->
-                        
-                        
 
-                    </Card>
-                
+                            </div>
+                                                                                                                                            
+                        </Card>
+                    </div>
                     
                 </div>
                 

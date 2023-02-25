@@ -34,12 +34,18 @@
 }
 .overflow-text{
   overflow: auto;
-  max-height: calc(100vh - 200px);
-  -webkit-mask-image: linear-gradient(to bottom,black 70%,transparent 100%);
-    mask-image: linear-gradient(to bottom,black 70%,transparent 100%);
+  max-height: calc(100vh - 200px - (var(--em-spacing) * 2));
+  
+  &.is-scrolling{
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom,black 90%,transparent 99%);
+      mask-image: linear-gradient(to bottom,black 90%,transparent 99%);
+    padding-bottom: var(--em-spacing);
+  }
 }
-button{
+button, .button{
     //font-family: var(--font-heading);
+    display: inline-block;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -81,16 +87,25 @@ button{
     }
   }
 .card{
+    --em-spacing: 0.75em;
     position: relative;
     z-index: 3;
     background-color: var(--dark-glass);
     border-radius: 2px;
     backdrop-filter: blur(0.5rem);
-    padding: 0.75em;
+    padding: var(--em-spacing);
     box-shadow: 0 0 0.5rem var(--bg-dark);
     border-radius: 5px 15px;
+    animation: show-up 0.4s ease-in-out;
+    
     @media (min-width: 768px){
-      padding: 1.5em;
+      --em-spacing: 1.5em;
+    }
+    @media (min-width: 1280px){
+      --em-spacing: 2em;
+    }
+    @media (min-width: 1440px){
+      --em-spacing: 2.5em;
     }
     p{
       margin: 0;
@@ -98,10 +113,11 @@ button{
         margin-top: 1em;
       }
     }
-    &[data-variant="light"]{
+    &[data-variant*="card-light"]{
       background-color: var(--light-glass);
       
     }
+    
   }
   .lateral-scroll{
     max-width: 100%;
@@ -111,4 +127,33 @@ button{
     &::-webkit-scrollbar{
       display: none;
     }
+  }
+  .snap-y{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    scroll-snap-stop: always;
+    > *{
+      
+      scroll-snap-align: start;
+      
+    
+    }
+  }
+  .h-screen{
+    height: 100vh;
+    height: 100svh;
+    &[data-variant*="padded-screen"]{
+      height: calc(100vh - 200px);
+      height: calc(100svh - 200px);
+    }
+  }
+  .max-h-screen{
+    max-height: 100vh;
+    max-height: 100svh;
+    &[data-variant*="padded-screen"]{
+      max-height: calc(100vh - 200px);
+      max-height: calc(100svh - 200px);
+    }
+    
   }
