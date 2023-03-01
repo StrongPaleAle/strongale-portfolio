@@ -61,9 +61,12 @@
         
 
         let accentCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+        let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--extra-color');
         accentCSSColor = accentCSSColor.split(" ").pop();
+        extraCSSColor = extraCSSColor.split(" ").pop();
         
         let accentColor = new Color(accentCSSColor);
+        let extraColor = new Color(extraCSSColor);
         
         const loader = new GLTFLoader().setPath( '/assets/models/' );
             loader.load( 'logo.gltf', function ( gltf ) {

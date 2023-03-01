@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BlockText from './BlockText.vue';
+import BlockGraph from './BlockGraph.vue';
 import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
@@ -40,34 +41,7 @@ onMounted(() => {
 
 
 
-function tabScroll(element) {
-    element.addEventListener('wheel', (e) => {
-        if (isAnimating) {
-            console.log('animating');
-            return;
-        } 
-        
-        if (e.deltaY > 0) {
-            if (selectedTab.value < tabsLength - 1) {
-                isAnimating = true;
-                e.preventDefault();
-                selectedTab.value++;
-                
-            } 
 
-        } else {
-            isAnimating = true;
-            if (selectedTab.value > 0) {
-                isAnimating = true;
-                e.preventDefault();
-                selectedTab.value--;
-            }  
-        }
-        setTimeout(() => {
-            isAnimating = false;
-        }, 200);
-    });
-}
 </script>
 <template>
     <section id="about" class="section-wrapper">
@@ -118,22 +92,25 @@ function tabScroll(element) {
                                     {{ section.title }}
 
                                 </h3>
+                                <div class="flow">
+                                    <div class="tab-section__content" 
+                                        v-for="block in section.blocks" >
 
-                                <div class="tab-section__content" 
-                                    v-for="block in section.blocks" >
+                                        <h4 class="text-accent heading uppercase lh-tight"
+                                            v-if="block.title" >
 
-                                    <h3 class="text-accent heading uppercase lh-tight"
-                                        v-if="block.title" >
+                                            {{ block.title }}
 
-                                        {{ block.title }}
+                                        </h4>
 
-                                    </h3>
+                                        
+                                        <BlockText v-if="block.type === 'BlockText'" :block="block"/>
+                                        <BlockGraph v-if="block.type === 'BlockGraph'" :block="block"/>
+                                        
 
-                                    
-                                    <BlockText v-if="block.type === 'BlockText'" :block="block"/>
-                                    
-
+                                    </div>
                                 </div>
+                               
                             
 
                             </div>

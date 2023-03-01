@@ -27,17 +27,72 @@
         "sections": [
             {
                 "id": "education1",
-                
+                "title": "A mix of art and technology",
                 "blocks": [
                     {   
                         "type": "BlockText",
                         "content" : "<p>I have always been fascinated by the use of technologies in the creative domain. For this reason, while I attended a <strong>traditional art-focused high school</strong>, I started to learn things like graphic design and 2d animation. <br>Later, I decided to enrol in the <strong>Multimedia Arts</strong> course at the Academy of Fine Arts of Carrara. There I learned the basics of many new media art fields, like UI/UX design, Web development, photography, sound engineering, stop-motion, video art, filmmaking, and interactive installations.</p><p>During my first three years at Carrara, I discovered my talent and passion for web development. In 2014, I obtained a First level Diploma (Bachelor's degree equivalent) in Multimedia Arts, with a thesis about web and procrastination. The commission didn&rsquo;t know if I was serious or if I was trying to trick them, so they gave me a grade of 110/110 cum Laude.</p><p>After that, I decided to attend the specialisation in <strong>Net Art and Digital Cultures</strong>, also at the Academy of Fine Arts of Carrara. In this course, I focused my curriculum on UX/UI Design and Web development (experiencing the use of VR in Three.js, in my main project), but I also dabbled in guerrilla marketing, game design, pixel art animation, and 3D printing. I managed to pass all the exams of my curriculum with excellent grades. However, for personal reasons (some of them more severe than the ones that brought me to write about procrastination in my previous thesis), the date of the dissertation is still to be defined.</p><p>In the last 9 years, I have also improved my development knowledge and skills day after day. I've been using new techniques in each project, reading books, software documentation, and blogs, as well as following various courses, content creators, conferences, and online workshops.</p>",
-                        "id": "education1_block1",
-                        "title": "A mix of art and technology"
+                        "id": "education1_block1"
+                        
                         
                     }
                 ]
             }]
+    },
+    {
+        "id": 3,
+        "title": "Skills",
+        "slug": "skills",
+        "label": "Skills",
+        "sections": [
+            {
+                "id": "skills1",
+                "title": "A neverending journey.",
+                "blocks": [
+                    {  
+                        "type": "BlockText",
+                        "content": "<p>I love learning new stuff. I experienced many things before finding my cup of tea. And even later, I had the opportunity, from time to time, to try my hand at various digital creative fields. <br>Below I have attempted to summarise, in a simple way, how confident I feel in my core skills.</p>",
+                        "id": "skills1_block1"
+                    },
+                    {
+                        "type": "BlockGraph",
+                        "content": [
+                            {
+                                "label": "HTML",
+                                "value": 100
+                            },
+                            {
+                                "label": "CSS",
+                                "value": 100
+                            },
+                            {
+                                "label": "JavaScript",
+                                "value": 80
+                            },
+                            {
+                                "label": "TypeScript",
+                                "value": 50
+                            },
+                            {
+                                "label": "GraphQL",
+                                "value": 40
+                            },
+                            {
+                                "label": "PHP",
+                                "value": 60
+                            },
+                            {
+                                "label": "SQL",
+                                "value": 50
+                            }
+
+                        ],
+                        "id": "skills1_block2",
+                        "title": "Languages"
+                    }
+                ]
+            }
+        ]
     }
     
 ]

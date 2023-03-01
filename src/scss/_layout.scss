@@ -14,7 +14,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 99;
-  background-image: radial-gradient(transparent 45%, var(--bg-dark) 70%);
+  background-image: radial-gradient(transparent 45%, var(--bg-dark) 70%, var(--pink-glass) 90%, var(--bg-dark) 100%);
   pointer-events: none;
 }
 .flow > * + * {
@@ -83,7 +83,7 @@ section{
     }
     
   }
-  .section-content{
+  .section-content, .flex-content{
     min-width: 320px;
     &.border-block-accent{
       border-top-left-radius: 0;

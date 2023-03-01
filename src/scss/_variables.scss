@@ -11,7 +11,7 @@
   --light-green:#c9fdb6; //Mint Green
   --nyanza:#E7FFE2; //Nyanza
   --white:#F4FCF3; //Honeydew
-
+  --pink: #FF1493; //DeepPink
   --magenta :#9F1463; //Medium Red Violet
 
 
@@ -19,6 +19,7 @@
   --black-shadow:#1C0D1722;
   --black-glass:#1C0D1755;
   --purple-glass:#40398011;
+  --pink-glass:#FF149311;
   --green-shadow:#c9fdb633;
   --green-transparent:#c9fdb600;
   --white-glass:#F4FCF355;
@@ -28,11 +29,12 @@
   --bg-light: var(--deep-purple);
   --bg-shadow: var(--black-shadow);
   --dark-glass: var(--black-glass);
-  --light-glass: var(--purple-glass);
+  --light-glass: var(--pink-glass);
   --bg-transparent: var(--black-transparent);
   --text-color: var(--white);
   --text-negative: var(--black);
   --accent-color: var(--bright-green);
+  --extra-color: var(--pink);
 
   @media screen and (prefers-color-scheme: light) {
 
@@ -45,6 +47,7 @@
     --text-color: var(--deep-purple);
     --text-negative: var(--white);
     --accent-color: var(--magenta);
+    --extra-color: var(--viridian);
     
   }
   html[data-theme="light"]{
@@ -57,6 +60,7 @@
     --text-color: var(--deep-purple);
     --text-negative: var(--white);
     --accent-color: var(--magenta);
+    --extra-color: var(--viridian);
   }
   html[data-theme="dark"]{
     --bg-dark: var(--black);
@@ -68,6 +72,7 @@
     --text-color: var(--white);
     --text-negative: var(--black);
     --accent-color: var(--bright-green);
+    --extra-color: var(--pink);
   }
   // Fonts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
