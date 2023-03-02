@@ -2,7 +2,8 @@
     &__border{
         stroke: var(--text-color);
         stroke-width: 2px;
-        fill: var(--dark-glass);
+        fill: var(--bg-dark);
+        opacity: 0.75;
     }
     &__axis{
         stroke: var(--text-color);
@@ -14,13 +15,17 @@
         position: relative;
         circle{
             fill: var(--accent-color);
+            &.area{
+                fill: var(--bg-transparent);
+            }
             
         }
         text{
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
             display: inline-block;
-            text-shadow: 0 0 0.5em var(--bg-dark);
+            fill: var(--white);
+            text-shadow: 0 0 0.25em var(--bg-dark);
         }
         &:hover{
             text{

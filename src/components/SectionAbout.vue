@@ -95,19 +95,10 @@ onMounted(() => {
                                 <div class="flow">
                                     <div class="tab-section__content" 
                                         v-for="block in section.blocks" >
-
-                                        <h4 class="text-accent heading uppercase lh-tight"
-                                            v-if="block.title" >
-
-                                            {{ block.title }}
-
-                                        </h4>
-
                                         
                                         <BlockText v-if="block.type === 'BlockText'" :block="block"/>
                                         <BlockGraph v-if="block.type === 'BlockGraph'" :block="block"/>
                                         
-
                                     </div>
                                 </div>
                                

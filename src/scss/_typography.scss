@@ -8,6 +8,12 @@
   .text-right{
     text-align: right;
   }
+  .text-left{
+    text-align: left;
+  }
+  .text-center{
+    text-align: center;
+  }
   .text-hero{
     font-size: clamp(2.5rem, calc(6vw + 1rem), 7rem);
     text-transform: uppercase;
@@ -23,6 +29,9 @@
   }
   .body-text{
     font-size: clamp(1rem, calc(0.15vw + 1rem), 1.25rem);
+  }
+  .text-small{
+    font-size: clamp(0.8rem, calc(0.15vw + 0.8rem), 1rem);
   }
   .text-half{
     font-size: 0.5em

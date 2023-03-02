@@ -1,6 +1,6 @@
 export function valueToPoint(value:number, index:number, total:number) {
     const x = 0
-    const y = -value * 0.8
+    const y = -value * 0.95
     const angle = ((Math.PI * 2) / total) * index
     const cos = Math.cos(angle)
     const sin = Math.sin(angle)

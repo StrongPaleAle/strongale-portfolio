@@ -15,8 +15,10 @@ const point = computed(() =>
 
 <template>
     <g class="svg-graph__point">
-        <circle :cx="point.x" :cy="point.y" r="3" fill="red"></circle>
-        <text :x="point.x" :y="point.y + 20">{{graphpoint.label}}</text>
+        <circle class="area" :cx="point.x" :cy="point.y" r="6" fill="transparent"></circle>
+        <circle :cx="point.x" :cy="point.y" r="3"></circle>
+        
+        <text filter="url(#solid)" :x="point.x" :y="point.y + 20">{{graphpoint.label}}</text>
     </g>
     
 </template>

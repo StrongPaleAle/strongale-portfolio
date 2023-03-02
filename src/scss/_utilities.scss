@@ -158,3 +158,43 @@ button, .button{
     }
     
   }
+  .tab-section{
+    &__content{
+      isolation: isolate;
+    }
+  }
+  .center-line{
+    overflow: hidden;
+    text-align: center;
+    
+    span{
+      position: relative;
+      display: inline-block;
+      padding: 0 0.5em;
+      z-index: 1;
+      &::before{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--accent-color);
+        z-index: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--accent-color);
+        z-index: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+      }
+    }
+   
+    
+  }

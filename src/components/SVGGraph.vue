@@ -51,6 +51,12 @@ const CirclePoints = computed(() => {
             ></line>
             <polygon class="svg-graph__border" :points="fullPoints"></polygon>
             <polygon class="svg-graph__result" :points="points"></polygon>
+            <defs>
+                <filter x="-0.1" y="-0.1" width="1.2" height="1.2" id="solid">
+                <feFlood flood-color="var(--dark-glass)"/>
+                <feComposite in="SourceGraphic" />
+                </filter>
+            </defs>
             <SVGGraphLabel
             v-for="(graphpoint, index) in graphPoints"
             :graphpoint="graphpoint"

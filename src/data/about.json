@@ -70,20 +70,20 @@
                                 "value": 80
                             },
                             {
-                                "label": "TypeScript",
-                                "value": 50
-                            },
-                            {
-                                "label": "GraphQL",
-                                "value": 40
-                            },
-                            {
                                 "label": "PHP",
                                 "value": 60
                             },
                             {
                                 "label": "SQL",
                                 "value": 50
+                            },
+                            {
+                                "label": "TypeScript",
+                                "value": 50
+                            },
+                            {
+                                "label": "GraphQL",
+                                "value": 40
                             }
 
                         ],
