@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BlockText from './BlockText.vue';
 import BlockGraph from './BlockGraph.vue';
+import BlockTags from './BlockTags.vue';
 import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
@@ -98,7 +99,8 @@ onMounted(() => {
                                         
                                         <BlockText v-if="block.type === 'BlockText'" :block="block"/>
                                         <BlockGraph v-if="block.type === 'BlockGraph'" :block="block"/>
-                                        
+                                        <BlockTags v-if="block.type === 'BlockTags'" :block="block"/>
+
                                     </div>
                                 </div>
                                

@@ -89,6 +89,70 @@
                         ],
                         "id": "skills1_block2",
                         "title": "Languages"
+                    },
+                    {
+                        "type": "BlockTags",
+                        "content": [
+                            {
+                                "label": "GIT",
+                                "value": 80
+                            },
+                            {
+                                "label": "VueJS",
+                                "value": 60
+                            },
+                            {
+                                "label": "SASS",
+                                "value": 90
+                            },
+                            {
+                                "label": "TailwindCSS",
+                                "value": 100
+                            },
+                            {
+                                "label": "Bootstrap",
+                                "value": 100
+                            },
+                            {
+                                "label": "ThreeJS",
+                                "value": 40
+                            },
+                            {
+                                "label": "GreenSock",
+                                "value": 40
+                            },
+                            {
+                                "label": "jQuery",
+                                "value": 80
+                            },
+                            {
+                                "label": "Laravel",
+                                "value": 30
+                            },
+                            {
+                                "label": "jQuery",
+                                "value": 80
+                            },
+                            {
+                                "label": "WordPress",
+                                "value": 90
+                            },
+                            {
+                                "label": "Drupal",
+                                "value": 60
+                            },
+                            {
+                                "label": "PrestaShop",
+                                "value": 40
+                            },
+                            {
+                                "label": "OctoberCMS",
+                                "value": 60
+                            }
+
+                        ],
+                        "id": "skills1_block3",
+                        "title": "Tools/Frameworks/Libraries/CMSs"
                     }
                 ]
             }

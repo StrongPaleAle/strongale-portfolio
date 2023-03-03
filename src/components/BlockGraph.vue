@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {GraphBlock} from '@/types';
+import {DataBlock} from '@/types';
 import SVGGraph from './SVGGraph.vue';
 
 const props = defineProps<{
-  block: Partial<GraphBlock>;
+  block: Partial<DataBlock>;
 }>();
 
 </script>

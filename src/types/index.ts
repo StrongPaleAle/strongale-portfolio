@@ -13,19 +13,19 @@ export interface TextBlock extends Block {
   content: string;
 }
 
-export interface GraphBlock extends Block {
+export interface DataBlock extends Block {
   
-  type: 'BlockGraph';
+  type: 'BlockGraph' | 'BlockTable' | 'BlockTags' | 'BlockProgress';
   content: [{ label: string; value: number }];
 }
 export interface ListBlock extends Block {
   
   type: 'BlockList';
-  listOrdination?: 'ordered' | 'unordered' | undefined;
+  listOrdination?: 'ordered' | 'unordered' | 'pills' | undefined;
   content: string[];
 }
 
-export type BlockTypes = TextBlock | GraphBlock | ListBlock;
+export type BlockTypes = TextBlock | DataBlock | ListBlock;
 
 export interface BlockGroup {
   id: string;

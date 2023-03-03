@@ -23,7 +23,9 @@ onMounted(() => {
         scale: 1.5,
         ease: "none",
     });
-    masksObj.forEach((mask, index) => {
+    masksObj.forEach((mask) => {
+        let index = mask.id;
+        console.log(index);
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.1;
         const layerScale = index - 0.75;
@@ -50,12 +52,15 @@ onMounted(() => {
             scrub: 2
             }
         });
-        layerScroll.to(trigger, {
-            duration: 1,
-            scale: layerScale * 2,
-            rotation: layerRotation - 90,
-            ease: "none",
-        });
+        setTimeout(() => {
+            layerScroll.to(trigger, {
+                duration: 1,
+                scale: layerScale * 2,
+                rotation: layerRotation - 90,
+                ease: "none",
+            });
+        }, 500);
+        
         
     });
 
@@ -67,6 +72,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="cover-overlay"></div>
+    
     <section id="cover">
         <div id="cover-layer-wrapper" class="cover-layer-wrapper">
             
@@ -82,6 +88,7 @@ onMounted(() => {
         </div>
         
     </section>
+    <div class="cover-shade"></div>
     
     
 </template>

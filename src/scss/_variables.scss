@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 
 $colors: (
   "black": #1C0D17,
@@ -20,11 +21,13 @@ $colors: (
     --#{$name}: #{$color};
 
     @for $i from 0 through 9 {
-      --#{$name}-0#{$i}: fade-out(#{$color}, #{$i}/10);
+
+      $transparency: rgba($color, calc($i * 0.1));
+
+      --#{$name}-0#{$i}: #{$transparency};
     }
   }
  
-  --test: fade-out(#1C0D17, 0.1);
 
   --black-transparent:#1C0D1700;
   --black-shadow:#1C0D1722;
@@ -38,10 +41,10 @@ $colors: (
 
   --bg-dark: var(--black);
   --bg-light: var(--deep-purple);
-  --bg-shadow: var(--black-shadow);
-  --dark-glass: var(--black-glass);
-  --light-glass: var(--pink-glass);
-  --bg-transparent: var(--black-transparent);
+  --bg-shadow: var(--black-02);
+  --dark-glass: var(--black-04);
+  --light-glass: var(--pink-01);
+  --bg-transparent: var(--black-00);
   --text-color: var(--white);
   --text-negative: var(--black);
   --accent-color: var(--bright-green);
@@ -51,10 +54,10 @@ $colors: (
 
     --bg-dark: var(--light-green);
     --bg-light: var(--white);
-    --bg-shadow: var(--green-shadow);
-    --bg-transparent: var(--green-transparent);
-    --bg-glass: var(--white-glass);
-    --light-glass: var(--green-glass);
+    --bg-shadow: var(--green-02);
+    --bg-transparent: var(--green-00);
+    --bg-glass: var(--white-04);
+    --light-glass: var(--green-04);
     --text-color: var(--deep-purple);
     --text-negative: var(--white);
     --accent-color: var(--magenta);
@@ -64,10 +67,10 @@ $colors: (
   html[data-theme="light"]{
     --bg-dark: var(--light-green);
     --bg-light: var(--white);
-    --bg-shadow: var(--green-shadow);
-    --bg-glass: var(--white-glass);
-    --light-glass: var(--green-glass);
-    --bg-transparent: var(--green-transparent);
+    --bg-shadow: var(--green-02);
+    --bg-transparent: var(--green-00);
+    --bg-glass: var(--white-04);
+    --light-glass: var(--green-04);
     --text-color: var(--deep-purple);
     --text-negative: var(--white);
     --accent-color: var(--magenta);
@@ -76,10 +79,10 @@ $colors: (
   html[data-theme="dark"]{
     --bg-dark: var(--black);
     --bg-light: var(--deep-purple);
-    --bg-shadow: var(--black-shadow);
-    --bg-glass: var(--black-glass);
-    --light-glass: var(--purple-glass);
-    --bg-transparent: var(--black-transparent);
+    --bg-shadow: var(--black-02);
+    --dark-glass: var(--black-04);
+    --light-glass: var(--pink-01);
+    --bg-transparent: var(--black-00);
     --text-color: var(--white);
     --text-negative: var(--black);
     --accent-color: var(--bright-green);

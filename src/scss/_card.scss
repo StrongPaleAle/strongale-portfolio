@@ -1,0 +1,34 @@
+.card{
+    --em-spacing: 0.75em;
+    position: relative;
+    z-index: 3;
+    background-color: var(--dark-glass);
+    border-radius: 2px;
+    backdrop-filter: blur(0.5rem);
+    padding: var(--em-spacing);
+    padding-bottom: 2em;
+    box-shadow: 0 0 0.5rem var(--bg-dark);
+    border-radius: 5px 15px;
+    animation: show-up 0.4s ease-in-out;
+    
+    @media (min-width: 768px){
+      --em-spacing: 1.5em;
+    }
+    @media (min-width: 1280px){
+      --em-spacing: 2em;
+    }
+    @media (min-width: 1440px){
+      --em-spacing: 2.5em;
+    }
+    p{
+      margin: 0;
+      & + p{
+        margin-top: 1em;
+      }
+    }
+    &[data-variant*="card-light"]{
+      background-image: linear-gradient(90deg, var(--dark-glass), var(--light-glass));
+      
+    }
+    
+  }

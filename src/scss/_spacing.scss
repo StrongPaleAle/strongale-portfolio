@@ -7,3 +7,8 @@
 .gap-2em{
     gap: 2em;
 }
+.gap-em\/2{
+    --em-spacing: 0.5em;
+    gap: var(--em-spacing);
+    
+}

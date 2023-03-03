@@ -65,9 +65,9 @@
         background-color: var(--bg-light);
         inset: 0;
         z-index: 1;
-        
         shape-rendering: geometricPrecision;
-        //filter: drop-shadow(0 0 0.15rem var(--bg-shadow));
+        
+        
         
       }
       .cover-layer-shadow{
@@ -79,9 +79,9 @@
         z-index: 0;
         inset: 1%;
         border-radius: 50%;
-        opacity: 0.2;
+        //opacity: 0.2;
         mix-blend-mode: multiply;
-        background-color: var(--bg-dark);
+        background-color: var(--black-glass);
         //background-image: radial-gradient(var(--bg-dark), var(--bg-transparent) 10%, var(--bg-dark) 40%);
         
       
@@ -116,7 +116,7 @@
     //   //background-color: var(--bg-shadow);
     // }
 
-    @for $i from 1 through 8 {
+    @for $i from 2 through 9 {
 
       #mask-#{$i} {
 
@@ -131,6 +131,7 @@
         --duration: calc(5s - #{3 - 0.05 * $i}s);
         transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
         opacity: 1;
+        
         //transform: translateZ(var(--starting-Z)) rotate(360deg);
         //animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
         //animation: new-start-cover-animation var(--duration) linear var(--delay);
@@ -144,56 +145,22 @@
     }
   }
 }
-@keyframes new-start-cover-animation {
-  0% {
-    transform: scale(0, 0) rotate(180deg);
-    opacity: var(--starting-opacity);
-  }
+.cover-overlay{
   
-  100% {
-    transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
-    opacity: 1;
-    
-  }
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-image: radial-gradient(var(--bg-transparent) 45%, var(--bg-dark) 80%);
+  pointer-events: none;
+  
+  
 }
-@keyframes start-cover-svgs-transform {
-  0% {
-    transform: translateZ(var(--initial-translateZ)) rotate(var(--initial-rotation));
-    opacity: 1;
-  }
+.cover-shade{
   
-  95%{
-    opacity: 1;
-  }
-  
-  100% {
-    transform: translateZ(240px) rotate(var(--initial-rotation));
-    opacity: 0;
-    
-  }
-}
-
-@keyframes cover-svgs-transform {
-  0% {
-    transform: translateZ(0px) rotate(var(--initial-rotation));
-    opacity: 1;
-    
-  }
-  95%{
-    opacity: 1;
-  }
-  
-  100% {
-    transform: translateZ(240px) rotate(var(--initial-rotation));
-    opacity: 0;
-    
-  }
-}
-@keyframes wrapper-rotation{
-  0%{
-    transform: rotate(320deg);
-  }
-  100%{
-    transform: rotate(-40deg);
-  }
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(45deg, var(--pink-00) , var(--pink-03));
+  pointer-events: none;
+  mix-blend-mode: color;
+  animation: fade-in 1s linear 0s forwards;
 }
