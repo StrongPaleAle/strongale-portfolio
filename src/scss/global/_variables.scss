@@ -20,11 +20,18 @@ $colors: (
   @each $name, $color in $colors {
     --#{$name}: #{$color};
 
-    @for $i from 0 through 9 {
+    @for $i from 0 through 10 {
 
       $transparency: rgba($color, calc($i * 0.1));
 
       --#{$name}-0#{$i}: #{$transparency};
+      .bg-#{$name}-0#{$i}{
+        background-color: var(--#{$name}-0#{$i});
+      }
+      .text-#{$name}-0#{$i}{
+        color: var(--#{$name}-0#{$i});
+      }
+
     }
   }
  

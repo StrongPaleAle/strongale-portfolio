@@ -88,7 +88,13 @@ button, .button{
     }
   }
   .tag{
+    --font-size: 100%;
+    --tag-op: 0;
+    
+    padding: 0.25em 0.5em;
     text-transform: none;
+    font-size: var(--font-size);
+    background-color: var(--tag-bg);
   }
   .lateral-scroll{
     max-width: 100%;

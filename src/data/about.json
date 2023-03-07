@@ -98,19 +98,23 @@
                                 "value": 80
                             },
                             {
-                                "label": "VueJS",
-                                "value": 60
-                            },
-                            {
                                 "label": "SASS",
                                 "value": 90
                             },
                             {
-                                "label": "TailwindCSS",
-                                "value": 100
+                                "label": "VueJS",
+                                "value": 60
+                            },
+                            {
+                                "label": "Laravel",
+                                "value": 30
                             },
                             {
                                 "label": "Bootstrap",
+                                "value": 100
+                            },
+                            {
+                                "label": "TailwindCSS",
                                 "value": 100
                             },
                             {
@@ -126,24 +130,16 @@
                                 "value": 80
                             },
                             {
-                                "label": "Laravel",
-                                "value": 30
-                            },
-                            {
-                                "label": "jQuery",
-                                "value": 80
-                            },
-                            {
-                                "label": "WordPress",
-                                "value": 90
-                            },
-                            {
                                 "label": "Drupal",
                                 "value": 60
                             },
                             {
                                 "label": "PrestaShop",
                                 "value": 40
+                            },
+                            {
+                                "label": "WordPress",
+                                "value": 90
                             },
                             {
                                 "label": "OctoberCMS",
