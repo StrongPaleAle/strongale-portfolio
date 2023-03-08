@@ -25,7 +25,7 @@ onMounted(() => {
     });
     masksObj.forEach((mask) => {
         let index = mask.id;
-        console.log(index);
+        //console.log(index);
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.1;
         const layerScale = index - 0.75;

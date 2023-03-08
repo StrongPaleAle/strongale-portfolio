@@ -1,7 +1,7 @@
 #about{
     position: relative;
     z-index: 3;
-    background-image: linear-gradient(transparent, var(--bg-dark) 85%);
+    background-image: linear-gradient(transparent, var(--bg-heavy) 90%);
     will-change: transform;
     > *{
       transform: translateZ(0px);

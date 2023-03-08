@@ -36,11 +36,9 @@
   .text-half{
     font-size: 0.5em
   }
-  .text-accent{
-    color: var(--accent-color);
-  }
+  
   .text-box{
-    color: var(--bg-light);
+    color: var(--bg-medium);
   }
   .lp-loose{
     letter-spacing: 0.05em;
@@ -66,9 +64,19 @@
     display: inline-block;
     border-radius: var(--border-radius-large);
     letter-spacing: 0.05em;
-    &[data-variant="accent"]{
-        background-color: var(--accent-color);
-      }
+    position: relative;
+    &[data-variant*="accent"]{
+      background-color: var(--accent-color);
+        
+    }
+    &[data-variant*="gradient"]:after{
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 20%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
+      
+    }
   }
   .content-text{
     max-width: 65ch;

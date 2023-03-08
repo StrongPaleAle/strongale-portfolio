@@ -53,7 +53,7 @@ const CirclePoints = computed(() => {
             <polygon class="svg-graph__result" :points="points"></polygon>
             <defs>
                 <filter x="-0.1" y="-0.1" width="1.2" height="1.2" id="solid">
-                <feFlood flood-color="var(--dark-glass)"/>
+                <feFlood flood-color="var(--bg-heavy-70)"/>
                 <feComposite in="SourceGraphic" />
                 </filter>
             </defs>

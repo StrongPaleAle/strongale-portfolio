@@ -31,27 +31,36 @@
           @extend .border-t-accent;
          
           text-align: center;
-          filter: drop-shadow(0 0 0.25rem var(--bg-dark));
+          filter: drop-shadow(0 0 0.25rem var(--bg-heavy));
           &-first{
-            text-shadow: 0 0 0.25rem var(--bg-dark);
+            text-shadow: 0 0 0.25rem var(--bg-heavy);
           }
           &-second{
-            text-shadow: 0 0 0.25rem var(--bg-dark);
+            text-shadow: 0 0 0.25rem var(--bg-heavy);
             font-weight: 400;
             letter-spacing: 0.1em;
             line-height: 1;
             margin-bottom: 0.25em;
-            text-transform: none;
+            
           }
           &-third{
             font-size: 1.1em;
             display: block;
-            //text-shadow: 0 0 0.25rem var(--bg-dark);
+            span{
+              background-color: var(--bg-heavy);
+              color: transparent;
+              position: relative;
+              text-shadow: 0.05em 0.05em 0.075em var(--white-20);
+              -webkit-background-clip: text;
+              background-clip: text;
+              z-index: 2;
+            }
+            //text-shadow: 0 0 0.25rem var(--bg-heavy);
            
           }
         }
         .cover-subtitle{
-          text-transform: none;
+          
           font-weight: 500;
         }
       }

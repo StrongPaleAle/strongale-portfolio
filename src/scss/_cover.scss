@@ -14,18 +14,7 @@
   --clip: path('');
 
   
-  // &::after{
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   opacity: 0.7;
-  //   background-image: radial-gradient(var(--bg-dark), var(--bg-transparent) 30%);
-  //   z-index: 2;
-  // }
+  
   
   .cover-layer-wrapper {
     //perspective: 230px;
@@ -62,7 +51,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: var(--bg-light);
+        background-color: var(--bg-medium);
         inset: 0;
         z-index: 1;
         shape-rendering: geometricPrecision;
@@ -81,8 +70,8 @@
         border-radius: 50%;
         //opacity: 0.2;
         mix-blend-mode: multiply;
-        background-color: var(--black-glass);
-        //background-image: radial-gradient(var(--bg-dark), var(--bg-transparent) 10%, var(--bg-dark) 40%);
+        background-color: var(--bg-heavy-40);
+        //background-image: radial-gradient(var(--bg-heavy), var(--bg-heavy-00) 10%, var(--bg-heavy) 40%);
         
       
       }
@@ -96,7 +85,7 @@
       //   inset: -1%;
       //   border-radius: 50%;
         
-      //   background-image: radial-gradient(transparent 60%, var(--bg-light) 90%);
+      //   background-image: radial-gradient(transparent 60%, var(--bg-medium) 90%);
         
         
       
@@ -111,12 +100,12 @@
     //   height: 90%;
     //   z-index: 1;
     //   inset: 10px;
-    //   background-image: radial-gradient(var(--bg-dark), var(--bg-shadow));
+    //   background-image: radial-gradient(var(--bg-heavy), var(--bg-heavy-20));
       
     //   //background-color: var(--bg-shadow);
     // }
 
-    @for $i from 2 through 9 {
+    @for $i from 1 through 8 {
 
       #mask-#{$i} {
 
@@ -150,7 +139,7 @@
   position: fixed;
   inset: 0;
   z-index: 99;
-  background-image: radial-gradient(var(--bg-transparent) 45%, var(--bg-dark) 80%);
+  background-image: radial-gradient(var(--bg-heavy-00) 45%, var(--bg-heavy) 80%);
   pointer-events: none;
   
   
@@ -159,7 +148,7 @@
   
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(45deg, var(--pink-00) , var(--pink-03));
+  background-image: linear-gradient(45deg, var(--bg-light-00) , var(--bg-light-30));
   pointer-events: none;
   mix-blend-mode: color;
   animation: fade-in 1s linear 0s forwards;

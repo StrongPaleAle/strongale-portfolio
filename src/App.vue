@@ -4,6 +4,13 @@
 import TheCover from './components/TheCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
+import { getTheme, setTheme } from './utils/utils';
+
+const theme = getTheme();
+
+setTheme(theme);
+console.log(theme);
+
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 .svg-graph{
     &__border{
-        stroke: var(--text-color);
+        stroke: var(--text-color-70);
         stroke-width: 2px;
-        fill: var(--bg-dark);
-        opacity: 0.75;
+        fill: var(--bg-heavy-70);
+        
     }
     &__axis{
         stroke: var(--text-color);
@@ -16,7 +16,7 @@
         circle{
             fill: var(--accent-color);
             &.area{
-                fill: var(--bg-transparent);
+                fill: var(--bg-heavy-50);
             }
             
         }
@@ -25,7 +25,7 @@
             transition: opacity 0.4s ease-in-out;
             display: inline-block;
             fill: var(--white);
-            text-shadow: 0 0 0.25em var(--bg-dark);
+            text-shadow: 0 0 0.25em var(--bg-heavy-80);
         }
         &:hover{
             text{

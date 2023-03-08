@@ -16,8 +16,12 @@ const {block} = toRefs(props);
         v-if="block.title" >
         <span>{{ block.title }}</span>
     </h4>
-    <div class="flex justify-center items-center lh-ultra-tight gap-em/2  text-large">
-        <span v-for="item in block.content" class="tag" :style="`--font-size: calc(70% + ${item.value}%);`">
+    <div class="flex justify-center items-center lh-tight gap-0  text-large">
+        <span v-for="item in block.content" class="tag" 
+        :style="{
+            '--font-size': `calc(70% + ${item.value}%)`,
+            '--tag-bg': `var(--bg-heavy-${item.value})`
+            }">
             {{ item.label }}
         </span>
     </div>

@@ -1,0 +1,95 @@
+@use 'sass:color';
+@use 'sass:math';
+
+$colors: (
+  "black": #1C0D17,
+  "deep-purple": #2E234C,
+  "purple": #403980,
+  "light-navy": #3B5883,
+  "viridian": #408666,
+  "green": #44B349,
+  "bright-green": #5CFF23,
+  "light-green": #c9fdb6,
+  "nyanza": #E7FFE2,
+  "white": #F4FCF3,
+  "pink": #FF1493,
+  "magenta": #9F1463,
+);
+$theme-options: (
+  "dark": (
+    "bg-heavy": "black",
+    "bg-medium": "deep-purple",
+    "bg-light": "pink",
+    "text-color": "white",
+    "text-negative": "deep-purple",
+    "accent-color": "bright-green",
+    "extra-color": "pink",
+  ),
+  "light": (
+    "bg-heavy": "light-green",
+    "bg-medium": "white",
+    "bg-light": "light-navy",
+    "text-color": "deep-purple",
+    "text-negative": "white",
+    "accent-color": "magenta",
+    "extra-color": "viriadian",
+  ),
+);
+:root{
+  // Colors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+
+    @for $i from 0 through 10 {
+
+      $transparency: rgba($color, calc($i * 0.1));
+
+      --#{$name}-#{$i}0: #{$transparency};
+
+    }
+  }
+
+    
+
+
+}
+// Themes ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@each $name, $color in $colors {
+    
+    .bg-#{$name}{
+        background-color: var(--#{$name});
+    }
+    @for $i from 0 through 10 {
+
+        .bg-#{$name}-#{$i}0{
+            background-color: var(--#{$name}-#{$i}0);
+        }
+        .text-#{$name}-#{$i}0{
+            color: var(--#{$name}-#{$i}0);
+        }
+
+    }
+}
+@each $name, $theme in $theme-options {
+    html[data-theme="#{$name}"]{
+      @each $property, $color in $theme {
+
+        --#{$property}: var(--#{$color});
+          @for $i from 0 through 10 {
+
+            
+
+            --#{$property}-#{$i}0: var(--#{$color}-#{$i}0);
+            
+            .bg-#{$property}-#{$i}0{
+              background-color: var(--#{$property}-#{$i}0);
+            }
+            .text-#{$property}-#{$i}0{
+              color: var(--#{$property}-#{$i}0);
+            }
+
+          }
+
+      }
+    }
+  }

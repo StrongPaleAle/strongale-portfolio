@@ -12,3 +12,7 @@
     gap: var(--em-spacing);
     
 }
+.gap-0{
+    --em-spacing: 0em;
+    gap: 0;
+}
