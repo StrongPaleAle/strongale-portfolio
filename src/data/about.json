@@ -149,6 +149,54 @@
                         ],
                         "id": "skills1_block3",
                         "title": "Tools/Frameworks/Libraries/CMSs"
+                    },
+                    {
+                        "type": "BlockTags",
+                        "content": [
+                            {
+                                "label": "Vector Graphic",
+                                "value": 80
+                            },
+                            {
+                                "label": "Photo editing",
+                                "value": 50
+                            },
+                            {
+                                "label": "Graphic design",
+                                "value": 40
+                            },
+                            {
+                                "label": "UX design",
+                                "value": 70
+                            },
+                            {
+                                "label": "UI design",
+                                "value": 90
+                            },
+                            {
+                                "label": "Game design",
+                                "value": 50
+                            },
+                            {
+                                "label": "Web design",
+                                "value": 100
+                            },       
+                            {
+                                "label": "2D animation",
+                                "value": 30
+                            },
+                            {
+                                "label": "Pixel Art",
+                                "value": 60
+                            },
+                            {
+                                "label": "Storytelling",
+                                "value": 30
+                            }
+
+                        ],
+                        "id": "skills1_block4",
+                        "title": "Design"
                     }
                 ]
             }

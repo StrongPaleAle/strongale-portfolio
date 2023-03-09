@@ -12,7 +12,7 @@ const {block} = toRefs(props);
 
 </script>
 <template>
-    <h4 class="text-accent mt-2em mb-em/2 heading uppercase lh-tight center-line"
+    <h4 class="text-accent mt-2em mb-em heading uppercase lh-tight center-line"
         v-if="block.title" >
         <span>{{ block.title }}</span>
     </h4>
@@ -21,8 +21,10 @@ const {block} = toRefs(props);
         :style="{
             '--font-size': `calc(70% + ${item.value}%)`,
             '--tag-bg': `var(--bg-heavy-${item.value})`
-            }">
+            }"
+        :data-value="item.value">
             {{ item.label }}
+            
         </span>
     </div>
 </template>

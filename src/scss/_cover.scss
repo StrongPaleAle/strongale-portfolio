@@ -1,6 +1,6 @@
 #cover {
   overflow-x: clip;
-  height: 100vh;
+  height: 100svh;
   position: absolute;
   width: 100%;
   top: 0;
@@ -138,7 +138,7 @@
   
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 1;
   background-image: radial-gradient(var(--bg-heavy-00) 45%, var(--bg-heavy) 80%);
   pointer-events: none;
   
@@ -148,8 +148,9 @@
   
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(45deg, var(--bg-light-00) , var(--bg-light-30));
+  background-image: linear-gradient(-45deg, var(--bg-light-00) , var(--bg-light-40));
   pointer-events: none;
   mix-blend-mode: color;
   animation: fade-in 1s linear 0s forwards;
+  z-index: 2;
 }

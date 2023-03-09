@@ -1,6 +1,5 @@
 #hero{
-    width: 100%;
-    z-index: 1;
+    
     
 
     .section-container{
@@ -8,7 +7,7 @@
         z-index: 2;
         display: flex;
         flex-flow: wrap-reverse;
-        width: 100%;
+        
         padding: 16px;
         justify-content: space-around;
         align-items: center;
@@ -46,15 +45,7 @@
           &-third{
             font-size: 1.1em;
             display: block;
-            span{
-              background-color: var(--bg-heavy);
-              color: transparent;
-              position: relative;
-              text-shadow: 0.05em 0.05em 0.075em var(--white-20);
-              -webkit-background-clip: text;
-              background-clip: text;
-              z-index: 2;
-            }
+            
             //text-shadow: 0 0 0.25rem var(--bg-heavy);
            
           }

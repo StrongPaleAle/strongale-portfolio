@@ -15,12 +15,11 @@ console.log(theme);
 
 <template>
   <div id="wrapper">
-
-    <section class="cover-wrapper">
-      <TheCover />
-      <TheHero />
-    </section>
+    <div class="cover-shade"></div>
     
+    <TheCover />
+    
+    <TheHero />
     <SectionAbout />
     
   </div>

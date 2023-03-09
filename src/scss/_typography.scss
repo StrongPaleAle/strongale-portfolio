@@ -15,7 +15,7 @@
     text-align: center;
   }
   .text-hero{
-    font-size: clamp(2.5rem, calc(6vw + 1rem), 7rem);
+    font-size: clamp(2.5rem, calc(6vw + 1rem), 5.5rem);
     text-transform: uppercase;
     
   }
@@ -59,7 +59,7 @@
   .text-box{
     color: var(--text-negative);
     background-color: var(--text-color);
-    padding-inline: 0.1em;
+    padding-inline: 0.2em 0.1em;
     line-height: 1;
     display: inline-block;
     border-radius: var(--border-radius-large);
@@ -74,9 +74,19 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 20%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
-      
+      background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 15%,var(--black-30) 25%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
+      border-radius: var(--border-radius-large);
     }
+  }
+  .carved{
+    background-color: var(--bg-heavy);
+    color: transparent;
+    position: relative;
+    text-shadow: 0.05em 0.05em 0.075em var(--extra-color-10);
+    -webkit-background-clip: text;
+    background-clip: text;
+    z-index: 2;
+    
   }
   .content-text{
     max-width: 65ch;

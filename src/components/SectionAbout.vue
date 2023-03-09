@@ -50,7 +50,7 @@ onMounted(() => {
             <div class="flex ">
                 <div class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
-                        <span class="about-title-text | text-box " data-variant="accent">About me</span>
+                        <span class="about-title-text | text-box " data-variant="accent"><span class="carved">About me</span></span>
                     </h2>
                     <nav class="tab-menu__container">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right">

@@ -17,6 +17,8 @@ const masksLength = masksObj.length;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+    const scrollDistance = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    console.log(scrollDistance);
     gsap.to('.cover-overlay', {
         duration: 1,
         delay: 0.5,
@@ -31,6 +33,7 @@ onMounted(() => {
         const layerScale = index - 0.75;
         const layerRotation = 180 - ((180 * index) / masksLength);
         const startingOpacity = 1 - index * 0.5;
+        
         const trigger = `#mask-${mask.id}`;
         const first = gsap.timeline({});
         first.from(trigger, {
@@ -71,24 +74,27 @@ onMounted(() => {
 
 </script>
 <template>
-    <div class="cover-overlay"></div>
+    <div id="cover" class="cover-wrapper">
+        <div class="cover-overlay"></div>
     
-    <section id="cover">
-        <div id="cover-layer-wrapper" class="cover-layer-wrapper">
-            
-            <CoverLayer
-             v-for="mask in masks"
-            :key="mask.id"
-            :mask="mask"
-            ></CoverLayer>
-            
-            
-            
-            
-        </div>
         
-    </section>
-    <div class="cover-shade"></div>
+            <div id="cover-layer-wrapper" class="cover-layer-wrapper">
+                
+                <CoverLayer
+                v-for="mask in masks"
+                :key="mask.id"
+                :mask="mask"
+                ></CoverLayer>
+                
+                
+                
+                
+            </div>
+            
+        
+    </div>
+    
+    
     
     
 </template>

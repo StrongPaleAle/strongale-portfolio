@@ -10,10 +10,10 @@ import TheLogo from './TheLogo.vue';
                     <h1 class="cover-title | m-block-0">
                         <span class="cover-title-first | block ws-nowrap lp-loose">Hi there!</span>
                         <span class="cover-title-second | text-half block">My name is</span>
-                        <span class="cover-title-third | text-box " data-variant="accent gradient"><span>Alessio</span></span> 
+                        <span class="cover-title-third | text-box " data-variant="accent gradient"><span class="carved">Alessio</span></span> 
                         
                     </h1>
-                    <p class="cover-subtitle | text-half m-block-0 lh-double">
+                    <p class="cover-subtitle | text-half text-center m-block-0 lh-double">
                         <strong>Web Developer</strong> since 2014.
                     </p>
                 </div>
