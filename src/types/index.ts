@@ -6,6 +6,9 @@ export interface Mask {
 export interface Block {
   id: string;
   title?: string | undefined;
+  titleHeader?: string | undefined;
+  titleVariant?: string | undefined;
+  blockVariant?: string | undefined;
 }
 export interface TextBlock extends Block {
   
@@ -18,18 +21,20 @@ export interface DataBlock extends Block {
   type: 'BlockGraph' | 'BlockTable' | 'BlockTags' | 'BlockProgress';
   content: [{ label: string; value: number }];
 }
+export interface InfoBlock extends Block {
+  type: 'BlockInfo';
+  content: [{ label: string; value: string; icon?: string; hiddenLabel?: boolean }];
+}
 export interface ListBlock extends Block {
   
   type: 'BlockList';
-  listOrdination?: 'ordered' | 'unordered' | 'pills' | undefined;
+  listOrdination?: 'ol' | 'ul' |  undefined;
   content: string[];
 }
 
-export type BlockTypes = TextBlock | DataBlock | ListBlock;
+export type BlockTypes = TextBlock | DataBlock | InfoBlock | ListBlock;
 
-export interface BlockGroup {
-  id: string;
-  title?: string | undefined;
+export interface BlockGroup extends Block{
   blocks: Partial<BlockTypes>[];
 }
 

@@ -7,13 +7,13 @@
         "sections": [
             {
                 "id": "summary1",
-                
+                "title": "You can call me Ale",
                 "blocks": [
                     {   
                         "type": "BlockText",
                         "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
-                        "id": "summary1_block1",
-                        "title": "You can call me Ale"
+                        "id": "summary1_block1"
+                        
                         
                     }
                 ]
@@ -88,7 +88,8 @@
 
                         ],
                         "id": "skills1_block2",
-                        "title": "Languages"
+                        "title": "Languages",
+                        "titleVariant":"center-line"
                     },
                     {
                         "type": "BlockTags",
@@ -148,7 +149,8 @@
 
                         ],
                         "id": "skills1_block3",
-                        "title": "Tools/Frameworks/Libraries/CMSs"
+                        "title": "Tools/Frameworks/Libraries/CMSs",
+                        "titleVariant":"center-line"
                     },
                     {
                         "type": "BlockTags",
@@ -196,10 +198,67 @@
 
                         ],
                         "id": "skills1_block4",
-                        "title": "Design"
+                        "title": "Design",
+                        "titleVariant":"center-line"
                     }
                 ]
             }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Work Experience",
+        "slug": "work-experience",
+        "label": "Work Experience",
+        "sections": [
+            {
+                "id": "experience0",
+                "title": "Work Experience",
+                "blocks": [
+                    {   
+                        "type": "BlockText",
+                        "content" : "<p>I started working as a web developer in 2014, with an internship while attending my specialisation classes. In 2015 web development became a part-time job and in 2016 my main full-time job. Here are my key experiences:</p>",
+                        "id": "experience0_block1" 
+                        
+                    }
+                ]
+            },
+            {
+                "id":"experience1",
+                "title": "Web Developer, UI/UX and Cross-media designer",
+                "titleVariant":"right-line",
+                "titleHeader":"h4",
+                "blocks":[
+                    {
+                        "type": "BlockInfo",
+                        "content":[
+                            {
+                                "label": "Business",
+                                "value": "Freelance",
+                                "icon": "alternate_email",
+                                "hiddenLabel": true
+                            },
+                            {    
+                                "label": "period",
+                                "value": "2016 - Present"
+                            }
+                        ],
+                        "id": "experience1_block1"
+                    },
+                    {
+                        "type": "BlockList",
+                        "listOrdination": "unordered",
+                        "content": [
+                            "Implemented websites and landing pages, from concept through deployment.",
+                            "Helped small and new businesses to have an online presence, and be among the first results of the local organic SERP.",
+                            "Designed brand identities for new activities and charities.",
+                            "Assisted clients in understanding the better solution for starting new projects, or managing/renewing an existing platform."
+                        ],
+                        "id": "experience1_block2"
+                    }
+                ]
+            }
+
         ]
     }
     

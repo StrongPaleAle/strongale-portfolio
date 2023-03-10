@@ -12,10 +12,7 @@ const {block} = toRefs(props);
 
 </script>
 <template>
-    <h4 class="text-accent mt-2em mb-em heading uppercase lh-tight center-line"
-        v-if="block.title" >
-        <span>{{ block.title }}</span>
-    </h4>
+    
     <div class="flex justify-center items-center lh-tight gap-0  text-large">
         <span v-for="item in block.content" class="tag" 
         :style="{

@@ -59,6 +59,9 @@ $theme-options: (
     .bg-#{$name}{
         background-color: var(--#{$name});
     }
+    .text-#{$name}{
+        color: var(--#{$name});
+    }
     @for $i from 0 through 10 {
 
         .bg-#{$name}-#{$i}0{
@@ -75,6 +78,7 @@ $theme-options: (
       @each $property, $color in $theme {
 
         --#{$property}: var(--#{$color});
+
           @for $i from 0 through 10 {
 
             
@@ -89,6 +93,12 @@ $theme-options: (
             }
 
           }
+        .bg-#{$property}{
+          background-color: var(--#{$property});
+        }
+        .text-#{$property}{
+          color: var(--#{$property});
+        }
 
       }
     }

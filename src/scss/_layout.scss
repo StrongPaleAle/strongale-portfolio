@@ -13,8 +13,15 @@ body {
   
 }
 
-.flow > * + * {
-  margin: 0 0 1em;
+.flow > * {
+  & + * {
+    margin: 1em 0 0;
+    & > h2, & > h3, & > h4, & > h5, & > h6 {
+      &:first-child {
+        margin-top: 2.5em;
+      }
+    }
+  }
 }
 
 section{

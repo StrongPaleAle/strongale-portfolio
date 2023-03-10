@@ -1,4 +1,6 @@
 @import 'global/normalize';
 @import 'global/fonts';
+$material-symbols-font-path: '/assets/fonts/';
+@import 'material-symbols';
 @import 'global/colors';
 @import 'global/variables';

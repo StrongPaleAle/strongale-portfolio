@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import BlockText from './BlockText.vue';
-import BlockGraph from './BlockGraph.vue';
-import BlockTags from './BlockTags.vue';
+
 import Card from './Card.vue';
-import { Tab } from '@/types';
+import { BlockTypes, Tab } from '@/types';
 import { ref, onMounted } from "vue";
+import BlockWrapper from './blocks/BlockWrapper.vue';
 
 import AboutData from '../data/about.json';
 
@@ -12,6 +11,7 @@ const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
 let selectedTab = ref<number>(0);
 let isAnimating = false;
+
 
 
 function selectTab(index: number) {
@@ -85,21 +85,28 @@ onMounted(() => {
                                 
                                 v-for="(section, index)  in tab.sections"
                                 :id="section.id"
-                                :key="index" >
-
-                                <h3 class="text-accent heading uppercase lh-tight"
+                                :key="index" 
+                                :data-variant="section.blockVariant">
+                            
+                                <component :is="section.titleHeader ? section.titleHeader : 'h3'" 
+                                    class="text-accent heading uppercase lh-tight"
+                                    :data-variant="section.titleVariant"
                                     v-if="section.title" >
 
-                                    {{ section.title }}
+                                    <span>{{ section.title }}</span>
 
-                                </h3>
+                                </component>
+                                
                                 <div class="flow">
+
                                     <div class="tab-section__content" 
-                                        v-for="block in section.blocks" >
+                                        v-for="block in section.blocks" 
+                                        :data-variant="block.blockVariant">
+
+                                        <KeepAlive>
+                                            <BlockWrapper :block="block" />
+                                        </KeepAlive>
                                         
-                                        <BlockText v-if="block.type === 'BlockText'" :block="block"/>
-                                        <BlockGraph v-if="block.type === 'BlockGraph'" :block="block"/>
-                                        <BlockTags v-if="block.type === 'BlockTags'" :block="block"/>
 
                                     </div>
                                 </div>
