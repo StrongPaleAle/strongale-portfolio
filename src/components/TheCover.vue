@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     const scrollDistance = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    console.log(scrollDistance);
+    //console.log(scrollDistance);
     gsap.to('.cover-overlay', {
         duration: 1,
         delay: 0.5,

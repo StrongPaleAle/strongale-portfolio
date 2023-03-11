@@ -7,12 +7,6 @@ const props = defineProps<{
 
 </script>
 <template>
-    <h4 class="text-accent heading uppercase lh-tight"
-        v-if="block.title" >
-
-        {{ block.title }}
-
-    </h4>
     <div class="content-block" v-html="block.content">
     </div>
 </template>

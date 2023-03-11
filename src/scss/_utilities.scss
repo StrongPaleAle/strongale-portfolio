@@ -44,6 +44,9 @@
     padding-bottom: var(--em-spacing);
   }
 }
+.overflow-y-hidden{
+    overflow-y: hidden;
+}
 button, .button{
     //font-family: var(--font-heading);
     display: inline-block;
@@ -139,6 +142,9 @@ button, .button{
       
     
     }
+    &[data-scrolling="false"]{
+      overflow-y: hidden;
+    }
   }
   .h-screen{
     height: 100vh;
@@ -197,7 +203,7 @@ button, .button{
    
     
   }
-  [data-variant="right-line"]{
+  [data-variant*="right-line"]{
     overflow: hidden;
     text-align: left;
     
@@ -219,5 +225,11 @@ button, .button{
       }
     }
    
+    
+  }
+  [data-marker*="accent-color"]{
+    li::marker{
+      color: var(--accent-color);
+    }
     
   }

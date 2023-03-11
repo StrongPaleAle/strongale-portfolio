@@ -108,9 +108,29 @@ section{
 .items-center{
   align-items: center;
 }
+.items-start{
+  align-items: flex-start;
+}
+.items-end{
+  align-items: flex-end;
+}
+.items-stretch{
+  align-items: stretch;
+}
+
 .justify-center{
   justify-content: center;
 }
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-end{
+  justify-content: flex-end;
+}
+.justify-between{
+  justify-content: space-between;
+}
+
 .skill-table{
   width: 100%;
   td{

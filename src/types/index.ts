@@ -9,6 +9,7 @@ export interface Block {
   titleHeader?: string | undefined;
   titleVariant?: string | undefined;
   blockVariant?: string | undefined;
+  extraClass?: string | undefined;
 }
 export interface TextBlock extends Block {
   

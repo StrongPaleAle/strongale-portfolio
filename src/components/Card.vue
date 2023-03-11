@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="card">
-        <div class="content-text"
+        <div class="content-text flow"
         ref="contentText" 
         :class="{'overflow-text hide-scrollbar' : overflow, 'is-scrolling' : isScrollable}">
             <slot></slot>

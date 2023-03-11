@@ -6,6 +6,7 @@ import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
 
 import AboutData from '../data/about.json';
+import { remove } from '@vue/shared';
 
 const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
@@ -18,29 +19,63 @@ function selectTab(index: number) {
     selectedTab.value = index;
 }
 onMounted(() => {
+
+    // BASIC VARIABLES
+    const hash = window.location.hash.substring(1);
     const aboutContainer = document.querySelector('#about .section-content');
     const tabItems = document.querySelectorAll('#about .tab-item');
-    selectTab(0);
-    const options = {
+    const cardHeight = window.innerHeight - 200;
+
+    // INTERSECTION OBSERVERS
+    const tabOptions = {
         root: aboutContainer,
         threshold: 1
     }
-    const observer = new IntersectionObserver(function(element, observer) {
-        
-            if (element[0].isIntersecting) {
-                let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
-                selectTab(tabN);
-            }
-        
-    }, options);
+
+    const tabObserver = new IntersectionObserver(scrollTabSwitch, tabOptions);
+    
+    const aboutObserver = new IntersectionObserver(toggleScrolling, { threshold: 1 });
+
+    aboutContainer ? aboutObserver.observe(aboutContainer) : null;
 
     tabItems.forEach((item) => {
-        observer.observe(item);
+        if (window.location.hash) {
+            
+            const itemID = item.getAttribute('id');
+
+            if (itemID === hash) {
+                const tabN = Number(item.getAttribute('data-tab')) || 0;
+                
+                const itemPos = cardHeight * tabN;
+                aboutContainer  ? aboutContainer.scrollTo({top : itemPos}) : null;
+                
+
+                selectTab(tabN);
+                //console.log(selectedTab.value);
+            }
+            
+        }
+
+        tabObserver.observe(item);
     });
-    //aboutContainer ? observer.observe(aboutContainer): null;
 });
 
-
+function scrollTabSwitch(element: any) {
+        
+    if (element[0].isIntersecting) {
+        let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
+        selectTab(tabN);
+    } 
+    
+}
+function toggleScrolling(element: any) {
+    if (element[0].isIntersecting) {
+        //console.log('scrolling');
+        element[0].target.setAttribute('data-scrolling', 'true');
+    } else {
+        element[0].target.setAttribute('data-scrolling', 'false');
+    }
+}
 
 
 </script>
@@ -86,7 +121,8 @@ onMounted(() => {
                                 v-for="(section, index)  in tab.sections"
                                 :id="section.id"
                                 :key="index" 
-                                :data-variant="section.blockVariant">
+                                :data-variant="section.blockVariant"
+                                :class="section.extraClass">
                             
                                 <component :is="section.titleHeader ? section.titleHeader : 'h3'" 
                                     class="text-accent heading uppercase lh-tight"
@@ -101,7 +137,9 @@ onMounted(() => {
 
                                     <div class="tab-section__content" 
                                         v-for="block in section.blocks" 
-                                        :data-variant="block.blockVariant">
+                                        :data-variant="block.blockVariant"
+                                        :class="block.extraClass"
+                                        >
 
                                         <KeepAlive>
                                             <BlockWrapper :block="block" />

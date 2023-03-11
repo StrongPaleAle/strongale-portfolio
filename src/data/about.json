@@ -226,7 +226,7 @@
             {
                 "id":"experience1",
                 "title": "Web Developer, UI/UX and Cross-media designer",
-                "titleVariant":"right-line",
+                "titleVariant":"center-line",
                 "titleHeader":"h4",
                 "blocks":[
                     {
@@ -239,15 +239,17 @@
                                 "hiddenLabel": true
                             },
                             {    
-                                "label": "period",
-                                "value": "2016 - Present"
+                                "label": "Period",
+                                "value": "2016 - Present",
+                                "icon": "schedule",
+                                "hiddenLabel": true
                             }
                         ],
                         "id": "experience1_block1"
                     },
                     {
                         "type": "BlockList",
-                        "listOrdination": "unordered",
+                        "listOrdination": "ul",
                         "content": [
                             "Implemented websites and landing pages, from concept through deployment.",
                             "Helped small and new businesses to have an online presence, and be among the first results of the local organic SERP.",
