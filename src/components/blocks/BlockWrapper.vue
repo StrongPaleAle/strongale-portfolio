@@ -8,11 +8,12 @@ const props = defineProps<{
 </script>
 <template>
     <component :is="block.titleHeader ? block.titleHeader : 'h4'" 
-        class="heading uppercase lh-tight" 
+        class="heading uppercase lh-tight"
+        :class="block.titleClass" 
         :data-variant="block.titleVariant"
         v-if="block.title" >
 
-        <span>{{ block.title }}</span>
+        <span class="title-inner">{{ block.title }}</span>
 
     </component>
     

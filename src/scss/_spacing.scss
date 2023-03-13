@@ -1,10 +1,14 @@
 .mt-2em{
     margin-top: 2em;
 }
+.pt-em{
+    padding-top: 1em;
+}
 .mb-em\/2{
     margin-bottom: 0.5em;
 }
 .gap-2em{
+    --em-spacing: 2em;
     gap: 2em;
 }
 .gap-em-05{

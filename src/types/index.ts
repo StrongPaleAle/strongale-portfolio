@@ -7,6 +7,7 @@ export interface Block {
   id: string;
   title?: string | undefined;
   titleHeader?: string | undefined;
+  titleClass?: string | undefined;
   titleVariant?: string | undefined;
   blockVariant?: string | undefined;
   extraClass?: string | undefined;
@@ -24,7 +25,7 @@ export interface DataBlock extends Block {
 }
 export interface InfoBlock extends Block {
   type: 'BlockInfo';
-  content: [{ label: string; value: string; icon?: string; hiddenLabel?: boolean }];
+  content: [{ label: string; value: string; link?: string; icon?: string; hiddenLabel?: boolean }];
 }
 export interface ListBlock extends Block {
   

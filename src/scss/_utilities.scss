@@ -8,6 +8,9 @@
     margin-block: 0;
 }
 .border-t-accent{
+    border-top: 2px solid var(--accent-color);
+}
+.border-t-radius-accent{
     border-top: 6px solid var(--accent-color);
     border-radius: 5px 15px;
 }
@@ -79,7 +82,7 @@ button, .button{
       background-color: var(--bg-button-hover);
       
     }
-    &[data-variant="accent"], &[data-active="true"]{
+    &[data-variant="accent-bg"], &[data-active="true"]{
       color: var(--text-negative);
       &:after{
         transform: translateX(0);
@@ -139,7 +142,7 @@ button, .button{
     > *{
       
       scroll-snap-align: start;
-      
+      scroll-snap-stop: always;
     
     }
     &[data-scrolling="false"]{
@@ -168,68 +171,4 @@ button, .button{
       isolation: isolate;
     }
   }
-  [data-variant="center-line"]{
-    overflow: hidden;
-    text-align: center;
-    
-    span{
-      position: relative;
-      display: inline-block;
-      padding: 0 0.5em;
-      z-index: 1;
-      &::before{
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 100vw;
-        background-color: var(--accent-color);
-        z-index: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 100%;
-      }
-      &::after{
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 100vw;
-        background-color: var(--accent-color);
-        z-index: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 100%;
-      }
-    }
-   
-    
-  }
-  [data-variant*="right-line"]{
-    overflow: hidden;
-    text-align: left;
-    
-    span{
-      position: relative;
-      display: inline-block;
-      padding: 0 0.5em 0 0;
-      z-index: 1;
-      &::after{
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: 100vw;
-        background-color: var(--accent-color);
-        z-index: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 100%;
-      }
-    }
-   
-    
-  }
-  [data-marker*="accent-color"]{
-    li::marker{
-      color: var(--accent-color);
-    }
-    
-  }
+  

@@ -8,6 +8,7 @@
             {
                 "id": "summary1",
                 "title": "You can call me Ale",
+                "titleClass":"text-accent-color",
                 "blocks": [
                     {   
                         "type": "BlockText",
@@ -48,6 +49,7 @@
             {
                 "id": "skills1",
                 "title": "A neverending journey.",
+                "titleClass":"text-accent-color",
                 "blocks": [
                     {  
                         "type": "BlockText",
@@ -214,6 +216,7 @@
             {
                 "id": "experience0",
                 "title": "Work Experience",
+                "titleClass":"text-accent-color",
                 "blocks": [
                     {   
                         "type": "BlockText",
@@ -226,7 +229,8 @@
             {
                 "id":"experience1",
                 "title": "Web Developer, UI/UX and Cross-media designer",
-                "titleVariant":"center-line",
+                "titleClass":"title-box",
+                "titleVariant":"center-line accent-bg",
                 "titleHeader":"h4",
                 "blocks":[
                     {
@@ -245,22 +249,151 @@
                                 "hiddenLabel": true
                             }
                         ],
-                        "id": "experience1_block1"
+                        "id": "experience1_blockinfo"
                     },
                     {
                         "type": "BlockList",
                         "listOrdination": "ul",
+                        "extraClass": "border-t-accent",
                         "content": [
                             "Implemented websites and landing pages, from concept through deployment.",
                             "Helped small and new businesses to have an online presence, and be among the first results of the local organic SERP.",
                             "Designed brand identities for new activities and charities.",
                             "Assisted clients in understanding the better solution for starting new projects, or managing/renewing an existing platform."
                         ],
-                        "id": "experience1_block2"
+                        "id": "experience1_blockdetails"
+                    }
+                ]
+            },
+            {
+                "id":"experience2",
+                "title": "External Web Developer",
+                "titleClass":"title-box",
+                "titleVariant":"center-line accent-bg",
+                "titleHeader":"h4",
+                "blocks":[
+                    {
+                        "type": "BlockInfo",
+                        "content":[
+                            {
+                                "label": "Business",
+                                "value": "Quivi",
+                                "link": "https://quivi.it",
+                                "icon": "alternate_email",
+                                "hiddenLabel": true
+                            },
+                            {    
+                                "label": "Period",
+                                "value": "2015 - 2022",
+                                "icon": "schedule",
+                                "hiddenLabel": true
+                            },
+                            {
+                                "label": "Location",
+                                "value": "Lucca, Italy / Remote",
+                                "icon": "location_on",
+                                "hiddenLabel": true
+                            }
+                        ],
+                        "id": "experience2_blockinfo"
+                    },
+                    {
+                        "type": "BlockText",
+                        "content": "<p><a href=\"https://quivi.it/\" target=\"_blank\">Quivi</a> is a software development studio and media strategy. I worked on many projects with them. At the moment is my most important and formative work experience.</p>",
+                        "id": "experience2_blockintro",
+                        "extraClass": "text-small border-t-accent pt-em"
+
+                    },
+                    {
+                        "type": "BlockList",
+                        "listOrdination": "ul",
+                        "content": [
+                            "High development experience in UI/UX development, using different CSS (Tailwind, Bootstrap, and Foundation), Javascript (Vue, AngularJs), and PHP(Laravel) frameworks.",
+                            "Independently developed themes for different CMSs (WordPress, Drupal, Prestashop, and OctoberCMS).",
+                            "Assessed UX and UI designs for technical feasibility.",
+                            "Liaised with clients for reviews, and independently managed bug fixing, multi-device, and cross-browser optimisation processes.",
+                            "Wrote a guide to help designers to compose more CSS frameworks and CMS-friendly layouts.",
+                            "Led, mentored, and reviewed trainee developers."
+                        ],
+                        "id": "experience2_blockdetails"
+                    }
+                ]
+            },
+            {
+                "id":"experience3",
+                "title": "Temp festival organizing staff",
+                "titleClass":"title-box",
+                "titleVariant":"center-line accent-bg",
+                "titleHeader":"h4",
+                "blocks":[
+                    {
+                        "type": "BlockInfo",
+                        "content":[
+                            {
+                                "label": "Business",
+                                "value": "Lucca Comics & Games",
+                                "link": "https://www.luccacomicsandgames.com/",
+                                "icon": "alternate_email",
+                                "hiddenLabel": true
+                            },
+                            {    
+                                "label": "Period",
+                                "value": "2013 - 2020",
+                                "icon": "schedule",
+                                "hiddenLabel": true
+                            },
+                            {
+                                "label": "Location",
+                                "value": "Lucca, Italy",
+                                "icon": "location_on",
+                                "hiddenLabel": true
+                            }
+                        ],
+                        "id": "experience3_blockinfo"
+                    },
+                    {
+                        "type": "BlockText",
+                        "content": "<p>Lucca Comics & Games is a comic books, gaming, and pop culture convention, held annually in Lucca, usually between the end of October and the beginning of November. It’s the first comics festival in Europe, and the second in the world, by attendance. For about a week each year, I help the organisation deal with issues on the ground at the festival.</p>",
+                        "id": "experience2_blockintro",
+                        "extraClass": "text-small border-t-accent pt-em"
+
+                    },
+                    {
+                        "type": "BlockList",
+                        "listOrdination": "ul",
+                        "content": [
+                            "Managed public venues' key handover, between the various exhibitors.",
+                            "Checked the correct preparation of the exhibition spaces by the contractor.",
+                            "Supported exhibitors in hitches and disservices management, or submitting new requests to the festival’s organisation.",
+                            "Improved several soft skills necessary for fieldwork in a big event, such as teamwork with new people, communication, crisis avoidance and management, public relations, customer service, recognising safety issues, fire safety, and troubleshooting."
+                        ],
+                        "id": "experience3_blockdetails"
                     }
                 ]
             }
 
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Hobbies",
+        "slug": "hobbies",
+        "label": "Hobbies",
+        "sections": [
+            {
+                "id": "hobbies1",
+                "title": "Improved by passion",
+                "titleClass":"text-accent-color",
+                "blocks": [
+                    {   
+                        "type": "BlockText",
+                        "content": "<p>I've always been passionate about everything that can tell a story, whether it is in written, drawn, audiovisual or interactive form. Even simply seeing or holding an old object found in an attic, a flea market, or a museum, and imagining its past, has always been thrilling for me. <br>I've also always loved crafting, inventing, and enhancing stuff, as well as solving riddles and puzzles. So, I soon found a way to join these two passions in games. I'm mainly into Role Play Games (tabletop or live-action) and video games. My interests have not been simply hobbies but <strong>a way to improve various soft skills.</strong></p><p>In my teen years, I used these hobbies to <strong>practice my digital skills</strong>: designing logos, posters and layout guides, and later creating my first web pages. I even took on responsibilities as a board member of a local board game association. <br>My main games are Cyberpunk 2020 and Vampire the Masquerade. For the latter, I took part in the organisation of many LARP games as a storyteller and collaborated with various gaming associations. In this way, I built a personal network with people from every part of Italy and abroad.</p><p>My relationship with video games has been essentially personal. I'm most fond of the sagas of The Legend of Zelda, Diablo, Baldur's Gate, and Starcraft. In the early years of the past decade, I also grew to love indie games, especially The Binding of Isaac, Undertale and Hades. I have always tried to investigate the functioning of the various aspects that make up a video game. However, only with the discovery of the indie games world, <strong>I ended up taking part in several game jams</strong>, mainly in the role of pixel artist and animator, UI designer, storyteller and game designer. <br>A couple of years ago, I also got to try the Souls series, falling in love with their silent narrative, discoverable in dialogues, environmental details and descriptions. They are currently my favourite gaming passion, while I'm waiting for the new Zelda chapter, of course 😉</p>",
+                        "id": "hobbies1_block1"
+                        
+                        
+                    }
+                ]
+            }
         ]
     }
     

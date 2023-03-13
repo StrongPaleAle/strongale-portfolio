@@ -4,6 +4,7 @@
 import TheCover from './components/TheCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
+import SectionPortfolio from './components/SectionPortfolio.vue';
 import { getTheme, setTheme } from './utils/utils';
 
 const theme = getTheme();
@@ -21,6 +22,7 @@ setTheme(theme);
     
     <TheHero />
     <SectionAbout />
+    <SectionPortfolio />
     
   </div>
   

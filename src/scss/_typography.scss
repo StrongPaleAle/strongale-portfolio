@@ -56,7 +56,7 @@
     line-height: 2;
   }
 
-  .text-box{
+  .text-box, .title-box > .title-inner{
     color: var(--text-negative);
     background-color: var(--text-color);
     padding-inline: 0.2em 0.1em;
@@ -65,9 +65,12 @@
     border-radius: var(--border-radius-large);
     letter-spacing: 0.05em;
     position: relative;
-    &[data-variant*="accent"]{
+    &[data-variant*="accent-bg"]{
       background-color: var(--accent-color);
         
+    }
+    &[data-variant*="dark-bg"]{
+      color: var(--text-color);
     }
     &[data-variant*="gradient"]:after{
       content: '';
@@ -78,6 +81,9 @@
       border-radius: var(--border-radius-large);
     }
   }
+  .title-box[data-variant*="accent-bg"] > .title-inner{
+    background-color: var(--accent-color);
+  }
   .carved{
     background-color: var(--bg-heavy);
     color: transparent;
@@ -86,6 +92,71 @@
     -webkit-background-clip: text;
     background-clip: text;
     z-index: 2;
+    
+  }
+  [data-variant*="center-line"]{
+    overflow: hidden;
+    text-align: center;
+    
+    span{
+      position: relative;
+      display: inline-block;
+      padding: 0 0.5em;
+      z-index: 1;
+      &::before{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--accent-color);
+        z-index: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--accent-color);
+        z-index: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+      }
+    }
+   
+    
+  }
+  [data-variant*="right-line"]{
+    overflow: hidden;
+    text-align: left;
+    
+    span{
+      position: relative;
+      display: inline-block;
+      padding: 0 0.5em 0 0;
+      z-index: 1;
+      &::after{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--accent-color);
+        z-index: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+      }
+    }
+   
+    
+  }
+  [data-marker*="accent-color"]{
+    li::marker{
+      color: var(--accent-color);
+    }
     
   }
   .content-text{

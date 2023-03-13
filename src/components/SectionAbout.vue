@@ -83,9 +83,9 @@ function toggleScrolling(element: any) {
     <section id="about" class="section-wrapper">
         <div class="section-container" >
             <div class="flex ">
-                <div class="section-sidebar">
+                <header class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
-                        <span class="about-title-text | text-box " data-variant="accent"><span class="carved">About me</span></span>
+                        <span class="about-title-text | text-box " data-variant="accent-bg"><span class="carved">About me</span></span>
                     </h2>
                     <nav class="tab-menu__container">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right">
@@ -100,7 +100,7 @@ function toggleScrolling(element: any) {
                         </ul> 
                     </nav>
                     
-                </div>
+                </header>
                 
                 
                 <div class="section-content | hide-scrollbar snap-y max-h-screen" data-variant="padded-screen">
@@ -125,11 +125,12 @@ function toggleScrolling(element: any) {
                                 :class="section.extraClass">
                             
                                 <component :is="section.titleHeader ? section.titleHeader : 'h3'" 
-                                    class="text-accent heading uppercase lh-tight"
+                                    class="heading uppercase lh-tight"
                                     :data-variant="section.titleVariant"
+                                    :class="section.titleClass"
                                     v-if="section.title" >
 
-                                    <span>{{ section.title }}</span>
+                                    <span class="title-inner">{{ section.title }}</span>
 
                                 </component>
                                 
