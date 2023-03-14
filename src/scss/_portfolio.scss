@@ -1,26 +1,31 @@
 #portfolio{
     background-image: linear-gradient(var(--bg-heavy), transparent 90%);
-    height: 200vh;
+    min-height: 200vh;
+    align-items: start;
     .section-container{
         display: flex;
         flex-direction: column;
         min-height: calc(100vh - 100px);
-        
+        position: sticky;
+        top: 2rem;
     }
 }
 .portfolio-container{
     flex-grow: 1;
-   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     position: relative;
+    overflow-y: hidden;
     
     .portfolio-item{
         --x: 0;
         --y: 0;
+        --scale:0;
+
+        opacity: 1;
         
-        position: absolute;
-        width: min-content;
-        left: var(--x);
-        top: var(--y);
+        
+       //transform: translate(var(--x), var(--y)) scale(var(--scale));
         
     }
 }

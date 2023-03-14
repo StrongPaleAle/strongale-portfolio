@@ -1,10 +1,9 @@
 #cover {
-  overflow-x: clip;
-  height: 100svh;
+  contain: paint;
+  overflow: hidden;
   position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
   
   --slices: 8;
@@ -13,7 +12,13 @@
   --animation-duration: calc(var(--slices) * var(--time-modifier));
   --clip: path('');
 
-  
+  .cover-wrapper{
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 100vh;
+  }
   
   
   .cover-layer-wrapper {
@@ -21,8 +26,8 @@
     position: absolute;
     z-index: -1;
     inset: 0;
-    width: 55vmax;
-    height: 55vmax;
+    width: 50vmax;
+    height: 50vmax;
     //transform-style: preserve-3d;
     top: 50%;
     left: 50%;
@@ -137,6 +142,7 @@
 .cover-overlay{
   
   position: fixed;
+  width: 100%;
   inset: 0;
   z-index: 1;
   background-image: radial-gradient(var(--bg-heavy-00) 45%, var(--bg-heavy) 80%);
@@ -147,8 +153,9 @@
 .cover-shade{
   
   position: fixed;
+  width: 100%;
   inset: 0;
-  background-image: linear-gradient(-45deg, var(--bg-light-00) , var(--bg-light-40));
+  background-image: linear-gradient(-135deg, var(--bg-light-00) , var(--bg-light-40));
   pointer-events: none;
   mix-blend-mode: color;
   animation: fade-in 1s linear 0s forwards;

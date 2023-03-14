@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import TheNav from './components/TheNav.vue';
 import TheCover from './components/TheCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
@@ -15,16 +16,21 @@ setTheme(theme);
 </script>
 
 <template>
-  <div id="wrapper">
+  <div class="app-inner">
+    <TheCover />
+    
     <div class="cover-shade"></div>
     
-    <TheCover />
+    <TheNav /> 
+  <main id="wrapper">
     
     <TheHero />
     <SectionAbout />
-    <SectionPortfolio />
+   <SectionPortfolio />
     
+  </main>
   </div>
+  
   
 </template>
 

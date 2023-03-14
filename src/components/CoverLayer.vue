@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Mask } from '@/types';
-import {gsap} from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 const props = defineProps<{
   mask: Mask;
