@@ -47,3 +47,18 @@ export interface Tab {
   label: string;
   sections: BlockGroup[];
 }
+
+export interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  year: number;
+  tags: string[];
+  content: string;
+  subtitle?: string;
+  design?: string;
+  development?: string;
+  link?: string;
+  cover?: string;
+  gallery?: string[];
+}

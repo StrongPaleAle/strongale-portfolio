@@ -17,10 +17,10 @@ setTheme(theme);
 
 <template>
   <div class="app-inner">
-    <TheCover />
+    
     
     <div class="cover-shade"></div>
-    
+    <TheCover />
     <TheNav /> 
   <main id="wrapper">
     

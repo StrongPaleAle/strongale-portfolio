@@ -25,54 +25,58 @@ onMounted(() => {
     //     scale: 1.5,
     //     ease: "none",
     // });
-    document.addEventListener('scroll', (evt) => {
-       evt.preventDefault() 
-    });
+    
     
     masksObj.forEach((mask) => {
         let index = mask.id;
         //console.log(index);
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.2;
+        
         const layerScale = index - 0.75;
+        const layerstartScale = layerScale + (masksLength - index)
         const layerRotation = 180 - ((180 * index) / masksLength);
-        const startingOpacity = 1 - index * 0.5;
+        const startingOpacity = 1 - (1 - index * 0.1);
         
         const trigger = `#mask-${mask.id}`;
         const first = gsap.timeline({});
         first.fromTo(trigger, {
-            
-            scale: layerScale/2,
-            rotation: layerRotation + 90
+            scale: layerstartScale,
+            opacity: startingOpacity,
         },{
             duration: layerDuration,
             delay: layerDelay,
             scale: layerScale,
-            rotation: layerRotation,
+            opacity: 1,
             ease: "none",
         });
         // gsap scrolltrigger for the mask
-        setTimeout(() => {
+        
             
             const layerScroll = gsap.timeline({
                 immediateRender: false,
                 overwrite: 'auto',
                 scrollTrigger: {
                 id: 'trigger',
-                trigger: '.app-inner',
+                trigger: '#cover',
                 start: 'top',
                 end: 'bottom',
                 scrub: 2
                 }
             });
         
-            layerScroll.to(trigger, {
+            layerScroll.fromTo(trigger, 
+            {
+                scale: layerScale,
+                rotation: layerRotation,
+            },
+            {
                 duration: 1,
                 scale: layerScale * 2,
                 rotation: layerRotation - 90,
                 ease: "none",
             });
-        }, 1500);
+        
         
         
     });

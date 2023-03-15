@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "title": "StrongAle",
+        "slug": "strongale",
+        "year": 2023,
+        "tags": [
+            "", 
+            "", 
+            ""],
+        "content": "",
+        "subtitle": "Just the website you are browsing right now.",
+        "design": "",
+        "development": "",
+        "link": "",
+        "cover": "",
+        "gallery": [
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 1,
+        "title": "",
+        "slug": "",
+        "year": 2019,
+        "tags": [
+            "", 
+            "", 
+            ""],
+        "content": "",
+        "subtitle": "",
+        "design": "",
+        "development": "",
+        "link": "",
+        "cover": "",
+        "gallery": [
+            "",
+            ""
+        ]
+    }
+]
+    

@@ -12,13 +12,14 @@ onMounted(() => {
     const portfolioHeight = portfolioContainer ? portfolioContainer.clientHeight : 0;
 
     const getRandom = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
-    
+    const getCenter = (parentD: number, childD: number, childS: number) => (parentD / 2) - (childD + (childS / 2));
     let rowElements = 0;
     let topDistance = 0;
     portfolioItems.forEach((item: HTMLElement, index) => {
         const itemWidth = item.clientWidth;
         const itemHeight = item.clientHeight;
-
+        const itemTop = item.offsetTop;
+        const itemLeft = item.offsetLeft;
         if (item.offsetTop > topDistance){
             rowElements = index;
             topDistance = item.offsetTop;
@@ -26,8 +27,8 @@ onMounted(() => {
         }
         const itemDelay = 0.5 * (index - rowElements);
         
-        const itemX = getRandom(0 - itemWidth, itemWidth);
-        const itemY = getRandom(0 - itemHeight, itemHeight);
+        const itemX = getCenter(portfolioWidth, itemLeft, itemWidth);
+        const itemY = getCenter(portfolioHeight, itemTop, itemHeight);
         const itemScale = 1 - (1 / portfolioItems.length * (index + 1));
         const trigger = `#${item.getAttribute('id')}`;
         const animate = trigger + ' .card';
