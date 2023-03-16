@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import { Project } from "@/types";
+import PortfolioProject from "./PortfolioProject.vue";
+import Projects from "../data/projects.json";
 import { onMounted } from "vue";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const projects = Projects as Project[];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +89,7 @@ onMounted(() => {
                 
             </header>
             <div class="portfolio-container gap-em-05">
-                <div class="portfolio-item | card " id="portfolio-1">
+                <!-- <div class="portfolio-item | card " id="portfolio-1">
                     <div class="card flex gap-2em">
                         <div class="portfolio-item__image">
                             <img src="https://via.placeholder.com/300x200" alt="">
@@ -99,119 +104,8 @@ onMounted(() => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-2">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-3">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-4">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-5">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-6">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-7">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item | card " id="portfolio-8">
-                    <div class="card flex gap-2em">
-                        <div class="portfolio-item__image">
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </div>
-                        <div class="portfolio-item__content">
-                            <h3 class="portfolio-item__title | heading text-large">Project title 2</h3>
-                            <p class="portfolio-item__description | content-text | text-large lh-loose">
-                            </p>
-                            <div class="portfolio-item__links">
-                                <a href="#" class="button">View project</a>
-                                <a href="#" class="button">View source</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
+                <PortfolioProject v-for="project in projects" :key="project.id" :project="project" />
                 
             </div>
         </div>

@@ -56,9 +56,9 @@ export interface Project {
   tags: string[];
   content: string;
   subtitle?: string;
-  design?: string;
-  development?: string;
+  design?: { label: string; link?: string};
+  development?: { label: string; link?: string};
   link?: string;
-  cover?: string;
-  gallery?: string[];
+  cover?: { url: string; alt: string;};
+  gallery?: [{ url: string; alt: string; caption?: string }];
 }

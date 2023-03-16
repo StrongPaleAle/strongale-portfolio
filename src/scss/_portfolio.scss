@@ -15,16 +15,30 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     position: relative;
-    overflow-y: hidden;
+    place-content: center;
+    place-items: center;
+    align-content: center;
+    justify-content: center;
     
     .portfolio-item{
         --x: 0;
         --y: 0;
         --scale:0;
+        --em-spacing: 0.5em;
 
+        padding-bottom: var(--em-spacing);
         opacity: 1;
         
-        
+        &__image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            opacity: 0;
+            transform: scaleX(0);
+            position: absolute;
+            transition: all 0.3s ease-in-out;
+        }
        //transform: translate(var(--x), var(--y)) scale(var(--scale));
         
     }

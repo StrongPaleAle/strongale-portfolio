@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
 import Card from './Card.vue';
-import { BlockTypes, Tab } from '@/types';
+import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
 
 import AboutData from '../data/about.json';
-import { remove } from '@vue/shared';
+
 
 const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
