@@ -114,7 +114,7 @@ function toggleScrolling(element: any) {
                         :data-active="index === selectedTab">
                     
                     
-                        <Card class="max-h-screen" :overflow="true" data-variant="card-light padded-screen">
+                        <Card class="max-h-screen pb-2em" :overflow="true" data-variant="card-light padded-screen">
                             
                             <div class="tab-section"
                                 

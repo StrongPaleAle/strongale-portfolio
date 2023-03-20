@@ -1,25 +1,30 @@
 .card{
-    --em-spacing: 0.75em;
+    
     position: relative;
     z-index: 3;
     background-color: var(--bg-heavy-40);
     border-radius: 2px;
     backdrop-filter: blur(0.5rem);
     padding: var(--em-spacing);
-    padding-bottom: 2em;
+    
     box-shadow: 0 0 0.5rem var(--bg-heavy-05);
     border-radius: 5px 15px;
     animation: show-up 0.4s ease-in-out;
+    &:not([class*="gap-"]){
+      --em-spacing: 0.75em;
+
+      @media (min-width: 768px){
     
-    @media (min-width: 768px){
-      --em-spacing: 1.5em;
+        --em-spacing: 1.5em;
+      }
+      @media (min-width: 1280px){
+        --em-spacing: 2em;
+      }
+      @media (min-width: 1440px){
+        --em-spacing: 2.5em;
+      }
     }
-    @media (min-width: 1280px){
-      --em-spacing: 2em;
-    }
-    @media (min-width: 1440px){
-      --em-spacing: 2.5em;
-    }
+    
     p{
       margin: 0;
       & + p{

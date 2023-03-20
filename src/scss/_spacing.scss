@@ -4,12 +4,23 @@
 .pt-em{
     padding-top: 1em;
 }
-.mb-em\/2{
+.pb-2em{
+    padding-bottom: 2em;
+}
+.mb-em-05{
     margin-bottom: 0.5em;
 }
 .gap-2em{
     --em-spacing: 2em;
     gap: 2em;
+}
+.gap-em{
+    --em-spacing: 1em;
+    gap: 1em;
+}
+.gap-em-15{
+    --em-spacing: 1.5em;
+    gap: 1.5em;
 }
 .gap-em-05{
     --em-spacing: 0.5em;

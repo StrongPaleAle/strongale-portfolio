@@ -13,7 +13,8 @@
             "Copywriting"
         ],
         "content": "<p>A year and a half after my move to London, after remotely concluding some projects that had already started and working on some new requests, I decided it was time to also move the centre of my work network to where I lived. The first thing to do was to create a portfolio. I wanted something that, in addition to showing my most impressive works, could say something more about me, and may express my skills, besides my creativity. <br>Everything you can see, whether it’s design, development or content, is the result of my ideas and work. So I’m the only one to blame 😬 <br>If you're curious about how and why I came up with these solutions, you can <a href=\"/#contact\">get in touch</a> with me for a chat.</p>",
-        "subtitle": "Just the website you are browsing right now."
+        "subtitle": "Just the website you are browsing right now.",
+        "source": "https://github.com/StrongPaleAle/strongale-portfolio"
         
     },
     {
@@ -129,15 +130,12 @@
         "tags": [
             "Art", 
             "Three.js",
-            "Social media API",
             "Javascript",
-            "UI design",
-            "UX design",
             "Copywriting",
             "VR"
         ],
         "content": "<p>My Tunnel of lo(l/n)eliness is one of my main Art projects during my Net Art and Digital Cultures specialisation. <br>It's a tunnel-like collection of all my (now abandoned) Tumblr blog posts. <br>My first experience with Three.js and weird UXs. It also works in VR, and I exhibited it at the annual exhibition of the Academy of Fine Arts of Carrara.</p>",
-        "subtitle": "“I am not alone.”",
+        "subtitle": "The right way to enjoy the web fun!",
         "link": "https://mytunnel.strongale.it/"
     }
 ]
