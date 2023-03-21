@@ -76,7 +76,7 @@ onMounted(() => {
 <template>
     <section id="portfolio" class="section-wrapper">
         <div class="section-container">
-            <header class="section-header | flex gap-2em">
+            <header class="section-header | flex gap-em-2">
                 <h2 class="section-title | heading text-huge lh-tight">
                     <span class="about-title-text | text-box " data-variant="accent-bg"><span class="carved">Portfolio</span></span>
                 </h2>
@@ -90,7 +90,7 @@ onMounted(() => {
             </header>
             <div class="portfolio-container gap-em-05">
                 <!-- <div class="portfolio-item | card " id="portfolio-1">
-                    <div class="card flex gap-2em">
+                    <div class="card flex gap-em-2">
                         <div class="portfolio-item__image">
                             <img src="https://via.placeholder.com/300x200" alt="">
                         </div>

@@ -1,33 +1,43 @@
-.mt-2em{
-    margin-top: 2em;
-}
-.pt-em{
-    padding-top: 1em;
-}
-.pb-2em{
-    padding-bottom: 2em;
-}
-.mb-em-05{
-    margin-bottom: 0.5em;
-}
-.gap-2em{
-    --em-spacing: 2em;
-    gap: 2em;
-}
-.gap-em{
-    --em-spacing: 1em;
-    gap: 1em;
-}
-.gap-em-15{
-    --em-spacing: 1.5em;
-    gap: 1.5em;
-}
-.gap-em-05{
-    --em-spacing: 0.5em;
-    gap: var(--em-spacing);
-    
-}
-.gap-0{
-    --em-spacing: 0em;
-    gap: 0;
+$sizing: (
+    0: 0,
+    'em-025': 0.25em,
+    'em-05': 0.5em,
+    'em-075': 0.75em,
+    'em-1': 1em,
+    'em-15': 1.5em,
+    'em-2': 2em,
+);
+$directions: (
+    't': top,
+    'r': right,
+    'b': bottom,
+    'l': left,
+    'block': block,
+    'inline': inline,
+);
+@each $key, $value in $sizing {
+    .m-#{$key} {
+        margin: $value;
+    }
+    .p-#{$key} {
+        padding: $value;
+    }
+    .gap-#{$key} {
+        --em-spacing: #{$value};
+        gap: $value;
+    }
+    .gap-y-#{$key} {
+        row-gap: $value;
+    }
+    .gap-x-#{$key} {
+        column-gap: $value;
+    }
+    @each $direction, $property in $directions {
+        .m-#{$direction}-#{$key} {
+            margin-#{$property}: $value;
+        }
+        .p-#{$direction}-#{$key} {
+            padding-#{$property}: $value;
+        }
+    }
 }

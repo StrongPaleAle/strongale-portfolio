@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 <template>
     
-    <div class="flex items-center gap-2em">
+    <div class="flex items-center gap-em-2">
         
         
         <div class="flex-content">

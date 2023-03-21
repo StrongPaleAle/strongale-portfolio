@@ -25,7 +25,7 @@
     
   }
   .text-xlarge{
-    font-size: clamp(1.25rem, calc(0.5vw + 1rem), 1.75rem);
+    font-size: clamp(1.45rem, calc(0.15vw + 1.45rem), 25rem);
   }
   .text-large{
     font-size: clamp(1.15rem, calc(0.15vw + 1rem), 1.25rem);
@@ -35,6 +35,9 @@
   }
   .text-small{
     font-size: clamp(0.8rem, calc(0.15vw + 0.8rem), 1rem);
+  }
+  .text-xsmall{
+    font-size: clamp(0.7rem, calc(0.15vw + 0.6rem), 0.825rem);
   }
   .text-half{
     font-size: 0.5em
