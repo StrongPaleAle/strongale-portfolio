@@ -61,6 +61,10 @@
         "development": {
             "label": "Quivi",
             "link": "https://quivi.it"
+        },
+        "cover": {
+            "url" : "/assets/storage/media/sotherga_loading-low.gif",
+            "alt" : "Sotherga website loading screen"
         }
     },
     {

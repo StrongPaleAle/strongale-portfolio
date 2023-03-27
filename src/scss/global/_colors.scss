@@ -12,8 +12,17 @@ $colors: (
   "light-green": #c9fdb6,
   "nyanza": #E7FFE2,
   "white": #F4FCF3,
+  "chinese-black": #0D1B19,
+  "jungle-green": #1B3733,
+  "dark-slate-gray": #28544D,
+  "palatinate": #671C58,
+  "jam": #9F1463,
+  "violet-red": #CF1D8F
   "pink": #FF1493,
-  "magenta": #9F1463,
+  "rd-rose": #FF39C0,
+  "l-rose": #FF9EE0,
+  "shampoo": #FFD6F2,
+  "l-blush": #FFEEFB
 );
 $theme-options: (
   "dark": (
@@ -23,7 +32,7 @@ $theme-options: (
     "text-color": "white",
     "text-negative": "deep-purple",
     "accent-color": "bright-green",
-    "extra-color": "pink",
+    "extra-color": "rd-rose",
   ),
   "light": (
     "bg-heavy": "light-green",
@@ -31,7 +40,7 @@ $theme-options: (
     "bg-light": "light-navy",
     "text-color": "deep-purple",
     "text-negative": "white",
-    "accent-color": "magenta",
+    "accent-color": "jam",
     "extra-color": "viriadian",
   ),
 );
