@@ -9,15 +9,15 @@ const props = defineProps<{
 <template>
     <div class="portfolio-item | card " :id="`portfolio-${project.id}`" >
         <div class="card gap-em-15">
-            
-            <div class="portfolio-item__image">
+            <p class="lh-loose text-text-color mb-em-05 text-right">{{ project.year }}</p>
+            <div v-if="project.cover" class="portfolio-item__image">
                 
-                <img src="https://via.placeholder.com/300x200" alt="">
+                <img :src="project.cover.url" :alt="project.cover.alt">
                 
             </div>
             <div class="portfolio-item__content">
                 <a :href="`#${project.slug}`" class="block mb-em">
-                    <p class="lh-loose text-text-color mb-em-05 text-right">{{ project.year }}</p>
+                    
                     <h3 class="portfolio-item__title | heading uppercase text-xlarge text-accent-color m-block-em-05">{{ project.title }}</h3>
                     <!-- <p v-if="project.subtitle" class="portfolio-item__description | content-text | text-small lh-loose text-text-color mb-em-05">
                         {{ project.subtitle }}

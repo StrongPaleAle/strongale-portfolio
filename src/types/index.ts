@@ -12,6 +12,16 @@ export interface Block {
   blockVariant?: string | undefined;
   extraClass?: string | undefined;
 }
+
+export interface Image {
+  id: string;
+  title?: string | undefined;
+  url: string;
+  active?: string | undefined;
+  alt: string;
+  caption?: string | undefined;
+}
+
 export interface TextBlock extends Block {
   
   type: 'BlockText';
@@ -60,6 +70,6 @@ export interface Project {
   development?: { label: string; link?: string};
   link?: string;
   source?: string;
-  cover?: { url: string; alt: string;};
-  gallery?: [{ url: string; alt: string; caption?: string }];
+  cover?: Image;
+  gallery?: Image[];
 }
