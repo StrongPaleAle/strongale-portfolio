@@ -32,7 +32,9 @@ $theme-options: (
     "text-color": "white",
     "text-negative": "deep-purple",
     "accent-color": "bright-green",
+    "accent-light": "light-green",
     "extra-color": "rd-rose",
+    "extra-light": "shampoo"
   ),
   "light": (
     "bg-heavy": "light-green",
@@ -41,7 +43,9 @@ $theme-options: (
     "text-color": "deep-purple",
     "text-negative": "white",
     "accent-color": "jam",
+    "accent-light": "l-rose",
     "extra-color": "viriadian",
+    "extra-light": "nyanza"
   ),
 );
 :root{

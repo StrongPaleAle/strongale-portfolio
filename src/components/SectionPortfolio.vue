@@ -52,7 +52,7 @@ onMounted(() => {
                 end: 'bottom bottom'
             }
         })
-        portfolioTimeline.fromTo(animate, {
+        portfolioTimeline.fromTo(trigger, {
             x: itemX,
             y: itemY,
             opacity: itemScale,

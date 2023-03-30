@@ -14,7 +14,12 @@
         ],
         "content": "<p>A year and a half after my move to London, after remotely concluding some projects that had already started and working on some new requests, I decided it was time to also move the centre of my work network to where I lived. The first thing to do was to create a portfolio. I wanted something that, in addition to showing my most impressive works, could say something more about me, and may express my skills, besides my creativity. <br>Everything you can see, whether it’s design, development or content, is the result of my ideas and work. So I’m the only one to blame 😬 <br>If you're curious about how and why I came up with these solutions, you can <a href=\"/#contact\">get in touch</a> with me for a chat.</p>",
         "subtitle": "Just the website you are browsing right now.",
-        "source": "https://github.com/StrongPaleAle/strongale-portfolio"
+        "source": "https://github.com/StrongPaleAle/strongale-portfolio",
+        "cover": {
+            "url" : "/storage/media/strongale_cover.jpg",
+            "active": "/storage/media/strongale_cover-400.gif",
+            "alt" : "StrongAle website logo"
+        }
         
     },
     {
@@ -63,9 +68,9 @@
             "link": "https://quivi.it"
         },
         "cover": {
-            "url" : "/storage/media/sotherga_loading-low.jpg",
-            "active": "/storage/media/sotherga_loading-low.gif",
-            "alt" : "Sotherga website loading screen"
+            "url" : "/storage/media/sotherga_cover.jpg",
+            "active": "/storage/media/sotherga_cover-400.gif",
+            "alt" : "Sotherga website hompage"
         }
     },
     {

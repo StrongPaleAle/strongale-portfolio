@@ -37,7 +37,7 @@
         LogoWrapper.value?.appendChild(renderer.domElement)
 
         camera = new PerspectiveCamera( 45, sizes.width / sizes.height, 1, 100);
-        camera.position.set( - 1, 2, 2 );
+        camera.position.set( - 1, 1, 2 );
         
         //console.log(typeof camera);
         // controls
@@ -61,13 +61,16 @@
         
 
         let accentCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
-        let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--extra-color');
+        let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--extra-light');
+        let ambientCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--bg-medium');
         accentCSSColor = accentCSSColor.split(" ").pop();
         extraCSSColor = extraCSSColor.split(" ").pop();
+        ambientCSSColor = ambientCSSColor.split(" ").pop();
         
         let accentColor = new Color(accentCSSColor);
         let extraColor = new Color(extraCSSColor);
-        
+        let ambientColor = new Color(ambientCSSColor);
+
         const loader = new GLTFLoader().setPath( '/assets/models/' );
             loader.load( 'logo.gltf', function ( gltf ) {
                 const model = gltf.scene;
@@ -122,11 +125,11 @@
         // scene.add( svgGroup );
         // ambient light
 
-				scene.add( new AmbientLight( 0x222222 ) );
+				scene.add( new AmbientLight( ambientColor ) );
 
             // point light
 
-            const light = new PointLight( 0xffffff, 1, 100 );
+            const light = new PointLight( extraCSSColor, 1, 100 );
            
             camera.add( light );
 
