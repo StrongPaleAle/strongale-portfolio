@@ -16,9 +16,29 @@
         "subtitle": "Just the website you are browsing right now.",
         "source": "https://github.com/StrongPaleAle/strongale-portfolio",
         "cover": {
-            "url" : "/storage/media/strongale_cover.jpg",
-            "active": "/storage/media/strongale_cover-400.gif",
-            "alt" : "StrongAle website logo"
+            "id": "strongale-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/strongale_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motione: reduce)"
+                },
+                {
+                    "src": "/storage/media/strongale_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/strongale_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "strongale-cover-img",
+                "src": "/storage/media/strongale_cover-400.gif",
+                "alt": "StrongAle rotating logo"
+                
+            }
         }
         
     },
@@ -40,7 +60,33 @@
             "label": "House of Greenland",
             "link": "https://houseofgreenland.com/"
         },
-        "link": "https://angryscientists.com/"
+        "link": "https://angryscientists.com/",
+        "cover": {
+            "id": "angry-scientist-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/angry-scientist_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/angry-scientist_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/angry-scientist_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "angry-scientist-cover-img",
+                "src": "/storage/media/angry-scientist_cover-400.gif",
+                "alt": "Angry Scientist website hompage animation"
+                
+            },
+            "overlay": "/storage/media/angry-scientist_cover-480-static.webp"
+        }
     },
     {
         "id": 3,
@@ -68,9 +114,29 @@
             "link": "https://quivi.it"
         },
         "cover": {
-            "url" : "/storage/media/sotherga_cover.jpg",
-            "active": "/storage/media/sotherga_cover-400.gif",
-            "alt" : "Sotherga website hompage"
+            "id": "sotherga-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/sotherga_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/sotherga_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/sotherga_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "sotherga-cover-img",
+                "src": "/storage/media/sotherga_cover-400.gif",
+                "alt": "Sotherga website hompage animation"
+                
+            }
         }
     },
     {
@@ -94,7 +160,32 @@
             "label": "Quivi",
             "link": "https://quivi.it"
         },
-        "link": "https://full.polito.it/"
+        "link": "https://full.polito.it/",
+        "cover": {
+            "id": "full-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/full_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/full_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/full_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "ufoplast-cover-img",
+                "src": "/storage/media/full_cover-400.gif",
+                "alt": "Full website hompage animation"
+                
+            }
+        }
     },
     {
         "id": 5,
@@ -116,7 +207,32 @@
             "label": "Quivi",
             "link": "https://quivi.it"
         },
-        "link": "https://it.ufoplast.com/en/"
+        "link": "https://it.ufoplast.com/en/",
+        "cover": {
+            "id": "ufoplast-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/ufoplast_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/ufoplast_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/ufoplast_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "ufoplast-cover-img",
+                "src": "/storage/media/ufoplast_cover-400.gif",
+                "alt": "Ufoplast website hompage animation"
+                
+            }
+        }
     },
     {
         "id": 6,
@@ -130,7 +246,32 @@
         ],
         "content": "<p>ALD (Lucchese Diabetic Association) is a non-profit charity that has been active for over thirty years in the Lucca area. Its primary purpose is the development of solidarity between people who, suffering from diabetic pathology, can share, by confronting each other, all the problems created by this pathology. <br>It’s a small and simple blog with some institutional information. I designed and developed it in a short time and low budget. However, as a diabetic, I am proud to have contributed to the cause.</p>",
         "subtitle": "“Alone we go faster, but together we go further.”",
-        "link": "https://www.diabetelucca.it/"
+        "link": "https://www.diabetelucca.it/",
+        "cover": {
+            "id": "ald-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/ald_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/ald_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/ald_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "ald-cover-img",
+                "src": "/storage/media/ald_cover-400.gif",
+                "alt": "ALD website hompage animation"
+                
+            }
+        }
     },
     {
         "id": 7,

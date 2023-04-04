@@ -16,10 +16,22 @@ export interface Block {
 export interface Image {
   id: string;
   title?: string | undefined;
-  url: string;
-  active?: string | undefined;
-  alt: string;
+  src: string;
+  alt?: string | undefined;
+  type?: string | undefined;
+  media?: string | undefined;
   caption?: string | undefined;
+}
+
+export interface Picture {
+  id: string;
+  title?: string | undefined;
+  sources: Image[];
+  img: Image;
+}
+
+export interface Cover extends Picture {
+  overlay?: string | undefined;
 }
 
 export interface TextBlock extends Block {
@@ -70,6 +82,6 @@ export interface Project {
   development?: { label: string; link?: string};
   link?: string;
   source?: string;
-  cover?: Image;
-  gallery?: Image[];
+  cover?: Cover;
+  gallery?: Picture[];
 }

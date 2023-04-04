@@ -9,11 +9,13 @@ const props = defineProps<{
 <template>
     <div class="portfolio-item" :id="`portfolio-${project.id}`" >
         
-        <span class="lh-loose text-text-color mb-em-05 text-right">{{ project.year }}</span>
-        <div v-if="project.cover" class="portfolio-item__image">
+        <span class="portfolio-item__date | lh-loose text-text-color mb-em-05 text-right">{{ project.year }}</span>
+        <div class="portfolio-item__image">
             
-            <img :src="project.cover.url" :alt="project.cover.alt">
-            
+            <picture v-if="project.cover" class="portfolio-item__image-inner">
+                <source v-for="image in project.cover.sources" :srcset="image.src" :type="image.type" :media="image.media">
+                <img :src="project.cover.img.src" :alt="project.cover.img.alt" loading="lazy" decoding="async">
+            </picture>
         </div>
         <div class="portfolio-item__content">
             <a :href="`#${project.slug}`" class="block mb-em">
