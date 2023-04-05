@@ -37,8 +37,8 @@
                 "id": "strongale-cover-img",
                 "src": "/storage/media/strongale_cover-400.gif",
                 "alt": "StrongAle rotating logo"
-                
-            }
+            },
+            "overlay": "/storage/media/strongale_cover-480-static.webp"
         }
         
     },
@@ -136,7 +136,8 @@
                 "src": "/storage/media/sotherga_cover-400.gif",
                 "alt": "Sotherga website hompage animation"
                 
-            }
+            },
+            "overlay": "/storage/media/sotherga_cover-480-static.webp"
         }
     },
     {
@@ -184,7 +185,8 @@
                 "src": "/storage/media/full_cover-400.gif",
                 "alt": "Full website hompage animation"
                 
-            }
+            },
+            "overlay": "/storage/media/full_cover-480-static.webp"
         }
     },
     {
@@ -231,7 +233,8 @@
                 "src": "/storage/media/ufoplast_cover-400.gif",
                 "alt": "Ufoplast website hompage animation"
                 
-            }
+            },
+            "overlay": "/storage/media/ufoplast_cover-480-static.webp"
         }
     },
     {
@@ -270,7 +273,8 @@
                 "src": "/storage/media/ald_cover-400.gif",
                 "alt": "ALD website hompage animation"
                 
-            }
+            },
+            "overlay": "/storage/media/ald_cover-480-static.webp"
         }
     },
     {

@@ -15,6 +15,7 @@ $directions: (
     'block': block,
     'inline': inline,
 );
+
 @each $key, $value in $sizing {
     .m-#{$key} {
         margin: $value;

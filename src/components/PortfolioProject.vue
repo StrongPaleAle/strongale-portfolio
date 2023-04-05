@@ -9,14 +9,17 @@ const props = defineProps<{
 <template>
     <div class="portfolio-item" :id="`portfolio-${project.id}`" >
         
-        <span class="portfolio-item__date | lh-loose text-text-color mb-em-05 text-right">{{ project.year }}</span>
+        
         <div class="portfolio-item__image">
             
             <picture v-if="project.cover" class="portfolio-item__image-inner">
                 <source v-for="image in project.cover.sources" :srcset="image.src" :type="image.type" :media="image.media">
                 <img :src="project.cover.img.src" :alt="project.cover.img.alt" loading="lazy" decoding="async">
             </picture>
+            <div v-if="project.cover?.overlay" class="overlay" :style="`background-image: url(${project.cover.overlay})`"></div>
         </div>
+        <span class="portfolio-item__date">{{ project.year }}</span>
+        
         <div class="portfolio-item__content">
             <a :href="`#${project.slug}`" class="block mb-em">
                 
@@ -31,22 +34,22 @@ const props = defineProps<{
                     {{ tag }}
                 </li>
             </ul>
-            <div class="portfolio-item__links text-large m-t-em-2">
-                <IconLink :href="`#${project.slug}`" icon="visibility">
-                    View project
-                </IconLink>
-
-                <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
-                    Visit website
-                </IconLink>
-
-                <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
-                    View source
-                </IconLink>
-                
-            </div>
-        </div>
             
+        </div>
+        <div class="portfolio-item__links text-large">
+            <IconLink :href="`#${project.slug}`" icon="visibility">
+                View project
+            </IconLink>
+
+            <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
+                Visit website
+            </IconLink>
+
+            <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
+                View source
+            </IconLink>
+            
+        </div>   
         
     </div>
 </template>

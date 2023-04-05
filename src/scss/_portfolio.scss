@@ -21,18 +21,23 @@
         --x: 0;
         --y: 0;
         --scale:0;
-        --em-spacing: 0.5em;
+        --em-spacing: 1em;
 
         width: 100%;
 
-        padding-bottom: var(--em-spacing);
+        padding: var(--em-spacing);
         opacity: 1;
-        
+       
         &__image{
             width: 100%;
            aspect-ratio: 1 / 1;
            background-color: var(--bg-light-30);
            line-height: 0;
+           position: relative;
+           opacity: 0.5;
+           transform: skew(15deg, 5deg) scale(0.75);
+           
+           transition: all 0.4s ease-in-out;
            picture{
         
                width: 100%;
@@ -44,17 +49,72 @@
        &__links{
             display: flex;
             gap: 1em;
+            flex-direction: column;
             justify-content: flex-end;
             align-items: center;
+            position: absolute;
+            top: 4.8em;
+            right: 0.2em;
+            
             
             a{
+                --clip-unit: 5px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 2em;
                 height: 2em;
+                color: var(--text-negative);
+                background-color: var(--accent-color);
+                border-radius: 3px 2px 5px 3px;
+                filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
+                @extend .clip-right-bottom;
                 
             }
-       } 
+       }
+       &__date{
+            position: absolute;
+            display: inline-block;
+            right: 0;
+            top: 1.2em;
+            font-size: 1.2em;
+            padding: 0.5em 0.75em;
+            background-color: var(--accent-color);
+            color: var(--text-negative);
+            font-weight: 700;
+            filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
+            &::after, &::before{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0.5em 0.5em 0 0;
+                border-color: var(--accent-color) transparent transparent transparent;
+                top: 100%;
+                right: 0;
+            }
+
+       }
+       &__content{
+            padding: 1em;
+            background-color: var(--bg-heavy-60);
+            transform: translate(0.5em, -0.5em);
+            border-radius: 10px 5px 20px 7px;
+            filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
+            
+            position: relative;
+            @extend .clip-right-bottom;
+       }
+       &:hover{
+        .portfolio-item__image{
+            transform: skew(0deg, 0deg) scale(1);
+            opacity: 1;
+                .overlay{
+                    opacity: 0;
+                    
+                }
+            }
+       }
     }
 }
