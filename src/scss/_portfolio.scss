@@ -17,6 +17,7 @@
     position: relative;
     
     
+    
     .portfolio-item{
         --x: 0;
         --y: 0;
@@ -24,26 +25,66 @@
         --em-spacing: 1em;
 
         width: 100%;
-
+        
+        position: relative;
         padding: var(--em-spacing);
         opacity: 1;
        
         &__image{
             width: 100%;
-           aspect-ratio: 1 / 1;
-           background-color: var(--bg-light-30);
-           line-height: 0;
-           position: relative;
-           opacity: 0.5;
-           transform: skew(15deg, 5deg) scale(0.75);
+            
+            
+            line-height: 0;
+            position: relative;
+            
+            
+            will-change: transform;
+            transform-style: preserve-3d;
+            transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY)) scale(0.8);
            
-           transition: all 0.4s ease-in-out;
+            transition: all 0.3s ease-in-out;
+
+            &::before,
+            &::after {
+            content: "";
+            position: absolute;
+            border-radius: inherit;
+           
+           
+            }
+
+            /* shadow */
+            &::before {
+            inset: 0.75rem;
+            border-radius: inherit;
+            background: black;
+            z-index: -1;
+            transform: translateZ(-49px);
+            filter: blur(15px);
+            opacity: 0.5;
+            }
+
+            /* gradient thingy */
+            &::after {
+            z-index: -2;
+            inset: -1rem;
+            background: linear-gradient(-45deg, red, blue);
+            transform: translateZ(-50px);
+            }
            picture{
-        
+            
                width: 100%;
                height: 100%;
                object-fit: cover;
+               > *{
+                transform: scale(0.5);
+               }
+               
            }
+           > *{
+            transform: translateZ(0);
+           }
+           
         }
        //transform: translate(var(--x), var(--y)) scale(var(--scale));
        &__links{
@@ -65,11 +106,28 @@
                 width: 2em;
                 height: 2em;
                 color: var(--text-negative);
-                background-color: var(--accent-color);
+                opacity: 0;
+                transform: translateX(100%);
+                transition: all 0.4s ease-in-out;
+                transition-delay: var(--delay, 0);
                 border-radius: 3px 2px 5px 3px;
+                position: relative;
+                isolation: isolate;
                 filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
-                @extend .clip-right-bottom;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    z-index: -1;
+                    background-color: var(--accent-color);
+                    @extend .clip-right-bottom;
+                }
                 
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}){
+                        --delay: #{$i * 0.1}s;
+                    }
+                }
             }
        }
        &__date{
@@ -97,24 +155,87 @@
 
        }
        &__content{
-            padding: 1em;
-            background-color: var(--bg-heavy-60);
-            transform: translate(0.5em, -0.5em);
+            padding: 0.75em;
+
+            transform: translate(0.5em, 0);
             border-radius: 10px 5px 20px 7px;
-            filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
+            left: var(--em-spacing);
+            right: var(--em-spacing);
+            isolation: isolate;
+            position: absolute;
+            bottom: 0;
             
-            position: relative;
-            @extend .clip-right-bottom;
+            &::before{
+                content: "";
+                position: absolute;
+                inset: -3px;
+                z-index: -1;
+                border-radius: 5px;
+                filter: blur(0.75em);
+                background-color: var(--bg-heavy);
+                background-image: linear-gradient(-135deg, var(--bg-light-50), var(--bg-light-10));
+                @extend .clip-right-bottom;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                border-radius: 5px;
+                background-image: linear-gradient(135deg, var(--accent-color), var(--accent-color-80) 80%, var(--accent-color));
+                @extend .clip-right-bottom;
+            }
+            
+            
+            
        }
+       &__tags{
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        .comma-list{
+        
+            padding-block: 0.5em;
+            margin: 0;
+            
+            
+            color: var(--text-negative);
+        }
+    }
        &:hover{
-        .portfolio-item__image{
-            transform: skew(0deg, 0deg) scale(1);
-            opacity: 1;
+        .portfolio-item{
+
+            &__image{
+                transform: perspective(5000px) rotateY(0) rotateX(0) scale(1);
+                //opacity: 0.8;
                 .overlay{
                     opacity: 0;
                     
                 }
+                picture{
+                    > *{
+                        transform: scale(1);
+                    }
+                }
             }
+            &__links{
+                a{
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            &__content{
+                transform: translate(0.5em, 0);
+               
+            }
+            &__tags{
+                max-height: 100px;
+                opacity: 1;
+            }
+
+        }
+            
        }
     }
 }

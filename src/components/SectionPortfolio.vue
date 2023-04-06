@@ -5,6 +5,7 @@ import Projects from "../data/projects.json";
 import { onMounted } from "vue";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { rotateElement } from "../utils/utils";
 
 const projects = Projects as Project[];
 
@@ -37,10 +38,12 @@ onMounted(() => {
         const itemScale = 1 - (1 / portfolioItems.length * (index + 1));
         const trigger = `#${item.getAttribute('id')}`;
         const animate = trigger + ' .card';
-
+        console.log(itemX);
         
         item.style.setProperty('--x', `${itemX}px`);
+        item.style.setProperty('--rotateX', `${itemX / 10}deg`);
         item.style.setProperty('--y', `${itemY}px`);
+        item.style.setProperty('--rotateY', `${itemY / 10 * -1}deg`);
         item.style.setProperty('--scale', `${itemScale}`);
 
         const portfolioTimeline = gsap.timeline({
@@ -68,10 +71,22 @@ onMounted(() => {
             ease: 'none'
         })
     })
-
-       
+    // const portfolioObserver = new IntersectionObserver(toggleMouseTracking, { threshold: 1 });
+    // portfolioContainer ? portfolioObserver.observe(portfolioContainer) : null;
 
 })
+function toggleMouseTracking(element: any) {
+    if (element[0].isIntersecting) {
+        //console.log('scrolling');
+        document.addEventListener("mousemove", (e) => {
+            const childs = Array.from(element[0].target.querySelectorAll('.portfolio-item') as NodeListOf<HTMLElement>);
+            childs.forEach((item: HTMLElement) => {
+                rotateElement(e, item);
+            });
+        });
+        
+    }
+}
 </script>
 <template>
     <section id="portfolio" class="section-wrapper">
@@ -88,7 +103,7 @@ onMounted(() => {
                 </div>
                 
             </header>
-            <div class="portfolio-container gap-em-05">
+            <div class="portfolio-container gap-em-2 p-block-em-2">
                 <!-- <div class="portfolio-item | card " id="portfolio-1">
                     <div class="card flex gap-em-2">
                         <div class="portfolio-item__image">

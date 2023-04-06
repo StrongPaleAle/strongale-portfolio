@@ -23,17 +23,19 @@ const props = defineProps<{
         <div class="portfolio-item__content">
             <a :href="`#${project.slug}`" class="block mb-em">
                 
-                <h3 class="portfolio-item__title | heading uppercase text-xlarge text-accent-color m-block-em-05">{{ project.title }}</h3>
+                <h3 class="portfolio-item__title | heading uppercase text-xlarge text-bg-heavy m-t-em-05 m-b-0">{{ project.title }}</h3>
                 <!-- <p v-if="project.subtitle" class="portfolio-item__description | content-text | text-small lh-loose text-text-color mb-em-05">
                     {{ project.subtitle }}
                 </p> -->
             </a>
+            <div class="portfolio-item__tags">
+                <ul class="comma-list">
+                    <li v-for="tag in project.tags" :key="tag" class="comma-list__item | text-xsmall uppercase">
+                        {{ tag }}
+                    </li>
+                </ul>
+            </div>
             
-            <ul class="comma-list">
-                <li v-for="tag in project.tags" :key="tag" class="comma-list__item | text-xsmall uppercase">
-                    {{ tag }}
-                </li>
-            </ul>
             
         </div>
         <div class="portfolio-item__links text-large">

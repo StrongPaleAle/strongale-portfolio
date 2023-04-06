@@ -11,7 +11,7 @@ import { getTheme, setTheme } from './utils/utils';
 const theme = getTheme();
 
 setTheme(theme);
-//console.log(theme);
+console.log(theme);
 
 </script>
 
