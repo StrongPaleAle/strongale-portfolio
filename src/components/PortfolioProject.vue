@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import {Project} from "@/types";
 import IconLink from "./blocks/IconLink.vue";
+import IconButton from "./blocks/IconButton.vue";
+import {openDialog} from "../utils/utils";
 
 const props = defineProps<{
   project: Partial<Project>;
+    index: number;
 }>();
 </script>
 <template>
@@ -39,9 +42,9 @@ const props = defineProps<{
             
         </div>
         <div class="portfolio-item__links text-large">
-            <IconLink :href="`#${project.slug}`" icon="visibility">
+            <IconButton @click="openDialog(`project-${index}_label`)" icon="visibility">
                 View project
-            </IconLink>
+            </IconButton>
 
             <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
                 Visit website

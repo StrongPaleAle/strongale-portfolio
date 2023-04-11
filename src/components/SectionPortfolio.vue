@@ -5,7 +5,7 @@ import Projects from "../data/projects.json";
 import { onMounted } from "vue";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { rotateElement } from "../utils/utils";
+import { rotateElement} from "../utils/utils";
 
 const projects = Projects as Project[];
 
@@ -41,9 +41,9 @@ onMounted(() => {
         console.log(itemX);
         
         item.style.setProperty('--x', `${itemX}px`);
-        item.style.setProperty('--rotateX', `${itemX / 10}deg`);
+        item.style.setProperty('--rotateX', `${itemX / 15}deg`);
         item.style.setProperty('--y', `${itemY}px`);
-        item.style.setProperty('--rotateY', `${itemY / 10 * -1}deg`);
+        item.style.setProperty('--rotateY', `${itemY / 15 * -1}deg`);
         item.style.setProperty('--scale', `${itemScale}`);
 
         const portfolioTimeline = gsap.timeline({
@@ -120,7 +120,12 @@ function toggleMouseTracking(element: any) {
                         </div>
                     </div>
                 </div> -->
-                <PortfolioProject v-for="project in projects" :key="project.id" :project="project" />
+                <PortfolioProject 
+                    v-for="project, index in projects" 
+                    :key="project.id" 
+                    :project="project" 
+                    :index="index" 
+                />
                 
             </div>
         </div>

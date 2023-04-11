@@ -35,6 +35,40 @@
       display: none;
     }
 }
+.clip-right-bottom{
+  clip-path: polygon(
+    0 var(--clip-unit), var(--clip-unit) 0, 
+    100% 0%, 
+    100% calc(100% - (var(--clip-unit) * 2)), calc(100% - (var(--clip-unit) * 2)) 100%, 
+    0 100%
+  );
+}
+.clip-left-bottom{
+  clip-path: polygon(
+    0 0, 
+    calc(100% - var(--clip-unit)) 0, 100% var(--clip-unit), 
+    100% 100%, 
+    calc(var(--clip-unit) * 2) 100%,
+    0 calc(100 - (var(--clip-unit)* 2))
+  );
+}
+.clip-left-top{
+  clip-path: polygon(
+    0 calc(var(--clip-unit) * 2), calc(var(--clip-unit) * 2) 0, 
+    100% 0%, 
+    100% calc(100% - var(--clip-unit)), calc(100% - var(--clip-unit)) 100%, 
+    0 100%
+  );
+}
+.clip-right-top{
+  clip-path: polygon(
+    0 0, 
+    calc(100% - (var(--clip-unit) * 2)) 0, 100% calc(var(--clip-unit) * 2), 
+    100% 100%, 
+    var(--clip-unit) 100%,
+    0 calc(100 - var(--clip-unit))
+  );
+}
 .overflow-text{
   overflow: auto;
   max-height: calc(100vh - 200px - (var(--em-spacing) * 2));
@@ -50,7 +84,7 @@
 .overflow-y-hidden{
     overflow-y: hidden;
 }
-button, .button{
+button:not(.icon-link), .button{
     //font-family: var(--font-heading);
     display: inline-block;
     font-weight: 700;
@@ -191,37 +225,28 @@ button, .button{
     background-size: cover;
     transition: all 0.4s ease-in-out;
   }
-  .clip-right-bottom{
-    clip-path: polygon(
-      0 var(--clip-unit), var(--clip-unit) 0, 
-      100% 0%, 
-      100% calc(100% - (var(--clip-unit) * 2)), calc(100% - (var(--clip-unit) * 2)) 100%, 
-      0 100%
-    );
-  }
-  .clip-left-bottom{
-    clip-path: polygon(
-      0 0, 
-      calc(100% - var(--clip-unit)) 0, 100% var(--clip-unit), 
-      100% 100%, 
-      calc(var(--clip-unit) * 2) 100%,
-      0 calc(100 - (var(--clip-unit)* 2))
-    );
-  }
-  .clip-left-top{
-    clip-path: polygon(
-      0 calc(var(--clip-unit) * 2), calc(var(--clip-unit) * 2) 0, 
-      100% 0%, 
-      100% calc(100% - var(--clip-unit)), calc(100% - var(--clip-unit)) 100%, 
-      0 100%
-    );
-  }
-  .clip-right-top{
-    clip-path: polygon(
-      0 0, 
-      calc(100% - (var(--clip-unit) * 2)) 0, 100% calc(var(--clip-unit) * 2), 
-      100% 100%, 
-      var(--clip-unit) 100%,
-      0 calc(100 - var(--clip-unit))
-    );
+  
+
+  .icon-link{
+    --clip-unit: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    color: var(--text-negative);
+    opacity: 0;
+    
+    border-radius: 3px 2px 5px 3px;
+    position: relative;
+    isolation: isolate;
+    filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
+    &:before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: var(--accent-color);
+        @extend .clip-right-bottom;
+    }
   }

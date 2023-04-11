@@ -26,7 +26,7 @@ export function valueToPoint(value:number, index:number, total:number) {
 
 }
   
-export function rotateElement(event, element) {
+export function rotateElement(event: MouseEvent, element: HTMLElement) {
   // get mouse position
   const x = event.clientX;
   const y = event.clientY;
@@ -58,4 +58,38 @@ export function rotateElement(event, element) {
   // set rotation
   element.style.setProperty("--rotateX", offsetX + "deg");
   element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+}
+
+export function openDialog(dialog: string) {
+
+  const oDialogs = document.querySelectorAll('.dialog.active');
+
+  oDialogs.forEach((oDialog) => {
+    const dialogID = oDialog.id;
+    closeDialog(dialogID);
+  });
+
+  const dialogElement = document.getElementById(dialog);
+  dialogElement?.classList.add('active');
+
+  dialogElement?.addEventListener("keydown", handleEscapeDialog, {once: true});
+  
+}
+
+export function closeDialog(dialog: string) {
+  
+    const dialogElement = document.getElementById(dialog);
+    dialogElement?.classList.remove('active');
+    dialogElement?.removeEventListener("keydown", handleEscapeDialog);
+    
+}
+
+
+
+function handleEscapeDialog(this: HTMLElement , event) {
+  
+  if (event.key === "Escape") {
+    const dialogID = this.id;
+    closeDialog(dialogID);
+  }
 }

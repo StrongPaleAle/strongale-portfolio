@@ -1,3 +1,9 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
 @keyframes show-up{
     0%{
         opacity: 0;
@@ -70,4 +76,9 @@
     100%{
       transform: rotate(-40deg);
     }
+  }
+
+  @keyframes spin-gradient{
+    0%{--gradient-angle: 0deg;}
+    100%{--gradient-angle: 360deg;}
   }

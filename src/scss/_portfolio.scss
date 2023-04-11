@@ -41,7 +41,7 @@
             will-change: transform;
             transform-style: preserve-3d;
             transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY)) scale(0.8);
-           
+            aspect-ratio: 1 / 1;
             transition: all 0.3s ease-in-out;
 
             &::before,
@@ -49,26 +49,34 @@
             content: "";
             position: absolute;
             border-radius: inherit;
-           
+            background: conic-gradient(
+                from var(--gradient-angle), 
+                var(--accent-light-80), 
+                var(--accent-color-80),
+                var(--accent-dark-40),
+                var(--accent-color-80),
+                var(--accent-light-80)
+                );
+            
+            
+                
            
             }
 
             /* shadow */
             &::before {
-            inset: 0.75rem;
+            inset: -0.25rem;
             border-radius: inherit;
-            background: black;
+            
             z-index: -1;
-            transform: translateZ(-49px);
-            filter: blur(15px);
-            opacity: 0.5;
+            transform: translateZ(-51px);
             }
 
             /* gradient thingy */
             &::after {
             z-index: -2;
-            inset: -1rem;
-            background: linear-gradient(-45deg, red, blue);
+            inset: 0rem;
+            filter: blur(2.5rem);
             transform: translateZ(-50px);
             }
            picture{
@@ -98,30 +106,10 @@
             right: 0.2em;
             
             
-            a{
-                --clip-unit: 5px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 2em;
-                height: 2em;
-                color: var(--text-negative);
-                opacity: 0;
+            > a, button{
                 transform: translateX(100%);
                 transition: all 0.4s ease-in-out;
                 transition-delay: var(--delay, 0);
-                border-radius: 3px 2px 5px 3px;
-                position: relative;
-                isolation: isolate;
-                filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
-                &:before{
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    z-index: -1;
-                    background-color: var(--accent-color);
-                    @extend .clip-right-bottom;
-                }
                 
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}){
@@ -218,9 +206,12 @@
                         transform: scale(1);
                     }
                 }
+                &::after, &::before{
+                    animation: spin-gradient 5s linear infinite;
+                }
             }
             &__links{
-                a{
+                a, button{
                     opacity: 1;
                     transform: translateX(0);
                 }
