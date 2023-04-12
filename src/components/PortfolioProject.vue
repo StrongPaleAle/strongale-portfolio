@@ -14,23 +14,25 @@ const props = defineProps<{
         
         
         <div class="portfolio-item__image">
-            
-            <picture v-if="project.cover" class="portfolio-item__image-inner">
+            <div class="imag-inner">
+                <picture v-if="project.cover" class="portfolio-item__image-inner">
                 <source v-for="image in project.cover.sources" :srcset="image.src" :type="image.type" :media="image.media">
                 <img :src="project.cover.img.src" :alt="project.cover.img.alt" loading="lazy" decoding="async">
             </picture>
             <div v-if="project.cover?.overlay" class="overlay" :style="`background-image: url(${project.cover.overlay})`"></div>
+            </div>
+            
         </div>
         <span class="portfolio-item__date">{{ project.year }}</span>
         
         <div class="portfolio-item__content">
-            <a :href="`#${project.slug}`" class="block mb-em">
+            <button @click="openDialog(`project-${index}`)" class="btn-link block mb-em text-text-color">
                 
-                <h3 class="portfolio-item__title | heading uppercase text-xlarge text-bg-heavy m-t-em-05 m-b-0">{{ project.title }}</h3>
+                <h3 class="portfolio-item__title | ellipsis heading uppercase text-xlarge  m-t-em-05 m-b-0">{{ project.title }}</h3>
                 <!-- <p v-if="project.subtitle" class="portfolio-item__description | content-text | text-small lh-loose text-text-color mb-em-05">
                     {{ project.subtitle }}
                 </p> -->
-            </a>
+            </button>
             <div class="portfolio-item__tags">
                 <ul class="comma-list">
                     <li v-for="tag in project.tags" :key="tag" class="comma-list__item | text-xsmall uppercase">
@@ -42,7 +44,7 @@ const props = defineProps<{
             
         </div>
         <div class="portfolio-item__links text-large">
-            <IconButton @click="openDialog(`project-${index}_label`)" icon="visibility">
+            <IconButton @click="openDialog(`project-${index}`)" icon="visibility">
                 View project
             </IconButton>
 

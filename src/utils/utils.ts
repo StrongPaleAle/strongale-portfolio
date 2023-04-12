@@ -63,16 +63,16 @@ export function rotateElement(event: MouseEvent, element: HTMLElement) {
 export function openDialog(dialog: string) {
 
   const oDialogs = document.querySelectorAll('.dialog.active');
-
+  console.log('closing dialogs');
   oDialogs.forEach((oDialog) => {
     const dialogID = oDialog.id;
     closeDialog(dialogID);
   });
-
+  console.log('opening dialog: ' + dialog);
   const dialogElement = document.getElementById(dialog);
   dialogElement?.classList.add('active');
 
-  dialogElement?.addEventListener("keydown", handleEscapeDialog, {once: true});
+  document.addEventListener("keydown", handleEscapeDialog, {once: true});
   
 }
 
@@ -86,10 +86,12 @@ export function closeDialog(dialog: string) {
 
 
 
-function handleEscapeDialog(this: HTMLElement , event) {
-  
+function handleEscapeDialog(event) {
+  console.log('handleEscapeDialog');
   if (event.key === "Escape") {
-    const dialogID = this.id;
-    closeDialog(dialogID);
+    const oDialog = document.querySelector('.dialog.active');
+    console.log('Escape pressed');
+    const dialogID = oDialog?.id;
+    dialogID ? closeDialog(dialogID) : null;
   }
 }

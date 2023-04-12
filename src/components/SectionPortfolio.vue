@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { Project } from "@/types";
 import PortfolioProject from "./PortfolioProject.vue";
+import SingleProject from "./SingleProject.vue";
 import Projects from "../data/projects.json";
 import { onMounted } from "vue";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { rotateElement} from "../utils/utils";
+import { rotateElement } from "../utils/utils";
 
 const projects = Projects as Project[];
 
@@ -38,7 +39,7 @@ onMounted(() => {
         const itemScale = 1 - (1 / portfolioItems.length * (index + 1));
         const trigger = `#${item.getAttribute('id')}`;
         const animate = trigger + ' .card';
-        console.log(itemX);
+        //console.log(itemX);
         
         item.style.setProperty('--x', `${itemX}px`);
         item.style.setProperty('--rotateX', `${itemX / 15}deg`);
@@ -129,5 +130,11 @@ function toggleMouseTracking(element: any) {
                 
             </div>
         </div>
+        <SingleProject
+            v-for="project, index in projects" 
+            :key="project.id" 
+            :project="project" 
+            :index="index"
+        />
     </section>
 </template>

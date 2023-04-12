@@ -69,6 +69,10 @@
     0 calc(100 - var(--clip-unit))
   );
 }
+:focus-visible{
+  outline: 3px solid var(--extra-color);
+  outline-offset: 2px;
+}
 .overflow-text{
   overflow: auto;
   max-height: calc(100vh - 200px - (var(--em-spacing) * 2));
@@ -84,169 +88,117 @@
 .overflow-y-hidden{
     overflow-y: hidden;
 }
-button:not(.icon-link), .button{
-    //font-family: var(--font-heading);
-    display: inline-block;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 1.1em;
-    padding: 0.5em 1em;
-    border-radius: var(--border-radius);
-    border: var(--button-border);
-    background-color: var(--bg-button);
-    color: var(--text-color);
+button.btn-link{
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    &:after, &:before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--border-radius);
-      background-color: var(--bg-button-active);
-      z-index: -1;
-      transform: translateX(100%);
-      transition: all 0.2s ease-in-out;
-    }
-    &:before{
-      
-      background-color: var(--bg-button-hover);
-      
-    }
-    &[data-variant="accent-bg"], &[data-active="true"]{
-      color: var(--text-negative);
-      &:after{
-        transform: translateX(0);
-      }
-    }
-    &:hover:not([data-active="true"]), &:focus:not([data-active="true"]){
-      &:before{
-        transform: translateX(0);
-      }
-    }
+    outline: inherit;
+    color: inherit;
+    appearance: none;
+    text-align: left;
+}
+
+.h-screen{
+  height: 100vh;
+  height: 100svh;
+  &[data-variant*="padded-screen"]{
+    height: calc(100vh - 200px);
+    height: calc(100svh - 200px);
   }
-  .tag{
-    --font-size: 100%;
-    --tag-bg: var(--bg-heavy-00);
-    display: inline-block;
-    padding: 0.25em 0.5em 0.4em;
-    text-transform: none;
-    font-size: var(--font-size);
-    background-color: var(--tag-bg);
-    position: relative;
-    &::after{
-      content: attr(data-value)"%";
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      display: flex;
-      color: var(--text-negative);
-      background-color: var(--accent-color);
-      align-items: center;
-      justify-content: center;
-      transform: scale(0.6);
-      transform-origin: center;
-      transition: all 0.4s ease-in-out;
-    }
-    &:hover{
-      &::after{
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  }
- 
-  .lateral-scroll{
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    &::-webkit-scrollbar{
-      display: none;
-    }
-  }
-  .snap-y{
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-    scroll-snap-stop: always;
-    > *{
-      
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    
-    }
-    &[data-scrolling="false"]{
-      overflow-y: hidden;
-    }
-  }
-  .h-screen{
-    height: 100vh;
-    height: 100svh;
-    &[data-variant*="padded-screen"]{
-      height: calc(100vh - 200px);
-      height: calc(100svh - 200px);
-    }
-  }
-  .max-h-screen{
-    max-height: 100vh;
-    max-height: 100svh;
-    &[data-variant*="padded-screen"]{
-      max-height: calc(100vh - 200px);
-      max-height: calc(100svh - 200px);
-    }
-    
-  }
-  .tab-section{
-    &__content{
-      isolation: isolate;
-    }
-  }
-  .comma-list{
-    display: flex;
-    flex-wrap: wrap;
-    @extend .gap-x-em-05;
-    &__item{
-      display: inline-block;
-      &:not(:last-child){
-        &::after{
-          content: ",";
-        }
-      }
-    }
-  }
-  .overlay{
-    position: absolute;
-    inset: 0;
-    background-position: center;
-    background-size: cover;
-    transition: all 0.4s ease-in-out;
+}
+.max-h-screen{
+  max-height: 100vh;
+  max-height: 100svh;
+  &[data-variant*="padded-screen"]{
+    max-height: calc(100vh - 200px);
+    max-height: calc(100svh - 200px);
   }
   
-
-  .icon-link{
-    --clip-unit: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    color: var(--text-negative);
-    opacity: 0;
-    
-    border-radius: 3px 2px 5px 3px;
-    position: relative;
+}
+.tab-section{
+  &__content{
     isolation: isolate;
-    filter: drop-shadow(3px 3px 0 var(--extra-dark-90));
-    &:before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background-color: var(--accent-color);
-        @extend .clip-right-bottom;
+  }
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.4s ease-in-out;
+}
+.visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+[data-variant*="center-line"]{
+  overflow: hidden;
+  text-align: center;
+  
+  span{
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em;
+    z-index: 1;
+    &::before{
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100vw;
+      background-color: var(--accent-color);
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 100%;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100vw;
+      background-color: var(--accent-color);
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
     }
   }
+  
+  
+}
+[data-variant*="right-line"]{
+  overflow: hidden;
+  text-align: left;
+  
+  span{
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em 0 0;
+    z-index: 1;
+    &::after{
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100vw;
+      background-color: var(--accent-color);
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+    }
+  }
+  
+  
+}
+
+  

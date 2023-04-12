@@ -13,7 +13,7 @@ const props = defineProps<{
     aria-modal="true"
     :aria-labelledby="`project-${index}_label`" 
     :id="`project-${index}`">
-        <div class="dialog__overlay" @click="closeDialog(`project-${index}`)"></div>
+        <div class="dialog__backdrop" @click="closeDialog(`project-${index}`)"></div>
         <div class="dialog__content">
             <div class="dialog__header">
                 <h2 class="dialog__title" :id="`project-${index}_label`">{{ project.title }}</h2>
