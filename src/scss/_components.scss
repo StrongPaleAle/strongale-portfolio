@@ -143,7 +143,7 @@
     --clippedbox-color: var(--text-color);
     --clippedbox-bg: var(--bg-heavy);
     --clippedbox-shadow: var(--accent-color-60);
-    
+    $clip-direction: clip-right-bottom;
     color: var(--clippedbox-color);
     
     background-color: transparent;
@@ -157,18 +157,46 @@
         z-index: -1;
         background-color: var(--clippedbox-bg);
         @extend .clip-right-bottom;
+        border-radius: inherit;
     }
+    &[data-variant*="clip-bl"]{
+      
+      &:before{
+        @extend .clip-left-bottom;
+      }  
+    }
+    &[data-variant*="gradient"]{
+      &:after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 15%,transparent 25%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
+        border-radius: inherit;
+        @extend .clip-right-bottom;
+        
+      }
+      &[data-variant*="clip-bl"]{
+      
+        &:after{
+          @extend .clip-left-bottom;
+        }  
+      }
+    }
+    
+    
   }
-
+  
   .text-box{
-    --clip-unit: 0.1em;
+    --clip-unit: 0.125em;
+    --textbox-b-radius: 0.05em;
     padding-inline: 0.2em 0.1em;
     line-height: 1;
     display: inline-block;
-    border-radius: var(--border-radius-large);
+    border-radius: var(--textbox-b-radius);
     letter-spacing: 0.05em;
     @extend .clipped-box;
-
+    
     &[data-variant*="accent-bg"]{
       --clippedbox-bg: var(--accent-color);
         
@@ -176,14 +204,7 @@
     &[data-variant*="dark-bg"]{
       color: var(--text-color);
     }
-    &[data-variant*="gradient"]:after{
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 15%,transparent 25%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
-      border-radius: var(--border-radius-large);
-    }
+    
   }
   .title-box[data-variant*="accent-bg"] > .title-inner{
     background-color: var(--accent-color);

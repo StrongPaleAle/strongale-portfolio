@@ -85,7 +85,7 @@ function toggleScrolling(element: any) {
             <div class="flex ">
                 <header class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
-                        <span class="about-title-text | text-box " data-variant="accent-bg"><span class="carved">About me</span></span>
+                        <span class="about-title-text | text-box " data-variant="accent-bg clip-bl"><span class="carved">About me</span></span>
                     </h2>
                     <nav class="tab-menu__container">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right">

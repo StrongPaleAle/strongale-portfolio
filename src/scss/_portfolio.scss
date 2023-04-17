@@ -185,7 +185,7 @@
                 z-index: -1;
                 border-radius: 5px;
                 background-color: var(--bg-heavy);
-                //background-image: linear-gradient(135deg, var(--extra-dark-20), var(--extra-dark-30) 80%, var(--extra-dark-10));
+                background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
                 @extend .clip-right-bottom;
             }
             
