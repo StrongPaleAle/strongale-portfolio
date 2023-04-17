@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import TheNav from './components/TheNav.vue';
 import TheCover from './components/TheCover.vue';
+import CoverMask from './components/CoverMask.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
@@ -16,21 +17,17 @@ console.log(theme);
 </script>
 
 <template>
-  <div class="app-inner">
-    
-    
-    <div class="cover-shade"></div>
-    <TheCover />
-    <TheNav /> 
+  
   <main id="wrapper">
+    <TheCover />
+    <div class="cover-shade"></div>
     
     <TheHero />
     <SectionAbout />
-   <SectionPortfolio />
+   
     
   </main>
-  </div>
-  
+  <CoverMask />
   
 </template>
 

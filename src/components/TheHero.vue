@@ -23,7 +23,7 @@ import TheLogo from './TheLogo.vue';
             <div class="cover-logo">
                 
                
-               <TheLogo></TheLogo>
+               <TheLogo />
                 
             </div>
         </div>

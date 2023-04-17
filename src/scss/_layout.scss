@@ -2,19 +2,20 @@ html{
   color-scheme: dark light;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  
+  contain: paint;
 }
 body {
   background-color: var(--bg-medium);
   color: var(--text-color);
   font-family: var(--font-text);
-  
+  contain: paint;
   //background-image: linear-gradient(var(--bg-heavy) 0%, var(--bg-heavy) 50%, var(--bg-light) 100%);
   
 }
 .app-inner{
   position: relative;
-  overflow: hidden;
+  overflow: clip;
+  
 }
 .flow > * {
   & + * {
@@ -32,7 +33,7 @@ body {
   
   position: relative;
   flex-flow: column nowrap;
-  overflow: hidden;
+  //overflow: hidden;
   
   > section {
     position: relative;

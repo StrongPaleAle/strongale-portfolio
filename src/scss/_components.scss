@@ -167,11 +167,12 @@
     display: inline-block;
     border-radius: var(--border-radius-large);
     letter-spacing: 0.05em;
-    @extend .clipped-box;
+    position: relative;
+    //@extend .clipped-box;
 
     &[data-variant*="accent-bg"]{
       --clippedbox-bg: var(--accent-color);
-        
+      background-color: var(--accent-color);   
     }
     &[data-variant*="dark-bg"]{
       color: var(--text-color);

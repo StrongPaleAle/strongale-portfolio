@@ -33,7 +33,7 @@ onMounted(() => {
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.2;
         
-        const layerScale = index - 0.75;
+        const layerScale = (index - 0.75) / 2;
         const layerstartScale = layerScale + (masksLength - index)
         const layerRotation = 180 - ((180 * index) / masksLength);
         const startingOpacity = 1 - (1 - index * 0.1);
@@ -41,13 +41,12 @@ onMounted(() => {
         const trigger = `#mask-${mask.id}`;
         const first = gsap.timeline({});
         first.fromTo(trigger, {
-            scale: layerstartScale,
-            opacity: startingOpacity,
+            scale: layerstartScale
+            
         },{
             duration: layerDuration,
             delay: layerDelay,
             scale: layerScale,
-            opacity: 1,
             ease: "none",
         });
         // gsap scrolltrigger for the mask
@@ -58,7 +57,7 @@ onMounted(() => {
                 overwrite: 'auto',
                 scrollTrigger: {
                 id: 'trigger',
-                trigger: '#cover',
+                trigger: 'body',
                 start: 'top',
                 end: 'bottom',
                 scrub: 2
@@ -74,7 +73,7 @@ onMounted(() => {
                 duration: 1,
                 scale: layerScale * 2,
                 rotation: layerRotation - 90,
-                ease: "none",
+                ease: "none"
             });
         
         
@@ -88,27 +87,16 @@ onMounted(() => {
 
 </script>
 <template>
-    <div id="cover">
-        
-        <div class="cover-wrapper">
-            <div id="cover-layer-wrapper" class="cover-layer-wrapper">
-                
-                <CoverLayer
-                v-for="mask in masks"
-                :key="mask.id"
-                :mask="mask"
-                ></CoverLayer>
-            </div>
+    <div id="cover" class="cover-wrapper">
+    
+        <div id="cover-layer-wrapper" class="cover-layer-wrapper">
+            <CoverLayer
+            v-for="mask in masks"
+            :key="mask.id"
+            :mask="mask"
+            ></CoverLayer>
         </div>
-        
-    
-        
-            
-            
-        
-    </div>
-    
-    
-    
+      
+    </div>  
     
 </template>
