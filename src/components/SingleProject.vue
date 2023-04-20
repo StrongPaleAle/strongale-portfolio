@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Project } from "@/types";
-import { closeDialog } from "../utils/utils";
+import { openDialog, closeDialog } from "../utils/utils";
+import IconLink from "./blocks/IconLink.vue";
+import IconButton from "./blocks/IconButton.vue";
+import ProjectInfo from "./blocks/ProjectInfo.vue";
 const props = defineProps<{
     project: Partial<Project>;
     index: number;  
@@ -15,15 +18,76 @@ const props = defineProps<{
     :id="`project-${index}`">
         <div class="dialog__backdrop" @click="closeDialog(`project-${index}`)"></div>
         <div class="dialog__content">
-            <div class="dialog__header">
-                <h2 class="dialog__title" :id="`project-${index}_label`">{{ project.title }}</h2>
-                <button class="dialog__close" @click="closeDialog(`project-${index}`)">
-                    <span class="visully-hidden">Close project</span>
-                </button>
-            </div>
-            <div class="dialog__body">
+            <header class="dialog__header | flex gap-em-2 justify-between">
+                <div>
+                    <h2 class="dialog__title | text-2xl heading uppercase m-0" :id="`project-${index}_label`">
+                        {{ project.title }}
+                    </h2>
+                    <p v-if="project.subtitle" class="subtitle italic text-large">
+                        {{ project.subtitle }}
+                    </p>
+                </div>
                 
+                
+                <div class="dialog__links | flex gap-em-05 text-large">
+                    
+
+                    <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
+                        Visit website
+                    </IconLink>
+
+                    <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
+                        View source
+                    </IconLink>
+                    <IconButton @click="openDialog(`project-${index - 1}`)" icon="arrow_back">
+                        View previous project
+                    </IconButton>
+                    <IconButton @click="openDialog(`project-${index + 1}`)" icon="arrow_forward">
+                        View next project
+                    </IconButton>
+                    <IconButton @click="closeDialog(`project-${index}`)" icon="close">
+                        Close project
+                    </IconButton>
+                    
+                </div>   
+            </header>
+            <div class="overflow-y-hidden">
+                <div class="dialog__body">
+                    <div class="grid">
+                        <div class="dialog__info">
+                            <ProjectInfo v-if="project.year" :label="'Year'" :value="`${project.year}`" icon="schedule" />
+                            
+                            <div v-if="project.design" class="dialog__info__item">
+                                <h3 class="dialog__info__title">Design</h3>
+                                <p class="dialog__info__content">
+                                    {{ project.design.label }}
+                                </p>
+                            </div>
+                            
+                        </div>
+            
+                        <div class="dialog__description">
+                            <div class="content-text | flow lh-loose" v-html="project.content"></div>
+                        </div>
+                        <div class="dialog__gallery">
+                            <div class="dialog__gallery__item">
+                                <img src="https://via.placeholder.com/800x600" alt="">
+                            </div>
+                            <div class="dialog__gallery__item">
+                                <img src="https://via.placeholder.com/800x600" alt="">
+                            </div>
+                            <div class="dialog__gallery__item">
+                                <img src="https://via.placeholder.com/800x600" alt="">
+                            </div>
+                            <div class="dialog__gallery__item">
+                                <img src="https://via.placeholder.com/800x600" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
+            
         </div>
     </div>
 </template>

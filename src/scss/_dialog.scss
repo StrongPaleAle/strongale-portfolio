@@ -1,3 +1,6 @@
+body.modal-open{
+    overflow: hidden;
+}
 .dialog{
     position: fixed;
     top: 0;
@@ -8,6 +11,7 @@
     justify-content: center;
     align-items: center;
     display: none;
+    
     &.active{
         display: flex;
     }
@@ -22,6 +26,11 @@
     }
     &__content{
         position: relative;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        width: clamp(320px, 80vw, 1800px);
+        height: calc(100% - 200px);
+        padding: clamp(0.5rem, 5vw, 3.5rem);
         &::before, &::after{
             content: "";
             position: absolute;
@@ -42,9 +51,15 @@
             inset: -1px -3px -3px -1px;
         }
         &::after{
+            background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
             background-color: var(--bg-heavy);
             z-index: -1;
         }
+    }
+    &__body{
+        overflow-y: auto;
+        height: 100%;
+        @extend .hide-scrollbar;
     }
 
     

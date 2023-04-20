@@ -66,22 +66,23 @@ export function openDialog(dialog: string) {
   console.log('closing dialogs');
   oDialogs.forEach((oDialog) => {
     const dialogID = oDialog.id;
-    closeDialog(dialogID);
+    closeDialog(dialogID, false);
   });
   console.log('opening dialog: ' + dialog);
   const dialogElement = document.getElementById(dialog);
+  document.body.classList.add('modal-open');
   dialogElement?.classList.add('active');
 
   document.addEventListener("keydown", handleEscapeDialog, {once: true});
   
 }
 
-export function closeDialog(dialog: string) {
+export function closeDialog(dialog: string, closeModal: boolean = true) {
   
     const dialogElement = document.getElementById(dialog);
     dialogElement?.classList.remove('active');
     dialogElement?.removeEventListener("keydown", handleEscapeDialog);
-    
+    closeModal ? document.body.classList.remove('modal-open') : null;
 }
 
 

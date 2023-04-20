@@ -91,6 +91,9 @@ body {
   > *{
     max-width: 100%;
   }
+  .flex-column{
+    flex-flow: column nowrap;
+  }
   .section-title {
     margin: 0;
     .text-box{

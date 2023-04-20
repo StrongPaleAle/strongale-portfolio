@@ -5,6 +5,9 @@
   .uppercase{
     text-transform: uppercase;
   }
+  .italic{
+    font-style: italic;
+  }
   .text-right{
     text-align: right;
   }
@@ -23,6 +26,9 @@
     font-size: clamp(2.5rem, calc(5vw + 1rem), 5.5rem);
     text-transform: uppercase;
     
+  }
+  .text-2xl{
+    font-size: clamp(1.85rem, calc(2vw + 1.85rem), 3.5rem);
   }
   .text-xlarge{
     font-size: clamp(1.25rem, calc(0.15vw + 1.25rem), 2.5rem);
