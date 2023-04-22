@@ -63,9 +63,9 @@
         let accentCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
         let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--extra-light');
         let ambientCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--bg-medium');
-        accentCSSColor = accentCSSColor.split(" ").pop();
-        extraCSSColor = extraCSSColor.split(" ").pop();
-        ambientCSSColor = ambientCSSColor.split(" ").pop();
+        accentCSSColor = accentCSSColor.trimStart().replace('deg', '');
+        extraCSSColor = extraCSSColor.trimStart().replace('deg', '');
+        ambientCSSColor = ambientCSSColor.trimStart().replace('deg', '');
         
         let accentColor = new Color(accentCSSColor);
         let extraColor = new Color(extraCSSColor);

@@ -1,3 +1,22 @@
+@use 'sass:color';
+@use "sass:map";
+:root{
+  --hue-shift: 0;
+  --sat-shift: 0;
+  --light-shift: 0;
+}
+html[data-theme="dark"]{
+  
+  --hue-shift-total: 64deg;
+  --sat-shift-total: 0;
+  --light-shift-total: 14;
+}
+html[data-theme="light"]{
+  --hue-shift-total: -9deg;
+  --sat-shift-total: 35;
+  --light-shift-total: -60;
+}
+
 #cover {
   contain: paint;
   overflow: hidden;
@@ -11,7 +30,9 @@
   --time-modifier: 15s;
   --animation-duration: calc(var(--slices) * var(--time-modifier));
   --clip: path('');
-
+  --hue-shift: calc(var(--hue-shift-total) / var(--slices));
+  --sat-shift: calc(var(--sat-shift-total) / var(--slices));
+  --light-shift: calc(var(--light-shift-total) / var(--slices));
   .cover-wrapper{
     position: absolute;
     left: 0;
@@ -43,7 +64,7 @@
       transform: translate(-50%, -50%) rotate(90deg);
     }
     .cover-layer {
-      
+      --mask-bg: var(--bg-medium);
       position: absolute;
       inset: 0;
       transform-origin: center;
@@ -58,11 +79,11 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: var(--bg-medium);
+        background-color: var(--mask-bg);
         inset: 0;
         z-index: 1;
         shape-rendering: optimizeSpeed;
-        
+        clip-path: var(--clip);
         
         
       }
@@ -122,6 +143,9 @@
         --clip: url(#maskpath-#{$i});
         --starting-Z: calc(#{$i} * 10px);
         --starting-opacity: calc( 1 - (1 / (#{$i} * 0.5)));
+        $hue-mask: color.adjust( map.get($colors, "deep-purple") , $hue: 8 * (8 - $i));
+        $light-mask: color.adjust( map.get($colors, "deep-purple") , $lightness: 1.75% * $i);
+        --mask-bg: #{$hue-mask};
         //--animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
         --delay: #{2 - 0.25 * $i}s;
         --duration: calc(5s - #{3 - 0.05 * $i}s);
@@ -134,10 +158,7 @@
         
       
       }
-      .cover-layer-mask{
-        
-        clip-path: var(--clip);
-      }
+      
     }
   }
 }

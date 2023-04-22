@@ -2,27 +2,27 @@
 @use 'sass:math';
 
 $colors: (
-  "black": #1C0D17,
-  "deep-purple": #2E234C,
-  "purple": #403980,
-  "light-navy": #3B5883,
-  "viridian": #408666,
-  "green": #44B349,
-  "bright-green": #5CFF23,
-  "light-green": #c9fdb6,
-  "nyanza": #E7FFE2,
-  "white": #F4FCF3,
-  "chinese-black": #0D1B19,
-  "jungle-green": #1B3733,
-  "dark-slate-gray": #28544D,
-  "palatinate": #671C58,
-  "jam": #9F1463,
-  "violet-red": #CF1D8F,
-  "pink": #FF1493,
-  "rd-rose": #FF39C0,
-  "l-rose": #FF9EE0,
-  "shampoo": #FFD6F2,
-  "l-blush": #FFEEFB
+  "black":hsl(320, 37%, 8%),
+  "deep-purple":hsl(256, 37%, 22%),
+  "purple":hsl(246, 38%, 36%),
+  "light-navy":hsl(216, 38%, 37%),
+  "viridian": hsl(153, 35%, 39%),
+  "green": hsl(123, 45%, 48%),
+  "bright-green":hsl(104, 100%, 57%),
+  "light-green": hsl(104, 95%, 85%),
+  "nyanza": hsl(110, 100%, 94%),
+  "white": hsl(113, 60%, 97%),
+  "chinese-black": hsl(171, 35%, 8%),
+  "jungle-green": hsl(171, 34%, 16%),
+  "dark-slate-gray": hsl(170, 35%, 24%),
+  "palatinate": hsl(312, 57%, 26%),
+  "jam": hsl(326, 78%, 35%),
+  "violet-red": hsl(322, 75%, 46%),
+  "pink": hsl(328, 100%, 54%),
+  "rd-rose": hsl(319, 100%, 61%),
+  "l-rose": hsl(319, 100%, 81%),
+  "shampoo": hsl(319, 100%, 92%),
+  "l-blush": hsl(314, 100%, 97%)
 );
 $theme-options: (
   "dark": (
@@ -55,7 +55,7 @@ $theme-options: (
 :root{
   // Colors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   @each $name, $color in $colors {
-    --#{$name}: #{$color};
+    --#{$name}:#{$color};
 
     @for $i from 0 through 10 {
 
