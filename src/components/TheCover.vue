@@ -33,7 +33,7 @@ onMounted(() => {
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.2;
         
-        const layerScale = index - 0.75;
+        const layerScale = index - 1.25;
         const layerstartScale = layerScale + (masksLength - index)
         const layerRotation = 180 - ((180 * index) / masksLength);
         const startingOpacity = 1 - (1 - index * 0.1);
