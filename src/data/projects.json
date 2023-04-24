@@ -3,7 +3,20 @@
         "id": 1,
         "title": "StrongAle",
         "slug": "strongale",
-        "year": 2023,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2023",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Designer, Developer, Copywriter",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            }
+        ],
         "tags": [
             "Brand Identity", 
             "Vue.js",
@@ -44,9 +57,102 @@
     },
     {
         "id": 2,
+        "title": "Sotherga",
+        "slug": "sotherga",
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2022",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Wordpress and Frontend Developer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Design",
+                "value": "ParcoStudio",
+                "link": "https://parco.studio/",
+                "icon": "design_services",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Dev Team",
+                "value": "Quivi",
+                "link": "https://quivi.it",
+                "icon": "code_blocks",
+                "hiddenLabel": false
+            }
+
+        ],
+        "tags": [
+            "WordPress", 
+            "OctoberCMS", 
+            "E-commerce",
+            "Vue.js",
+            "Javascript",
+            "PHP",
+            "Laravel",
+            "Integration"
+        ],
+        "content": "<p>Sotherga is an aesthetic medicine clinic in Milan. The project had three main integrated parts: A WordPress-based corporate area, a skin care products online store built with OctoberCMS, and an interactive questionnaire to receive a skincare routine consultation. <br>My roles in the project were: Main core UI, WordPress and survey front-end developer, and senior front-end developer for the store part.</p>",
+        "subtitle": "“The art of aesthetic medicine”",
+        "cover": {
+            "id": "sotherga-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/sotherga_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/sotherga_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/sotherga_cover-400.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "sotherga-cover-img",
+                "src": "/storage/media/sotherga_cover-400.gif",
+                "alt": "Sotherga website hompage animation"
+                
+            },
+            "overlay": "/storage/media/sotherga_cover-480-static.webp"
+        }
+    },
+    {
+        "id": 3,
         "title": "Angry Scientist",
         "slug": "angry-scientist",
-        "year": 2021,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2021",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Fullstack Developer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Design",
+                "value": "House of Greenland",
+                "link": "https://houseofgreenland.com/",
+                "icon": "design_services",
+                "hiddenLabel": false
+            }
+
+        ],
         "tags": [
             "WordPress", 
             "AJAX", 
@@ -56,10 +162,6 @@
         ],
         "content": "<p>Angry Scientist aims to help people counter conspiracy theorists with facts, logic, and brutal humour. <br>This website is the result of only nine days of my work, coming from three chunks of three days, spread over different months. In addition to development, were also held during these days: meetings, training on content uploading, layout changes, revisions, and website release. <br>Aware of the limited time available, and to avoid mishaps and delays, I chose to rely on easy solutions in which I was highly confident, and that made it easy for the client to upload content. For this reason, I built a small WordPress theme that benefits from the CMS built-in AJAX features since it is necessary for a real-time content filter by custom fields.</p>",
         "subtitle": "“Stop arguing with idiots on the internet.”",
-        "design": {
-            "label": "House of Greenland",
-            "link": "https://houseofgreenland.com/"
-        },
         "link": "https://angryscientists.com/",
         "cover": {
             "id": "angry-scientist-cover",
@@ -89,62 +191,38 @@
         }
     },
     {
-        "id": 3,
-        "title": "Sotherga",
-        "slug": "sotherga",
-        "year": 2022,
-        "tags": [
-            "WordPress", 
-            "OctoberCMS", 
-            "E-commerce",
-            "Vue.js",
-            "Javascript",
-            "PHP",
-            "Laravel",
-            "Integration"
-        ],
-        "content": "<p>Sotherga is an aesthetic medicine clinic in Milan. The project had three main integrated parts: A WordPress-based corporate area, a skin care products online store built with OctoberCMS, and an interactive questionnaire to receive a skincare routine consultation. <br>My roles in the project were: Main core UI, WordPress and survey front-end developer, and senior front-end developer for the store part.</p>",
-        "subtitle": "“The art of aesthetic medicine”",
-        "design": {
-            "label": "ParcoStudio",
-            "link": "https://parco.studio/"
-        },
-        "development": {
-            "label": "Quivi",
-            "link": "https://quivi.it"
-        },
-        "cover": {
-            "id": "sotherga-cover",
-            "sources": [
-                {
-                    "src": "/storage/media/sotherga_cover-480-static.webp",
-                    "type": "image/webp",
-                    "media": "(prefers-reduced-motion: reduce)"
-                },
-                {
-                    "src": "/storage/media/sotherga_cover.jpg",
-                    "type": "image/jpg",
-                    "media": "(prefers-reduced-motion: reduce)"
-                },
-                {
-                    "src": "/storage/media/sotherga_cover-400.webp",
-                    "type": "image/webp"
-                }
-            ],
-            "img": {
-                "id": "sotherga-cover-img",
-                "src": "/storage/media/sotherga_cover-400.gif",
-                "alt": "Sotherga website hompage animation"
-                
-            },
-            "overlay": "/storage/media/sotherga_cover-480-static.webp"
-        }
-    },
-    {
         "id": 4,
         "title": "FULL",
         "slug": "full",
-        "year": 2021,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2021",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Lead Developer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Design",
+                "value": "ParcoStudio",
+                "link": "https://parco.studio/",
+                "icon": "design_services",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Dev Team",
+                "value": "Quivi",
+                "link": "https://quivi.it",
+                "icon": "code_blocks",
+                "hiddenLabel": false
+            }
+
+        ],
         "tags": [
             "WordPress", 
             "Javascript",
@@ -153,14 +231,6 @@
         ],
         "content": "<p>FULL (Future Urban Legacy Lab) is the international interdepartmental research centre of the Politecnico di Torino that investigates the present and the future of cities, on a global and local scale. The website aims to share the centre's research projects, publications, and multimedia content produced during the events. <br>This project was my first experience as a lead developer.</p>",
         "subtitle": "Future Urban Legacy Lab",
-        "design": {
-            "label": "ParcoStudio",
-            "link": "https://parco.studio/"
-        },
-        "development": {
-            "label": "Quivi",
-            "link": "https://quivi.it"
-        },
         "link": "https://full.polito.it/",
         "cover": {
             "id": "full-cover",
@@ -193,7 +263,35 @@
         "id": 5,
         "title": "UFOPLAST",
         "slug": "ufoplast",
-        "year": 2020,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2020",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Fullstack Developer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Design",
+                "value": "ParcoStudio",
+                "link": "https://parco.studio/",
+                "icon": "design_services",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Dev Team",
+                "value": "Quivi",
+                "link": "https://quivi.it",
+                "icon": "code_blocks",
+                "hiddenLabel": false
+            }
+
+        ],
         "tags": [ 
             "PrestaShop",
             "PHP",
@@ -201,14 +299,6 @@
         ],
         "content": "<p>UFO Plast was founded in 1977 in Tuscany-Italy and immediately became part of the social imaginary as a true icon of the off-road world. <br>While all my friends tried to beat the boredom of the first lockdown, binge-watching Netflix shows, home-baking bread and pizza, and gardening, I was working on this e-commerce. <br>The main challenge for this project was using Prestashop as CMS. The fact that remote working was new to many doubtless contributed to the struggle.</p>",
         "subtitle": "“High-quality gear just landed on Earth.”",
-        "design": {
-            "label": "ParcoStudio",
-            "link": "https://parco.studio/"
-        },
-        "development": {
-            "label": "Quivi",
-            "link": "https://quivi.it"
-        },
         "link": "https://it.ufoplast.com/en/",
         "cover": {
             "id": "ufoplast-cover",
@@ -241,7 +331,21 @@
         "id": 6,
         "title": "ALD",
         "slug": "ald",
-        "year": 2019,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2019",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Designer, Fullstack Developer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            }
+
+        ],
         "tags": [
             "WordPress", 
             "UI design",
@@ -281,7 +385,21 @@
         "id": 7,
         "title": "My Tunnel of lo(l/n)eliness",
         "slug": "my-tunnel-of-lol-neliness",
-        "year": 2016,
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2016",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Developer, Designer, Copywriter",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            }
+
+        ],
         "tags": [
             "Art", 
             "Three.js",

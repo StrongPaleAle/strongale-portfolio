@@ -3,7 +3,7 @@ import { Project } from "@/types";
 import { openDialog, closeDialog } from "../utils/utils";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
-import ProjectInfo from "./blocks/ProjectInfo.vue";
+import SingleInfo from "./blocks/SingleInfo.vue";
 const props = defineProps<{
     project: Partial<Project>;
     index: number;  
@@ -53,21 +53,23 @@ const props = defineProps<{
             </header>
             <div class="overflow-y-hidden">
                 <div class="dialog__body">
-                    <div class="grid">
+                    <div class="grid gap-em-2">
                         <div class="dialog__info">
-                            <ProjectInfo v-if="project.year" :label="'Year'" :value="`${project.year}`" icon="schedule" />
+                            <div v-if="project.infos" class="grid lh-tight text-large gap-em-05">
+                                <SingleInfo v-for="info in project.infos" :info="info"  />
+                            <!-- <ProjectInfo v-if="project.year" :label="'Year'" :value="`${project.year}`" icon="schedule" />
                             
                             <div v-if="project.design" class="dialog__info__item">
                                 <h3 class="dialog__info__title">Design</h3>
                                 <p class="dialog__info__content">
                                     {{ project.design.label }}
                                 </p>
+                            </div> -->
                             </div>
-                            
                         </div>
             
                         <div class="dialog__description">
-                            <div class="content-text | flow lh-loose" v-html="project.content"></div>
+                            <div class="content-text | flow lh-loose body-text" v-html="project.content"></div>
                         </div>
                         <div class="dialog__gallery">
                             <div class="dialog__gallery__item">

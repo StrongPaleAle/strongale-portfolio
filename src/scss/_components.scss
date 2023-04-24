@@ -223,3 +223,12 @@
   .title-box[data-variant*="accent-bg"] > .title-inner{
     background-color: var(--accent-color);
   }
+  .single-info{
+    a{
+      color: currentColor;
+      text-decoration: underline;
+      &:hover{
+        color: var(--extra-light);
+      }
+    }
+  }

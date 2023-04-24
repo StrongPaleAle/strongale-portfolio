@@ -3,11 +3,18 @@ import {Project} from "@/types";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
 import {openDialog} from "../utils/utils";
+import {computed} from "vue";
 
 const props = defineProps<{
   project: Partial<Project>;
     index: number;
 }>();
+
+const year = computed(() => {
+  return props.project.infos.find((info) => info.label === "Year")?.value;
+});
+
+
 </script>
 <template>
     <div class="portfolio-item" :id="`portfolio-${project.id}`" >
@@ -23,7 +30,7 @@ const props = defineProps<{
             </div>
             
         </div>
-        <span class="portfolio-item__date">{{ project.year }}</span>
+        <span class="portfolio-item__date">{{ year }}</span>
         
         <div class="portfolio-item__content">
             <button @click="openDialog(`project-${index}`)" class="btn-link block mb-em text-text-color">

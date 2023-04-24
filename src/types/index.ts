@@ -30,6 +30,14 @@ export interface Picture {
   img: Image;
 }
 
+export interface Info {
+  label: string; 
+  value: string; 
+  link?: string; 
+  icon?: string; 
+  hiddenLabel?: boolean
+}
+
 export interface Cover extends Picture {
   overlay?: string | undefined;
 }
@@ -47,7 +55,7 @@ export interface DataBlock extends Block {
 }
 export interface InfoBlock extends Block {
   type: 'BlockInfo';
-  content: [{ label: string; value: string; link?: string; icon?: string; hiddenLabel?: boolean }];
+  content: Info[];
 }
 export interface ListBlock extends Block {
   
@@ -74,12 +82,10 @@ export interface Project {
   id: number;
   title: string;
   slug: string;
-  year: number;
   tags: string[];
   content: string;
   subtitle?: string;
-  design?: { label: string; link?: string};
-  development?: { label: string; link?: string};
+  infos?: Info[];
   link?: string;
   source?: string;
   cover?: Cover;
