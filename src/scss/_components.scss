@@ -224,6 +224,7 @@
     background-color: var(--accent-color);
   }
   .single-info{
+    
     a{
       color: currentColor;
       text-decoration: underline;
@@ -231,4 +232,11 @@
         color: var(--extra-light);
       }
     }
+    .material-symbols-outlined{
+      padding: 0.1em;
+      border-radius: 50%;
+      
+    }
   }
+
+  

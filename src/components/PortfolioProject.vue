@@ -21,7 +21,7 @@ const year = computed(() => {
         
         
         <div class="portfolio-item__image">
-            <div class="imag-inner">
+            <div class="imag-inner" @click="openDialog(`project-${index}`)">
                 <picture v-if="project.cover" class="portfolio-item__image-inner">
                 <source v-for="image in project.cover.sources" :srcset="image.src" :type="image.type" :media="image.media">
                 <img :src="project.cover.img.src" :alt="project.cover.img.alt" loading="lazy" decoding="async">

@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { rotateElement } from "../utils/utils";
 
 const projects = Projects as Project[];
-
+const totalProjects = projects.length - 1;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
@@ -125,7 +125,8 @@ function toggleMouseTracking(element: any) {
                     v-for="project, index in projects" 
                     :key="project.id" 
                     :project="project" 
-                    :index="index" 
+                    :index="index"
+                    
                 />
                 
             </div>
@@ -135,6 +136,7 @@ function toggleMouseTracking(element: any) {
             :key="project.id" 
             :project="project" 
             :index="index"
+            :totalProjects="totalProjects"
         />
     </section>
 </template>

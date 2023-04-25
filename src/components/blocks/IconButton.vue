@@ -5,7 +5,7 @@
     }>();
 </script>
 <template>
-    <button  class="icon-link">
+    <button class="icon-link">
         <i class="material-symbols-outlined" aria-hidden="true">{{ icon }}</i>
         <span class="visually-hidden">
             <slot></slot>
