@@ -17,7 +17,7 @@ const masksLength = masksObj.length;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-    const scrollDistance = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    //const scrollDistance = window.scrollY || (document.documentElement || document.body.parentNode || document.body).scrollTop;
     //console.log(scrollDistance);
     // gsap.to('.cover-overlay', {
     //     duration: 1,
@@ -25,8 +25,9 @@ onMounted(() => {
     //     scale: 1.5,
     //     ease: "none",
     // });
-    
-    
+    let orientation = window.matchMedia("(orientation: portrait)").matches;
+    let rotationConst = orientation ? 90 : 0;
+    console.log(rotationConst);
     masksObj.forEach((mask) => {
         let index = mask.id;
         //console.log(index);
@@ -35,7 +36,7 @@ onMounted(() => {
         
         const layerScale = index - 1.25;
         const layerstartScale = layerScale + (masksLength - index)
-        const layerRotation = 180 - ((180 * index) / masksLength);
+        const layerRotation = 180 - ((180 * index) / masksLength) + rotationConst;
         const startingOpacity = 1 - (1 - index * 0.1);
         
         const trigger = `#mask-${mask.id}`;

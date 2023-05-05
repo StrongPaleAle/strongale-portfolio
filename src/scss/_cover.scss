@@ -13,14 +13,15 @@ $slice_count: 8;
   $sat-bg: color.saturation($background);
   $lig-bg: color.lightness($background);
   $hue-diff: $hue-bg - $hue;
-  $sat-diff: $sat-bg - $sat;
+  $sat-diff: $sat - $sat-bg;
   $lig-diff: $lig-bg - $lig;
   $hue-shift: math.div($hue-diff, $slices);
   $sat-shift: math.div($sat-diff, $slices);
   $lig-shift: math.div($lig-diff, $slices);
-  $hue-shifted: $hue-shift * ($slices - $slice_index);
-  $sat-shifted: $sat-shift * ($slices - $slice_index);
-  $lig-shifted: $lig-shift * ($slices - $slice_index);
+  $ex-index: math.pow(math.div($slice_index, 4), 3);
+  $hue-shifted: $hue-shift * ($slices - $ex-index);
+  $sat-shifted: $sat-shift * ($slices - $ex-index);
+  $lig-shifted: $lig-shift * ($slices - $ex-index);
   $color: color.adjust($foreground, $hue: $hue-shifted, $saturation: $sat-shifted, $lightness: $lig-shifted);
   @return $color;
 }
@@ -63,10 +64,13 @@ html[data-theme="light"]{
   --slices: 8;
   --modifier: 15;
   --time-modifier: 15s;
-
+  --rotation-const: 0deg;
   --animation-duration: calc(var(--slices) * var(--time-modifier));
   --clip: path('');
-  
+  @media (orientation: portrait) {
+      
+    --rotation-const: 90deg;
+  }
   .cover-wrapper{
     position: absolute;
     left: 0;
@@ -86,16 +90,13 @@ html[data-theme="light"]{
     width: 50vmax;
     height: 50vmax;
     //transform-style: preserve-3d;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
+    margin: auto;
     isolation: isolate;
     //backface-visibility: hidden;
     //will-change: transform;
     //animation: wrapper-rotation var(--animation-duration) linear  infinite;
-    @media (orientation: portrait) {
-      
-      transform: translate(-50%, -50%) rotate(90deg);
+    @media (orientation: landscape) {
+       left: 15%;
     }
     .cover-layer {
       
@@ -172,7 +173,7 @@ html[data-theme="light"]{
       #mask-#{$i} {
 
         --initial-scale: #{$i - 0.75};
-        --initial-rotation: calc((180 - ((180 * #{$i}) / var(--slices))) * 1deg);
+        --initial-rotation: calc(((180 - ((180 * #{$i}) / var(--slices))) + var(--rotation-const)) * 1deg);
         //--initial-translateZ: calc(((30 * var(--slices)) - (#{$i} * 30)) * 1px);
         --clip: url(#maskpath-#{$i});
         //--starting-Z: calc(#{$i} * 10px);
@@ -218,7 +219,7 @@ html[data-theme="light"]{
   position: fixed;
   width: 100%;
   inset: 0;
-  background-image: linear-gradient(-135deg, var(--bg-light-00) , var(--bg-light-40));
+  background-image: conic-gradient(from -125deg at 30% 70%, var(--extra-color-40), var(--extra-color-00) , var(--extra-color-40));
   pointer-events: none;
   mix-blend-mode: color;
   animation: fade-in 1s linear 0s forwards;
