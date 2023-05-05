@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2019",
     "useDefineForClassFields": true,
     "module": "AMD",
     "moduleResolution": "Node",
@@ -10,7 +10,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
-    "lib": ["es2015", "DOM"],
+    "lib": ["es2019", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
     "allowJs": true,

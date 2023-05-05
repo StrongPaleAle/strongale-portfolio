@@ -11,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const year = computed(() => {
-  return props.project.infos.find((info) => info.label === "Year")?.value;
+  return props.project?.infos?.find((info) => info.label === "Year")?.value;
 });
 
 
