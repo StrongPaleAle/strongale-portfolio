@@ -14,6 +14,10 @@
     border-top: 6px solid var(--accent-color);
     border-radius: 5px 15px;
 }
+.border-tb-radius-accent{
+  border-block: 6px solid var(--accent-color);
+  border-radius: 5px 15px;
+}
 .border-b-accent{
     border-bottom: 6px solid var(--accent-color);
     border-radius: 5px 15px;
@@ -200,5 +204,11 @@ button.btn-link{
   
   
 }
-
+.mlink{
+  color: var(--accent-color);
+  span{
+    display: none;
+    
+  }
+}
   
