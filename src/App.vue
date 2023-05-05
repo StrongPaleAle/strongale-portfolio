@@ -19,7 +19,7 @@ console.log(theme);
   <div class="app-inner">
     
     
-    <div class="cover-shade"></div>
+    
     <TheCover />
     <TheNav /> 
   <main id="wrapper">

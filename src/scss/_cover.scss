@@ -121,6 +121,16 @@ html[data-theme="light"]{
         clip-path: var(--clip);
         
         
+        
+      }
+      &:last-of-type{
+        .cover-layer-mask{
+          background-image: conic-gradient(from -125deg, var(--extra-color-20), var(--bg-medium) , var(--extra-color-20), var(--bg-medium) , var(--extra-color-20), var(--bg-medium) , var(--extra-color-20));
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+          
+        }
       }
       .cover-layer-shadow{
         
