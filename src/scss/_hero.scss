@@ -70,13 +70,19 @@
           align-items: center;
           .cover-title{
             @extend .border-tb-radius-accent;
+            opacity: 0;
+            animation: fade-in 0.7s ease-in-out 1.5s forwards;
           }
           .cover-logo{
+            opacity: 0;
+            animation: fade-in 0.7s ease-in-out 1.2s forwards;
             #logo-wrapper{
               margin: 0 auto;
             }
           }
           .coming-soon-copy {
+            opacity: 0;
+            animation: fade-in 0.7s ease-in-out 1.8s forwards;
             @media (min-width: 900px){
               font-size: clamp(1.15rem, calc(0.15vw + 1rem), 1.25rem);
               br + br{
