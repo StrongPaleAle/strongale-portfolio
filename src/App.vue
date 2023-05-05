@@ -9,10 +9,10 @@ import TheCover from './components/TheCover.vue';
 import { getTheme, setTheme } from './utils/utils';
 import ComingSoon from './components/ComingSoon.vue';
 
-const theme = getTheme();
+// const theme = getTheme();
 
-setTheme(theme);
-console.log(theme);
+// setTheme(theme);
+// console.log(theme);
 
 </script>
 

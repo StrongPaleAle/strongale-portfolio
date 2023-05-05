@@ -30,7 +30,7 @@ onMounted(() => {
                     
                 </div>
                 <div class="heading | text-hero">
-                    <h1 class="cover-title | m-block-0">
+                    <h1 class="cover-title | m-block-0 p-inline-em-025">
                         Coming Soon
                     </h1>
                     

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -10,6 +10,41 @@
     <meta name="msapplication-TileColor" content="#2e234c">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @font-face {
+          font-family: 'Roboto Mono';
+          src: url('/assets/fonts/RobotoMono-VariableFont_wght.woff2') format('woff2 supports variations'), 
+              url('/assets/fonts/RobotoMono-VariableFont_wght.woff2') format('woff2-variations');
+          font-weight: 100 700;
+          font-style: normal;
+          font-display: swap;
+      }
+
+
+      @font-face {
+          font-family: 'Rubik';
+          src: url('/assets/fonts/Rubik-VariableFont_wght.woff2') format('woff2 supports variations'),
+              url('/assets/fonts/Rubik-VariableFont_wght.woff2') format('woff2-variations');
+          font-weight: 300 900;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      :root{
+        --font-text: 'Roboto Mono', monospace;
+        --font-heading: 'Rubik', sans-serif;
+      }
+      body{
+        font-family: var(--font-text);
+      }
+      .heading{
+        font-family: var(--font-heading);
+        font-weight: 700;
+      }
+
+    </style>
+
     <title>Alessio "StrongAle" Falchi, Frontend Developer - Coming Soon</title>
     <meta name="description" content="Web Developer since 2014. I aim to produce a pleasant and practical user experience for everyone. My name is Alessio Falchi, but everyone calls me Ale." />
     <meta name="keywords" content="StrongAle, Alessio Falchi, Web Developer, Javascript, HTML, CSS, SASS, Vuejs, Frontend Developer, London" />
