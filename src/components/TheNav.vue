@@ -1,5 +1,11 @@
 <template>
     <nav class="main-nav">
+        <div class="main-nav__logo">
+            <a href="/" class="main-nav__logo-link">
+                <span class="masked-logo"></span>
+                <span class="main-nav__logo-text">Alessio Falchi</span>
+            </a>
+        </div>
         <ul class="main-nav__list">
             <li class="main-nav__item">
                 <a href="/" class="main-nav__link">Home</a>

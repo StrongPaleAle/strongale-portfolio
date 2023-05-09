@@ -1,17 +1,25 @@
 .main-nav{
-    background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
+    //background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
+    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    .masked-logo{
+        width: 2rem;
+    }
     ul{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: 1rem 1rem 2rem;
+        padding: 1rem 2rem;
         margin: 0;
         list-style: none;
+        background-color: var(--bg-heavy);
         li{
             a{
                 color: var(--accent-color);

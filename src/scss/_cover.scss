@@ -32,11 +32,17 @@ $fg-color-dark: map.get($colors, $fg-name-dark); // get color value from colors 
 $bg-name-dark: map.get($theme-options, 'dark', 'bg-heavy'); // get color name from theme options
 $bg-color-dark: map.get($colors, $bg-name-dark);
 
+$sh-name-dark: map.get($theme-options, 'dark', 'bg-light'); // get color name from theme options
+$sh-color-dark: map.get($colors, $sh-name-dark);
+
 $fg-name-light: map.get($theme-options, 'light', 'bg-medium'); // get color name from theme options
 $fg-color-light: map.get($colors, $fg-name-light); // get color value from colors name
 
+$bg-name-light: map.get($theme-options, 'light', 'bg-heavy'); // get color name from theme options
+$bg-color-light: map.get($colors, $bg-name-light); // get color value from colors name
 
-
+$sh-name-light: map.get($theme-options, 'light', 'bg-light'); // get color name from theme options
+$sh-color-light: map.get($colors, $sh-name-light);
 
 
 html[data-theme="dark"]{
@@ -123,15 +129,16 @@ html[data-theme="light"]{
         
         
       }
-      &:last-of-type{
-        .cover-layer-mask{
-          background-image: conic-gradient(from -125deg, var(--extra-color-20), var(--bg-medium) , var(--extra-color-20), var(--bg-medium) , var(--extra-color-20), var(--bg-medium) , var(--extra-color-20));
-          background-size: 50%;
-          background-repeat: no-repeat;
-          background-position: center;
+      // &:last-of-type{
+      //   .cover-layer-mask{
+      //     $cover_shade: color.mix($fg-color-dark, $sh-color-dark, 80%);
+      //     background-image: conic-gradient(from -125deg, $cover_shade, var(--bg-medium) , $cover_shade, var(--bg-medium) , $cover_shade, var(--bg-medium) , $cover_shade);
+      //     background-size: 50%;
+      //     background-repeat: no-repeat;
+      //     background-position: center;
           
-        }
-      }
+      //   }
+      // }
       .cover-layer-shadow{
         
         
@@ -188,11 +195,12 @@ html[data-theme="light"]{
         --clip: url(#maskpath-#{$i});
         //--starting-Z: calc(#{$i} * 10px);
         //--starting-opacity: calc( 1 - (1 / (#{$i} * 0.5)));
+        $amount: math.div(100, $slice_count) * math.pow(math.div($i, 4), 3) * 1%;
+        $shade-amount: 100 - ($i * 2.5%);
 
-
-        $dark-layer-bg: get_layer_bg($fg-color_dark, $bg-color_dark, $i, $slice_count);
-
-
+        //$dark-layer-bg: get_layer_bg($fg-color_dark, $bg-color_dark, $i, $slice_count);
+        $dark-layer-bg: color.mix($fg-color_dark, $bg-color_dark, $amount);
+        
         --dark-layer-bg: #{$dark-layer-bg};
         
         
@@ -200,14 +208,22 @@ html[data-theme="light"]{
         --delay: #{2 - 0.25 * $i}s;
         --duration: calc(5s - #{3 - 0.05 * $i}s);
         
+        $cover_shade: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+
+        
         transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
         opacity: 1;
         z-index: $i;
         //transform: translateZ(var(--starting-Z)) rotate(360deg);
         //animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
         //animation: new-start-cover-animation var(--duration) linear var(--delay);
+        .cover-layer-mask{
+          background: conic-gradient(from -125deg, $cover_shade, $dark-layer-bg , $cover_shade, $dark-layer-bg , $cover_shade, $dark-layer-bg, $cover_shade);
+          //background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
         
-      
       }
       
     }

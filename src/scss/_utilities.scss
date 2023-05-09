@@ -200,5 +200,10 @@ button.btn-link{
   
   
 }
-
+.masked-logo{
+  clip-path: url(#mask-logo);
+  aspect-ratio: 1/1;
+  display: inline-block;
+  background-color: var(--accent-color);
+}
   
