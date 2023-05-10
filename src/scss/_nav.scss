@@ -8,9 +8,25 @@
     z-index: 100;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 2rem;
     .masked-logo{
-        width: 2rem;
+        width: 1.5rem;
+    }
+    .main-nav__logo-link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-color-08);
+        transition: all 0.2s ease-in-out;
+        gap: 1rem;
+        &:hover{
+            color: var(--accent-color);
+        }
+    }
+    .main-nav__logo-text{
+        @extend .heading, .uppercase;
+        font-size: 2rem;
     }
     ul{
         display: flex;
@@ -34,4 +50,5 @@
             }
         }
     }
+
 }

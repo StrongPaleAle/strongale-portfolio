@@ -29,7 +29,6 @@ console.log(theme);
    <SectionPortfolio />
     
   </main>
-  </div>
   <svg width="0" height="0" viewBox="0 0 1 1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <defs>
         <clipPath id="mask-logo" clipPathUnits="objectBoundingBox">
@@ -37,6 +36,8 @@ console.log(theme);
         </clipPath>
     </defs>
   </svg>
+  </div>
+  
   
 </template>
 
