@@ -13,22 +13,38 @@ export interface Block {
   extraClass?: string | undefined;
 }
 
-export interface Image {
+export interface Media {
   id: string;
   title?: string | undefined;
   src: string;
   alt?: string | undefined;
   type?: string | undefined;
   media?: string | undefined;
-  caption?: string | undefined;
 }
 
 export interface Picture {
   id: string;
   title?: string | undefined;
-  sources: Image[];
-  img: Image;
+  sources: Media[];
+  img: Media;
+  caption?: string | undefined;
+  showCaption?: boolean | undefined;
+  tag: 'picture' | 'img';
 }
+
+export interface Video {
+  id: string;
+  title?: string | undefined;
+  sources: Media[];
+  caption?: string | undefined;
+  showCaption?: boolean | undefined;
+  tag: 'video';
+}
+
+export type Slide = Picture | Video; 
+
+
+
 
 export interface Info {
   label: string; 
@@ -89,5 +105,5 @@ export interface Project {
   link?: string;
   source?: string;
   cover?: Cover;
-  gallery?: Picture[];
+  gallery?: Slide[];
 }

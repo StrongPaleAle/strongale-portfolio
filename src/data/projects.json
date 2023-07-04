@@ -32,27 +32,75 @@
             "id": "strongale-cover",
             "sources": [
                 {
-                    "src": "/storage/media/strongale_cover-480-static.webp",
+                    "src": "/storage/media/covers/strongale_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motione: reduce)"
                 },
                 {
-                    "src": "/storage/media/strongale_cover.jpg",
+                    "src": "/storage/media/covers/strongale_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/strongale_cover-400.webp",
+                    "src": "/storage/media/covers/strongale_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "strongale-cover-img",
-                "src": "/storage/media/strongale_cover-400.gif",
+                "src": "/storage/media/covers/strongale_cover-400.gif",
                 "alt": "StrongAle rotating logo"
             },
-            "overlay": "/storage/media/strongale_cover-480-static.webp"
-        }
+            "tag": "picture",
+            "overlay": "/storage/media/covers/strongale_cover-480-static.webp"
+        },
+        "gallery": [
+            {
+                "id": "strongale-slide-1",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/strongale/logo_slide_1.svg",
+                        "type": "image/svg+xml"
+                    }
+                ],
+                "img": {
+                    "id": "strongale-slide-1-img",
+                    "src": "/storage/media/galleries/strongale/logo_slide_1.png",
+                    "alt": "Infographic: The Logo, Fusion - letter A + letter F resulting in a symbol of the two letters with a overlapping leg"
+                },
+                "tag": "picture"
+            },
+            {
+                "id": "strongale-slide-2",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/strongale/logo_slide_2.svg",
+                        "type": "image/svg+xml"
+                    }
+                ],
+                "img": {
+                    "id": "strongale-slide-2-img",
+                    "src": "/storage/media/galleries/strongale/logo_slide_2.png",
+                    "alt": "Infographic: The Logo, Rotation - The resulting symbol is rotated -135°"
+                },
+                "tag": "picture"
+            },
+            {
+                "id": "strongale-slide-3",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/strongale/logo_slide_3.svg",
+                        "type": "image/svg+xml"
+                    }
+                ],
+                "img": {
+                    "id": "strongale-slide-3-img",
+                    "src": "/storage/media/galleries/strongale/logo_slide_3.png",
+                    "alt": "Infographic: The Logo, Finishing: the rotated symbol is square cropped and the corners are rounded"
+                },
+                "tag": "picture"
+            }
+        ]
         
     },
     {
@@ -104,28 +152,127 @@
             "id": "sotherga-cover",
             "sources": [
                 {
-                    "src": "/storage/media/sotherga_cover-480-static.webp",
+                    "src": "/storage/media/covers/sotherga_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/sotherga_cover.jpg",
+                    "src": "/storage/media/covers/sotherga_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/sotherga_cover-400.webp",
+                    "src": "/storage/media/covers/sotherga_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "sotherga-cover-img",
-                "src": "/storage/media/sotherga_cover-400.gif",
+                "src": "/storage/media/covers/sotherga_cover-400.gif",
                 "alt": "Sotherga website hompage animation"
                 
             },
-            "overlay": "/storage/media/sotherga_cover-480-static.webp"
-        }
+            "tag": "picture",
+            "overlay": "/storage/media/covers/sotherga_cover-480-static.webp"
+        },
+        "gallery": [
+            {
+                "id": "sotherga-slide-cover",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_cover.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_cover.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga website homepage: Cover, Therapeutic areas preview horizontal scroll, imperfection tap and blemish preview open",
+                "showCaption": false
+            },
+            {
+                "id": "sotherga-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga website homepage scrolling: Cover, Imperfections buttons, Therapeutic areas preview, survey banner, journal preview, clinic banner, doctors, press and footer",
+                "showCaption": false
+            },
+            {
+                "id": "sotherga-imperfection",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_imperfection.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_imperfection.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga website imperfection detail scrolling: Title, preview photo, description, imperfection's treatments list, whatsapp call to action, imperfection's articles, imperfection's doctors, and footer",
+                "showCaption": false
+            },
+            {
+                "id": "sotherga-therapeutic-area",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_area.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_area.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga website Therapeutic area detail scrolling: Title, subtitle, preview photo, description, Therapeutic area's treatments sorted by type, whatsapp call to action, survey banner, Therapeutic area's articles, Therapeutic area's doctors, and footer",
+                "showCaption": false
+            },
+            {
+                "id": "sotherga-treatment",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_treatment.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_treatment.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga website Treatment detail scrolling: First section 2 columns layout (Left: Title, subtitle, description. Right column: preview photo, treatment's details), Treatment's steps, Treatment's doctors, whatsapp call to action, survey banner, related Treatments, and footer",
+                "showCaption": false
+            },
+            {
+                "id": "sotherga-shop",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_shop.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_shop.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga shop scrolling: Title(Medical skincare), filters(Imperfection, Skin, Type), brand select, first 4 products, survey banner, products list, scrolling to top, brand select dropdown opening and selection. Lading screen. Brand's page, title, brand description, filters and brand's selection, brand products list. Click on a product, loading screen. Product Detail: Cover with product's details and add to cart button, product image on the right. Product description, survey banner, product's gallery, ingredients dropdown, about the brand. Scroll on top, add to cart button click, cart window opening (product summary, total price, checkout button), click on checkout, loading screen, checkout page on two columns (Left:order summary, add a coupon. Right: checkout form).",
+                "showCaption": false
+            }
+        ]
     },
     {
         "id": 3,
@@ -167,27 +314,28 @@
             "id": "angry-scientist-cover",
             "sources": [
                 {
-                    "src": "/storage/media/angry-scientist_cover-480-static.webp",
+                    "src": "/storage/media/covers/angry-scientist_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/angry-scientist_cover.jpg",
+                    "src": "/storage/media/covers/angry-scientist_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/angry-scientist_cover-400.webp",
+                    "src": "/storage/media/covers/angry-scientist_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "angry-scientist-cover-img",
-                "src": "/storage/media/angry-scientist_cover-400.gif",
+                "src": "/storage/media/covers/angry-scientist_cover-400.gif",
                 "alt": "Angry Scientist website hompage animation"
                 
             },
-            "overlay": "/storage/media/angry-scientist_cover-480-static.webp"
+            "tag": "picture",
+            "overlay": "/storage/media/covers/angry-scientist_cover-480-static.webp"
         }
     },
     {
@@ -236,27 +384,28 @@
             "id": "full-cover",
             "sources": [
                 {
-                    "src": "/storage/media/full_cover-480-static.webp",
+                    "src": "/storage/media/covers/full_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/full_cover.jpg",
+                    "src": "/storage/media/covers/full_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/full_cover-400.webp",
+                    "src": "/storage/media/covers/full_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "ufoplast-cover-img",
-                "src": "/storage/media/full_cover-400.gif",
+                "src": "/storage/media/covers/full_cover-400.gif",
                 "alt": "Full website hompage animation"
                 
             },
-            "overlay": "/storage/media/full_cover-480-static.webp"
+            "tag": "picture",
+            "overlay": "/storage/media/covers/full_cover-480-static.webp"
         }
     },
     {
@@ -304,27 +453,28 @@
             "id": "ufoplast-cover",
             "sources": [
                 {
-                    "src": "/storage/media/ufoplast_cover-480-static.webp",
+                    "src": "/storage/media/covers/ufoplast_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/ufoplast_cover.jpg",
+                    "src": "/storage/media/covers/ufoplast_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/ufoplast_cover-400.webp",
+                    "src": "/storage/media/covers/ufoplast_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "ufoplast-cover-img",
-                "src": "/storage/media/ufoplast_cover-400.gif",
+                "src": "/storage/media/covers/ufoplast_cover-400.gif",
                 "alt": "Ufoplast website hompage animation"
                 
             },
-            "overlay": "/storage/media/ufoplast_cover-480-static.webp"
+            "tag": "picture",
+            "overlay": "/storage/media/covers/ufoplast_cover-480-static.webp"
         }
     },
     {
@@ -358,27 +508,28 @@
             "id": "ald-cover",
             "sources": [
                 {
-                    "src": "/storage/media/ald_cover-480-static.webp",
+                    "src": "/storage/media/covers/ald_cover-480-static.webp",
                     "type": "image/webp",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/ald_cover.jpg",
+                    "src": "/storage/media/covers/ald_cover.jpg",
                     "type": "image/jpg",
                     "media": "(prefers-reduced-motion: reduce)"
                 },
                 {
-                    "src": "/storage/media/ald_cover-400.webp",
+                    "src": "/storage/media/covers/ald_cover-400.webp",
                     "type": "image/webp"
                 }
             ],
             "img": {
                 "id": "ald-cover-img",
-                "src": "/storage/media/ald_cover-400.gif",
+                "src": "/storage/media/covers/ald_cover-400.gif",
                 "alt": "ALD website hompage animation"
                 
             },
-            "overlay": "/storage/media/ald_cover-480-static.webp"
+            "tag": "picture",
+            "overlay": "/storage/media/covers/ald_cover-480-static.webp"
         }
     },
     {
@@ -409,7 +560,34 @@
         ],
         "content": "<p>My Tunnel of lo(l/n)eliness is one of my main Art projects during my Net Art and Digital Cultures specialisation. <br>It's a tunnel-like collection of all my (now abandoned) Tumblr blog posts. <br>My first experience with Three.js and weird UXs. It also works in VR, and I exhibited it at the annual exhibition of the Academy of Fine Arts of Carrara.</p>",
         "subtitle": "The right way to enjoy the web fun!",
-        "link": "https://mytunnel.strongale.it/"
+        "link": "https://mytunnel.strongale.it/",
+        "cover": {
+            "id": "mytunnel-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/covers/tunnel_cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/covers/tunnel_cover.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/covers/tunnel_cover-480.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "ald-cover-img",
+                "src": "/storage/media/covers/tunnel_cover-400.gif",
+                "alt": "My tunnel of lo(l/n)eliness starting screen"
+                
+            },
+            "tag": "picture",
+            "overlay": "/storage/media/covers/tunnel_cover-480-static.webp"
+        }
     }
 ]
     
