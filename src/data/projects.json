@@ -271,6 +271,22 @@
                 "tag": "video",
                 "caption": "Sotherga shop scrolling: Title(Medical skincare), filters(Imperfection, Skin, Type), brand select, first 4 products, survey banner, products list, scrolling to top, brand select dropdown opening and selection. Lading screen. Brand's page, title, brand description, filters and brand's selection, brand products list. Click on a product, loading screen. Product Detail: Cover with product's details and add to cart button, product image on the right. Product description, survey banner, product's gallery, ingredients dropdown, about the brand. Scroll on top, add to cart button click, cart window opening (product summary, total price, checkout button), click on checkout, loading screen, checkout page on two columns (Left:order summary, add a coupon. Right: checkout form).",
                 "showCaption": false
+            },
+            {
+                "id": "sotherga-funnel",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_funnel.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/sotherga/sotherga_funnel.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Sotherga skincare survey: Acceptance and opening questions, skin tone color picker. The background change color based on the skin tone selected. Interactive skin type questions and imperfection questions (a face appears in background and some details changes following the answers), skin routine questions (commonly used skincare products type selection).",
+                "showCaption": false
             }
         ]
     },
@@ -336,7 +352,73 @@
             },
             "tag": "picture",
             "overlay": "/storage/media/covers/angry-scientist_cover-480-static.webp"
-        }
+        }, 
+        "gallery": [
+            {
+                "id": "angry-scientist-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry-scientist_home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry-scientist_home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Angry Scientist website homepage: A chat style survey, for pinpoint the type conspiracy the user is dealing with. At the end of the survey, the website provides some gif images and helpful links to counter that conspiracy theory (next slide)",
+                "showCaption": false
+            },
+            {
+                "id": "angry-scientist-result",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry_scientists_result.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry_scientists_result.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Angry Scientist website result: Two columns layout: Left: gif images slider with sharing buttons. Right: Title, description, helpful links and button for starting a new survey.",
+                "showCaption": false
+            },
+            {
+                "id": "angry-scientist-gallery",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry_scientists_gallery.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry_scientists_gallery.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Angry Scientist website gallery: Title(educate the internet). Two columns layout: Left: filters. Right: gif images grid.",
+                "showCaption": false
+            },
+            {
+                "id": "angry-scientist-about",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/angry_scientists/angry_scientists_about.webp",
+                        "type": "image/webp"
+                    }
+                ],
+                "img": {
+                    "id": "angry-scientist-about-img",
+                    "src": "/storage/media/covers/angry_scientists_about.jpg",
+                    "alt": "Angry Scientist website about page"
+                    
+                },
+                "tag": "picture"
+            }
+        ]
     },
     {
         "id": 4,
@@ -399,14 +481,32 @@
                 }
             ],
             "img": {
-                "id": "ufoplast-cover-img",
+                "id": "full-cover-img",
                 "src": "/storage/media/covers/full_cover-400.gif",
                 "alt": "Full website hompage animation"
                 
             },
             "tag": "picture",
             "overlay": "/storage/media/covers/full_cover-480-static.webp"
-        }
+        }, 
+        "gallery": [
+            {
+                "id": "full-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/full/full_home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/full/full_home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "FULL website homepage scrolling: Header with logo and menu, subtitle, latest in research slider, latest news marquee, Upcoming events section, latest rear slider, latest multimedia section, and footer",
+                "showCaption": false
+            }
+        ]
     },
     {
         "id": 5,
