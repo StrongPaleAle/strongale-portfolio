@@ -169,7 +169,7 @@
             "img": {
                 "id": "sotherga-cover-img",
                 "src": "/storage/media/covers/sotherga_cover-400.gif",
-                "alt": "Sotherga website hompage animation"
+                "alt": "Sotherga hompage animation"
                 
             },
             "tag": "picture",
@@ -189,7 +189,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga website homepage: Cover, Therapeutic areas preview horizontal scroll, imperfection tap and blemish preview open",
+                "caption": "Sotherga homepage: Cover, Therapeutic areas preview horizontal scroll, imperfection tap and blemish preview open",
                 "showCaption": false
             },
             {
@@ -205,7 +205,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga website homepage scrolling: Cover, Imperfections buttons, Therapeutic areas preview, survey banner, journal preview, clinic banner, doctors, press and footer",
+                "caption": "Sotherga homepage scrolling: Cover, Imperfections buttons, Therapeutic areas preview, survey banner, journal preview, clinic banner, doctors, press and footer",
                 "showCaption": false
             },
             {
@@ -221,7 +221,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga website imperfection detail scrolling: Title, preview photo, description, imperfection's treatments list, whatsapp call to action, imperfection's articles, imperfection's doctors, and footer",
+                "caption": "Sotherga imperfection detail scrolling: Title, preview photo, description, imperfection's treatments list, whatsapp call to action, imperfection's articles, imperfection's doctors, and footer",
                 "showCaption": false
             },
             {
@@ -237,7 +237,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga website Therapeutic area detail scrolling: Title, subtitle, preview photo, description, Therapeutic area's treatments sorted by type, whatsapp call to action, survey banner, Therapeutic area's articles, Therapeutic area's doctors, and footer",
+                "caption": "Sotherga Therapeutic area detail scrolling: Title, subtitle, preview photo, description, Therapeutic area's treatments sorted by type, whatsapp call to action, survey banner, Therapeutic area's articles, Therapeutic area's doctors, and footer",
                 "showCaption": false
             },
             {
@@ -253,7 +253,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga website Treatment detail scrolling: First section 2 columns layout (Left: Title, subtitle, description. Right column: preview photo, treatment's details), Treatment's steps, Treatment's doctors, whatsapp call to action, survey banner, related Treatments, and footer",
+                "caption": "Sotherga Treatment detail scrolling: First section 2 columns layout (Left: Title, subtitle, description. Right column: preview photo, treatment's details), Treatment's steps, Treatment's doctors, whatsapp call to action, survey banner, related Treatments, and footer",
                 "showCaption": false
             },
             {
@@ -347,7 +347,7 @@
             "img": {
                 "id": "angry-scientist-cover-img",
                 "src": "/storage/media/covers/angry-scientist_cover-400.gif",
-                "alt": "Angry Scientist website hompage animation"
+                "alt": "Angry Scientists homepage animation"
                 
             },
             "tag": "picture",
@@ -367,7 +367,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientist website homepage: A chat style survey, for pinpoint the type conspiracy the user is dealing with. At the end of the survey, the website provides some gif images and helpful links to counter that conspiracy theory (next slide)",
+                "caption": "Angry Scientists homepage: A chat style survey, for pinpoint the type conspiracy the user is dealing with. At the end of the survey, the website provides some gif images and helpful links to counter that conspiracy theory (next slide)",
                 "showCaption": false
             },
             {
@@ -383,7 +383,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientist website result: Two columns layout: Left: gif images slider with sharing buttons. Right: Title, description, helpful links and button for starting a new survey.",
+                "caption": "Angry Scientists result: Two columns layout: Left: gif images slider with sharing buttons. Right: Title, description, helpful links and button for starting a new survey.",
                 "showCaption": false
             },
             {
@@ -399,7 +399,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientist website gallery: Title(educate the internet). Two columns layout: Left: filters. Right: gif images grid.",
+                "caption": "Angry Scientists gallery: Title(educate the internet). Two columns layout: Left: filters. Right: gif images grid.",
                 "showCaption": false
             },
             {
@@ -413,7 +413,7 @@
                 "img": {
                     "id": "angry-scientist-about-img",
                     "src": "/storage/media/covers/angry_scientists_about.jpg",
-                    "alt": "Angry Scientist website about page"
+                    "alt": "Angry Scientists about page"
                     
                 },
                 "tag": "picture"
@@ -483,7 +483,7 @@
             "img": {
                 "id": "full-cover-img",
                 "src": "/storage/media/covers/full_cover-400.gif",
-                "alt": "Full website hompage animation"
+                "alt": "Full website homepage animation"
                 
             },
             "tag": "picture",
@@ -503,7 +503,71 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL website homepage scrolling: Header with logo and menu, subtitle, latest in research slider, latest news marquee, Upcoming events section, latest rear slider, latest multimedia section, and footer",
+                "caption": "FULL homepage scrolling: Header with logo and menu, subtitle, latest in research slider, latest news marquee, Upcoming events section, latest rear slider, latest multimedia section, and footer",
+                "showCaption": false
+            },
+            {
+                "id": "full-research",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/full/full_research.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/full/full_research.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "FULL Research page: Header with logo and menu,Title(Research at FULL) subtitle, latest in research slider, Filters, Research grid.",
+                "showCaption": false
+            },
+            {
+                "id": "full-reader",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/full/full_reader.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/full/full_reader.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "FULL Reader detail page: Header with logo and menu,Title subtitle, two column description latest in research slider, Filters, Research grid.",
+                "showCaption": false
+            },
+            {
+                "id": "full-reader",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/full/full_reader.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/full/full_reader.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "FULL Reader detail page scrolling: (blue text on white background) Header with logo and menu,Title and subtitle, two column description, cover and details, download link, images gallery, back to reader link, and footer.",
+                "showCaption": false
+            },
+            {
+                "id": "full-podcast",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/full/full_podcast.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/full/full_podcast.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "FULL website Talk & Media detail page scrolling: (white text on black background) Header with logo and menu, Title and speaker name, two column layout (Left: Spotify widget. Right: Date, description, details and sharing links), related Media, back to T&M link, and footer.",
                 "showCaption": false
             }
         ]
@@ -570,12 +634,62 @@
             "img": {
                 "id": "ufoplast-cover-img",
                 "src": "/storage/media/covers/ufoplast_cover-400.gif",
-                "alt": "Ufoplast website hompage animation"
+                "alt": "Ufoplast hompage animation"
                 
             },
             "tag": "picture",
             "overlay": "/storage/media/covers/ufoplast_cover-480-static.webp"
-        }
+        },
+        "gallery": [
+            {
+                "id": "ufoplast-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Ufoplast homepage scrolling: Header with logo and menus, cover, replica plastics banner and e-bike banner, new products banner,highlight products, adult clothing banner, new products, Kids gear banner, snow banner and vintage plastics banner, footer and newsletter subscription form.",
+                "showCaption": false
+            },
+            {
+                "id": "ufoplast-models",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_model_search.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_model_search.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Ufoplast website homepage scrolling: Header with logo and menus, Title (Replica plastics), instructions (Select the brand, model and year of your bike to see the full list of compatible plastics), Three select inputs (Brand, Model, Year), Brand's logos grid, and click on Honda logo. New title (Replica plastics - Honda), a red motorbike image replace the brand's logos grid, click and selection of model and year. Shop page with all compatible plastics.",
+                "showCaption": false
+            },
+            {
+                "id": "ufoplast-product-selection",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_product_selection.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_product_selection.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Ufoplast Protection page: click on the protection link in the header menu, menu opening animation, click on Adult - Chest Protectors link. Chest protectors category page: Header with logo and menus, Title, two columns layout (Left: categories and filters. Right: Products grid).  ",
+                "showCaption": false
+            }
+        ]
     },
     {
         "id": 6,
