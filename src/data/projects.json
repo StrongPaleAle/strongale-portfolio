@@ -412,7 +412,7 @@
                 ],
                 "img": {
                     "id": "angry-scientist-about-img",
-                    "src": "/storage/media/covers/angry_scientists_about.jpg",
+                    "src": "/storage/media/galleries/angry_scientists/angry_scientists_about.jpg",
                     "alt": "Angry Scientists about page"
                     
                 },
@@ -686,7 +686,23 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Ufoplast Protection page: click on the protection link in the header menu, menu opening animation, click on Adult - Chest Protectors link. Chest protectors category page: Header with logo and menus, Title, two columns layout (Left: categories and filters. Right: Products grid).  ",
+                "caption": "Ufoplast Protection page: click on the protection link in the header menu, menu opening animation, and click on the Adult - Chest Protectors link. Chest protectors category page: Header with logo and menus, Title, two columns layout (Left: categories and filters. Right: Products grid). Click on a product.",
+                "showCaption": false
+            },
+            {
+                "id": "ufoplast-journey",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_customer_journey.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/ufoplast/ufoplast_customer_journey.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "Ufoplast Product detail: Header with logo and menus, two columns layout (Left: breadcrumbs, title, share buttons, add to favourite button, description, and price. Right: Image gallery with zoom on hover). Add to cart button, technical data accordion, related products grid. Click on add to cart button, success overlay with product summary, cart summary, continue shopping button, and proceed to checkout button. Click on the checkout button, Shopping cart page: Header with logo and menus, two-column layout (Left: product summaries, continue shopping link. Right: Order summary, checkout button), Paypal button, footer and newsletter subscription form. Click on the checkout button, Checkout page: Header with logo and menus, two-column layout (Left: Checkout form. Right: Order summary).",
                 "showCaption": false
             }
         ]
@@ -744,7 +760,25 @@
             },
             "tag": "picture",
             "overlay": "/storage/media/covers/ald_cover-480-static.webp"
-        }
+        },
+        "gallery": [
+            {
+                "id": "ald-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/ald/ald_home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/ald/ald_home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "ALD homepage scrolling: Cover with logo, menu, random image, and catchphrase. Mission, Board members, Testimonials, blog, contact form, donations info, opening time, legal info, Lucca's Structure of Diabetes and Metabolic Diseases info and staff.",
+                "showCaption": false
+            }
+        ]
     },
     {
         "id": 7,
@@ -772,7 +806,7 @@
             "Copywriting",
             "VR"
         ],
-        "content": "<p>My Tunnel of lo(l/n)eliness is one of my main Art projects during my Net Art and Digital Cultures specialisation. <br>It's a tunnel-like collection of all my (now abandoned) Tumblr blog posts. <br>My first experience with Three.js and weird UXs. It also works in VR, and I exhibited it at the annual exhibition of the Academy of Fine Arts of Carrara.</p>",
+        "content": "<p>My Tunnel of lo(l/n)eliness is one of my main Art projects during my Net Art and Digital Cultures specialisation. <br>It's a tunnel-like collection of all my (now abandoned) Tumblr blog posts. <br>My first experience with Three.js and weird UXs. It also works in VR, and I exhibited it at the annual exhibition of the Academy of Fine Arts of Carrara. On the website there is a little easter egg. A proof of how easily a bug can become a feature ;)</p>",
         "subtitle": "The right way to enjoy the web fun!",
         "link": "https://mytunnel.strongale.it/",
         "cover": {
@@ -801,7 +835,89 @@
             },
             "tag": "picture",
             "overlay": "/storage/media/covers/tunnel_cover-480-static.webp"
-        }
+        },
+        "gallery": [
+            {
+                "id": "mytunnel-short",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/mytunnel_short.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/mytunnel/mytunnel_short.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "My Tunnel of lo(l/n)eliness: A tunnel simulated with a radial gradient and a moving pinkish grid as floor. On the top right of the screen, three icons, full-screen, audio and info. At the centre of the screen: Title( My Tunnel of lo(l/n)eliness), content (Choose an option, Virtual Reality button, standard button. Click on the standard button conte changes: Are you ready? Start button, headphone advice, and start without the sound link. Click on start. All the text at the centre disappears. Time ellipsis. Many images are moving towards the screen).",
+                "showCaption": false
+            },
+            {
+                "id": "mytunnel-info",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/mytunnel_madness.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/mytunnel/mytunnel_madness.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "My Tunnel of lo(l/n)eliness: Starting screen (see previous video for description). Click on the info button. A slide-in popup appears from left: Title (My Tunnel of lo(l/n)eliness), project description, VR tutorial infographic, closing text, and search form. Click on a link on the closing text (madness). The popup slides out to the left. A new page appears with a lot of images(the number increase over time) running towards the screen.",
+                "showCaption": false
+            },
+            {
+                "id": "mytunnel-sculpture",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/tunnel_full_sculpture.webp",
+                        "type": "image/webp"
+                    }
+                ],
+                "img": {
+                    "id": "mytunnel-sculpture-img",
+                    "src": "/storage/media/galleries/mytunnel/tunnel_full_sculpture.jpg",
+                    "alt": "My Tunnel of lo(l/n)eliness exhibition at the Academy of Fine Arts of Carrara. A statue of a woman sitting cross-legged, looking towards the void, wearing a cardboard visor and paper sheets scattered between her legs. \"Try me!\" is written on the visor with a marker."
+                    
+                },
+                "tag": "picture"
+            },
+            {
+                "id": "mytunnel-sculpture-closeup",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/tunnel_sculpture.webp",
+                        "type": "image/webp"
+                    }
+                ],
+                "img": {
+                    "id": "mytunnel-closeup-img",
+                    "src": "/storage/media/galleries/mytunnel/tunnel_sculpture.jpg",
+                    "alt": "Close-up picture of a statue's face, smiling, wearing a cardboard visor. \"Try me!\" is written on the visor with a marker."
+                    
+                },
+                "tag": "picture"
+            },
+            {
+                "id": "mytunnel-flyers",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/tunnel_flyer.webp",
+                        "type": "image/webp"
+                    }
+                ],
+                "img": {
+                    "id": "mytunnel-flyers-img",
+                    "src": "/storage/media/galleries/mytunnel/tunnel_flyer.jpg",
+                    "alt": "Scattered sheets of paper containing the project description, near the hand of a statue."
+                    
+                },
+                "tag": "picture"
+            }
+        ]
     }
 ]
     
