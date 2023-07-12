@@ -66,7 +66,7 @@
                 "img": {
                     "id": "strongale-slide-1-img",
                     "src": "/storage/media/galleries/strongale/logo_slide_1.png",
-                    "alt": "Infographic: The Logo, Fusion - letter A + letter F resulting in a symbol of the two letters with a overlapping leg"
+                    "alt": "Infographic: The Logo, Fusion - letter A + letter F resulting in a symbol of the two letters with an overlapping leg."
                 },
                 "tag": "picture"
             },
@@ -96,7 +96,7 @@
                 "img": {
                     "id": "strongale-slide-3-img",
                     "src": "/storage/media/galleries/strongale/logo_slide_3.png",
-                    "alt": "Infographic: The Logo, Finishing: the rotated symbol is square cropped and the corners are rounded"
+                    "alt": "Infographic: The Logo, Finishing: the rotated symbol is square cropped, and the corners are rounded."
                 },
                 "tag": "picture"
             }
@@ -189,7 +189,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga homepage: Cover, Therapeutic areas preview horizontal scroll, imperfection tap and blemish preview open",
+                "caption": "Sotherga homepage: Cover, Therapeutic areas preview horizontal scroll, imperfection tap and blemish preview open.",
                 "showCaption": false
             },
             {
@@ -205,7 +205,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga homepage scrolling: Cover, Imperfections buttons, Therapeutic areas preview, survey banner, journal preview, clinic banner, doctors, press and footer",
+                "caption": "Sotherga homepage scrolling: Cover, Imperfections buttons, Therapeutic areas preview, survey banner, journal preview, clinic banner, doctors, press and footer.",
                 "showCaption": false
             },
             {
@@ -221,7 +221,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga imperfection detail scrolling: Title, preview photo, description, imperfection's treatments list, whatsapp call to action, imperfection's articles, imperfection's doctors, and footer",
+                "caption": "Sotherga imperfection detail scrolling: Title, preview photo, description, related treatments list, WhatsApp call to action, related articles, related specialists, and footer.",
                 "showCaption": false
             },
             {
@@ -237,7 +237,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga Therapeutic area detail scrolling: Title, subtitle, preview photo, description, Therapeutic area's treatments sorted by type, whatsapp call to action, survey banner, Therapeutic area's articles, Therapeutic area's doctors, and footer",
+                "caption": "Sotherga Therapeutic area detail scrolling: Title, subtitle, preview photo, description, Therapeutic area's treatments sorted by type, WhatsApp call to action, survey banner, Therapeutic area's articles, Therapeutic area's doctors, and footer.",
                 "showCaption": false
             },
             {
@@ -253,7 +253,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga Treatment detail scrolling: First section 2 columns layout (Left: Title, subtitle, description. Right column: preview photo, treatment's details), Treatment's steps, Treatment's doctors, whatsapp call to action, survey banner, related Treatments, and footer",
+                "caption": "Sotherga Treatment detail scrolling: First section 2 columns layout (Left: Title, subtitle, description. Right column: preview photo, treatment details), Treatment's steps, Treatment's doctors, whatsapp call to action, survey banner, related Treatments, and footer.",
                 "showCaption": false
             },
             {
@@ -269,7 +269,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga shop scrolling: Title(Medical skincare), filters(Imperfection, Skin, Type), brand select, first 4 products, survey banner, products list, scrolling to top, brand select dropdown opening and selection. Lading screen. Brand's page, title, brand description, filters and brand's selection, brand products list. Click on a product, loading screen. Product Detail: Cover with product's details and add to cart button, product image on the right. Product description, survey banner, product's gallery, ingredients dropdown, about the brand. Scroll on top, add to cart button click, cart window opening (product summary, total price, checkout button), click on checkout, loading screen, checkout page on two columns (Left:order summary, add a coupon. Right: checkout form).",
+                "caption": "Sotherga shop scrolling: Title(Medical skincare), filters(Imperfection, Skin, Type), brand select, first 4 products, survey banner, products list, scrolling to top, brand select dropdown opening and selection. Lading screen. Brand's page, title, brand description, filters and brand's selection, brand products list. Click on a product, loading screen. Product Detail: Cover with product's details and add to cart button, product image on the right. Product description, survey banner, product's gallery, ingredients dropdown, about the brand. Scroll on top, add to cart button click, cart window opening (product summary, total price, checkout button), click on checkout, loading screen, checkout page on two-column (Left:order summary, add a coupon. Right: checkout form).",
                 "showCaption": false
             },
             {
@@ -285,7 +285,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Sotherga skincare survey: Acceptance and opening questions, skin tone color picker. The background change color based on the skin tone selected. Interactive skin type questions and imperfection questions (a face appears in background and some details changes following the answers), skin routine questions (commonly used skincare products type selection).",
+                "caption": "Sotherga skincare survey: Acceptance and opening questions, skin tone colour picker. The background change colour based on the skin tone selected. Interactive skin type and imperfection questions (a face appears in the background, and some details change following the answers), skin routine questions (commonly used skincare products type selection).",
                 "showCaption": false
             }
         ]
@@ -367,7 +367,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientists homepage: A chat style survey, for pinpoint the type conspiracy the user is dealing with. At the end of the survey, the website provides some gif images and helpful links to counter that conspiracy theory (next slide)",
+                "caption": "Angry Scientists homepage: A chat-style survey to pinpoint the type of conspiracy the user is dealing with. At the end of the survey the website provides some gif images and helpful links to counter that conspiracy theory (next slide).",
                 "showCaption": false
             },
             {
@@ -383,7 +383,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientists result: Two columns layout: Left: gif images slider with sharing buttons. Right: Title, description, helpful links and button for starting a new survey.",
+                "caption": "Angry Scientists result screen: two-column layout (Left: gif images slider with sharing buttons. Right: Title, description, helpful links and button for starting a new survey).",
                 "showCaption": false
             },
             {
@@ -399,7 +399,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Angry Scientists gallery: Title(educate the internet). Two columns layout: Left: filters. Right: gif images grid.",
+                "caption": "Angry Scientists gallery: Title(educate the internet). Two-column layout: Left: filters. Right: gif images grid.",
                 "showCaption": false
             },
             {
@@ -503,7 +503,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL homepage scrolling: Header with logo and menu, subtitle, latest in research slider, latest news marquee, Upcoming events section, latest rear slider, latest multimedia section, and footer",
+                "caption": "FULL homepage scrolling: Header with logo and menu, subtitle, latest in research slider, latest news marquee, Upcoming events section, latest rear slider, latest multimedia section, and footer.",
                 "showCaption": false
             },
             {
@@ -519,7 +519,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL Research page: Header with logo and menu,Title(Research at FULL) subtitle, latest in research slider, Filters, Research grid.",
+                "caption": "FULL Research page: Header with logo and menu, Title(Research at FULL) subtitle, latest in research slider, Filters, Research grid.",
                 "showCaption": false
             },
             {
@@ -535,7 +535,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL Reader detail page: Header with logo and menu,Title subtitle, two column description latest in research slider, Filters, Research grid.",
+                "caption": "FULL Reader detail page: Header with logo and menu, Title subtitle, two-column description latest in research slider, Filters, Research grid.",
                 "showCaption": false
             },
             {
@@ -551,7 +551,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL Reader detail page scrolling: (blue text on white background) Header with logo and menu,Title and subtitle, two column description, cover and details, download link, images gallery, back to reader link, and footer.",
+                "caption": "FULL Reader detail page scrolling: (blue text on white background) Header with logo and menu, Title and subtitle, two-column description, cover and details, download link, images gallery, back to reader link, and footer.",
                 "showCaption": false
             },
             {
@@ -567,7 +567,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "FULL website Talk & Media detail page scrolling: (white text on black background) Header with logo and menu, Title and speaker name, two column layout (Left: Spotify widget. Right: Date, description, details and sharing links), related Media, back to T&M link, and footer.",
+                "caption": "FULL website Talk & Media detail page scrolling: (white text on black background) Header with logo and menu, Title and speaker name, two-column layout (Left: Spotify widget. Right: Date, description, details and sharing links), related Media, back to T&M link, and footer.",
                 "showCaption": false
             }
         ]
@@ -654,7 +654,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Ufoplast homepage scrolling: Header with logo and menus, cover, replica plastics banner and e-bike banner, new products banner,highlight products, adult clothing banner, new products, Kids gear banner, snow banner and vintage plastics banner, footer and newsletter subscription form.",
+                "caption": "Ufoplast homepage: Header with logo and menus, cover, replica plastics banner and e-bike banner, new products banner, highlight products, adult clothing banner, new products, Kids gear banner, snow banner and vintage plastics banner, footer and newsletter subscription form.",
                 "showCaption": false
             },
             {
@@ -670,7 +670,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Ufoplast website homepage scrolling: Header with logo and menus, Title (Replica plastics), instructions (Select the brand, model and year of your bike to see the full list of compatible plastics), Three select inputs (Brand, Model, Year), Brand's logos grid, and click on Honda logo. New title (Replica plastics - Honda), a red motorbike image replace the brand's logos grid, click and selection of model and year. Shop page with all compatible plastics.",
+                "caption": "Ufoplast Replica Plastics page: Header with logo and menus, Title (Replica plastics), instructions (Select the brand, model and year of your bike to see the full list of compatible plastics), Three select inputs (Brand, Model, Year), Brand's logos grid, and click on Honda logo. New title (Replica plastics - Honda), a red motorbike image replace the brand's logos grid, click and selection of model and year. Shop page with all compatible plastics.",
                 "showCaption": false
             },
             {
@@ -686,7 +686,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Ufoplast Protection page: click on the protection link in the header menu, menu opening animation, and click on the Adult - Chest Protectors link. Chest protectors category page: Header with logo and menus, Title, two columns layout (Left: categories and filters. Right: Products grid). Click on a product.",
+                "caption": "Ufoplast Protection page: click on the protection link in the header menu, menu opening animation, and click on the Adult - Chest Protectors link. Chest protectors category page: Header with logo and menus, Title, two-column layout (Left: categories and filters. Right: Products grid). Click on a product.",
                 "showCaption": false
             },
             {
@@ -702,7 +702,7 @@
                     }
                 ],
                 "tag": "video",
-                "caption": "Ufoplast Product detail: Header with logo and menus, two columns layout (Left: breadcrumbs, title, share buttons, add to favourite button, description, and price. Right: Image gallery with zoom on hover). Add to cart button, technical data accordion, related products grid. Click on add to cart button, success overlay with product summary, cart summary, continue shopping button, and proceed to checkout button. Click on the checkout button, Shopping cart page: Header with logo and menus, two-column layout (Left: product summaries, continue shopping link. Right: Order summary, checkout button), Paypal button, footer and newsletter subscription form. Click on the checkout button, Checkout page: Header with logo and menus, two-column layout (Left: Checkout form. Right: Order summary).",
+                "caption": "Ufoplast Product detail: Header with logo and menus, two-column layout (Left: breadcrumbs, title, share buttons, add to favourite button, description, and price. Right: Image gallery with zoom on hover). Add to cart button, technical data accordion, related products grid. Click on add to cart button, success overlay with product summary, cart summary, continue shopping button, and proceed to checkout button. Click on the checkout button, Shopping cart page: Header with logo and menus, two-column layout (Left: product summaries, continue shopping link. Right: Order summary, checkout button), Paypal button, footer and newsletter subscription form. Click on the checkout button, Checkout page: Header with logo and menus, two-column layout (Left: Checkout form. Right: Order summary).",
                 "showCaption": false
             }
         ]
@@ -913,6 +913,22 @@
                     "id": "mytunnel-flyers-img",
                     "src": "/storage/media/galleries/mytunnel/tunnel_flyer.jpg",
                     "alt": "Scattered sheets of paper containing the project description, near the hand of a statue."
+                    
+                },
+                "tag": "picture"
+            },
+            {
+                "id": "mytunnel-try",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/mytunnel/tunnel_try.webp",
+                        "type": "image/webp"
+                    }
+                ],
+                "img": {
+                    "id": "mytunnel-flyers-img",
+                    "src": "/storage/media/galleries/mytunnel/tunnel_try.jpg",
+                    "alt": "A girl's trying the VR experience. She is wearing and holding a cardboard visor with both hands."
                     
                 },
                 "tag": "picture"
