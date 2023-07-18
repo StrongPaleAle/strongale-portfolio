@@ -4,6 +4,7 @@ import { openDialog, closeDialog } from "../utils/utils";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
 import SingleInfo from "./blocks/SingleInfo.vue";
+import BlockGallery from "./blocks/BlockGallery.vue";
 const props = defineProps<{
     project: Partial<Project>;
     index: number;
@@ -21,7 +22,7 @@ const props = defineProps<{
         <div class="dialog__backdrop" @click="closeDialog(`project-${index}`)"></div>
         <div class="dialog__content">
             
-            <div class="overflow-y-hidden">
+            
                 <div class="dialog__body">
                     <div class="dialog__grid gap-em-2">
                         <header class="dialog__header | flex gap-em-2 justify-between">
@@ -53,23 +54,12 @@ const props = defineProps<{
                             <div class="content-text | flow lh-loose body-text" v-html="project.content"></div>
                         </div>
                         <div class="dialog__gallery">
-                            <div class="dialog__gallery__item">
-                                <img src="https://via.placeholder.com/800x600" alt="">
-                            </div>
-                            <div class="dialog__gallery__item">
-                                <img src="https://via.placeholder.com/800x600" alt="">
-                            </div>
-                            <div class="dialog__gallery__item">
-                                <img src="https://via.placeholder.com/800x600" alt="">
-                            </div>
-                            <div class="dialog__gallery__item">
-                                <img src="https://via.placeholder.com/800x600" alt="">
-                            </div>
+                            <BlockGallery :slides="project.gallery" />
                         </div>
                     </div>
                     
                 </div>
-            </div>
+            
             <footer class="dialog__links | flex gap-em-05 text-large">
                     
                 <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
