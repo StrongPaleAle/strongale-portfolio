@@ -54,7 +54,7 @@ const props = defineProps<{
                             <div class="content-text | flow lh-loose body-text" v-html="project.content"></div>
                         </div>
                         <div class="dialog__gallery">
-                            <BlockGallery :slides="project.gallery" />
+                            <BlockGallery :slides="project.gallery" :label="`${project.title} gallery`"/>
                         </div>
                     </div>
                     
