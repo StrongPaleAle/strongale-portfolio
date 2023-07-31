@@ -88,7 +88,7 @@
                 object-fit: cover;
                 
                 > *{
-                    transform: scale(0.5);
+                    transform: scale(0.95);
                     border-radius: inherit;
                     
                 }
@@ -97,7 +97,7 @@
            > *{
             transform: translateZ(0);
             border-radius: inherit;
-            opacity: 0.8;
+            //opacity: 0.8;
            }
            
         }

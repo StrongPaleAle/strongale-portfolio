@@ -27,17 +27,17 @@ const props = defineProps<{
                     <div class="dialog__grid gap-em-2">
                         <header class="dialog__header | flex gap-em-2 justify-between">
                             <div>
-                                <h2 class="dialog__title | text-2xl heading uppercase m-0" :id="`project-${index}_label`">
+                                <h2 class="dialog__title text-box | text-2xl heading uppercase m-0" :id="`project-${index}_label`" data-variant="accent-bg">
                                     {{ project.title }}
                                 </h2>
-                                <p v-if="project.subtitle" class="subtitle italic text-large">
+                                <p v-if="project.subtitle" class="subtitle italic text-large text-accent-color">
                                     {{ project.subtitle }}
                                 </p>
                             </div>
                             
                         </header>
                         <div class="dialog__info">
-                            <div v-if="project.infos" class="grid justify-between lh-tight text-large gap-em-05">
+                            <div v-if="project.infos" class="grid justify-between lh-tight text-large gap-em-15">
                                 <SingleInfo v-for="info in project.infos" :info="info"  />
                             <!-- <ProjectInfo v-if="project.year" :label="'Year'" :value="`${project.year}`" icon="schedule" />
                             

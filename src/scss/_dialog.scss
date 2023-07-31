@@ -152,6 +152,11 @@ body.modal-open{
         right: 1em;
         top: 1em;
     }
+    &__title{
+        padding-inline: 0.3em;
+        padding-block: 0.1em;
+        letter-spacing: 0;
+    }
 
     
 }

@@ -199,6 +199,7 @@
     
     &[data-variant*="accent-bg"]{
       --clippedbox-bg: var(--accent-color);
+      --clippedbox-color: var(--bg-heavy);
         
     }
     &[data-variant*="dark-bg"]{
