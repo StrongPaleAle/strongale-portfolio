@@ -239,5 +239,39 @@
       
     }
   }
+  .video-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    button{
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      .material-symbols-outlined{
+        padding: 0.1em;
+        border-radius: 50%;
+        background-color: var(--bg-heavy);
+        opacity: 0.8;
+        transition: opacity 0.2s ease-in-out;
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+    .indicator{
+      color: var(--bg-heavy);
+      opacity: 0.6;
+      .material-symbols-outlined{
+        font-size: 28px;
+      }
+      
+    }
+    
+  }
 
   
