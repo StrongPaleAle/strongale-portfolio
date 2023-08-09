@@ -73,7 +73,7 @@ onMounted(() => {
             },
             {
                 duration: 1,
-                scale: layerScale * 2,
+                scale: layerScale * 3,
                 rotation: layerRotation - 90,
                 ease: "none",
             });

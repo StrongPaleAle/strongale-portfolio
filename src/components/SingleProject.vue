@@ -8,7 +8,9 @@ import BlockGallery from "./blocks/BlockGallery.vue";
 const props = defineProps<{
     project: Partial<Project>;
     index: number;
-    totalProjects: number;  
+    totalProjects: number;
+    nextProject?: Partial<Project> | undefined;
+    prevProject?: Partial<Project> | undefined;  
 }>();
 
 </script>
@@ -17,9 +19,9 @@ const props = defineProps<{
     class="dialog"
     role="dialog"
     aria-modal="true"
-    :aria-labelledby="`project-${index}_label`" 
-    :id="`project-${index}`">
-        <div class="dialog__backdrop" @click="closeDialog(`project-${index}`)"></div>
+    :aria-labelledby="`project-${project.slug}_label`" 
+    :id="`project-${project.slug}`">
+        <div class="dialog__backdrop" @click="closeDialog(`project-${project.slug}`)"></div>
         <div class="dialog__content">
             
             
@@ -27,7 +29,7 @@ const props = defineProps<{
                     <div class="dialog__grid gap-em-2">
                         <header class="dialog__header | flex gap-em-2 justify-between">
                             <div>
-                                <h2 class="dialog__title text-box | text-2xl heading uppercase m-0" :id="`project-${index}_label`" data-variant="accent-bg">
+                                <h2 class="dialog__title text-box | text-2xl heading uppercase m-0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
                                     {{ project.title }}
                                 </h2>
                                 <p v-if="project.subtitle" class="subtitle italic text-large text-accent-color">
@@ -69,13 +71,13 @@ const props = defineProps<{
                 <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
                     View source
                 </IconLink>
-                <IconButton v-if="index > 0" @click="openDialog(`project-${index - 1}`)" icon="arrow_back">
+                <IconButton v-if="prevProject" @click="openDialog(`project-${prevProject.slug}`)" icon="arrow_back">
                     View previous project
                 </IconButton>
-                <IconButton v-if="index < totalProjects" @click="openDialog(`project-${index + 1}`)" icon="arrow_forward">
+                <IconButton v-if="nextProject" @click="openDialog(`project-${nextProject.slug}`)" icon="arrow_forward">
                     View next project
                 </IconButton>
-                <IconButton @click="closeDialog(`project-${index}`)" icon="close">
+                <IconButton @click="closeDialog(`project-${project.slug}`)" icon="close">
                     Close project
                 </IconButton>
                 

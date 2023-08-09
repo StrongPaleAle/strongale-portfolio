@@ -137,6 +137,8 @@ function toggleMouseTracking(element: any) {
             :project="project" 
             :index="index"
             :totalProjects="totalProjects"
+            :nextProject="projects[index + 1]"
+            :prevProject="projects[index - 1]"
         />
     </section>
 </template>
