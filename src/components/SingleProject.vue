@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
 import { Project } from "@/types";
-import { openDialog, closeDialog } from "../utils/utils";
+import { openDialog, closeDialog } from "../utils/dialog";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
 import SingleInfo from "./blocks/SingleInfo.vue";
@@ -12,6 +13,12 @@ const props = defineProps<{
     nextProject?: Partial<Project> | undefined;
     prevProject?: Partial<Project> | undefined;  
 }>();
+
+onMounted(() => {
+    if (window.location.hash === `#project-${props.project.slug}`) {
+        openDialog(`project-${props.project.slug}`);
+    }
+});
 
 </script>
 <template>
@@ -56,7 +63,7 @@ const props = defineProps<{
                             <div class="content-text | flow lh-loose body-text" v-html="project.content"></div>
                         </div>
                         <div class="dialog__gallery">
-                            <BlockGallery :slides="project.gallery" :label="`${project.title} gallery`"/>
+                            <BlockGallery :slides="project.gallery" :label="`${project.title} gallery`" :parentD="`project-${project.slug}`"/>
                         </div>
                     </div>
                     
@@ -71,12 +78,12 @@ const props = defineProps<{
                 <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
                     View source
                 </IconLink>
-                <IconButton v-if="prevProject" @click="openDialog(`project-${prevProject.slug}`)" icon="arrow_back">
+                <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject.slug}`)" icon="arrow_back">
                     View previous project
-                </IconButton>
-                <IconButton v-if="nextProject" @click="openDialog(`project-${nextProject.slug}`)" icon="arrow_forward">
+                </IconLink>
+                <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject.slug}`)" icon="arrow_forward">
                     View next project
-                </IconButton>
+                </IconLink>
                 <IconButton @click="closeDialog(`project-${project.slug}`)" icon="close">
                     Close project
                 </IconButton>

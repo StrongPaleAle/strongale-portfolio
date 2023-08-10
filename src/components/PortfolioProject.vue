@@ -2,7 +2,7 @@
 import {Project} from "@/types";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
-import {openDialog} from "../utils/utils";
+import {openDialog} from "../utils/dialog";
 import {computed} from "vue";
 
 const props = defineProps<{
