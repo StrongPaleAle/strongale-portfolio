@@ -60,7 +60,7 @@ onMounted(() => {
                         </div>
             
                         <div class="dialog__description">
-                            <div class="content-text | flow lh-loose body-text" v-html="project.content"></div>
+                            <div class="content-text | flow lh-loose" v-html="project.content"></div>
                         </div>
                         <div class="dialog__gallery">
                             <BlockGallery :slides="project.gallery" :label="`${project.title} gallery`" :parentD="`project-${project.slug}`"/>
