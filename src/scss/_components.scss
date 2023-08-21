@@ -186,6 +186,63 @@
     
     
   }
+  .clip-card{
+    &::before{
+      content: "";
+      position: absolute;
+      inset: -1px -3px -3px -1px;
+      z-index: -1;
+      border-radius: var(--clip-unit);
+      //filter: blur(0.75em);
+      background-color: var(--bg-heavy);
+      background-image: conic-gradient(
+          from var(--gradient-angle), 
+          var(--accent-light-80), 
+          var(--accent-color-80),
+          var(--accent-dark-40),
+          var(--accent-color-80),
+          var(--accent-light-80)
+          );
+      @extend .clip-right-bottom;
+  }
+  &::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 5px;
+      background-color: var(--bg-heavy);
+      background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
+      @extend .clip-right-bottom;
+  }
+}
+.clip-ui{
+  isolation: isolate;
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 5px 0 7px;
+    @extend .clip-right-bottom; 
+  }
+  &::before{
+      background-image: conic-gradient(
+          from var(--gradient-angle), 
+          var(--accent-light-80), 
+          var(--accent-color-80),
+          var(--accent-dark-40),
+          var(--accent-color-80),
+          var(--accent-light-80)
+          );
+      z-index: -2;
+      inset: -1px -3px -3px -1px;
+  }
+  &::after{
+      background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
+      background-color: var(--bg-heavy);
+      z-index: -1;
+  }
+}
   
   .text-box{
     --clip-unit: 0.125em;

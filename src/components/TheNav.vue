@@ -2,7 +2,9 @@
     <nav class="main-nav">
         <div class="main-nav__logo">
             <a href="/" class="main-nav__logo-link">
-                <span class="masked-logo"></span>
+                <span class="logo-wrapper">
+                    <span class="masked-logo"></span>
+                </span>
                 <span class="main-nav__logo-text">Strong<span class="text-accent-color">Ale</span></span>
             </a>
         </div>

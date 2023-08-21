@@ -23,9 +23,10 @@
         --y: 0;
         --scale:0;
         --em-spacing: 1em;
-
+        --zIndex: 1;
         width: 100%;
-        
+        z-index: var(--zIndex);
+        isolation: isolate;
         position: relative;
         padding: var(--em-spacing);
         opacity: 1;
@@ -207,7 +208,7 @@
             color: var(--accent-color);
         }
     }
-       &:hover, &:focus-within{
+       &:hover, &:focus-within, &.on-center{
         .portfolio-item{
 
             &__image{

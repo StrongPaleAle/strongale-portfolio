@@ -1,6 +1,7 @@
 .main-nav{
     //background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
-    
+    --clip-unit: 6px;
+    --padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,33 +10,64 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: var(--padding);
     .masked-logo{
         width: 1.5rem;
     }
-    .main-nav__logo-link{
+    &__logo-link{
+        --flex-basis: 0;
         display: flex;
         align-items: center;
         text-decoration: none;
         color: var(--text-color-08);
         transition: all 0.2s ease-in-out;
         gap: 1rem;
+        
         &:hover{
-            color: var(--accent-color);
+            --flex-basis: 7em
+
         }
     }
-    .main-nav__logo-text{
+    &__logo-text{
         @extend .heading, .uppercase;
+        padding: 4px;
+        background-image: linear-gradient(var(--bg-heavy-00), var(--bg-heavy-80), var(--bg-light-00));
+        filter: drop-shadow(3px 3px 0 var(--bg-heavy-60));
+        
+        
         font-size: 2rem;
+        line-height: 1;
+        display: block;
+        overflow: hidden;
+        flex-basis: var(--flex-basis);
+        transition: flex-basis 0.5s ease-in-out;
     }
-    ul{
+    .logo-wrapper{
+        --clip-unit: 4px;
+        padding: 0.25em;
+        display: block;
+        position: relative;
+        line-height: 0;
+        @extend .clip-ui;
+    }
+    &__logo{
+        position: relative;
+        
+        
+    }
+    &__list{
         display: flex;
         justify-content: flex-end;
         align-items: center;
         padding: 1rem 2rem;
         margin: 0;
         list-style: none;
-        background-color: var(--bg-heavy);
+        
+        position: fixed;
+        bottom: 4px;
+        inset-inline: 4px;
+        @extend .clip-ui;
+    
         li{
             a{
                 color: var(--accent-color);
@@ -49,6 +81,10 @@
                 }
             }
         }
+    }
+    @media (min-width: 768px){
+        --padding: 1rem 2rem;
+        
     }
 
 }

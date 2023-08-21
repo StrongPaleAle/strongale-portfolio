@@ -13,6 +13,8 @@ const totalProjects = projects.length - 1;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+    const canHover = window.matchMedia('(hover: hover)').matches;
+    console.log(canHover);
     const portfolioContainer = document.querySelector('#portfolio .portfolio-container');
     const portfolioItems = Array.from(document.querySelectorAll('#portfolio .portfolio-item') as NodeListOf<HTMLElement>);
     const portfolioWidth = portfolioContainer ? portfolioContainer.clientWidth : 0;
@@ -22,6 +24,16 @@ onMounted(() => {
     const getCenter = (parentD: number, childD: number, childS: number) => (parentD / 2) - (childD + (childS / 2));
     let rowElements = 0;
     let topDistance = 0;
+    let startA = 'top 90%';
+    
+    let pin = false;
+    if(window.innerWidth < 768){
+        startA = 'top 70%';    
+        pin = true;
+        
+        
+    }
+
     portfolioItems.forEach((item: HTMLElement, index) => {
         const itemWidth = item.clientWidth;
         const itemHeight = item.clientHeight;
@@ -32,11 +44,13 @@ onMounted(() => {
             topDistance = item.offsetTop;
 
         }
-        const itemDelay = 0.5 * (index - rowElements);
+        let itemDelay = 0.5 * index;
         
         const itemX = getCenter(portfolioWidth, itemLeft, itemWidth);
         const itemY = getCenter(portfolioHeight, itemTop, itemHeight);
-        const itemScale = 1 - (1 / portfolioItems.length * (index + 1));
+        let itemScale = 1 - (1 / portfolioItems.length * (index + 1));
+        let itemZIndex = portfolioItems.length - index;
+        let startingScale = itemScale / 2;
         const trigger = `#${item.getAttribute('id')}`;
         const animate = trigger + ' .card';
         //console.log(itemX);
@@ -46,21 +60,30 @@ onMounted(() => {
         item.style.setProperty('--y', `${itemY}px`);
         item.style.setProperty('--rotateY', `${itemY / 15 * -1}deg`);
         item.style.setProperty('--scale', `${itemScale}`);
-
+        item.style.setProperty('--zIndex', `${itemZIndex}`);
+        if(window.innerWidth < 768){
+            itemDelay = 0;
+            itemScale = 1;
+            item.style.setProperty('--rotateY', `${itemY / 30 * -1}deg`);
+            startingScale = 0;
+        }
+        
+            
         const portfolioTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: trigger,
-                pin:false,
-                scrub:1,
-                start: 'top 80%',
-                end: 'bottom bottom'
+                pin: pin,
+                scrub: 0.5,
+                start: startA,
+                end: '+=100',
+                
             }
         })
         portfolioTimeline.fromTo(trigger, {
             x: itemX,
             y: itemY,
             opacity: itemScale,
-            scale: itemScale / 2,
+            scale: startingScale,
             
         }, {
             duration: 0.5,
@@ -71,6 +94,11 @@ onMounted(() => {
             scale: 1,
             ease: 'none'
         })
+       
+        if(!canHover){
+            const noHoverObserver = new IntersectionObserver(centerScreenRotate, {rootMargin:'-10% 0px -10% 0px', threshold: 1});
+            item ? noHoverObserver.observe(item) : null;
+        }
     })
     // const portfolioObserver = new IntersectionObserver(toggleMouseTracking, { threshold: 1 });
     // portfolioContainer ? portfolioObserver.observe(portfolioContainer) : null;
@@ -86,6 +114,17 @@ function toggleMouseTracking(element: any) {
             });
         });
         
+    }
+}
+function centerScreenRotate(element: any) {
+    if (element[0].isIntersecting) {
+        console.log('fully inside');
+        element[0].target.classList.add('on-center');
+        
+        
+    } else {
+        console.log('not fully inside');
+        element[0].target.classList.remove('on-center');
     }
 }
 </script>
