@@ -56,30 +56,43 @@
         
     }
     &__list{
+        
+        padding: 0.8rem;
+        
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: 1rem 2rem;
-        margin: 0;
-        list-style: none;
         
         position: fixed;
         bottom: 4px;
         inset-inline: 4px;
         @extend .clip-ui;
-    
+        ul{
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
         li{
             a{
-                color: var(--accent-color);
+                color: var(--text-color);
                 text-decoration: none;
                 
                 
                 padding: 1em;
                 transition: all 0.2s ease-in-out;
                 &:hover{
-                    color: var(--text-color-08);
+                    color: var(--accent-color);
                 }
             }
+        }
+        @media (min-width: 768px){
+            
+            position: relative;
+            bottom: auto;
+            inset-inline: auto;
+            
         }
     }
     @media (min-width: 768px){
