@@ -3,7 +3,9 @@
   initial-value: 132deg;
   inherits: false;
 }
-
+:root {
+  --gradient-angle: 132deg;
+}
 @keyframes show-up{
     0%{
         opacity: 0;

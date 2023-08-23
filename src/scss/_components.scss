@@ -226,6 +226,7 @@
     @extend .clip-right-bottom; 
   }
   &::before{
+      background-color: var(--bg-heavy);
       background-image: conic-gradient(
           from var(--gradient-angle), 
           var(--accent-light-80), 
@@ -329,6 +330,60 @@
       
     }
     
+  }
+  .toggle{
+    
+    border-radius: 100vw;
+    padding: 0.15em;
+    
+    background-color: var(--bg-medium-40);
+    position: relative;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    border: none;
+    box-shadow: inset 0.15em 0.15em 0.05em var(--bg-heavy-80);
+    &:before{
+      content: "";
+      position: absolute;
+      inset: 0.15em auto 0.15em 0.15em;
+      aspect-ratio: 1/1;
+      border-radius: inherit;
+      background-color: var(--bg-light-30);
+      transition: all 0.2s ease-in-out;
+      z-index: -1;
+      transition: transform 0.3s ease-in-out;
+      
+    }
+    &__icon{
+      color: var(--text-color);
+      font-size: 1.2em;
+      display: inline-block;
+      height: 100%;
+      padding: 0.1em;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+      &:first-child{
+        opacity: 1;
+      }
+      
+    }
+    &[data-active="true"]{
+      &:before{
+        transform: translateX(100%);
+      }
+      .toggle__icon:last-child{
+        opacity: 1;
+      }
+      .toggle__icon:first-child{
+        opacity: 0.5;
+      }
+    }
+
   }
 
   

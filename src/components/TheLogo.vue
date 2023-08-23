@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import {Scene, WebGLRenderer, PerspectiveCamera, MeshStandardMaterial, AmbientLight, PointLight, Color}  from 'three';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+    import { useDark } from '@vueuse/core';
 	//import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import { onMounted, ref} from 'vue';
@@ -27,6 +28,15 @@
             animate();
         }
     });
+    const isDark = useDark({
+    onChanged(dark: boolean) {
+        // update the dom, call the API or something
+        if (logoCanvas.value) {
+            init();
+            animate();
+        }
+    },
+    })
     function init() {
         
 
@@ -50,7 +60,7 @@
         controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
         controls.dampingFactor = 0.05;
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 2.0;
+        controls.autoRotateSpeed = 1.0;
         controls.screenSpacePanning = false;
         controls.enablePan = false;
         controls.enableZoom = false;

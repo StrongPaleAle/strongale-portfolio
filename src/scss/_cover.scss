@@ -49,13 +49,15 @@ html[data-theme="dark"]{
   
   
   .cover-layer-mask{
-    background-color: var(--dark-layer-bg);
+    --layer-bg: var(--dark-layer-bg);
+    --layer-shade: var(--dark-layer-shade);
   }
 }
 html[data-theme="light"]{
   
   .cover-layer-mask{
-    background-color: var(--light-layer-bg);
+    --layer-bg: var(--light-layer-bg);
+    --layer-shade: var(--light-layer-shade);
   }
 }
 
@@ -125,7 +127,10 @@ html[data-theme="light"]{
         z-index: 1;
         shape-rendering: optimizeSpeed;
         clip-path: var(--clip);
-        
+        background: conic-gradient(from -125deg, var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade));
+          //background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
         
         
       }
@@ -150,7 +155,7 @@ html[data-theme="light"]{
         border-radius: 50%;
         //opacity: 0.2;
         mix-blend-mode: multiply;
-        background-color: var(--bg-heavy-20);
+        background-color: var(--bg-heavy);
         //background-image: radial-gradient(var(--bg-heavy), var(--bg-heavy-00) 10%, var(--bg-heavy) 40%);
         
       
@@ -200,16 +205,19 @@ html[data-theme="light"]{
 
         //$dark-layer-bg: get_layer_bg($fg-color_dark, $bg-color_dark, $i, $slice_count);
         $dark-layer-bg: color.mix($fg-color_dark, $bg-color_dark, $amount);
-        
+        $light-layer-bg: color.mix($fg-color_light, $bg-color_light, $amount);
         --dark-layer-bg: #{$dark-layer-bg};
-        
+        --light-layer-bg: #{$light-layer-bg};
         
         //--animation-delay: calc(120s - ((var(--slices) * var(--time-modifier)) - (#{$i} * var(--time-modifier))));
         --delay: #{2 - 0.25 * $i}s;
         --duration: calc(5s - #{3 - 0.05 * $i}s);
         
-        $cover_shade: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+        $cover_shade_dark: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+        $cover_shade_light: color.mix($light-layer-bg, $sh-color-light, $shade-amount);
 
+        --dark-layer-shade: #{$cover_shade_dark};
+        --light-layer-shade: #{$cover_shade_light};
         
         transform: scale(var(--initial-scale), var(--initial-scale)) rotate(var(--initial-rotation));
         opacity: 1;
@@ -217,12 +225,7 @@ html[data-theme="light"]{
         //transform: translateZ(var(--starting-Z)) rotate(360deg);
         //animation: start-cover-svgs-transform var(--animation-delay) linear 0s ,cover-svgs-transform var(--animation-duration) linear  var(--animation-delay) infinite;
         //animation: new-start-cover-animation var(--duration) linear var(--delay);
-        .cover-layer-mask{
-          background: conic-gradient(from -125deg, $cover_shade, $dark-layer-bg , $cover_shade, $dark-layer-bg , $cover_shade, $dark-layer-bg, $cover_shade);
-          //background-size: 50%;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
+        
         
       }
       

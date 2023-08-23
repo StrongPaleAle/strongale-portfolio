@@ -2,6 +2,11 @@
     //background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
     --clip-unit: 6px;
     --padding: 0.5rem 1rem;
+    --link-direction: row;
+    --display-icons: block;
+    --link-size: 0.75rem;
+    --justify-menu: space-between;
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -16,7 +21,9 @@
     }
     &__logo-link{
         --flex-basis: 0;
+        --text-opacity: 0;
         display: flex;
+        
         align-items: center;
         text-decoration: none;
         color: var(--text-color-08);
@@ -24,15 +31,15 @@
         gap: 1rem;
         
         &:hover{
-            --flex-basis: 7em
+            --flex-basis: 7em;
+            --text-opacity: 1;
 
         }
     }
     &__logo-text{
         @extend .heading, .uppercase;
-        padding: 4px;
-        background-image: linear-gradient(var(--bg-heavy-00), var(--bg-heavy-80), var(--bg-light-00));
-        filter: drop-shadow(3px 3px 0 var(--bg-heavy-60));
+        
+       
         
         
         font-size: 2rem;
@@ -40,14 +47,28 @@
         display: block;
         overflow: hidden;
         flex-basis: var(--flex-basis);
-        transition: flex-basis 0.5s ease-in-out;
+        transition: flex-basis 0.3s ease-in-out;
+
+    }
+    &__text-wrapper{
+        padding: 4px;
+        background-image: linear-gradient(var(--bg-heavy-00), var(--bg-heavy-80), var(--bg-light-00));
+        filter: drop-shadow(3px 3px 0 var(--bg-heavy-60));
+        
+        opacity: var(--text-opacity);
+        transition: opacity 0.2s ease-in-out 0.3s;
+            
+        
+        
+        
     }
     .logo-wrapper{
         --clip-unit: 4px;
+        
         padding: 0.25em;
-        display: block;
         position: relative;
         line-height: 0;
+
         @extend .clip-ui;
     }
     &__logo{
@@ -60,7 +81,7 @@
         padding: 0.8rem;
         
         display: flex;
-        justify-content: flex-end;
+        justify-content: var(--justify-menu);
         align-items: center;
         
         position: fixed;
@@ -71,20 +92,29 @@
             margin: 0;
             list-style: none;
             display: flex;
-            justify-content: flex-end;
+            justify-content: var(--justify-menu);
             align-items: center;
         }
         li{
             a{
                 color: var(--text-color);
                 text-decoration: none;
-                
-                
-                padding: 1em;
+                display: block;
+                text-align: center;
+                font-size: var(--link-size);
+                padding: 0 1em;
                 transition: all 0.2s ease-in-out;
+                span{
+                    display: var(--display-icons);
+                    font-size: 1.5em;
+                    line-height: 1;
+                    margin-inline: auto;
+                     
+                }
                 &:hover{
                     color: var(--accent-color);
                 }
+
             }
         }
         @media (min-width: 768px){
@@ -97,7 +127,9 @@
     }
     @media (min-width: 768px){
         --padding: 1rem 2rem;
-        
+        --display-icons: none;
+        --link-size: 1.125rem;
+        --justify-menu: flex-end;
     }
 
 }

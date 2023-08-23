@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
+    "@vueuse/core": "^10.3.0",
     "gsap": "^3.11.4",
     "material-symbols": "^0.5.0",
     "vue": "^3.2.41"
