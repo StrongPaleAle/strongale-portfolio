@@ -33,20 +33,20 @@ onMounted(() => {
             
             
                 <div class="dialog__body">
-                    <div class="dialog__grid gap-em-2">
+                    <div class="dialog__grid">
                         <header class="dialog__header | flex gap-em-2 justify-between">
                             <div>
-                                <h2 class="dialog__title text-box | text-2xl heading uppercase m-0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
+                                <h2 class="dialog__title text-box | heading uppercase m-0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
                                     {{ project.title }}
                                 </h2>
-                                <p v-if="project.subtitle" class="subtitle italic text-large text-accent-color">
+                                <p v-if="project.subtitle" class="subtitle italic text-accent-color">
                                     {{ project.subtitle }}
                                 </p>
                             </div>
                             
                         </header>
                         <div class="dialog__info">
-                            <div v-if="project.infos" class="grid justify-between lh-tight text-large gap-em-15">
+                            <div v-if="project.infos" class="grid justify-between lh-tight text-large">
                                 <SingleInfo v-for="info in project.infos" :info="info"  />
                             <!-- <ProjectInfo v-if="project.year" :label="'Year'" :value="`${project.year}`" icon="schedule" />
                             

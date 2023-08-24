@@ -35,7 +35,7 @@
       display: none;
     }
 }
-.clip-right-bottom{
+@mixin clip-right-bottom{
   clip-path: polygon(
     0 var(--clip-unit), var(--clip-unit) 0, 
     100% 0%, 
@@ -43,7 +43,7 @@
     0 100%
   );
 }
-.clip-left-bottom{
+@mixin clip-left-bottom{
   clip-path: polygon(
     0 0, 
     calc(100% - var(--clip-unit)) 0, 100% var(--clip-unit), 
@@ -52,7 +52,7 @@
     0 calc(100% - (var(--clip-unit)* 2))
   );
 }
-.clip-left-top{
+@mixin clip-left-top{
   clip-path: polygon(
     0 calc(var(--clip-unit) * 2), calc(var(--clip-unit) * 2) 0, 
     100% 0%, 
@@ -60,7 +60,7 @@
     0 100%
   );
 }
-.clip-right-top{
+@mixin clip-right-top{
   clip-path: polygon(
     0 0, 
     calc(100% - (var(--clip-unit) * 2)) 0, 100% calc(var(--clip-unit) * 2), 

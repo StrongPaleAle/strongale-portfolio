@@ -7,7 +7,8 @@ import TheCover from './components/TheCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
-import { getTheme, setTheme} from './utils/utils';
+import SectionContact from './components/SectionContact.vue';
+//import { getTheme, setTheme} from './utils/utils';
 
 
 
@@ -25,7 +26,8 @@ import { getTheme, setTheme} from './utils/utils';
     
     <TheHero />
     <SectionAbout />
-   <SectionPortfolio />
+    <SectionPortfolio />
+    <SectionContact />
     
   </main>
   <svg width="0" height="0" viewBox="0 0 1 1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">

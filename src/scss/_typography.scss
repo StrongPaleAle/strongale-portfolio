@@ -51,12 +51,21 @@
   .text-half{
     font-size: 0.5em
   }
-  
+  .text-up{
+    font-size: 1.5em;
+  }
+  .text-2up{
+    font-size: 3em;
+  }
   .text-box{
     color: var(--bg-medium);
   }
+  
   .lp-loose{
     letter-spacing: 0.05em;
+  }
+  .lp-tight{
+    letter-spacing: -0.05em;
   }
   .lh-tight{
     line-height: 1;

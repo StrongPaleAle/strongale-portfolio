@@ -47,6 +47,9 @@ const isOpening = (mutationList, observer) => {
     //console.log('mutation', mutation);
      if (mutation.target.classList.contains('active')) {
        //console.log('mutation is-open');
+       const splideContainer = mutation.target.querySelector('.splide');
+       let sWidth = splideContainer.clientWidth;
+       splideContainer.style.setProperty("--max-slide", sWidth + 'px');
        setTimeout(() => {
          gallery.value?.splide?.refresh();
        }, 100);

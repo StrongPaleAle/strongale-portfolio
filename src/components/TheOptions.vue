@@ -6,6 +6,7 @@ const isDark = useDark({
   attribute: 'data-theme',
   valueDark: 'dark',
   valueLight: 'light',
+  disableTransition: false
 });
 const toggleDark = useToggle(isDark);
 

@@ -114,8 +114,8 @@
   .icon-link{
     --clip-unit: 5px;
     --iconlink-color: var(--text-color);
-    --iconlink-bg: var(--bg-heavy);
-    --iconlink-shadow: var(--accent-color-60);
+    --iconlink-bg: var(--extra-dark);
+    --iconlink-shadow: var(--accent-color-80);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,17 +125,27 @@
     opacity: 1;
     border: 0;
     background-color: transparent;
-    border-radius: 3px 2px 5px 3px;
+    border-radius: 5px;
     position: relative;
     isolation: isolate;
-    filter: drop-shadow(3px 3px 0 var(--iconlink-shadow));
+    
     &:before{
         content: "";
         position: absolute;
+        border-radius: 5px;
         inset: 0;
         z-index: -1;
         background-color: var(--iconlink-bg);
-        @extend .clip-right-bottom;
+        @include clip-right-bottom;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        inset: -1px -2px -2px -1px;
+        border-radius: 5px;
+        z-index: -2;
+        background-color: var(--iconlink-shadow);
+        @include clip-left-bottom;
     }
   }
   .clipped-box{
@@ -156,13 +166,13 @@
         inset: 0;
         z-index: -1;
         background-color: var(--clippedbox-bg);
-        @extend .clip-right-bottom;
+        @include clip-right-bottom;
         border-radius: inherit;
     }
     &[data-variant*="clip-bl"]{
       
       &:before{
-        @extend .clip-left-bottom;
+        @include clip-left-bottom;
       }  
     }
     &[data-variant*="gradient"]{
@@ -173,13 +183,13 @@
         z-index: 1;
         background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 15%,transparent 25%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
         border-radius: inherit;
-        @extend .clip-right-bottom;
+        @include clip-right-bottom;
         
       }
       &[data-variant*="clip-bl"]{
       
         &:after{
-          @extend .clip-left-bottom;
+          @include clip-left-bottom;
         }  
       }
     }
@@ -203,7 +213,7 @@
           var(--accent-color-80),
           var(--accent-light-80)
           );
-      @extend .clip-right-bottom;
+          @include clip-right-bottom;
   }
   &::after{
       content: "";
@@ -213,35 +223,42 @@
       border-radius: 5px;
       background-color: var(--bg-heavy);
       background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
-      @extend .clip-right-bottom;
+      @include clip-right-bottom;
   }
 }
 .clip-ui{
   isolation: isolate;
+  
   &::before, &::after{
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: 0 5px 0 7px;
-    @extend .clip-right-bottom; 
+    
+    
+    
   }
   &::before{
-      background-color: var(--bg-heavy);
+      background-color: var(--accent-dark);
+      --gradient-angle: 45deg;
       background-image: conic-gradient(
           from var(--gradient-angle), 
           var(--accent-light-80), 
-          var(--accent-color-80),
-          var(--accent-dark-40),
-          var(--accent-color-80),
+          var(--accent-color),
+          var(--accent-dark-60),
+          var(--accent-color-90),
           var(--accent-light-80)
           );
       z-index: -2;
       inset: -1px -3px -3px -1px;
+      @include clip-left-bottom; 
+      border-radius: 5px 0 7px 0;
   }
   &::after{
       background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
       background-color: var(--bg-heavy);
       z-index: -1;
+      inset: 0;
+      border-radius: 0 5px 0 7px;
+      @include clip-right-bottom; 
   }
 }
   
@@ -336,27 +353,28 @@
     border-radius: 100vw;
     padding: 0.15em;
     
-    background-color: var(--bg-medium-40);
+    background-color: var(--accent-dark-60);
     position: relative;
     display: flex;
     align-items: center;
     isolation: isolate;
     border: none;
-    box-shadow: inset 0.15em 0.15em 0.05em var(--bg-heavy-80);
+    box-shadow: inset 0.15em 0.15em 0.05em var(--bg-heavy-50);
     &:before{
       content: "";
       position: absolute;
       inset: 0.15em auto 0.15em 0.15em;
       aspect-ratio: 1/1;
       border-radius: inherit;
-      background-color: var(--bg-light-30);
-      transition: all 0.2s ease-in-out;
+      background-color: var(--accent-light-70);
+      transform: translateX(0);
       z-index: -1;
+
       transition: transform 0.3s ease-in-out;
       
     }
     &__icon{
-      color: var(--text-color);
+      color: var(--text-negative);
       font-size: 1.2em;
       display: inline-block;
       height: 100%;
