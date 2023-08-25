@@ -36,7 +36,7 @@ onMounted(() => {
                     <div class="dialog__grid">
                         <header class="dialog__header | flex gap-em-2 justify-between">
                             <div>
-                                <h2 class="dialog__title text-box | heading uppercase m-0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
+                                <h2 class="dialog__title text-box | heading uppercase m0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
                                     {{ project.title }}
                                 </h2>
                                 <p v-if="project.subtitle" class="subtitle italic text-accent-color">
@@ -78,10 +78,10 @@ onMounted(() => {
                 <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
                     View source
                 </IconLink>
-                <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject.slug}`)" icon="arrow_back">
+                <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject?.slug}`)" icon="arrow_back">
                     View previous project
                 </IconLink>
-                <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject.slug}`)" icon="arrow_forward">
+                <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject?.slug}`)" icon="arrow_forward">
                     View next project
                 </IconLink>
                 <IconButton @click="closeDialog(`project-${project.slug}`)" icon="close">

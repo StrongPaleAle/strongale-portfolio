@@ -7,14 +7,15 @@ import { onMounted } from "vue";
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { rotateElement } from "../utils/utils";
+import { options } from "../utils/options";
 
 const projects = Projects as Project[];
 const totalProjects = projects.length - 1;
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-    const canHover = window.matchMedia('(hover: hover)').matches;
-    console.log(canHover);
+    
+    
     const portfolioContainer = document.querySelector('#portfolio .portfolio-container');
     const portfolioItems = Array.from(document.querySelectorAll('#portfolio .portfolio-item') as NodeListOf<HTMLElement>);
     const portfolioWidth = portfolioContainer ? portfolioContainer.clientWidth : 0;
@@ -95,7 +96,7 @@ onMounted(() => {
             ease: 'none'
         })
        
-        if(!canHover){
+        if(!options.canHover){
             const noHoverObserver = new IntersectionObserver(centerScreenRotate, {rootMargin:'-10% 0px -10% 0px', threshold: 1});
             item ? noHoverObserver.observe(item) : null;
         }
@@ -118,12 +119,12 @@ function toggleMouseTracking(element: any) {
 }
 function centerScreenRotate(element: any) {
     if (element[0].isIntersecting) {
-        console.log('fully inside');
+        //console.log('fully inside');
         element[0].target.classList.add('on-center');
         
         
     } else {
-        console.log('not fully inside');
+        //console.log('not fully inside');
         element[0].target.classList.remove('on-center');
     }
 }
@@ -143,7 +144,7 @@ function centerScreenRotate(element: any) {
                 </div>
                 
             </header>
-            <div class="portfolio-container gap-em-2 p-block-em-2">
+            <div class="portfolio-container gap-em-2 pblock-em-2">
                 <!-- <div class="portfolio-item | card " id="portfolio-1">
                     <div class="card flex gap-em-2">
                         <div class="portfolio-item__image">

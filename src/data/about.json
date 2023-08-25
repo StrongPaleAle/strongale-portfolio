@@ -301,7 +301,7 @@
                         "type": "BlockText",
                         "content": "<p><a href=\"https://quivi.it/\" target=\"_blank\">Quivi</a> is a software development studio and media strategy. I worked on many projects with them. At the moment is my most important and formative work experience.</p>",
                         "id": "experience2_blockintro",
-                        "extraClass": "text-small border-t-accent p-t-em-1"
+                        "extraClass": "text-small border-t-accent pt-em-1"
 
                     },
                     {
@@ -355,7 +355,7 @@
                         "type": "BlockText",
                         "content": "<p>Lucca Comics & Games is a comic books, gaming, and pop culture convention, held annually in Lucca, usually between the end of October and the beginning of November. It’s the first comics festival in Europe, and the second in the world, by attendance. For about a week each year, I help the organisation deal with issues on the ground at the festival.</p>",
                         "id": "experience2_blockintro",
-                        "extraClass": "text-small border-t-accent p-t-em-1"
+                        "extraClass": "text-small border-t-accent pt-em-1"
 
                     },
                     {

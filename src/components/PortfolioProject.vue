@@ -35,7 +35,7 @@ const year = computed(() => {
         <div class="portfolio-item__content">
             <a :href="`#project-${project.slug}`" @click="openDialog(`project-${project.slug}`)" class="btn-link block mb-em text-text-color">
                 
-                <h3 class="portfolio-item__title | ellipsis heading uppercase text-xlarge  m-t-em-05 m-b-0">{{ project.title }}</h3>
+                <h3 class="portfolio-item__title | ellipsis heading uppercase text-xlarge  mt-em-05 mb-0">{{ project.title }}</h3>
                 <!-- <p v-if="project.subtitle" class="portfolio-item__description | content-text | text-small lh-loose text-text-color mb-em-05">
                     {{ project.subtitle }}
                 </p> -->

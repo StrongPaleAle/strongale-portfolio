@@ -1,7 +1,7 @@
 .main-nav{
     //background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
     --clip-unit: 6px;
-    --padding: 0.5rem 0 0.5rem 1rem; 
+    --padding: 0.5rem 1rem 0.5rem 1rem; 
     --link-direction: row;
     --display-icons: block;
     --link-size: 0.75rem;
@@ -117,9 +117,7 @@
 
             }
         }
-        .site-options{
-            font-size: min(var(--link-size), 1rem);
-        }
+        
         @media (min-width: 768px){
             
             position: relative;
@@ -128,12 +126,22 @@
             
         }
     }
+    .site-options{
+        font-size: min(var(--link-size), 0.875rem);
+        display: flex;
+        gap: 1em;
+        
+        padding-left: 1.5em;
+         border-left: 2px solid var(--accent-color);
+
+    }
     @media (min-width: 768px){
         --padding: 0.25rem 1rem 0.25rem 0.25rem;
         --display-icons: none;
         --link-size: 0.875rem;
         --justify-menu: flex-end;
         width: 100%;
+
     }
     @media (min-width: 1024px){
         --padding: 1rem 2rem;

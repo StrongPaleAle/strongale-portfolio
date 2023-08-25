@@ -34,10 +34,10 @@ $directions: (
         column-gap: $value;
     }
     @each $direction, $property in $directions {
-        .m-#{$direction}-#{$key} {
+        .m#{$direction}-#{$key} {
             margin-#{$property}: $value;
         }
-        .p-#{$direction}-#{$key} {
+        .p#{$direction}-#{$key} {
             padding-#{$property}: $value;
         }
     }
