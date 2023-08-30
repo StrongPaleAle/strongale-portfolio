@@ -2,6 +2,11 @@ export interface Mask {
   id?: number | undefined;
   svgcode?: string | undefined;
 }
+export interface NewMask {
+  id?: number | undefined;
+  path?: string | undefined;
+  size?: number | undefined;
+}
 
 export interface Block {
   id: string;

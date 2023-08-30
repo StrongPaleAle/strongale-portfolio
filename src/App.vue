@@ -1,9 +1,10 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { onMounted, onUpdated } from 'vue';
+
 import TheNav from './components/TheNav.vue';
-import TheCover from './components/TheCover.vue';
+//import TheCover from './components/TheCover.vue';
+import CanvasCover from './components/CanvasCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
@@ -17,10 +18,10 @@ import SectionContact from './components/SectionContact.vue';
 
 <template>
   <div class="app-inner">
+
     
-    
-    
-    <TheCover />
+    <CanvasCover />
+    <!-- <TheCover /> -->
     <TheNav /> 
   <main id="wrapper">
     

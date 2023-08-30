@@ -1,6 +1,5 @@
 import { reactive } from "vue";
 
-
 function getMotionPreference() {
     const browserPRM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -22,6 +21,7 @@ function getMotionPreference() {
 export const options = reactive({
     canHover: window.matchMedia('(hover: hover)').matches,
     prefersReducedMotion: getMotionPreference(),
+    theme: document.documentElement.getAttribute('data-theme') || 'dark',
     toggleReducedMotion: function () {
         this.prefersReducedMotion = !this.prefersReducedMotion;
         let stringPRM = this.prefersReducedMotion.toString();

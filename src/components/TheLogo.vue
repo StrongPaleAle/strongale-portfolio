@@ -5,7 +5,7 @@
 	//import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import { onMounted, ref} from 'vue';
-
+    
     const LogoWrapper = ref<HTMLElement | null>(null);
     const logoCanvas = ref<HTMLCanvasElement | null>(null);
     const SvgLogo = ref<SVGElement | null>(null);

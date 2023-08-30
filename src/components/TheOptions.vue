@@ -10,7 +10,16 @@ const isDark = useDark({
     disableTransition: false
 })
 const toggleDark = useToggle(isDark);
-
+const changeTheme = useDark({
+    onChanged(dark: boolean) {
+        // update the dom, call the API or something
+        if (options.theme ) {
+            options.theme = document.documentElement.getAttribute('data-theme') || 'dark';
+            console.log(options.theme);
+            
+        }
+    },
+})
 </script>
 <template>
     <div class="site-options">

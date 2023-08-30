@@ -1,0 +1,53 @@
+@use 'sass:color';
+@use "sass:map";
+@use 'sass:math';
+
+$slice_count: 8;
+
+$fg-name-dark: map.get($theme-options, 'dark', 'bg-medium'); // get color name from theme options
+$fg-color-dark: map.get($colors, $fg-name-dark); // get color value from colors name
+
+$bg-name-dark: map.get($theme-options, 'dark', 'bg-heavy'); // get color name from theme options
+$bg-color-dark: map.get($colors, $bg-name-dark);
+
+$sh-name-dark: map.get($theme-options, 'dark', 'bg-light'); // get color name from theme options
+$sh-color-dark: map.get($colors, $sh-name-dark);
+
+$fg-name-light: map.get($theme-options, 'light', 'bg-medium'); // get color name from theme options
+$fg-color-light: map.get($colors, $fg-name-light); // get color value from colors name
+
+$bg-name-light: map.get($theme-options, 'light', 'bg-heavy'); // get color name from theme options
+$bg-color-light: map.get($colors, $bg-name-light); // get color value from colors name
+
+$sh-name-light: map.get($theme-options, 'light', 'bg-light'); // get color name from theme options
+$sh-color-light: map.get($colors, $sh-name-light);
+:root{
+    @for $i from 1 through $slice_count {
+
+        $amount: math.div(100, $slice_count) * math.pow(math.div($i, 4), 3) * 1%;
+        $shade-amount: 100 - ($i * 2.5%);
+
+        $dark-layer-bg: color.mix($fg-color_dark, $bg-color_dark, $amount);
+        $light-layer-bg: color.mix($fg-color_light, $bg-color_light, $amount);
+        --dark-layer-bg-#{$i}: #{$dark-layer-bg};
+        --light-layer-bg-#{$i}: #{$light-layer-bg};
+
+        $cover_shade_dark: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+        $cover_shade_light: color.mix($light-layer-bg, $sh-color-light, $shade-amount);
+
+        --dark-layer-shade-#{$i}: #{$cover_shade_dark};
+        --light-layer-shade-#{$i}: #{$cover_shade_light};
+
+    }
+}
+
+#canvas-cover{
+    position:fixed;
+    inset: 0;
+    z-index: -1;
+    //background-color: #333;
+    width: 100%;
+    height: 100%;
+}
+
+
