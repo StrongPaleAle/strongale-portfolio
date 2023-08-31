@@ -18,21 +18,50 @@ onMounted(() => {
         const ctx = canvas.value.getContext('2d');
         const width = canvas.value.clientWidth;
         const height = canvas.value.clientHeight;
-        canvas.value.width = width;
-        canvas.value.height = height;
+        
         let orientation = window.matchMedia("(orientation: portrait)").matches;
         let rotationConst = orientation ? 90 : 0;
 
+        function setDisplay() {
+  
+            let ratio = window.devicePixelRatio || 1;
+            console.log('ratio' + ratio);
+            if (canvas.value) {
+                canvas.value.width = width * ratio;
+                canvas.value.height = height * ratio;
+            }
+            if (ctx) {
+                ctx.scale(ratio, ratio);
+            }
+        
+           
+        }
+        setDisplay();
+
+        window.addEventListener('resize', setDisplay);
+
         masksObj.forEach((mask, index) => {
             if (mask) {
+                
                 let propertyBg = `--${options.theme}-layer-bg-${mask.id}`;
                 let propertyShade = `--${options.theme}-layer-shade-${mask.id}`;
                 let colorBg = getComputedStyle(document.documentElement).getPropertyValue(propertyBg);
                 let colorShade = getComputedStyle(document.documentElement).getPropertyValue(propertyShade);
-                let factor = (width * 3.6) / 10000;
+                const factor = (width * 3.4) / 10000;
                 let objWidth = mask.size * factor;
-
-                const layerRotation = 180 - ((180 * mask.id) / masksLength) + rotationConst;
+                let layerRotation = (index * 360 / masksLength) + rotationConst;
+                const maskLayer = {
+                    id : mask.id,
+                    path : mask.path,
+                    size : mask.size,
+                    colorBg : colorBg,
+                    colorShade : colorShade,
+                    width : objWidth,
+                    x: (width - objWidth) / 2,
+                    y: (height - objWidth) / 2,
+                    rotation : layerRotation
+                }
+                
 
                 
                 
@@ -43,24 +72,31 @@ onMounted(() => {
                     
                     let gradient = ctx.createConicGradient(90, mask.size / 2, mask.size / 2);
                     gradient.addColorStop(0, colorBg);
-                    gradient.addColorStop(0.125, colorShade);
-                    gradient.addColorStop(0.25, colorBg);
-                    gradient.addColorStop(0.375, colorShade);
-                    gradient.addColorStop(0.5, colorBg);
-                    gradient.addColorStop(0.625, colorShade);
-                    gradient.addColorStop(0.75, colorBg);
-                    gradient.addColorStop(0.875, colorShade);
+                    gradient.addColorStop(0.15, colorShade);
+                    gradient.addColorStop(0.30, colorBg);
+                    gradient.addColorStop(0.45, colorShade);
+                    gradient.addColorStop(0.60, colorBg);
+                    gradient.addColorStop(0.75, colorShade);
                     gradient.addColorStop(1, colorBg);
 
                     ctx.fillStyle = gradient;
-                    ctx.translate((width - objWidth) / 2, (height - objWidth) / 2);
+                    
+                    
+                    // 
+                    // 
+                    
+                    ctx.translate(width / 2, height / 2);
+                    ctx.rotate(layerRotation * Math.PI / 180);
+                    ctx.translate(-1 * width / 2, -1 * height / 2);
+                    ctx.translate(((width - objWidth) / 2) , ((height - objWidth) / 2) );
                     ctx.scale(factor, factor);
+                    // ctx.translate( objWidth / 2, objWidth / 2);
                     //ctx.rotate(layerRotation * Math.PI / 180);
-            
                     ctx.fill(p);
+                    
                     ctx.restore();
-                    console.log(p);
-                    console.log(mask.id, gradient, factor, objWidth);
+                    
+                    
                 
                 }
                 
