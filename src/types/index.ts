@@ -7,7 +7,18 @@ export interface NewMask {
   path?: string | undefined;
   size?: number | undefined;
 }
-
+export interface MaskLayer {
+  id: number;
+  path: string;
+  size: number;
+  colorBg: string;
+  colorShade: string;
+  width: number;
+  x: number;
+  y: number;
+  rotation: number;
+  scale: number;
+}
 export interface Block {
   id: string;
   title?: string | undefined;
