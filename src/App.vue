@@ -3,8 +3,8 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 import TheNav from './components/TheNav.vue';
-//import TheCover from './components/TheCover.vue';
-import CanvasCover from './components/CanvasCover.vue';
+import TheCover from './components/TheCover.vue';
+//import CanvasCover from './components/CanvasCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
@@ -20,8 +20,8 @@ import SectionContact from './components/SectionContact.vue';
   <div class="app-inner">
 
     
-    <CanvasCover />
-    <!-- <TheCover /> -->
+    
+    <TheCover />
     <TheNav /> 
   <main id="wrapper">
     

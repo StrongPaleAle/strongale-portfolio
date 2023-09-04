@@ -3,10 +3,13 @@ export interface Mask {
   svgcode?: string | undefined;
 }
 export interface NewMask {
-  id?: number | undefined;
-  path?: string | undefined;
-  size?: number | undefined;
+  id: number;
+  path: string;
+  size: number;
 }
+
+export type MaskGroup = NewMask[]; 
+
 export interface MaskLayer {
   id: number;
   path: string;
@@ -18,6 +21,21 @@ export interface MaskLayer {
   y: number;
   rotation: number;
   scale: number;
+}
+
+export interface CanvasState {
+  canvas: HTMLCanvasElement | null;
+  ctx: CanvasRenderingContext2D | null;
+  width: number;
+  height: number;
+  factor: number;
+  orientation: number;
+}
+export interface CanvasAnimation {
+  scale: number;
+  rotation: number;
+  x: number;
+  y: number;
 }
 export interface Block {
   id: string;

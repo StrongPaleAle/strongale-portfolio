@@ -64,8 +64,10 @@ html[data-theme="light"]{
 #cover {
   contain: paint;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   width: 100%;
+  height: 100%;
   inset: 0;
   z-index: 0;
   background-color: var(--bg-heavy);
@@ -95,8 +97,8 @@ html[data-theme="light"]{
     position: absolute;
     z-index: -1;
     inset: 0;
-    width: 50vmax;
-    height: 50vmax;
+    width: 100vmax;
+    height: 100vmax;
     //transform-style: preserve-3d;
     margin: auto;
     isolation: isolate;

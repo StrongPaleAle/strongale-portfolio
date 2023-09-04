@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { Mask } from '@/types';
+import { NewMask } from '@/types';
 import { ref, onMounted } from "vue";
 import CoverLayer from './CoverLayer.vue';
-import MasksData from '../data/masks.json';
+import MasksData from '../data/newmasks.json';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const masks = ref<Partial<Mask>[]>(MasksData);
+const masks = ref<Partial<NewMask>[]>(MasksData);
 //let shadows = ref<number>(masks.value.length * 3);
 const masksObj = JSON.parse(JSON.stringify(masks.value));
 
@@ -34,7 +34,7 @@ onMounted(() => {
         const layerDuration = 1.125 - (0.75 - index * 0.125);
         const layerDelay = 1 - index * 0.2;
         
-        const layerScale = index - 1.25;
+        const layerScale = 1;
         const layerstartScale = layerScale + (masksLength - index)
         const layerRotation = 180 - ((180 * index) / masksLength) + rotationConst;
         const startingOpacity = 1 - (1 - index * 0.1);
