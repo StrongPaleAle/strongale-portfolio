@@ -9,6 +9,7 @@ import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
 import SectionContact from './components/SectionContact.vue';
+import TheOptions from './components/TheOptions.vue';
 //import { getTheme, setTheme} from './utils/utils';
 
 
@@ -17,18 +18,18 @@ import SectionContact from './components/SectionContact.vue';
 </script>
 
 <template>
-  <div class="app-inner">
+  <div class="app-inner" >
 
-    
+    <TheOptions />
     
     <TheCover />
-    <TheNav /> 
-  <main id="wrapper">
     
-    <TheHero />
+  <main id="wrapper" style="height: 100vh;">
+    
+    <!-- <TheHero />
     <SectionAbout />
     <SectionPortfolio />
-    <SectionContact />
+    <SectionContact /> -->
     
   </main>
   <svg width="0" height="0" viewBox="0 0 1 1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">

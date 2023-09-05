@@ -1,6 +1,6 @@
 export interface Mask {
-  id?: number | undefined;
-  svgcode?: string | undefined;
+  id: number;
+  path: string;
 }
 export interface NewMask {
   id: number;

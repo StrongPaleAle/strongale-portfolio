@@ -17,10 +17,10 @@ const props = defineProps<{
     <div class="cover-layer" :id="`mask-${mask.id}`" :data-mask="mask.id">
         <div class="cover-layer-mask"></div>
     </div>
-    <svg height="0" width="0" view-box="0 0 2 2">
+    <svg height="0" width="0" :view-box="`0 0 1 1`">
       <defs>
         <clipPath :id="`maskpath-${mask.id}`" clipPathUnits="objectBoundingBox">
-          <path :d="mask.svgcode"/>
+          <path :d="mask.path"/>
         </clipPath>
       </defs>
     </svg>
