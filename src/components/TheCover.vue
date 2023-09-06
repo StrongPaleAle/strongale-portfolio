@@ -57,12 +57,12 @@ onMounted(() => {
                 scale: layerScale
             },
             {
-                rotation: layerRotation - 90,
-                y: -400 * index - (30 * index * 2),
-                scale: layerScale + index * 0.15,
-                duration: 15,
+                rotation: -180,
+                y: -520 * ((index + 1) / 2.5) - (40 * (index + 1) * 2),
+                scale: layerScale - (masksLength - index) * 0.025,
+                duration: 5,
                 delay: 2,
-                ease: "none",
+                ease: "sine",
             });
         // gsap scrolltrigger for the mask
         

@@ -117,7 +117,7 @@ html[data-theme="light"]{
       backface-visibility: hidden;
       opacity: 1;
       contain: paint;
-      will-change: transform, opacity;
+      will-change: transform;
       
 
       .cover-layer-mask{

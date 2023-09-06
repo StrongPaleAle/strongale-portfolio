@@ -24,7 +24,7 @@ import TheOptions from './components/TheOptions.vue';
     
     <TheCover />
     
-  <main id="wrapper" style="height: 100vh;">
+  <main id="wrapper">
     
     <!-- <TheHero />
     <SectionAbout />
