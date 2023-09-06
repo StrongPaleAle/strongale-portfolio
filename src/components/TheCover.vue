@@ -25,6 +25,10 @@ onMounted(() => {
     //     scale: 1.5,
     //     ease: "none",
     // });
+    document.addEventListener('click', function() {
+        document.documentElement.requestFullscreen();
+    });
+    
     let orientation = window.matchMedia("(orientation: portrait)").matches;
     let rotationConst = orientation ? 90 : 0;
     console.log(rotationConst);
@@ -40,15 +44,17 @@ onMounted(() => {
         const startingOpacity = 1 - (1 - index * 0.1);
         
         const trigger = `#mask-${mask.id}`;
-        gsap.ticker.fps(30);
+        gsap.ticker.fps(60);
         const first = gsap.timeline({});
         first.fromTo(trigger, {
             scale: layerstartScale,
+            
         },{
             duration: layerDuration,
-            delay: layerDelay,
-            scale: layerScale,
+            delay: layerDelay + 2,
+            scale: layerScale, 
             ease: "sine",
+        
         });
         first.fromTo(trigger, 
             {
@@ -60,8 +66,8 @@ onMounted(() => {
                 rotation: -180,
                 y: -520 * ((index + 1) / 2.5) - (40 * (index + 1) * 2),
                 scale: layerScale - (masksLength - index) * 0.025,
-                duration: 5,
-                delay: 2,
+                duration: 10,
+                delay: 2 + layerDelay / 2, 
                 ease: "sine",
             });
         // gsap scrolltrigger for the mask
@@ -102,16 +108,14 @@ onMounted(() => {
 <template>
     <div id="cover">
         
-        <div class="cover-wrapper">
-            <div id="cover-layer-wrapper" class="cover-layer-wrapper">
+        
                 
                 <CoverLayer
                 v-for="mask in masks"
                 
                 :mask="mask"
                 ></CoverLayer>
-            </div>
-        </div>
+            
         
     
         
