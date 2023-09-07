@@ -23,7 +23,7 @@ onMounted(() => {
         //const height = canvasEl.value.clientHeight;
         //const vMax = Math.max(width, height);
         //const factor = (vMax * 3.8) / 10000;
-
+        gsap.ticker.fps(30);
         const canvasState = ref<CanvasState>({
             canvas: canvasEl.value,
             ctx: canvasEl.value.getContext('2d'),

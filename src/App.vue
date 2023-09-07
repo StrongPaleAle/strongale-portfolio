@@ -3,13 +3,13 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 import TheNav from './components/TheNav.vue';
-import TheCover from './components/TheCover.vue';
-//import CanvasCover from './components/CanvasCover.vue';
+//import TheCover from './components/TheCover.vue';
+import CanvasCover from './components/CanvasCover.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
 import SectionContact from './components/SectionContact.vue';
-import TheOptions from './components/TheOptions.vue';
+//import TheOptions from './components/TheOptions.vue';
 //import { getTheme, setTheme} from './utils/utils';
 
 
@@ -20,16 +20,16 @@ import TheOptions from './components/TheOptions.vue';
 <template>
   <div class="app-inner" >
 
-    <TheOptions />
     
-    <TheCover />
     
+    <CanvasCover />
+    <TheNav />
   <main id="wrapper">
     
-    <!-- <TheHero />
+    <TheHero />
     <SectionAbout />
     <SectionPortfolio />
-    <SectionContact /> -->
+    <SectionContact />
     
   </main>
   <svg width="0" height="0" viewBox="0 0 1 1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
