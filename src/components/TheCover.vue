@@ -44,29 +44,22 @@ onMounted(() => {
         const startingOpacity = 1 - (1 - index * 0.1);
         
         const trigger = `#mask-${mask.id}`;
-        gsap.ticker.fps(60);
+        gsap.ticker.fps(30);
         const first = gsap.timeline({});
-        first.fromTo(trigger, {
-            scale: layerstartScale,
-            
-        },{
-            duration: layerDuration,
-            delay: layerDelay + 2,
+        first.to(trigger, {
+            duration: layerDuration * 4,
+            delay: layerDelay + 3,
             scale: layerScale, 
             ease: "sine",
         
         });
-        first.fromTo(trigger, 
-            {
-                rotation: layerRotation,
-                y: 0,
-                scale: layerScale
-            },
+        first.to(trigger, 
+            
             {
                 rotation: -180,
                 y: -520 * ((index + 1) / 2.5) - (40 * (index + 1) * 2),
                 scale: layerScale - (masksLength - index) * 0.025,
-                duration: 10,
+                duration: 15,
                 delay: 2 + layerDelay / 2, 
                 ease: "sine",
             });
