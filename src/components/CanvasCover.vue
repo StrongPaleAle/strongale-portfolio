@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { options } from "../utils/options";
-import { NewMask, MaskGroup, MaskLayer, CanvasState, CanvasAnimation } from '@/types';
-import MasksData from '../data/newmasks.json';
+import { MaskGroup, MaskLayer, CanvasState, CanvasAnimation } from '@/types';
+import MasksData from '../data/nnewmasks.json';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -17,19 +17,19 @@ let Layers = ref<MaskLayer[]>([]);
 
 onMounted(() => {
     if (canvasEl.value) {
-
+        console.log(masks.value);
         //const ctx = canvasEl.value.getContext('2d');
         // width = canvasEl.value.clientWidth;
         //const height = canvasEl.value.clientHeight;
         //const vMax = Math.max(width, height);
         //const factor = (vMax * 3.8) / 10000;
-        gsap.ticker.fps(30);
+        gsap.ticker.fps(60);
         const canvasState = ref<CanvasState>({
             canvas: canvasEl.value,
             ctx: canvasEl.value.getContext('2d'),
             width: canvasEl.value.clientWidth,
             height: canvasEl.value.clientHeight,
-            factor: (Math.max(canvasEl.value.clientWidth, canvasEl.value.clientHeight) * 3.8) / 10000,
+            factor: (Math.max(canvasEl.value.clientWidth, canvasEl.value.clientHeight) * 3.8) / 5000,
             orientation: window.matchMedia("(orientation: portrait)").matches ? 90 : 0
         });
 
@@ -69,7 +69,7 @@ onMounted(() => {
         });
         initMasks(masks.value, Layers.value, canvasState.value, canvasAnimation.value);
 
-        console.log(Layers.value);
+        //console.log(Layers.value);
 
         Layers.value.forEach((mask, index) => {
             if (mask) {
@@ -111,7 +111,7 @@ onMounted(() => {
                 trigger: 'body',
                 start: 'top top+=10',
                 end: 'bottom bottom-=10',
-                scrub: true,
+                scrub: 1,
                 markers: true,
                 onUpdate: (self) => {
                     canvasUpdate(canvasState.value, canvasAnimation.value, Layers.value);
@@ -160,7 +160,7 @@ onMounted(() => {
 function setDisplay(canvas: CanvasState) {
   
     let ratio = window.devicePixelRatio || 1;
-    console.log('ratio' + ratio);
+    //console.log('ratio' + ratio);
     if (canvas.canvas) {
         canvas.canvas.width = canvas.width * ratio;
         canvas.canvas.height = canvas.height * ratio;
@@ -173,7 +173,7 @@ function setDisplay(canvas: CanvasState) {
 function resetDisplay(canvas: CanvasState) {
   
   let ratio = window.devicePixelRatio || 1;
-  console.log('ratio' + ratio);
+  //console.log('ratio' + ratio);
   if (canvas.canvas) {
       canvas.width = canvas.canvas.clientWidth;
       canvas.height = canvas.canvas.clientHeight;

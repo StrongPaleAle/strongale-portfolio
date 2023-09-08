@@ -4,11 +4,13 @@
 
 import TheNav from './components/TheNav.vue';
 //import TheCover from './components/TheCover.vue';
-import CanvasCover from './components/CanvasCover.vue';
+//import CanvasCover from './components/CanvasCover.vue';
+import CanvasBackground from './components/CanvasBackground.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
 import SectionContact from './components/SectionContact.vue';
+
 //import TheOptions from './components/TheOptions.vue';
 //import { getTheme, setTheme} from './utils/utils';
 
@@ -21,8 +23,8 @@ import SectionContact from './components/SectionContact.vue';
   <div class="app-inner" >
 
     
-    
-    <CanvasCover />
+    <CanvasBackground />
+    <!-- <CanvasCover /> -->
     <TheNav />
   <main id="wrapper">
     
