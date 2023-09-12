@@ -5,7 +5,8 @@
 import TheNav from './components/TheNav.vue';
 //import TheCover from './components/TheCover.vue';
 //import CanvasCover from './components/CanvasCover.vue';
-import CanvasBackground from './components/CanvasBackground.vue';
+import VideoBackground from './components/VideoBackground.vue';
+//import CanvasBackground from './components/CanvasBackground.vue';
 import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
@@ -22,8 +23,8 @@ import SectionContact from './components/SectionContact.vue';
 <template>
   <div class="app-inner" >
 
-    
-    <CanvasBackground />
+    <VideoBackground />
+    <!-- <CanvasBackground /> -->
     <!-- <CanvasCover /> -->
     <TheNav />
   <main id="wrapper">

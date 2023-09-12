@@ -13,22 +13,29 @@ onMounted(() =>{
         canvas.height = window.innerHeight;
 
         const context = canvas.getContext("2d");
-        const frameCount = 564;
+        const frameCount = 565;
        
         gsap.registerPlugin(ScrollTrigger);
         gsap.ticker.fps(60);    
         
-        const currentFrame = (index) => `/assets/images/bg/retina/webp60/${(index + 1).toString()}.webp`;
+        const currentFrame = (index) => `/assets/images/bg/2560x1543/webp/${(index + 1).toString()}.webp`;
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };
-
+        console.log(options.webp);
         for (let i = 0; i < frameCount; i++) {
             const img = new Image();
             img.src = currentFrame(i);
-            console.log(currentFrame(i));
+            //console.log(currentFrame(i));
             images.push(img);
         }
+        
+        gsap.to(cave, {
+            frame: 0,
+            snap: "frame",
+            ease: "none",
+            onUpdate: render,
+        });
         gsap.to(cave, {
             frame: frameCount - 1,
             snap: "frame",

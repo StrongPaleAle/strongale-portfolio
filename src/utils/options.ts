@@ -16,12 +16,29 @@ function getMotionPreference() {
     
     
 }
+const canUseWebp = headers => {
+    let useWebp = false;
+    if (typeof document === 'object') {
+      // Client side rendering
+      const canvas = document.createElement('canvas');
+  
+      if (
+        canvas.getContext &&
+        canvas.getContext('2d') &&
+        canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
+      ) {
+        useWebp = true;
+      }
+    }
+    return useWebp;
+  };
 
 
 export const options = reactive({
     canHover: window.matchMedia('(hover: hover)').matches,
     prefersReducedMotion: getMotionPreference(),
     theme: document.documentElement.getAttribute('data-theme') || 'dark',
+    webp: canUseWebp(document.documentElement.style),
     toggleReducedMotion: function () {
         this.prefersReducedMotion = !this.prefersReducedMotion;
         let stringPRM = this.prefersReducedMotion.toString();
