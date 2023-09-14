@@ -387,6 +387,9 @@
       justify-content: center;
       opacity: 0.8;
       transition: opacity 0.3s ease-in-out;
+      svg{
+        fill: currentColor;
+      }
       &:first-child{
         opacity: 1;
       }
