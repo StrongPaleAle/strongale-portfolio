@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { options } from "../utils/options";
 import {gsap} from 'gsap';
 import { SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import CoverStatic from './CoverStatic.vue';
 // ffmpeg -i lowfps.mov -vf scale=1920:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_1920.mp4
 
 const videoBg = ref<HTMLVideoElement | null>(null);
+let videoFile = ref<string>('landscape_1440'); 
+
 
 onMounted(() =>{
+
+    setFile();
+    window.addEventListener('resize', setFile);
+
     if (videoBg.value) {
 
         gsap.registerPlugin(ScrollTrigger, SlowMo);
@@ -133,12 +138,80 @@ onMounted(() =>{
 
         /* ---------------------------------- */
     }
+    
 })
+
+function setFile(){
+        if (window.matchMedia("(orientation: portrait)").matches){
+
+            if (window.innerWidth <= 390){
+
+                videoFile.value = 'portrait_360';
+
+            } else if (window.innerWidth <= 520){
+
+                videoFile.value = 'portrait_432';
+
+            } else if (window.innerWidth <= 650){
+
+                videoFile.value = 'portrait_576';
+
+            } else if (window.innerWidth <= 765){
+
+                videoFile.value = 'portrait_720';
+
+            } else if (window.innerWidth <= 855){
+
+                videoFile.value = 'portrait_810';
+
+            } else if (window.innerWidth <= 990){
+                
+                videoFile.value = 'portrait_900';
+
+            }  else {
+                
+                videoFile.value = 'portrait_1080';
+
+            } 
+
+        } else {
+            if (window.innerWidth <= 850){
+
+                videoFile.value = 'landscape_640';
+
+            } else if (window.innerWidth <= 992){
+
+                videoFile.value = 'landscape_960';
+
+            } else if (window.innerWidth <= 1152){
+
+                videoFile.value = 'landscape_1024';
+
+            } else if (window.innerWidth <= 1360){
+
+                videoFile.value = 'landscape_1280';
+
+            } else if (window.innerWidth <= 1520){
+
+                videoFile.value = 'landscape_1440';
+
+            } else if (window.innerWidth <= 1760){
+
+                videoFile.value = 'landscape_1600';
+
+            }  else {
+
+                videoFile.value = 'landscape_1920';
+
+            } 
+        }
+        console.log(videoFile.value);
+    }
 
 </script>
 <template>
     <div class="video-holder">
-        <video  src="/assets/video/portrait2_810.mp4" playsinline="true" preload="auto" muted class="video-background" ref="videoBg"></video>
+        <video :src="`/assets/video/${ videoFile }.mp4`" playsinline="true" preload="auto" muted class="video-background" ref="videoBg"></video>
     </div>
     
 </template>

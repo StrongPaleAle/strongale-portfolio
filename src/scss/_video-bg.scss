@@ -1,0 +1,179 @@
+@use 'sass:color';
+@use "sass:map";
+@use 'sass:math';
+
+$slice_count: 8;
+
+
+$fg-name-dark: map.get($theme-options, 'dark', 'bg-medium'); // get color name from theme options
+$fg-color-dark: map.get($colors, $fg-name-dark); // get color value from colors name
+
+$bg-name-dark: map.get($theme-options, 'dark', 'bg-heavy'); // get color name from theme options
+$bg-color-dark: map.get($colors, $bg-name-dark);
+
+$sh-name-dark: map.get($theme-options, 'dark', 'bg-light'); // get color name from theme options
+$sh-color-dark: map.get($colors, $sh-name-dark);
+
+$fg-name-light: map.get($theme-options, 'light', 'bg-medium'); // get color name from theme options
+$fg-color-light: map.get($colors, $fg-name-light); // get color value from colors name
+
+$bg-name-light: map.get($theme-options, 'light', 'bg-heavy'); // get color name from theme options
+$bg-color-light: map.get($colors, $bg-name-light); // get color value from colors name
+
+$sh-name-light: map.get($theme-options, 'light', 'bg-light'); // get color name from theme options
+$sh-color-light: map.get($colors, $sh-name-light);
+
+.video-holder{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.5s ease-in-out;
+    .video-background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: fill; 
+    }
+}
+html[data-theme="light"] .video-holder{
+    filter: invert(1);
+}
+html[data-theme="dark"]{
+  
+  
+    .static-layer{
+      --layer-bg: var(--dark-layer-bg);
+      --layer-shade: var(--dark-layer-shade);
+    }
+  }
+  html[data-theme="light"]{
+    
+    .static-layer{
+      --layer-bg: var(--light-layer-bg);
+      --layer-shade: var(--light-layer-shade);
+    }
+  }
+
+.app-inner{
+    --bg-shade: color-mix(in srgb, var(--bg-light) 20%, var(--bg-medium));
+    contain: paint;
+    background-color: var(--bg-medium);
+    background-image: conic-gradient(from 240deg at 50% 10%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+}
+.static-layer{
+    object-fit: fill;
+    position: absolute;     
+    clip-path: var(--static-clip);
+    background: conic-gradient(from var(--deg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade));
+}
+.top-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    .static-layer{
+        
+        height: 240vh;
+        aspect-ratio: 1/1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    @for $i from 1 through $slice_count {
+        $sm: $i - 1;
+        .static-layer:nth-child(#{$slice_count - $sm}) {
+          $deg: 240 - (22.5 * ($slice_count - $i)) * 1deg;
+          --deg: #{$deg};
+          --static-clip: url(#covr-bg-#{$i});
+
+          $amount: math.div(100, $slice_count) * math.pow(math.div($sm, 4), 3) * 1%;
+          $shade-amount: 100 - (($i - 0.5) * 2.5%);
+    
+          
+          $dark-layer-bg: color.mix($fg-color_dark, $bg-color_dark, $amount);
+          $light-layer-bg: color.mix($fg-color_light, $bg-color_light, $amount);
+          --dark-layer-bg: #{$dark-layer-bg};
+          --light-layer-bg: #{$light-layer-bg};
+          
+         
+          
+          $cover_shade_dark: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+          $cover_shade_light: color.mix($light-layer-bg, $sh-color-light, $shade-amount);
+    
+          --dark-layer-shade: #{$cover_shade_dark};
+          --light-layer-shade: #{$cover_shade_light};
+          
+          
+          opacity: 1;
+          
+          
+        }
+        
+      }
+    
+
+}
+.bottom-cover{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    isolation: isolate;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        inset-inline: 0;
+        top: 10vw;
+        background-color: var(--bg-heavy);
+    }
+    .static-layer{
+        width: 100%;
+        aspect-ratio: 1/1;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: conic-gradient(from var(--deg) at 50% -200%, var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade));
+    }
+    @for $i from 1 through $slice_count {
+        $sm: $i;
+        .static-layer:nth-child(#{$slice_count - $sm}) {
+          $deg: 240 - (22.5 * ($slice_count - $i)) * 1deg;
+          --deg: #{$deg};
+          --static-clip: url(#footer-bg-#{$i});
+
+          $amount: math.div(100, $slice_count) * math.pow(math.div($sm, 4), 3) * 1%;
+          $shade-amount: 100 - (($i - 0.5) * 2.5%);
+    
+          
+          $dark-layer-bg: color.mix($fg-color_dark, $bg-color_dark, $amount);
+          $light-layer-bg: color.mix($fg-color_light, $bg-color_light, $amount);
+          --dark-layer-bg: #{$dark-layer-bg};
+          --light-layer-bg: #{$light-layer-bg};
+          
+         
+          
+          $cover_shade_dark: color.mix($dark-layer-bg, $sh-color-dark, $shade-amount);
+          $cover_shade_light: color.mix($light-layer-bg, $sh-color-light, $shade-amount);
+    
+          --dark-layer-shade: #{$cover_shade_dark};
+          --light-layer-shade: #{$cover_shade_light};
+          
+          
+          opacity: 1;
+          z-index: #{$i};
+          
+        }
+        
+      }
+}
