@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+
 import TheOptions from "./TheOptions.vue";
+
 </script>
 <template>
     <nav class="main-nav">

@@ -28,7 +28,7 @@ $sh-color-light: map.get($colors, $sh-name-light);
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     transition: filter 0.5s ease-in-out;
     .video-background{
         position: absolute;
@@ -61,7 +61,7 @@ html[data-theme="dark"]{
 
 .app-inner{
     --bg-shade: color-mix(in srgb, var(--bg-light) 20%, var(--bg-medium));
-    contain: paint;
+    //contain: paint;
     background-color: var(--bg-medium);
     background-image: conic-gradient(from 240deg at 50% 10%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
 }
@@ -70,6 +70,11 @@ html[data-theme="dark"]{
     position: absolute;     
     clip-path: var(--static-clip);
     background: conic-gradient(from var(--deg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade), var(--layer-bg), var(--layer-shade));
+}
+.cover-static{
+  position: absolute;
+  inset: 0;
+  contain: paint;
 }
 .top-cover{
     position: absolute;
@@ -80,12 +85,14 @@ html[data-theme="dark"]{
     
     .static-layer{
         
-        height: 240vh;
+        height: 240vmin;
         aspect-ratio: 1/1;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        
+        @media (orientation: portrait){
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
     }
 
     @for $i from 1 through $slice_count {
@@ -172,7 +179,9 @@ html[data-theme="dark"]{
           
           opacity: 1;
           z-index: #{$i};
-          
+          @media (orientation: portrait){
+            --static-clip: url(#footer-bgp-#{$i});
+          }
         }
         
       }

@@ -89,6 +89,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     z-index: 2;
+    filter: drop-shadow(0.015em 0.015em 0 var(--accent-light));
     
   }
   

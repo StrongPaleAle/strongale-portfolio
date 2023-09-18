@@ -153,13 +153,14 @@
     --clippedbox-color: var(--text-color);
     --clippedbox-bg: var(--bg-heavy);
     --clippedbox-shadow: var(--accent-color-60);
+    --clippedbox-highlight: var(--accent-light);
     $clip-direction: clip-right-bottom;
     color: var(--clippedbox-color);
     
     background-color: transparent;
     position: relative;
     isolation: isolate;
-    filter: drop-shadow(3px 3px 0 var(--clippedbox-shadow));
+    filter: drop-shadow(3px 3px 0 var(--clippedbox-shadow)) drop-shadow(-2px -2px 0 var(--clippedbox-highlight));
     &:before{
         content: "";
         position: absolute;
@@ -174,6 +175,15 @@
       &:before{
         @include clip-left-bottom;
       }  
+    }
+    &[data-variant*="clip-desk"]{
+      @media  (min-width: 1024px) {
+        &[data-variant*="clip-desk-bl"]{
+          &:before{
+            @include clip-left-bottom;
+          }  
+        }
+      }
     }
     &[data-variant*="gradient"]{
       &:after{

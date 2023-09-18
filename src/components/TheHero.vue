@@ -10,7 +10,7 @@ import TheLogo from './TheLogo.vue';
                     <h1 class="cover-title | mblock-0">
                         <span class="cover-title-first | block ws-nowrap lp-loose">Hi there!</span>
                         <span class="cover-title-second | text-half block">My name is</span>
-                        <span class="cover-title-third | text-box " data-variant="accent-bg gradient"><span class="carved">Alessio</span></span> 
+                        <span class="cover-title-third | text-box " data-variant="accent-bg"><span class="carved">Alessio</span></span> 
                         
                     </h1>
                     <p class="cover-subtitle | text-half text-center mblock-0 lh-double">
