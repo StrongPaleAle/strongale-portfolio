@@ -96,10 +96,13 @@ body {
   }
   .section-title {
     margin: 0;
+    text-align: right;
     .text-box{
       border-top-right-radius: 0;
     }
-    
+    @media (min-width: 1024px){
+      text-align: left;
+    }
   }
   .grow{
     flex-grow: 1;

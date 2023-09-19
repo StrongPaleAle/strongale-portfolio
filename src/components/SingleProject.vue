@@ -36,7 +36,7 @@ onMounted(() => {
                     <div class="dialog__grid">
                         <header class="dialog__header | flex gap-em-2 justify-between">
                             <div>
-                                <h2 class="dialog__title text-box | heading uppercase m0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
+                                <h2 class="dialog__title text-box | heading uppercase m-0" :id="`project-${project.slug}_label`" data-variant="accent-bg">
                                     {{ project.title }}
                                 </h2>
                                 <p v-if="project.subtitle" class="subtitle italic text-accent-color">
@@ -69,7 +69,7 @@ onMounted(() => {
                     
                 </div>
             
-            <footer class="dialog__links | flex gap-em-05 text-large">
+            <footer class="dialog__links | flex gap-em-05">
                     
                 <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
                     Visit website

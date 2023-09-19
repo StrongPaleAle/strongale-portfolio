@@ -59,8 +59,8 @@
                 "id": "strongale-slide-1",
                 "sources": [
                     {
-                        "src": "/storage/media/galleries/strongale/logo_slide_1.svg",
-                        "type": "image/svg+xml"
+                        "src": "/storage/media/galleries/strongale/logo_slide_1.webp",
+                        "type": "image/webp"
                     }
                 ],
                 "img": {
@@ -74,8 +74,8 @@
                 "id": "strongale-slide-2",
                 "sources": [
                     {
-                        "src": "/storage/media/galleries/strongale/logo_slide_2.svg",
-                        "type": "image/svg+xml"
+                        "src": "/storage/media/galleries/strongale/logo_slide_2.webp",
+                        "type": "image/webp"
                     }
                 ],
                 "img": {
@@ -89,8 +89,8 @@
                 "id": "strongale-slide-3",
                 "sources": [
                     {
-                        "src": "/storage/media/galleries/strongale/logo_slide_3.svg",
-                        "type": "image/svg+xml"
+                        "src": "/storage/media/galleries/strongale/logo_slide_3.webp",
+                        "type": "image/webp"
                     }
                 ],
                 "img": {

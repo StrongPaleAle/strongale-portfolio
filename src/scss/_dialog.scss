@@ -4,7 +4,7 @@ body.modal-open{
 
 .dialog{
     --pt: 30px;
-    --icon-size: 0.75rem;
+    --icon-size: 0.875rem;
     --em-spacing: 1.5em;
     --title-size: clamp(1.5rem, calc(1.5vw + 1.5rem), 2.5rem);
     --subtitle-size: clamp(0.875rem, calc(1.25vw + 0.875rem), 1rem);
@@ -234,7 +234,7 @@ body.modal-open{
     }
     @media screen and (min-width: 1024px){
         --pt: 70px;
-        --icon-size: 0.875rem;
+        
         &__content{
         --h-modifier: 40px;
         }

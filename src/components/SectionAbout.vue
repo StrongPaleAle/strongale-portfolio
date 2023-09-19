@@ -4,12 +4,18 @@ import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
-
+import { useScroll, useScrollLock, useToggle } from '@vueuse/core';
 import AboutData from '../data/about.json';
 
 
 const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
+const tabsContainer = ref<HTMLElement | null>(null);
+const tabItems = ref<HTMLElement[] | null>(null);
+
+const isLocked = ref(false);
+
+const toggleLock = useToggle(isLocked);
 let selectedTab = ref<number>(0);
 let isAnimating = false;
 
@@ -23,7 +29,7 @@ onMounted(() => {
     // BASIC VARIABLES
     const hash = window.location.hash.substring(1);
     const aboutContainer = document.querySelector('#about .section-content');
-    const tabItems = document.querySelectorAll('#about .tab-item');
+    
     const cardHeight = window.innerHeight - 200;
 
     // INTERSECTION OBSERVERS
@@ -38,7 +44,7 @@ onMounted(() => {
 
     aboutContainer ? aboutObserver.observe(aboutContainer) : null;
 
-    tabItems.forEach((item) => {
+    tabItems.value?.forEach((item) => {
         if (window.location.hash) {
             
             const itemID = item.getAttribute('id');
@@ -85,7 +91,7 @@ function toggleScrolling(element: any) {
             <div class="flex ">
                 <header class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
-                        <span class="about-title-text | text-box " data-variant="accent-bg clip-bl"><span class="carved">About me</span></span>
+                        <span class="about-title-text | text-box " data-variant="accent-bg clip-desk-bl"><span class="carved">About me</span></span>
                     </h2>
                     <nav class="tab-menu__container">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right">
@@ -103,7 +109,7 @@ function toggleScrolling(element: any) {
                 </header>
                 
                 
-                <div class="section-content | hide-scrollbar snap-y max-h-screen" data-variant="padded-screen">
+                <div class="section-content | hide-scrollbar snap-y max-h-screen" data-variant="padded-screen" ref="tabsContainer">
                     
                     <div class="tab-item | h-screen lh-loose body-text" 
                         data-variant="padded-screen" 
@@ -111,7 +117,8 @@ function toggleScrolling(element: any) {
                         :id="tab.slug"
                         :key="index"
                         :data-tab="index"
-                        :data-active="index === selectedTab">
+                        :data-active="index === selectedTab"
+                        ref="tabItems">
                     
                     
                         <Card class="max-h-screen pb-em-2" :overflow="true" data-variant="card-light padded-screen">
