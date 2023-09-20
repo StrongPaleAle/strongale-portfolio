@@ -29,6 +29,7 @@
             {
                 "id": "education1",
                 "title": "A mix of art and technology",
+                "titleClass":"text-accent-color",
                 "blocks": [
                     {   
                         "type": "BlockText",

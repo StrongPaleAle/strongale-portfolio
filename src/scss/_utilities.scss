@@ -82,7 +82,7 @@
     position: relative;
     -webkit-mask-image: linear-gradient(to bottom,black 90%,transparent 99%);
       mask-image: linear-gradient(to bottom,black 90%,transparent 99%);
-    padding-bottom: var(--em-spacing);
+    //padding-bottom: var(--em-spacing);
   }
 }
 .overflow-y-hidden{

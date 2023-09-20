@@ -4,7 +4,7 @@ import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
-import { useScroll, useScrollLock, useToggle } from '@vueuse/core';
+
 import AboutData from '../data/about.json';
 
 
@@ -12,10 +12,9 @@ const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
 const tabsContainer = ref<HTMLElement | null>(null);
 const tabItems = ref<HTMLElement[] | null>(null);
+const tabMenu = ref<HTMLElement | null>(null);
+const tabMenuItems = ref<HTMLElement[] | null>(null);
 
-const isLocked = ref(false);
-
-const toggleLock = useToggle(isLocked);
 let selectedTab = ref<number>(0);
 let isAnimating = false;
 
@@ -23,6 +22,10 @@ let isAnimating = false;
 
 function selectTab(index: number) {
     selectedTab.value = index;
+    console.log(tabMenuItems.value);
+    
+    
+
 }
 onMounted(() => {
 
@@ -34,15 +37,15 @@ onMounted(() => {
 
     // INTERSECTION OBSERVERS
     const tabOptions = {
-        root: aboutContainer,
-        threshold: 1
+        root: tabsContainer.value,
+        threshold: 0.75
     }
 
     const tabObserver = new IntersectionObserver(scrollTabSwitch, tabOptions);
     
-    const aboutObserver = new IntersectionObserver(toggleScrolling, { threshold: 1 });
+    //const aboutObserver = new IntersectionObserver(toggleScrolling, { threshold: 1 });
 
-    aboutContainer ? aboutObserver.observe(aboutContainer) : null;
+    //aboutContainer ? aboutObserver.observe(aboutContainer) : null;
 
     tabItems.value?.forEach((item) => {
         if (window.location.hash) {
@@ -53,7 +56,7 @@ onMounted(() => {
                 const tabN = Number(item.getAttribute('data-tab')) || 0;
                 
                 const itemPos = cardHeight * tabN;
-                aboutContainer  ? aboutContainer.scrollTo({top : itemPos}) : null;
+                tabsContainer.value?.scrollTo({top : itemPos});
                 
 
                 selectTab(tabN);
@@ -69,6 +72,7 @@ onMounted(() => {
 function scrollTabSwitch(element: any) {
         
     if (element[0].isIntersecting) {
+        
         let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
         selectTab(tabN);
     } 
@@ -94,10 +98,11 @@ function toggleScrolling(element: any) {
                         <span class="about-title-text | text-box " data-variant="accent-bg clip-desk-bl"><span class="carved">About me</span></span>
                     </h2>
                     <nav class="tab-menu__container">
-                        <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right">
+                        <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right" ref="tabMenu">
                             <li class="tab-menu__item"
                                 v-for="(tab, index)  in tabs"
                                 :key="index" 
+                                ref="tabMenuItems"
                                 >
                                     
                                 <a class="button" :href="`#${tab.slug}`"  :data-active="index === selectedTab">{{ tab.title }}</a>
@@ -109,60 +114,62 @@ function toggleScrolling(element: any) {
                 </header>
                 
                 
-                <div class="section-content | hide-scrollbar snap-y max-h-screen" data-variant="padded-screen" ref="tabsContainer">
-                    
-                    <div class="tab-item | h-screen lh-loose body-text" 
-                        data-variant="padded-screen" 
-                        v-for="(tab, index)  in tabs"
-                        :id="tab.slug"
-                        :key="index"
-                        :data-tab="index"
-                        :data-active="index === selectedTab"
-                        ref="tabItems">
-                    
-                    
-                        <Card class="max-h-screen pb-em-2" :overflow="true" data-variant="card-light padded-screen">
-                            
-                            <div class="tab-section"
+                <div class="section-content max-h-screen" data-variant="padded-screen" >
+                    <div class="tab-wrapper | hide-scrollbar snap-xy  max-h-screen" ref="tabsContainer" data-variant="padded-screen">
+                        <div class="tab-item | h-screen lh-loose body-text" 
+                            data-variant="padded-screen" 
+                            v-for="(tab, index)  in tabs"
+                            :id="tab.slug"
+                            :key="index"
+                            :data-tab="index"
+                            :data-active="index === selectedTab"
+                            ref="tabItems">
+                        
+                        
+                            <Card class="max-h-screen pb-em-2" :overflow="true" data-variant="card-light padded-screen">
                                 
-                                v-for="(section, index)  in tab.sections"
-                                :id="section.id"
-                                :key="index" 
-                                :data-variant="section.blockVariant"
-                                :class="section.extraClass">
-                            
-                                <component :is="section.titleHeader ? section.titleHeader : 'h3'" 
-                                    class="heading uppercase lh-tight"
-                                    :data-variant="section.titleVariant"
-                                    :class="section.titleClass"
-                                    v-if="section.title" >
-
-                                    <span class="title-inner">{{ section.title }}</span>
-
-                                </component>
+                                <div class="tab-section"
+                                    
+                                    v-for="(section, index)  in tab.sections"
+                                    :id="section.id"
+                                    :key="index" 
+                                    :data-variant="section.blockVariant"
+                                    :class="section.extraClass">
                                 
-                                <div class="flow">
+                                    <component :is="section.titleHeader ? section.titleHeader : 'h3'" 
+                                        class="heading uppercase lh-tight"
+                                        :data-variant="section.titleVariant"
+                                        :class="section.titleClass"
+                                        v-if="section.title" >
 
-                                    <div class="tab-section__content" 
-                                        v-for="block in section.blocks" 
-                                        :data-variant="block.blockVariant"
-                                        :class="block.extraClass"
-                                        >
+                                        <span class="title-inner">{{ section.title }}</span>
 
-                                        <KeepAlive>
-                                            <BlockWrapper :block="block" />
-                                        </KeepAlive>
-                                        
+                                    </component>
+                                    
+                                    <div class="flow">
 
+                                        <div class="tab-section__content" 
+                                            v-for="block in section.blocks" 
+                                            :data-variant="block.blockVariant"
+                                            :class="block.extraClass"
+                                            >
+
+                                            <KeepAlive>
+                                                <BlockWrapper :block="block" />
+                                            </KeepAlive>
+                                            
+
+                                        </div>
                                     </div>
-                                </div>
-                               
-                            
+                                
+                                
 
-                            </div>
-                                                                                                                                            
-                        </Card>
+                                </div>
+                                                                                                                                                
+                            </Card>
+                        </div>
                     </div>
+                    
                     
                 </div>
                 

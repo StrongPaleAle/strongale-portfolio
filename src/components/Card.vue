@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, toRefs, onMounted } from 'vue';
+import { useScroll} from '@vueuse/core';
 const props = defineProps<{
   overflow?: boolean
   
 }>()
 
 const contentText = ref<HTMLElement| null>(null);
+const {arrivedState} = useScroll(contentText);
+const { bottom } = toRefs(arrivedState)
 let isScrollable = ref<boolean>(false);
 onMounted(() => {
     if(props.overflow){
@@ -23,7 +26,7 @@ onMounted(() => {
     <div class="card">
         <div class="content-text flow"
         ref="contentText" 
-        :class="{'overflow-text hide-scrollbar' : overflow, 'is-scrolling' : isScrollable}">
+        :class="{'overflow-text hide-scrollbar' : overflow, 'is-scrolling' : !bottom && isScrollable}">
             <slot></slot>
         </div>
         
