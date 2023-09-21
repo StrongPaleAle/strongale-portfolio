@@ -20,6 +20,17 @@
           #logo-wrapper{
             width:  max(300px, 25vw);
             height: max(300px, 25vw);
+            cursor: grab;
+            pointer-events: none;
+            @media (hover :hover){
+              pointer-events: auto;
+            }
+
+            &:active{
+              cursor: grabbing;
+            }
+            
+            
           }
         }
       }

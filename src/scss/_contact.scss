@@ -44,5 +44,17 @@
     color: var(--text-negative);
     line-height: 0;
     aspect-ratio: 1/1;
+    position: relative;
+    &:before, &:after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: var(--accent-color);
+        z-index: -1;
+        border-radius: 50%;
+    }
+    svg{
+        aspect-ratio: 1/1;
+    }
 }
 

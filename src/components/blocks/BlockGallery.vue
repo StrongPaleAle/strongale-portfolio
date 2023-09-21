@@ -2,8 +2,10 @@
 import { onMounted, ref } from 'vue';
 import { Slide } from '@/types';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import { options } from '../../utils/options';
 import BlockPicture from './BlockPicture.vue';
 import BlockVideo from './BlockVideo.vue';
+
 
 const props = defineProps<{
     slides: Partial<Slide>[] | undefined; 
@@ -34,7 +36,7 @@ const onMoved = (splide: any, newIndex: number, prevIndex: number, destIndex: nu
   }
   const newSlide = splide.Components.Slides.getAt(newIndex);
   const newVideo = newSlide.slide.querySelector('video');
-  if (newVideo) {
+  if (newVideo &&!options.prefersReducedMotion && !options.prefersReducedData) {
     newVideo.play();
   }
   //console.log('oldSlide', oldSlide);

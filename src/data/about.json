@@ -82,7 +82,7 @@
                             },
                             {
                                 "label": "TypeScript",
-                                "value": 50
+                                "value": 70
                             },
                             {
                                 "label": "GraphQL",
@@ -107,7 +107,7 @@
                             },
                             {
                                 "label": "VueJS",
-                                "value": 60
+                                "value": 70
                             },
                             {
                                 "label": "Laravel",
@@ -127,7 +127,7 @@
                             },
                             {
                                 "label": "GreenSock",
-                                "value": 40
+                                "value": 60
                             },
                             {
                                 "label": "jQuery",
@@ -388,7 +388,7 @@
                 "blocks": [
                     {   
                         "type": "BlockText",
-                        "content": "<p>I've always been passionate about everything that can tell a story, whether it is in written, drawn, audiovisual or interactive form. Even simply seeing or holding an old object found in an attic, a flea market, or a museum, and imagining its past, has always been thrilling for me. <br>I've also always loved crafting, inventing, and enhancing stuff, as well as solving riddles and puzzles. So, I soon found a way to join these two passions in games. I'm mainly into Role Play Games (tabletop or live-action) and video games. My interests have not been simply hobbies but <strong>a way to improve various soft skills.</strong></p><p>In my teen years, I used these hobbies to <strong>practice my digital skills</strong>: designing logos, posters and layout guides, and later creating my first web pages. I even took on responsibilities as a board member of a local board game association. <br>My main games are Cyberpunk 2020 and Vampire the Masquerade. For the latter, I took part in the organisation of many LARP games as a storyteller and collaborated with various gaming associations. In this way, I built a personal network with people from every part of Italy and abroad.</p><p>My relationship with video games has been essentially personal. I'm most fond of the sagas of The Legend of Zelda, Diablo, Baldur's Gate, and Starcraft. In the early years of the past decade, I also grew to love indie games, especially The Binding of Isaac, Undertale and Hades. I have always tried to investigate the functioning of the various aspects that make up a video game. However, only with the discovery of the indie games world, <strong>I ended up taking part in several game jams</strong>, mainly in the role of pixel artist and animator, UI designer, storyteller and game designer. <br>A couple of years ago, I also got to try the Souls series, falling in love with their silent narrative, discoverable in dialogues, environmental details and descriptions. They are currently my favourite gaming passion, while I'm waiting for the new Zelda chapter, of course 😉</p>",
+                        "content": "<p>I've always been passionate about everything that can tell a story, whether it is in written, drawn, audiovisual or interactive form. Even simply seeing or holding an old object found in an attic, a flea market, or a museum, and imagining its past, has always been thrilling for me. <br>I've also always loved crafting, inventing, and enhancing stuff, as well as solving riddles and puzzles. So, I soon found a way to join these two passions in games. I'm mainly into Role Play Games (tabletop or live-action) and video games. My interests have not been simply hobbies but <strong>a way to improve various soft skills.</strong></p><p>In my teen years, I used these hobbies to <strong>practice my digital skills</strong>: designing logos, posters and layout guides, and later creating my first web pages. I even took on responsibilities as a board member of a local board game association. <br>My main games are Cyberpunk 2020 and Vampire the Masquerade. For the latter, I took part in the organisation of many LARP games as a storyteller and collaborated with various gaming associations. In this way, I built a personal network with people from every part of Italy and abroad.</p><p>My relationship with video games has been essentially personal. I'm most fond of the sagas of The Legend of Zelda, Diablo, Baldur's Gate, and Starcraft. In the early years of the past decade, I also grew to love indie games, especially The Binding of Isaac, Undertale and Hades. I have always tried to investigate the functioning of the various aspects that make up a video game. However, only with the discovery of the indie games world, <strong>I ended up taking part in several game jams</strong>, mainly in the role of pixel artist and animator, UI designer, storyteller and game designer. <br>A couple of years ago, I also got to try the Souls series, falling in love with their silent narrative, discoverable in dialogues, environmental details and descriptions.</p>",
                         "id": "hobbies1_block1"
                         
                         

@@ -56,9 +56,9 @@ onMounted(() => {
         const animate = trigger + ' .card';
         //console.log(itemX);
         
-        item.style.setProperty('--x', `${itemX}px`);
+        item.style.setProperty('--x', `${itemX / 2}px`);
         item.style.setProperty('--rotateX', `${itemX / 15}deg`);
-        item.style.setProperty('--y', `${itemY}px`);
+        item.style.setProperty('--y', `${itemY / 2 }px`);
         item.style.setProperty('--rotateY', `${itemY / 15 * -1}deg`);
         item.style.setProperty('--scale', `${itemScale}`);
         item.style.setProperty('--zIndex', `${itemZIndex}`);
@@ -69,8 +69,8 @@ onMounted(() => {
             startingScale = 0;
         }
         
-            
-        const portfolioTimeline = gsap.timeline({
+        if(options.canHover && !options.prefersReducedMotion){
+            const portfolioTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: trigger,
                 pin: pin,
@@ -79,22 +79,24 @@ onMounted(() => {
                 end: '+=100',
                 
             }
-        })
-        portfolioTimeline.fromTo(trigger, {
-            x: itemX,
-            y: itemY,
-            opacity: itemScale,
-            scale: startingScale,
-            
-        }, {
-            duration: 0.5,
-            delay: itemDelay,
-            x:0,
-            y:0,
-            opacity: 1,
-            scale: 1,
-            ease: 'none'
-        })
+            })
+            portfolioTimeline.fromTo(trigger, {
+                x: itemX / 2,
+                y: itemY / 2,
+                opacity: itemScale,
+                scale: startingScale,
+                
+            }, {
+                duration: 0.5,
+                delay: itemDelay,
+                x:0,
+                y:0,
+                opacity: 1,
+                scale: 1,
+                ease: 'none'
+            })
+        }
+       
        
         if(!options.canHover){
             const noHoverObserver = new IntersectionObserver(centerScreenRotate, {rootMargin:'-10% 0px -10% 0px', threshold: 1});

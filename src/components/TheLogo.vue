@@ -51,7 +51,7 @@
         
         //console.log(typeof camera);
         // controls
-
+        
         controls = new OrbitControls( camera, renderer.domElement );
         //controls.listenToKeyEvents( window ); // optional
 
@@ -135,11 +135,11 @@
         // scene.add( svgGroup );
         // ambient light
 
-				scene.add( new AmbientLight( ambientColor ) );
+				scene.add( new AmbientLight( ambientCSSColor ) );
 
             // point light
 
-            const light = new PointLight( extraCSSColor, 1, 100 );
+            const light = new PointLight( extraCSSColor, 15, 100 );
            
             camera.add( light );
 

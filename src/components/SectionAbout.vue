@@ -10,21 +10,53 @@ import AboutData from '../data/about.json';
 
 const tabs = ref<Partial<Tab>[]>(JSON.parse(JSON.stringify(AboutData)));
 const tabsLength = tabs.value.length;
+const sectionWrapper = ref<HTMLElement | null>(null);
 const tabsContainer = ref<HTMLElement | null>(null);
-const tabItems = ref<HTMLElement[] | null>(null);
+const tabItems = ref<HTMLElement[]>([]);
 const tabMenu = ref<HTMLElement | null>(null);
-const tabMenuItems = ref<HTMLElement[] | null>(null);
+const tabMenuItems = ref<HTMLElement[]>([]);
 
+let clickedLink = ref<boolean>(false);
 let selectedTab = ref<number>(0);
-let isAnimating = false;
 
 
 
-function selectTab(index: number) {
+
+function selectTab(index: number, fromLink: boolean) {
+
     selectedTab.value = index;
-    console.log(tabMenuItems.value);
+    //console.log(clickedLink.value);
+
+    // if (window.innerWidth < 1024){
+        
+    // }
+    const tabMenuItem = tabMenuItems.value[index];
+    const tabItem = tabItems.value[index];
     
+    tabMenuItems.value.forEach((item) => {
+        item?.querySelector('a')?.setAttribute('data-active', 'false');
+    });
+    tabMenuItem?.querySelector('a')?.setAttribute('data-active', 'true');
+
+    if (fromLink) {
+        
+        tabsContainer.value?.scroll({
+            left: tabItem.offsetLeft,
+            behavior: 'smooth'
+        });
+        
+    } 
     
+    const itemPos = tabMenuItem.offsetLeft + tabMenuItem.clientWidth;
+
+        if (tabMenu.value?.offsetWidth && itemPos > tabMenu.value?.offsetWidth) {
+            
+            tabMenu.value?.scrollTo({left : itemPos - tabMenu.value?.offsetWidth + 100, behavior: 'smooth'});
+            
+        }
+        if (tabMenu.value?.scrollLeft && tabMenuItem.offsetLeft < tabMenu.value?.scrollLeft) {
+            tabMenu.value?.scrollTo({left : tabMenuItem.offsetLeft - 100, behavior: 'smooth'});
+        }
 
 }
 onMounted(() => {
@@ -46,7 +78,7 @@ onMounted(() => {
     //const aboutObserver = new IntersectionObserver(toggleScrolling, { threshold: 1 });
 
     //aboutContainer ? aboutObserver.observe(aboutContainer) : null;
-
+    
     tabItems.value?.forEach((item) => {
         if (window.location.hash) {
             
@@ -56,27 +88,47 @@ onMounted(() => {
                 const tabN = Number(item.getAttribute('data-tab')) || 0;
                 
                 const itemPos = cardHeight * tabN;
-                tabsContainer.value?.scrollTo({top : itemPos});
                 
-
-                selectTab(tabN);
+                
+                console.log('hash ' + tabN);
+                
                 //console.log(selectedTab.value);
+                setTimeout(() => {
+                    window.scrollTo({top :  sectionWrapper.value?.offsetTop, behavior: 'smooth' });
+                    tabsContainer.value?.scrollTo({top : itemPos });
+                }, 200);
+                
+                
             }
             
         }
-
-        tabObserver.observe(item);
+        setTimeout(() => {
+            tabObserver.observe(item);
+        }, 300);
+        
     });
 });
 
 function scrollTabSwitch(element: any) {
         
     if (element[0].isIntersecting) {
+        if (!clickedLink.value) {
+            console.log('scrolling bug ' + clickedLink.value);
+            let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
+            selectTab(tabN, false);
+        }
         
-        let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
-        selectTab(tabN);
     } 
     
+}
+function clickedLinkHandler(index: number, event) {
+    
+    clickedLink.value = true;
+    const tabN = index;
+    selectTab(tabN , true);
+    setTimeout(() => {
+        clickedLink.value = false;
+    }, 750);
 }
 function toggleScrolling(element: any) {
     if (element[0].isIntersecting) {
@@ -90,7 +142,7 @@ function toggleScrolling(element: any) {
 
 </script>
 <template>
-    <section id="about" class="section-wrapper">
+    <section id="about" class="section-wrapper" ref="sectionWrapper">
         <div class="section-container" >
             <div class="flex ">
                 <header class="section-sidebar">
@@ -102,10 +154,11 @@ function toggleScrolling(element: any) {
                             <li class="tab-menu__item"
                                 v-for="(tab, index)  in tabs"
                                 :key="index" 
+                                :data-tab="index"
                                 ref="tabMenuItems"
                                 >
                                     
-                                <a class="button" :href="`#${tab.slug}`"  :data-active="index === selectedTab">{{ tab.title }}</a>
+                                <a class="button" :href="`#${tab.slug}`"  data-active="false" @click="clickedLinkHandler(index, $event)">{{ tab.title }}</a>
                             </li>
                             
                         </ul> 
