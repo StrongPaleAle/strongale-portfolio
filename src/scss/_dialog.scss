@@ -35,13 +35,16 @@ body.modal-open{
         z-index: -1;
     }
     &__content{
-        --c-padding: 1.5rem clamp(0.5rem, 2.5vw, 3.5rem) clamp(0.5rem, 2.5vw, 3.5rem);
+        --c-top: 1.5rem;
+        --c-inline: clamp(0.5rem, 2.5vw, 3.5rem);
+        --c-bottom: clamp(0.5rem, 2.5vw, 3.5rem);
+        
         --h-modifier: 60px;
         position: relative;
-        width: clamp(320px, calc(100% - 1.5rem), 1600px);
+        width: clamp(320px, calc(100% - 1.5rem), 1400px);
         height: calc(100% - var(--h-modifier));
        
-        padding: var(--c-padding);
+        padding: var(--c-top) var(--c-inline) var(--c-bottom);
         
         @extend .clip-ui;
     }
@@ -68,11 +71,14 @@ body.modal-open{
             > *{
                 max-width: 100%;
             }
+            .dialog__gallery{
+                max-height: 450px;
+            }
             .splide{
-                --d-modifier: calc((var(--c-padding) * 2) + var(--info-height, 125px) + var(--h-modifier) + var(--pt));
+                --d-modifier: calc(var(--c-top) + var(--c-bottom) + var(--info-height, 125px) + var(--h-modifier) + var(--pt));
                 height: 100%;
-                padding-bottom: 1.5em;
-                max-height: min(calc(100vw + 1.5em), calc(100vh - var(--d-modifier) - 3.5em));
+                padding-bottom: 1.5rem;
+                max-height: min(450px, 100vh - var(--d-modifier));
                 .splide__track{
                     height: 100%;
                     cursor: grab;
@@ -83,16 +89,27 @@ body.modal-open{
                             height: 100%;
                             max-height: 100%;
                             //max-width: 100%;
-                            max-width: var(--max-slide, 100%);
+                            width: auto;
+                            display: flex;
+                            align-items: center;
+                            max-width:100%;
                             .block-picture{
                                 height: 100%;
+                                max-height: min(420px, 100vh - var(--d-modifier) - 1.5rem, 100%);
                                 width: auto;
-                                max-width: var(--max-slide, 100%);
-                                img, figure, picture, video{
-                                    height: 100%;
-                                    max-width: var(--max-slide, 100%);
+                                max-width: min(420px, 100vh - var(--d-modifier) - 1.5rem, 100%);
+                                position: relative;
+                                margin: 0;
+                                
+                                video, img {
+                                    display: block;
+                                    margin: 0 auto;
                                     width: auto;
-                                    margin: 0;
+                                    height: auto;
+                                    max-width: 100%;
+
+                                    max-height: 100%;
+                                    object-fit: contain;
                                 }
                                 .video-controls{
                                     
@@ -215,13 +232,16 @@ body.modal-open{
         align-items: center;
 
         &__content{
-            --c-padding: clamp(0.5rem, 2.5vw, 3.5rem);
+            
+            --c-top: clamp(0.5rem, 2.5vw, 3.5rem);
+            --c-inline: clamp(0.5rem, 2.5vw, 3.5rem);
+            --c-bottom: clamp(0.5rem, 2.5vw, 3.5rem);
             --h-modifier: 50px;
         }
         &__body{
             .dialog__grid{
                 display: grid;
-                grid-template-columns: clamp(320px, 50%, 65ch) 1fr ;
+                grid-template-columns: clamp(320px, 50%, calc(65ch + 3em)) 1fr;
                 grid-template-rows: auto 1fr;
                 grid-auto-flow: row dense;
                 > *{
@@ -252,8 +272,16 @@ body.modal-open{
         --subtitle-size: clamp(1.15rem, calc(0.15vw + 1rem), 1.25rem);
         &__content{
             --h-modifier: 150px;
-            --c-padding: clamp(0.5rem, 5vw, 3.5rem);
+            --c-top: clamp(0.5rem, 5vw, 3.5rem);
+            --c-inline: clamp(0.5rem, 5vw, 3.5rem);
+            --c-bottom: clamp(0.5rem, 5vw, 3.5rem);
+            
             //padding-bottom: clamp(1.5rem, calc(5vw + 1.5rem), 5rem);
+        }
+        &__description{
+            .content-text{
+                font-size: 100%;
+            }
         }
         
     }

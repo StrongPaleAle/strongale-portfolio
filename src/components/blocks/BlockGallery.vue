@@ -21,7 +21,7 @@ const myOptions : any | undefined = {
   arrows: moreSlides,
   gap: '0.5rem',
   breakpoints: {
-      640: { autoWidth: false, perPage: 1, gap: '0' },
+      450: { autoWidth: false, perPage: 1, gap: '0' },
   },
 }; 
 

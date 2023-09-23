@@ -6,13 +6,13 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <div class="block-picture">
-    <figure>
+  
+    <figure  class="block-picture">
         <picture>
         <source v-for="source in picture.sources" :srcset="source.src" :media="source.media" :type="source.type"/>
         <img :src="picture.img?.src" :alt="picture.img?.alt" />
         </picture>
-        <figcaption v-if="picture.caption && picture.showCaption">{{ picture.caption }}</figcaption>
+        
     </figure>
-  </div>
+  
 </template>

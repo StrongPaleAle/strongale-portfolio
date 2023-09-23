@@ -105,6 +105,129 @@
     },
     {
         "id": 2,
+        "title": "ForgePlay",
+        "slug": "forgeplay",
+        "infos": [
+            {
+                "label": "Year",
+                "value": "2023",
+                "icon": "schedule",
+                "hiddenLabel": false
+            },
+            {
+                "label": "Role",
+                "value": "Developer, Designer",
+                "icon": "task_alt",
+                "hiddenLabel": false
+            }
+
+        ],
+        "tags": [
+            "Web Design", 
+            "Vite.js",
+            "TailwindCSS",
+            "PHP",
+            "Static website"
+        ],
+        "content": "<p>ForgePlay studio is an emergent indie games development team focused on mobile games. The studio has a clear mission: create games that stimulate critical thinking and creativity or deliver important messages to inspire players. The founder is one of my dearest friends, and I accepted to join the team not as a web developer only but also as a UX/UI and narrative designer.</p><p>I designed and developed a simple static website, given that, at the moment, the games in the most advanced state of development are in alpha. Therefore, only a minimal online presence was needed as a reference for publishers and investors.</p><p>However, we are already working on something special 😉</p>",
+        "subtitle": "We do not make simple pastimes...",
+        "link": "https://forgeplay.it/",
+        "cover": {
+            "id": "forgeplay-cover",
+            "sources": [
+                {
+                    "src": "/storage/media/covers/forgeplay-cover-480-static.webp",
+                    "type": "image/webp",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/covers/forgeplay-cover-480-static.jpg",
+                    "type": "image/jpg",
+                    "media": "(prefers-reduced-motion: reduce)"
+                },
+                {
+                    "src": "/storage/media/covers/forgeplay-cover-480.webp",
+                    "type": "image/webp"
+                }
+            ],
+            "img": {
+                "id": "forgeplay-cover-img",
+                "src": "/storage/media/covers/tunnel_cover-400.gif",
+                "alt": "ForgePlay website cover"
+                
+            },
+            "tag": "picture",
+            "overlay": "/storage/media/covers/forgeplay-cover-480-static.webp"
+        },
+        "gallery": [
+            {
+                "id": "forgeplay-cover-vid",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-cover.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-cover.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "ForgePlay Studio Cover: A gaming controller is hit by a hammer. The controller rotates a bit and produces sparks. The text ForgePlay Studio appears.",
+                "showCaption": false
+            },
+            {
+                "id": "forgeplay-home",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-home.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-home.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "ForgePlay Studio homepage scrolling: Header with logo and menu, Cover, games grid, About section, contacts Section, and footer.",
+                "showCaption": false
+            },
+            {
+                "id": "forgeplay-about",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-about.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-about.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "ForgePlay Studio About section: Two column layout: title and description on the right, on the left a pixel-art illustration of the team. Name, role, and social links appear in a ballon on hover.",
+                "showCaption": false
+            },
+            {
+                "id": "forgeplay-project",
+                "sources": [
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-project.webm",
+                        "type": "video/webm"
+                    },
+                    {
+                        "src": "/storage/media/galleries/forgeplay/forgeplay-project.mp4",
+                        "type": "video/mp4"
+                    }
+                ],
+                "tag": "video",
+                "caption": "ForgePlay Studio Single Project dialog: Two column layout: carousel galley on the right, on the Title, info, description, Join the alpha test form.",
+                "showCaption": false
+            }
+        ]
+    },
+    {
+        "id": 3,
         "title": "Sotherga",
         "slug": "sotherga",
         "infos": [
@@ -291,7 +414,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Angry Scientist",
         "slug": "angry-scientist",
         "infos": [
@@ -421,7 +544,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "FULL",
         "slug": "full",
         "infos": [
@@ -573,7 +696,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 6,
         "title": "UFOPLAST",
         "slug": "ufoplast",
         "infos": [
@@ -708,7 +831,7 @@
         ]
     },
     {
-        "id": 6,
+        "id": 7,
         "title": "ALD",
         "slug": "ald",
         "infos": [
@@ -781,7 +904,7 @@
         ]
     },
     {
-        "id": 7,
+        "id": 8,
         "title": "My Tunnel of lo(l/n)eliness",
         "slug": "my-tunnel-of-lol-neliness",
         "infos": [
@@ -828,7 +951,7 @@
                 }
             ],
             "img": {
-                "id": "ald-cover-img",
+                "id": "mytunnel-cover-img",
                 "src": "/storage/media/covers/tunnel_cover-400.gif",
                 "alt": "My tunnel of lo(l/n)eliness starting screen"
                 
