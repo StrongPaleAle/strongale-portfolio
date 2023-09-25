@@ -71,7 +71,7 @@
         
 
         let accentCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
-        let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--extra-light');
+        let extraCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--spotlight');
         let ambientCSSColor:string | undefined = getComputedStyle(document.documentElement).getPropertyValue('--bg-medium');
         accentCSSColor = accentCSSColor.trimStart().replace('deg', '');
         extraCSSColor = extraCSSColor.trimStart().replace('deg', '');

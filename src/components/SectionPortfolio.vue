@@ -49,7 +49,7 @@ onMounted(() => {
         
         const itemX = getCenter(portfolioWidth, itemLeft, itemWidth);
         const itemY = getCenter(portfolioHeight, itemTop, itemHeight);
-        let itemScale = 1 - (1 / portfolioItems.length * (index + 1));
+        let itemScale = 1 - (1 / portfolioItems.length * (index + 1) / 1.5);
         let itemZIndex = portfolioItems.length - index;
         let startingScale = itemScale / 2;
         const trigger = `#${item.getAttribute('id')}`;

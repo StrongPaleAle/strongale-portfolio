@@ -92,7 +92,7 @@ body.modal-open{
                             width: auto;
                             display: flex;
                             align-items: center;
-                            max-width:100%;
+                            max-width: min(420px, 100vh - var(--d-modifier) - 1.5rem, 100%);
                             .block-picture{
                                 height: 100%;
                                 max-height: min(420px, 100vh - var(--d-modifier) - 1.5rem, 100%);

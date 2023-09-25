@@ -71,7 +71,7 @@
         flex-direction: column;
         overflow-x: hidden;
         overflow-y: auto;
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
         > *{
           flex-basis: auto;
         }

@@ -2,27 +2,34 @@
 @use 'sass:math';
 
 $colors: (
-  "black":hsl(320, 37%, 8%),
-  "deep-purple":hsl(256, 46%, 19%), // #2e234d
+  "black":hsl(320, 37%, 8%), // #1C0D17
+  "deep-purple":hsl(256, 46%, 19%), // #261A47
   "purple":hsl(246, 38%, 36%),
   "light-navy":hsl(216, 38%, 37%),
   "viridian": hsl(153, 35%, 39%),
-  "green": hsl(123, 45%, 48%),
-  "bright-green":hsl(104, 100%, 57%),
-  "light-green": hsl(104, 95%, 85%),
-  "nyanza": hsl(110, 100%, 94%),
-  "white": hsl(113, 60%, 97%),
+  "green": hsl(123, 100%, 36%), // #00B606
+  "bright-green":hsl(97, 100%, 50%), // #63FF00
+  "spring-green": hsl(150, 100%, 55%), // #19FF8C
+  "light-green": hsl(104, 95%, 85%), // #CAFDB6
+  "nyanza": hsl(76, 62%, 88%), // #E9F3CD
+  "white": hsl(143, 67%, 98%), // #F5FDF8
   "chinese-black": hsl(171, 35%, 8%),
   "jungle-green": hsl(171, 34%, 16%),
   "dark-slate-gray": hsl(170, 35%, 24%),
-  "palatinate": hsl(312, 57%, 26%),
+  "palatinate": hsl(312, 57%, 26%), // #671C58
   "jam": hsl(326, 78%, 35%),
   "violet-red": hsl(322, 75%, 46%),
-  "pink": hsl(328, 100%, 54%),
-  "rd-rose": hsl(319, 100%, 61%),
+  "pink": hsl(328, 100%, 54%), // #FF1493
+  "rd-rose": hsl(319, 100%, 61%), // #FF39C0
   "l-rose": hsl(319, 100%, 81%),
-  "shampoo": hsl(319, 100%, 92%),
-  "l-blush": hsl(314, 100%, 97%)
+  "shampoo": hsl(319, 100%, 92%), // #FFD6F2
+  "l-blush": hsl(314, 100%, 97%),
+  "french-violet": hsl(277, 100%, 41%), // #8100D1
+  "indigo": hsl(283, 95%, 20%), // #450362
+  "lavender": hsl(277, 100%, 81%), // #450362
+  "mint-green": hsl(160, 70%, 87%), // #C6F5E5
+  "acquamarine": hsl(145, 100%, 71%), // #6BFFA9
+  "acqua-deep": hsl(161, 100%, 18%) // #005A3D
 );
 $theme-options: (
   "dark": (
@@ -36,20 +43,22 @@ $theme-options: (
     "accent-light": "light-green",
     "extra-dark": "palatinate",
     "extra-color": "rd-rose",
-    "extra-light": "shampoo"
+    "extra-light": "shampoo",
+    "spotlight": "white"
   ),
   "light": (
     "bg-heavy": "white",
-    "bg-medium": "light-green",
-    "bg-light": "green",
-    "text-color": "deep-purple",
-    "text-negative": "white",
-    "accent-dark": "palatinate",
-    "accent-color": "jam",
-    "accent-light": "l-rose",
-    "extra-dark": "dark-slate-gray",
-    "extra-color": "viriadian",
-    "extra-light": "nyanza"
+    "bg-medium": "nyanza",
+    "bg-light": "spring-green",
+    "text-color": "black",
+    "text-negative": "nyanza",
+    "accent-dark": "indigo",
+    "accent-color": "french-violet",
+    "accent-light": "lavender",
+    "extra-dark": "mint-green",
+    "extra-color": "acquamarine",
+    "extra-light": "acqua-deep",
+    "spotlight": "white"
   ),
 );
 :root{

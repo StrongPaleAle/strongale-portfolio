@@ -8,7 +8,7 @@ const props = defineProps<{
 
 </script>
 <template>
-    <div class="flex justify-center lh-tight text-large">
+    <div class="info-wrapper flex justify-center lh-tight body-text gap-em-2">
       <SingleInfo v-for="info in block.content" :info="info" />
     </div>
     

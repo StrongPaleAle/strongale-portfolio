@@ -67,12 +67,12 @@
             position: absolute;
             
             border-radius: inherit;
-            background-color: var(--bg-heavy);
+            background-color: var(--accent-dark);
             background: conic-gradient(
                 from var(--gradient-angle), 
                 var(--accent-light-80), 
                 var(--accent-color-80),
-                var(--accent-dark-40),
+                var(--accent-dark),
                 var(--accent-color-80),
                 var(--accent-light-80)
                 );
@@ -186,12 +186,12 @@
                 z-index: -1;
                 border-radius: 5px;
                 //filter: blur(0.75em);
-                background-color: var(--bg-heavy);
+                background-color: var(--accent-dark);
                 background-image: conic-gradient(
                     from var(--gradient-angle), 
                     var(--accent-light-80), 
                     var(--accent-color-80),
-                    var(--accent-dark-40),
+                    var(--accent-dark),
                     var(--accent-color-80),
                     var(--accent-light-80)
                     );

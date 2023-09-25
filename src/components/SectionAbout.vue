@@ -91,11 +91,12 @@ onMounted(() => {
                 
                 
                 console.log('hash ' + tabN);
-                
+                tabsContainer.value?.scrollTo({top : itemPos });
+                    selectTab(tabN , true);
                 //console.log(selectedTab.value);
                 setTimeout(() => {
                     window.scrollTo({top :  sectionWrapper.value?.offsetTop, behavior: 'smooth' });
-                    tabsContainer.value?.scrollTo({top : itemPos });
+                    
                 }, 200);
                 
                 
