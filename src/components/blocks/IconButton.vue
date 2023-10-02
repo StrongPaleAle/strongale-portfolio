@@ -6,7 +6,7 @@
 </script>
 <template>
     <button class="icon-link">
-        <i class="material-symbols-outlined" aria-hidden="true">{{ icon }}</i>
+        <span aria-hidden="true"><svg class="icon-svg"><use :href="`#${icon}`" /></svg></span>
         <span class="visually-hidden">
             <slot></slot>
         </span>

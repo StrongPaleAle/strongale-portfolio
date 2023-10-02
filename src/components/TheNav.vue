@@ -22,27 +22,34 @@ import TheOptions from "./TheOptions.vue";
             <div class="main-nav__list">
                 <ul class="flex">
                     <li class="main-nav__item">
-                        <a href="/" class="main-nav__link"> 
-                            <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                        <a href="/" class="main-nav__link">
+                            <span aria-hidden="true"><svg class="icon-svg"><use href="#icon_home" /></svg></span>
                             Home
                         </a>
                     </li>
                     <li class="main-nav__item">
                         <a href="/#about" class="main-nav__link">
-                            <span class="material-symbols-outlined" aria-hidden="true">info</span>
+                            <span aria-hidden="true"><svg class="icon-svg"><use href="#icon_info" /></svg></span>
                             About
                         </a>
                     </li>
                     <li class="main-nav__item">
                         <a href="/#portfolio" class="main-nav__link">
-                            <span class="material-symbols-outlined" aria-hidden="true">work_history</span>
+                            <span aria-hidden="true"><svg class="icon-svg"><use href="#work_history" /></svg></span>
+                            
                             Work
                         </a>
                     </li>
                     <li class="main-nav__item">
                         <a href="/#contact" class="main-nav__link">
-                            <span class="material-symbols-outlined" aria-hidden="true">contact_support</span>
+                            <span aria-hidden="true"><svg class="icon-svg"><use href="#contact_support" /></svg></span>
                             Contact
+                        </a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="https://cv.strongale.it/" target="_blank" class="main-nav__link">
+                            <span aria-hidden="true"><svg class="icon-svg"><use href="#icon_cv" /></svg></span>
+                            My CV
                         </a>
                     </li>
                 </ul>

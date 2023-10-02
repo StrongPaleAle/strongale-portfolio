@@ -59,7 +59,7 @@ const year = computed(() => {
                 Visit website
             </IconLink>
 
-            <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
+            <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank">
                 View source
             </IconLink>
             

@@ -1,7 +1,7 @@
 .main-nav{
     //background-image: linear-gradient(var(--bg-heavy), var(--bg-heavy-70) 60%, var(--bg-light-00));
     --clip-unit: 6px;
-    --padding: 0.5rem 1rem 0.5rem 1rem; 
+    --padding: 0.5rem; 
     --link-direction: row;
     --display-icons: block;
     --link-size: 0.75rem;
@@ -116,6 +116,11 @@
                     color: var(--accent-color);
                 }
 
+            }
+            @media (max-width: 399.99px){
+                &:first-child{
+                    display: none;
+                }
             }
         }
         

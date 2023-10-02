@@ -75,7 +75,7 @@ onMounted(() => {
                     Visit website
                 </IconLink>
 
-                <IconLink v-if="project.source" :href="project.source" icon="source" target="_blank">
+                <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank">
                     View source
                 </IconLink>
                 <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject?.slug}`)" icon="arrow_back">
@@ -84,7 +84,7 @@ onMounted(() => {
                 <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject?.slug}`)" icon="arrow_forward">
                     View next project
                 </IconLink>
-                <IconButton @click="closeDialog(`project-${project.slug}`)" icon="close">
+                <IconButton @click="closeDialog(`project-${project.slug}`)" icon="icon_close">
                     Close project
                 </IconButton>
                 
