@@ -9,8 +9,8 @@ const props = defineProps<{
   
     <figure  class="block-picture">
         <picture>
-        <source v-for="source in picture.sources" :srcset="source.src" :media="source.media" :type="source.type"/>
-        <img :src="picture.img?.src" :alt="picture.img?.alt" />
+            <source v-for="source in picture.sources" :srcset="source.src" :media="source.media" :type="source.type"/>
+            <img :src="picture.img?.src" :alt="picture.img?.alt" loading="lazy"/>
         </picture>
         
     </figure>

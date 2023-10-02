@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import {gsap} from 'gsap';
 import { SlowMo } from "gsap/EasePack";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CoverStatic from './CoverStatic.vue';
+//import CoverStatic from './CoverStatic.vue';
 // ffmpeg -i lowfps.mov -vf scale=1920:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_1920.mp4
 
 const videoBg = ref<HTMLVideoElement | null>(null);
