@@ -110,17 +110,33 @@
       }
     }
   }
-
+  .icon-svg{
+    aspect-ratio: 1/1;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    shape-rendering: geometricPrecision;
+  }
+  .circle-icon{
+    --padding: 4px;
+    padding: var(--padding);
+    line-height: 0;
+    font-size: 1.2em;
+    border-radius: 50%;
+  
+    
+  }
   .icon-link{
     --clip-unit: 5px;
+    --padding: 8px;
     --iconlink-color: var(--text-color);
     --iconlink-bg: var(--extra-dark);
     --iconlink-shadow: var(--accent-color-80);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2em;
-    height: 2em;
+    padding: var(--padding);
     color: var(--iconlink-color);
     opacity: 1;
     border: 0;
@@ -128,7 +144,10 @@
     border-radius: 5px;
     position: relative;
     isolation: isolate;
-    
+    font-size: 1.2em;
+    span{
+      line-height: 0;
+    }
     &:before{
         content: "";
         position: absolute;
@@ -390,7 +409,7 @@
       font-size: 1.1em;
       display: inline-block;
       height: 100%;
-      padding: 0.2em;
+      padding: 3px;
       aspect-ratio: 1/1;
       display: flex;
       align-items: center;
@@ -399,6 +418,8 @@
       transition: opacity 0.3s ease-in-out;
       svg{
         fill: currentColor;
+        shape-rendering: geometricPrecision;
+        
       }
       &:first-child{
         opacity: 1;
@@ -445,4 +466,52 @@
   }
   .info-wrapper{
     row-gap: 1em;
+  }
+  .cv-link{
+    --clip-unit: 5px;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    filter: drop-shadow(3px 3px 0 var(--accent-dark));
+    color: var(--bg-heavy);
+    
+    &::after{
+       
+        content: "";
+        background-color: var(--accent-color);
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        
+        transition: all 0.2s ease-in-out;
+        @include clip-left-bottom;
+    }
+    &::before{
+        content: "";
+        background-color: var(--accent-light);
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        display: block;
+        opacity: 0.75;
+        filter: blur(2px) drop-shadow(0 0 2 var(--white));
+        transform: scale(0);
+        
+        transition: all 0.2s ease-in-out;
+        @include clip-left-bottom;
+    }
+    &:hover{
+        &::after{
+            opacity: 0.5;
+            
+        }
+        &::before{
+            transform: scale(1);
+        }
+    }
   }

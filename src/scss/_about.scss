@@ -13,6 +13,16 @@
         font-size: clamp(1rem, calc(0.05vw + 1rem), 2.5rem);
       }
     }
+    .tldr{
+      color: var(--accent-color);
+      text-align: right;
+      font-size: 1.5em;
+      display: none;
+      
+      @media screen and (min-width: 1024px){
+        display: block;
+      }
+    }
     .section-content{
       --c-spacing: 0.75em;
       max-width: calc(65ch + var(--c-spacing) * 2);
@@ -67,6 +77,7 @@
         
       
       }
+      
       @media screen and (min-width: 1024px){
         flex-direction: column;
         overflow-x: hidden;

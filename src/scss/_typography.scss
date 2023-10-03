@@ -114,7 +114,8 @@
   a{
     text-decoration: none;
   }
-  p a{
+  
+  p :where(a){
     text-decoration: underline;
     color: var(--extra-light);
   }

@@ -11,8 +11,10 @@ const props = defineProps<{
     
       <div class="single-info | flex items-center gap-em-05">
         
-          <span class="material-symbols-outlined bg-accent-color text-text-negative" aria-hidden="true"
-          v-if="info.icon">{{ info.icon }}</span>
+          <span class="circle-icon bg-accent-color text-text-negative" aria-hidden="true"
+          v-if="info.icon">
+          <svg class="icon-svg"><use :href="`#${info.icon}`" /></svg>
+        </span>
 
         <span>
 

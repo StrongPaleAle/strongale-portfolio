@@ -206,11 +206,16 @@ button.btn-link{
   display: inline-block;
   background-color: var(--accent-color);
 }
-.icon-svg{
-  aspect-ratio: 1/1;
-  height: 1em;
-  display: inline-block;
-  vertical-align: middle;
-  fill: currentColor;
+.show-desktop{
+  display: none;
+  @media (min-width: 425px){
+    display: block;
+  }
+}
+.show-mobile{
+  display: block;
+  @media (min-width: 424.99px){
+    display: none;
+  }
 }
   

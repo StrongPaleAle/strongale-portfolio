@@ -246,7 +246,7 @@
                             {    
                                 "label": "Period",
                                 "value": "2016 - Present",
-                                "icon": "schedule",
+                                "icon": "icon_clock",
                                 "hiddenLabel": true
                             }
                         ],
@@ -286,7 +286,7 @@
                             {    
                                 "label": "Period",
                                 "value": "2015 - 2022",
-                                "icon": "schedule",
+                                "icon": "icon_clock",
                                 "hiddenLabel": true
                             },
                             {
@@ -340,7 +340,7 @@
                             {    
                                 "label": "Period",
                                 "value": "2013 - 2020",
-                                "icon": "schedule",
+                                "icon": "icon_clock",
                                 "hiddenLabel": true
                             },
                             {

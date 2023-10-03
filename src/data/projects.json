@@ -7,7 +7,7 @@
             {
                 "label": "Year",
                 "value": "2023",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -111,7 +111,7 @@
             {
                 "label": "Year",
                 "value": "2023",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -234,7 +234,7 @@
             {
                 "label": "Year",
                 "value": "2022",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -421,7 +421,7 @@
             {
                 "label": "Year",
                 "value": "2021",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -551,7 +551,7 @@
             {
                 "label": "Year",
                 "value": "2021",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -703,7 +703,7 @@
             {
                 "label": "Year",
                 "value": "2020",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -838,7 +838,7 @@
             {
                 "label": "Year",
                 "value": "2019",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {
@@ -911,7 +911,7 @@
             {
                 "label": "Year",
                 "value": "2016",
-                "icon": "schedule",
+                "icon": "icon_clock",
                 "hiddenLabel": false
             },
             {

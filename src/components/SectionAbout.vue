@@ -91,7 +91,7 @@ onMounted(() => {
                 
                 
                 console.log('hash ' + tabN);
-                tabsContainer.value?.scrollTo({top : itemPos });
+                //tabsContainer.value?.scrollTo({top : itemPos });
                     selectTab(tabN , true);
                 //console.log(selectedTab.value);
                 setTimeout(() => {
@@ -164,6 +164,7 @@ function toggleScrolling(element: any) {
                             
                         </ul> 
                     </nav>
+                    <p class="tldr">TL;DR <a class="cv-link" href="https://cv.strongale.it" target="_blank">Read my CV</a></p>
                     
                 </header>
                 

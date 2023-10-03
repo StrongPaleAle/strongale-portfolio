@@ -51,7 +51,7 @@ const year = computed(() => {
             
         </div>
         <div class="portfolio-item__links text-large">
-            <IconLink :href="`#project-${project.slug}`" @click="openDialog(`project-${project.slug}`)" icon="visibility">
+            <IconLink :href="`#project-${project.slug}`" @click="openDialog(`project-${project.slug}`)" icon="icon_visibility">
                 View project
             </IconLink>
 

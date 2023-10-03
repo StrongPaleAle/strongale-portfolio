@@ -13,6 +13,7 @@ import TheHero from './components/TheHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
 import SectionPortfolio from './components/SectionPortfolio.vue';
 import SectionContact from './components/SectionContact.vue';
+import TheFooter from './components/TheFooter.vue';
 
 //import TheOptions from './components/TheOptions.vue';
 //import { getTheme, setTheme} from './utils/utils';
@@ -38,7 +39,7 @@ let enableVideo = ref<boolean>(!options.prefersReducedData && !options.prefersRe
     <SectionContact />
     
   </main>
-  
+  <TheFooter />
   </div>
   
   

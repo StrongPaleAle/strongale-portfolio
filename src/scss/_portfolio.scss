@@ -136,7 +136,10 @@
                 opacity: 0;
                 transition: all 0.4s ease-in-out;
                 transition-delay: var(--delay, 0);
-                
+                &:before{
+                    background-color: var(--bg-heavy);
+                    background-image: linear-gradient(180deg, var(--bg-heavy-20), var(--bg-light-20));
+                }
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}){
                         --delay: #{$i * 0.1}s;
@@ -154,7 +157,7 @@
             background-color: var(--bg-heavy);
             color: var(--text-color);
             font-weight: 700;
-            filter: drop-shadow(3px 3px 0 var(--accent-color-60));
+            filter: drop-shadow(3px 3px 0 var(--accent-dark));
             &::after, &::before{
                 content: "";
                 position: absolute;
