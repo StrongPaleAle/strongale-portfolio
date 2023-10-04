@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import type { Ref } from 'vue'
 import { Video } from '@/types';
 
+
 const props = defineProps<{
     video: Partial<Video>; 
 }>();

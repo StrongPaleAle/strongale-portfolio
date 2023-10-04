@@ -35,6 +35,7 @@ const canUseWebp = headers => {
 
 
 export const options = reactive({
+    isLoaded: false,
     canHover: window.matchMedia('(hover: hover)').matches,
     prefersReducedData: window.matchMedia('(prefers-reduced-data: reduce)').matches,
     prefersReducedMotion: getMotionPreference(),

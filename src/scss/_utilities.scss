@@ -201,10 +201,10 @@ button.btn-link{
   
 }
 .masked-logo{
-  clip-path: url(#mask-logo);
+  shape-rendering: geometricPrecision;
   aspect-ratio: 1/1;
   display: inline-block;
-  background-color: var(--accent-color);
+  fill: currentColor;
 }
 .show-desktop{
   display: none;

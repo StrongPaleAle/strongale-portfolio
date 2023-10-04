@@ -11,9 +11,16 @@ body {
   
   
 }
+svg.symbols{
+  line-height: 0;
+  position: absolute;
+}
 .app-inner{
   position: relative;
   overflow: hidden;
+  &.blocked{
+    max-height: 101vh;
+  }
 }
 .flow > * {
   margin: 0;
@@ -38,6 +45,9 @@ body {
     position: relative;
     min-height: 100svh;
     z-index: 3;
+    + section {
+      margin-top: 20vh;
+    }
   }
 }
 .section-wrapper{

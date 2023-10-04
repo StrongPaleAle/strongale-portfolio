@@ -1,14 +1,26 @@
 <script setup lang="ts">
-
+import { onMounted } from "vue";
 import TheOptions from "./TheOptions.vue";
-
+onMounted(() => {
+    
+});
+function goTop(evt: Event) {
+    evt.preventDefault();
+    history.pushState("", document.title, window.location.pathname);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}
 </script>
 <template>
     <nav class="main-nav">
         <div class="main-nav__logo">
-            <a href="/" class="main-nav__logo-link">
+            <a href="/" class="main-nav__logo-link" @click="goTop">
                 <span class="logo-wrapper">
-                    <span class="masked-logo"></span>
+                    <svg class="masked-logo">
+                        <use href="#icon-logo" />
+                    </svg>
                 </span>
                 <span class="main-nav__logo-text">
                     <span class="main-nav__text-wrapper">
@@ -22,7 +34,7 @@ import TheOptions from "./TheOptions.vue";
             <div class="main-nav__list">
                 <ul class="flex">
                     <li class="main-nav__item">
-                        <a href="/" class="main-nav__link">
+                        <a href="/" class="main-nav__link"  @click="goTop">
                             <span class="nav-icon" aria-hidden="true"><svg class="icon-svg"><use href="#icon_home" /></svg></span>
                             Home
                         </a>

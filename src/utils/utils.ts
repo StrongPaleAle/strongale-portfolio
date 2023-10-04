@@ -25,6 +25,16 @@ export function valueToPoint(value:number, index:number, total:number) {
   }
 
 }
+
+export function navSwitch(element: any) {
+        
+  if (element[0].isIntersecting) {
+    const id = element[0].target.id;
+    console.log(id);
+      
+  } 
+  
+}
   
 export function rotateElement(event: MouseEvent, element: HTMLElement) {
   // get mouse position
