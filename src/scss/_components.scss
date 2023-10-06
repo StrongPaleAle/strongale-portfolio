@@ -179,7 +179,7 @@
     background-color: transparent;
     position: relative;
     isolation: isolate;
-    filter: drop-shadow(3px 3px 0 var(--clippedbox-shadow)) drop-shadow(-2px -2px 0 var(--clippedbox-highlight));
+    filter: drop-shadow(5px 5px 0 var(--clippedbox-shadow)) drop-shadow(-3px -3px 0 var(--clippedbox-highlight));
     &:before{
         content: "";
         position: absolute;
@@ -329,12 +329,16 @@
     background-color: var(--accent-color);
   }
   .single-info{
-    
+    word-spacing: -0.2em;
     a{
       color: currentColor;
       text-decoration: underline;
+      word-spacing: -0.4em;
       &:hover{
         color: var(--extra-light);
+      }
+      .hover-label{
+        word-spacing: normal;
       }
     }
     .material-symbols-outlined{
@@ -443,9 +447,9 @@
   .has-hover-label{
     position: relative;
     .hover-label{
-      position: absolute;
+      position: fixed;
       display: block;
-      top: calc(100% + 0.5em);
+      top: 50%;
       left: 50%;
       transform: translateX(-50%);
       padding: 0.5em;
@@ -464,6 +468,28 @@
       }
     }
   }
+  .tooltip{
+    position: fixed;
+    display: block;
+    max-width: 100px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    background-color: var(--bg-heavy);
+    border-radius: 3px;
+    color: var(--text-color);
+    border: 1px solid var(--extra-dark);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    font-size: 0.75rem;
+    pointer-events: none;
+    z-index: 9999;
+    &.active{
+      opacity: 1;
+    }
+  }
+ 
   .info-wrapper{
     row-gap: 1em;
   }

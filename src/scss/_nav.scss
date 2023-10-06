@@ -6,6 +6,7 @@
     --display-icons: block;
     --link-size: 0.75rem;
     --justify-menu: space-between;
+    --logo-text-size: 1.5rem;
     
     position: fixed;
     top: 0;
@@ -44,7 +45,7 @@
        
         
         
-        font-size: 2rem;
+        font-size: var(--logo-text-size);
         line-height: 1;
         display: block;
         overflow: hidden;
@@ -98,13 +99,16 @@
             align-items: center;
         }
         li{
-            a{
-                color: var(--text-color);
+            font-size: var(--link-size);
+            padding: 0 1em;
+            a{  
+                --link-color:  var(--text-color);
+                color: var(--link-color);
                 text-decoration: none;
                 display: block;
                 text-align: center;
-                font-size: var(--link-size);
-                padding: 0 1em;
+                font-size: inherit;
+                
                 transition: all 0.2s ease-in-out;
                 position: relative;
                 isolation: isolate;
@@ -120,7 +124,7 @@
                     --clip-unit: 1px;
                     content: "";
                     position: absolute;
-                    background-color: var(--accent-color);
+                    background-color: var(--link-color);
                     z-index: -1;
                     bottom: -4px;
                     inset-inline: 0;
@@ -130,8 +134,14 @@
                     transition: all 0.2s ease-in-out;
                     @include clip-left-bottom;
                 }
-                &:hover, &.active{
-                    color: var(--accent-color);
+                &:hover, &:focus{
+                    --link-color: var(--accent-light);
+                    &::after{
+                        transform: scaleX(1);
+                    }
+                }
+                &.active{
+                    --link-color: var(--accent-color);
                     &::after{
                         transform: scaleX(1);
                     }
@@ -142,6 +152,7 @@
                         //color: var(--accent-color);
                         position: relative;
                         isolation: isolate;
+                        padding: 0 0.5em;
                         &::after{
                             --clip-unit: 5px;
                             content: "";
@@ -161,11 +172,12 @@
                             inset: -7px -2px;
                             display: block;
                             transform: scale(0);
-                            transform-origin: center right;
+                            
                             transition: all 0.2s ease-in-out;
                             @include clip-left-bottom;
                         }
                         &:hover{
+                            --link-color: var(--bg-medium);
                             &::after{
                                 opacity: 0.5;
                                 
@@ -218,6 +230,7 @@
     @media (min-width: 1024px){
         --padding: 1rem 2rem 1rem 1rem;
         --link-size: 1.125rem;
+        --logo-text-size: 2rem;
     }
 
 }

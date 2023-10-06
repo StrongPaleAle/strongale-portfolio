@@ -14,7 +14,7 @@ const point = computed(() =>
 </script>
 
 <template>
-    <g class="svg-graph__point">
+    <g class="svg-graph__point" :data-tooltip="graphpoint.label">
         <circle class="area" :cx="point.x" :cy="point.y" r="6" fill="transparent"></circle>
         <circle :cx="point.x" :cy="point.y" r="3"></circle>
         

@@ -18,6 +18,7 @@ const props = defineProps<{
         <div class="grow">
             <table class="skill-table text-small">
                 <tr v-for="(point, index) in block.content" :key="index">
+                    <td class="skill-table__label">{{index + 1}}.</td>
                     <td>{{point.label}}</td>
                     <td class="grow-td">
                         <div class="progress">

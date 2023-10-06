@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+//import { navObserver } from '../utils/utils';
 import TheLogo from './TheLogo.vue';
+
+const sectionWrapper = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+    //navObserver.observe(sectionWrapper.value as HTMLElement);
+});
+
 </script>
 
 <template>
-<section id="hero" class="section-wrapper">
+<section id="hero" class="section-wrapper" ref="sectionWrapper">
         <div class="section-container">
             <div class="cover-content">
                 <div class="heading | text-hero">

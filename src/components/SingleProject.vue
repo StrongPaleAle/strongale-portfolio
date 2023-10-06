@@ -71,20 +71,20 @@ onMounted(() => {
             
             <footer class="dialog__links | flex gap-em-05">
                     
-                <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
+                <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank" data-tooltip="Visit the website">
                     Visit website
                 </IconLink>
 
-                <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank">
-                    View source
+                <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank" data-tooltip="View source code">
+                    View source code
                 </IconLink>
-                <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject?.slug}`)" icon="arrow_back">
+                <IconLink v-if="prevProject" :href="`#project-${prevProject.slug}`" @click="openDialog(`project-${prevProject?.slug}`)" icon="arrow_back" data-tooltip="Previeous project">
                     View previous project
                 </IconLink>
-                <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject?.slug}`)" icon="arrow_forward">
+                <IconLink v-if="nextProject" :href="`#project-${nextProject.slug}`" @click="openDialog(`project-${nextProject?.slug}`)" icon="arrow_forward" data-tooltip="Next project">
                     View next project
                 </IconLink>
-                <IconButton @click="closeDialog(`project-${project.slug}`)" icon="icon_close">
+                <IconButton @click="closeDialog(`project-${project.slug}`)" icon="icon_close" data-tooltip="Close project">
                     Close project
                 </IconButton>
                 

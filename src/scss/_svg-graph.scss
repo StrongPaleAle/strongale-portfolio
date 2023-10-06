@@ -27,11 +27,11 @@
             fill: var(--text-color);
             text-shadow: 0 0 0.25em var(--bg-heavy-80);
         }
-        &:hover{
-            text{
-                opacity: 1;
-            }
-        }
+        // &:hover{
+        //     text{
+        //         opacity: 1;
+        //     }
+        // }
     }
     text{
         fill: var(--text-color);

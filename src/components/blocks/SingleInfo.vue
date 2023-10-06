@@ -25,10 +25,14 @@ const props = defineProps<{
         
           <a v-if="info.link" 
             :href="info.link"
-            class="single-info__value" 
-            target="_blank" 
+            class="single-info__value has-hover-label" 
+            target="_blank"
+            data-tooltip="Visit the website" 
             rel="external">
-              {{ info.value }}
+              {{ info.value }}<svg class="icon-svg"><use href="#open_in_new" /></svg>
+              <span class="visually-hidden">(Opens in a new tab)</span>
+              
+
           </a>
           <span v-else class="single-info__value">
               {{ info.value }}

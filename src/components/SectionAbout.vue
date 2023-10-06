@@ -60,7 +60,7 @@ function selectTab(index: number, fromLink: boolean) {
 
 }
 onMounted(() => {
-
+    
     // BASIC VARIABLES
     const hash = window.location.hash.substring(1);
     const aboutContainer = document.querySelector('#about .section-content');

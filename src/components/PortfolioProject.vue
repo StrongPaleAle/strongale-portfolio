@@ -51,15 +51,15 @@ const year = computed(() => {
             
         </div>
         <div class="portfolio-item__links text-large">
-            <IconLink :href="`#project-${project.slug}`" @click="openDialog(`project-${project.slug}`)" icon="icon_visibility">
+            <IconLink :href="`#project-${project.slug}`" @click="openDialog(`project-${project.slug}`)" icon="icon_visibility" data-tooltip="View project">
                 View project
             </IconLink>
 
-            <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank">
+            <IconLink v-if="project.link" :href="project.link" icon="open_in_new" target="_blank" data-tooltip="Visit website">
                 Visit website
             </IconLink>
 
-            <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank">
+            <IconLink v-if="project.source" :href="project.source" icon="icon_source" target="_blank" data-tooltip="View source code">
                 View source
             </IconLink>
             

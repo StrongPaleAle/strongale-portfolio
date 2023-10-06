@@ -1,9 +1,29 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import TheOptions from "./TheOptions.vue";
+
+const navObserver = new IntersectionObserver(navSwitch, {rootMargin: "-50% 0px -50% 0px"});
 onMounted(() => {
-    
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => {
+        navObserver.observe(section);
+    });
 });
+
+
+function navSwitch(element: any) {
+        
+  if (element[0].isIntersecting) {
+    const id = element[0].target.id;
+    const current = document.querySelector(`.main-nav__link.active`);
+    const target = document.querySelector(`.main-nav__link[href="#${id}"]`);
+
+    current?.classList.remove('active');
+    target?.classList.add('active');
+      
+  } 
+  
+}
 function goTop(evt: Event) {
     evt.preventDefault();
     history.pushState("", document.title, window.location.pathname);
@@ -34,26 +54,26 @@ function goTop(evt: Event) {
             <div class="main-nav__list">
                 <ul class="flex">
                     <li class="main-nav__item">
-                        <a href="/" class="main-nav__link"  @click="goTop">
+                        <a href="#hero" class="main-nav__link"  @click="goTop">
                             <span class="nav-icon" aria-hidden="true"><svg class="icon-svg"><use href="#icon_home" /></svg></span>
                             Home
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="/#about" class="main-nav__link">
+                        <a href="#about" class="main-nav__link">
                             <span class="nav-icon"  aria-hidden="true"><svg class="icon-svg"><use href="#icon_info" /></svg></span>
                             About
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="/#portfolio" class="main-nav__link">
+                        <a href="#portfolio" class="main-nav__link">
                             <span class="nav-icon"  aria-hidden="true"><svg class="icon-svg"><use href="#work_history" /></svg></span>
                             
                             Work
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="/#contact" class="main-nav__link">
+                        <a href="#contacts" class="main-nav__link">
                             <span class="nav-icon" aria-hidden="true"><svg class="icon-svg"><use href="#contact_support" /></svg></span>
                             Contact
                         </a>
