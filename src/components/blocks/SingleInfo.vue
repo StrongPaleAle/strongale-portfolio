@@ -25,7 +25,7 @@ const props = defineProps<{
         
           <a v-if="info.link" 
             :href="info.link"
-            class="single-info__value has-hover-label" 
+            class="single-info__value" 
             target="_blank"
             data-tooltip="Visit the website" 
             rel="external">

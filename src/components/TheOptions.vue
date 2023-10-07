@@ -23,7 +23,7 @@ const changeTheme = useDark({
 </script>
 <template>
     <div class="site-options">
-        <button class="toggle has-hover-label" :data-active="isDark" @click="toggleDark()" :data-tooltip="`Switch to ${ isDark ? 'Light theme' : 'Dark theme' }`">
+        <button class="toggle" :data-active="isDark" @click="toggleDark()" :data-tooltip="`Switch to ${ isDark ? 'Light theme' : 'Dark theme' }`">
             <span class="toggle__icon" aria-hidden="true">
                 <svg width="1em" height="1em"><use href="#light_mode" /></svg>
             </span>

@@ -1,0 +1,60 @@
+.icon-svg{
+    aspect-ratio: 1/1;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    shape-rendering: geometricPrecision;
+  }
+  .circle-icon{
+    --padding: 4px;
+    padding: var(--padding);
+    line-height: 0;
+    font-size: 1.2em;
+    border-radius: 50%;
+  
+    
+  }
+  .icon-link{
+    --clip-unit: 5px;
+    --padding: 8px;
+    --iconlink-color: var(--text-color);
+    --iconlink-bg: var(--extra-dark);
+    --iconlink-shadow: var(--accent-color-80);
+    --clip-half: calc(var(--clip-unit) / 2);
+    --clip-double: calc(var(--clip-unit) * 2);
+    --clip-half75: calc(var(--clip-unit) / 1.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+    color: var(--iconlink-color);
+    opacity: 1;
+    border: 0;
+    background-color: transparent;
+    border-radius: 5px;
+    position: relative;
+    isolation: isolate;
+    font-size: 1.2em;
+    span{
+      line-height: 0;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        border-radius: 5px;
+        inset: 0;
+        z-index: -1;
+        background-color: var(--iconlink-bg);
+        @include clip-angle(var(--clip-unit) ,calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2), calc(var(--clip-unit) / 2));
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        inset: -1px -2px -2px -1px;
+        border-radius: 5px;
+        z-index: -2;
+        background-color: var(--iconlink-shadow);
+        @include clip-angle(calc(var(--clip-unit) / 2), var(--clip-unit) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2));
+    }
+  }

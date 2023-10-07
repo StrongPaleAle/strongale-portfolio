@@ -1,0 +1,193 @@
+.button{
+    //font-family: var(--font-heading);
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    border: var(--button-border);
+    background-color: var(--bg-button);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    &:after, &:before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--border-radius);
+      background-color: var(--bg-button-active);
+      z-index: -1;
+      transform: translateX(100%);
+      transition: all 0.2s ease-in-out;
+    }
+    &:before{
+      
+      background-color: var(--bg-button-hover);
+      
+    }
+    &[data-variant="accent-bg"], &[data-active="true"]{
+      color: var(--text-negative);
+      &:after{
+        transform: translateX(0);
+      }
+    }
+    &:hover:not([data-active="true"]), &:focus:not([data-active="true"]){
+      &:before{
+        transform: translateX(0);
+      }
+    }
+  }
+  .cv-link{
+    --clip-unit: 5px;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    filter: drop-shadow(4px 4px 0 var(--accent-dark));
+    color: var(--bg-heavy);
+    
+    &::after{
+       
+        content: "";
+        background-color: var(--accent-color);
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+        
+        transition: all 0.2s ease-in-out;
+        @include clip-angle(calc(var(--clip-unit) / 2), var(--clip-unit) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2));
+    }
+    &::before{
+        content: "";
+        background-color: var(--accent-light);
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        display: block;
+        opacity: 0.75;
+        filter: blur(2px) drop-shadow(0 0 2 var(--white));
+        transform: scale(0);
+        
+        transition: all 0.2s ease-in-out;
+        @include clip-angle(calc(var(--clip-unit) / 2), var(--clip-unit) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2));
+    }
+    &:hover{
+        &::after{
+            opacity: 0.5;
+            translate: 2px 2px;
+            
+        }
+        &::before{
+            transform: scale(1);
+            translate: 2px 2px;
+        }
+    }
+  }
+
+  .toggle{
+    
+    border-radius: 100vw;
+    padding: 0.15em;
+    
+    background-color: var(--text-color-40);
+    position: relative;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    border: none;
+    outline: 1px solid var(--accent-color);
+    box-shadow: inset 0.15em 0.15em 0.05em var(--bg-heavy-50);
+    &:before{
+      content: "";
+      position: absolute;
+      inset: 0.15em auto 0.15em 0.15em;
+      aspect-ratio: 1/1;
+      border-radius: inherit;
+      background-color: var(--accent-color-80);
+      transform: translateX(0);
+      outline: 2px solid var(--accent-dark);
+      z-index: -1;
+
+      transition: transform 0.3s ease-in-out;
+      
+    }
+    &__icon{
+      color: var(--text-negative);
+      font-size: 1.1em;
+      display: inline-block;
+      height: 100%;
+      padding: 3px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
+      svg{
+        fill: currentColor;
+        shape-rendering: geometricPrecision;
+        
+      }
+      &:first-child{
+        opacity: 1;
+      }
+      
+    }
+    &[data-active="true"]{
+      &:before{
+        transform: translateX(100%);
+      }
+      .toggle__icon:last-child{
+        opacity: 1;
+      }
+      .toggle__icon:first-child{
+        opacity: 0.8;
+      }
+    }
+
+  }
+  .video-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    button{
+      opacity: 0.8;
+      border: 0;
+      background-color: var(--bg-heavy);
+      border-radius: 50%;
+      padding: 4px;
+      margin: 0;
+      line-height: 0;
+      color: var(--text-color);
+      transition: all 0.25s ease-in-out;
+      &:hover{
+          opacity: 1;
+          color: var(--accent-light);
+      }
+    }
+    .indicator{
+      font-size: 0.8em;
+      opacity: 0.6;
+      color: var(--text-color);
+      background-color: var(--bg-heavy);
+      line-height: 0;
+      padding: 5px;
+      border-radius: 50%;
+      
+    }
+    
+  }

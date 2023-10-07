@@ -145,7 +145,7 @@ function toggleScrolling(element: any) {
 <template>
     <section id="about" class="section-wrapper" ref="sectionWrapper">
         <div class="section-container" >
-            <div class="flex ">
+            <div class="flex justify-center">
                 <header class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
                         <span class="about-title-text | text-box " data-variant="accent-bg clip-desk-bl"><span class="carved">About me</span></span>
@@ -164,7 +164,11 @@ function toggleScrolling(element: any) {
                             
                         </ul> 
                     </nav>
-                    <p class="tldr">TL;DR <a class="cv-link" href="https://cv.strongale.it" target="_blank">Read my CV</a></p>
+                    <p class="tldr">TL;DR 
+                        <a class="cv-link" href="https://cv.strongale.it" target="_blank">
+                                <span>Read my CV</span>
+                            </a>
+                    </p>
                     
                 </header>
                 

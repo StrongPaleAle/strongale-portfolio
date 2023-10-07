@@ -1,0 +1,197 @@
+@mixin clip-angle($top_left: 0, $top_right: 0, $bottom_right: 0, $bottom_left: 0){
+
+  @if $top_left != 0{
+    $top_left: 0 #{$top_left},  #{$top_left} 0;
+  } @else{
+    $top_left: 0 0;
+  }
+
+  @if $top_right != 0{
+    $top_right: calc(100% -  #{$top_right}) 0, 100%  #{$top_right};
+  } @else{
+    $top_right: 100% 0;
+  }
+
+  @if $bottom_right != 0{
+    $bottom_right: 100% calc(100% - #{$bottom_right}), calc(100% - #{$bottom_right}) 100%;
+  } @else{
+    $bottom_right: 100% 100%;
+  }
+
+  @if $bottom_left != 0{
+    $bottom_left: #{$bottom_left} 100%, 0 calc(100% - #{$bottom_left});
+  } @else{
+    $bottom_left: 0 100%;
+  }
+  clip-path: polygon(
+    #{$top_left}, 
+    #{$top_right},
+    #{$bottom_right},
+    #{$bottom_left}
+  );
+}
+
+.clipped-box{
+  --clip-unit: 5px;
+  --clippedbox-color: var(--text-color);
+  --clippedbox-bg: var(--bg-heavy);
+  --clippedbox-shadow: var(--accent-dark);
+  --clippedbox-highlight: var(--accent-light);
+  --clip-half: calc(var(--clip-unit) / 2);
+  --clip-double: calc(var(--clip-unit) * 2);
+  --clip-half75: calc(var(--clip-unit) / 1.75);
+  
+  color: var(--clippedbox-color);
+  
+  background-color: transparent;
+  position: relative;
+  isolation: isolate;
+  filter: drop-shadow(var(--clip-half75) var(--clip-half75) 0 var(--clippedbox-shadow));
+  &:before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--clippedbox-bg);
+      @include clip-angle(var(--clip-unit) ,var(--clip-half), var(--clip-double), var(--clip-half));
+      border-radius: inherit;
+  }
+  &[data-variant*="clip-bl"]{
+    
+    &:before{
+      
+      @include clip-angle(
+        calc(var(--clip-unit) / 2), 
+        var(--clip-unit) , 
+        calc(var(--clip-unit) / 2), 
+        calc(var(--clip-unit) * 2)
+        );
+    }  
+  }
+  &[data-variant*="clip-desk"]{
+    @media  (min-width: 1024px) {
+      &[data-variant*="clip-desk-bl"]{
+        &:before{
+          @include clip-angle(
+            calc(var(--clip-unit) / 2), 
+            var(--clip-unit) , 
+            0, 
+            calc(var(--clip-unit) * 2)
+            );
+        }  
+      }
+    }
+  }
+  &[data-variant*="gradient"]{
+    &:after{
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(45deg, var(--black-30) 0%, transparent 10%, var(--white-20) 15%,transparent 25%, transparent 50%, transparent 70%,  var(--white-40) 80%, transparent 90%);
+      border-radius: inherit;
+      @include clip-angle(
+        var(--clip-unit) ,
+        calc(var(--clip-unit) / 2), 
+        calc(var(--clip-unit) * 2), 
+        calc(var(--clip-unit) / 2)
+        );
+      
+      
+    }
+    &[data-variant*="clip-bl"]{
+    
+      &:after{
+        @include clip-angle(
+        calc(var(--clip-unit) / 2), 
+        var(--clip-unit) , 
+        calc(var(--clip-unit) / 2), 
+        calc(var(--clip-unit) * 2)
+        );
+      }  
+    }
+  }
+  
+  
+}
+  
+.clip-ui{
+  isolation: isolate;
+  
+  &::before, &::after{
+    content: "";
+    position: absolute;
+    
+    
+    
+  }
+  &::before{
+      background-color: var(--accent-dark);
+      --gradient-angle: 45deg;
+      background-image: conic-gradient(
+          from var(--gradient-angle), 
+          var(--accent-light-80), 
+          var(--accent-color),
+          var(--accent-dark-60),
+          var(--accent-color-90),
+          var(--accent-light-80)
+          );
+      z-index: -2;
+      inset: -1px -3px -3px -1px;
+      @include clip-angle(0, var(--clip-unit) , 0, calc(var(--clip-unit) * 2)); 
+      border-radius: 5px 0 7px 0;
+  }
+  &::after{
+      background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
+      background-color: var(--bg-heavy);
+      z-index: -1;
+      inset: 0;
+      border-radius: 0 5px 0 7px;
+      @include clip-angle(
+        var(--clip-unit),
+        calc(var(--clip-unit) / 2), 
+        calc(var(--clip-unit) * 2), 
+        calc(var(--clip-unit) / 2)
+        ); 
+  }
+}
+  
+.text-box{
+  --clip-unit: 0.125em;
+  --textbox-b-radius: 0.05em;
+  padding-inline: 0.2em 0.1em;
+  line-height: 1;
+  display: inline-block;
+  border-radius: var(--textbox-b-radius);
+  letter-spacing: 0.05em;
+  @extend .clipped-box;
+  
+  &[data-variant*="accent-bg"]{
+    --clippedbox-bg: var(--accent-color);
+    --clippedbox-color: var(--bg-heavy);
+      
+  }
+  &[data-variant*="dark-bg"]{
+    color: var(--text-color);
+  }
+  
+}
+.title-box{
+  > .title-inner{
+    color: var(--text-negative);
+    background-color: var(--text-color);
+    padding-inline: 0.2em 0.1em;
+    line-height: 1;
+    display: inline-block;
+    border-radius: var(--border-radius-large);
+    letter-spacing: 0.05em;
+    position: relative;
+    
+  }
+  &[data-variant*="accent-bg"] > .title-inner{
+    background-color: var(--accent-color);
+  }
+}
+  
+  
+  

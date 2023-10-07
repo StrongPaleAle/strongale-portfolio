@@ -49,7 +49,7 @@
                 <nav aria-label="Contacts">
                     <ul class="contact-links |  flex justify-center items-center gap-em-15">
                         <li>
-                            <a href="mailto:alessio@strongale.it" class="contact-link has-hover-label mlink" target="_blank" data-tooltip="Email">
+                            <a href="mailto:alessio@strongale.it" class="contact-link  mlink" target="_blank" data-tooltip="Email">
                                 <span class="contact-icon circle-icon" aria-hidden="true">
                                     <svg class="icon-svg"><use href="#alternate_email" /></svg>
                             
@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="contact-link has-hover-label" href="https://www.linkedin.com/in/alessio-falchi/" target="_blank" data-tooltip="LinkedIn">
+                            <a class="contact-link" href="https://www.linkedin.com/in/alessio-falchi/" target="_blank" data-tooltip="LinkedIn">
                                 <span class="contact-icon circle-icon" aria-hidden="true">
                                     <svg class="icon-svg"><use href="#icon_linkedin" /></svg>
                             
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="contact-link has-hover-label" href="https://github.com/StrongPaleAle" target="_blank" data-tooltip="GitHub">
+                            <a class="contact-link" href="https://github.com/StrongPaleAle" target="_blank" data-tooltip="GitHub">
                                 <span class="contact-icon circle-icon" aria-hidden="true">
                                     <svg class="icon-svg"><use href="#icon_github" /></svg>
                                 </span>
@@ -81,7 +81,11 @@
                                 </span>
                             </a>
                         </li>
-                        <li><a class="cv-link" href="https://cv.strongale.it" target="_blank">Read my CV</a></li>
+                        <li>
+                            <a class="cv-link" href="https://cv.strongale.it" target="_blank">
+                                <span>Read my CV</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 

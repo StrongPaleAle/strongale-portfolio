@@ -8,6 +8,7 @@ body.modal-open{
     --em-spacing: 1.5em;
     --title-size: clamp(1.5rem, calc(1.5vw + 1.5rem), 2.5rem);
     --subtitle-size: clamp(0.875rem, calc(1.25vw + 0.875rem), 1rem);
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -33,6 +34,7 @@ body.modal-open{
         height: 100%;
         background-color: var(--bg-heavy-80);
         z-index: -1;
+        backdrop-filter: blur(2px);
     }
     &__content{
         --c-top: 1.5rem;
@@ -45,7 +47,7 @@ body.modal-open{
         height: calc(100% - var(--h-modifier));
        
         padding: var(--c-top) var(--c-inline) var(--c-bottom);
-        
+        filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
         @extend .clip-ui;
     }
     &__header{
@@ -112,19 +114,21 @@ body.modal-open{
                                     object-fit: contain;
                                 }
                                 .video-controls{
-                                    
+                                    font-size: 1.25em;
                                     opacity: 0.5;
                                     transition: opacity 0.25s ease-in-out;
                                     .indicator{
+                                        
                                         opacity: 0;
                                         transition: opacity 0.25s ease-in-out;
                                     }
+                                    
                                 }
                                 &.playing{
                                    .video-controls{
                                         opacity: 1;
                                         .indicator{
-                                            opacity: 0.6;
+                                            opacity: 0.7;
                                         }
                                       
                                     } 
@@ -151,10 +155,10 @@ body.modal-open{
                     }
                     &--prev{
                         &::before{
-                            @include clip-left-bottom;
+                            @include clip-angle(var(--clip-half), var(--clip-unit) , var(--clip-half), var(--clip-double));
                         }
                         &::after{
-                            @include clip-right-bottom;
+                            @include clip-angle( var(--clip-unit), var(--clip-half), var(--clip-double), var(--clip-half));
                         }
                     }
                 }
@@ -193,10 +197,7 @@ body.modal-open{
                 -webkit-line-clamp: 2;
                 overflow: hidden;
             }
-            .material-symbols-outlined{
-                
-                font-size: 1.5em;
-            }
+            
         }
     }
     &__description{
@@ -216,9 +217,7 @@ body.modal-open{
         top: -0.5em;
         .icon-link{
             font-size: var(--icon-size);
-            .material-symbols-outlined{
-                font-size: 1.5em;
-            }
+            
         }
     }
     &__title{

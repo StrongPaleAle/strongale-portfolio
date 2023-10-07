@@ -1,0 +1,69 @@
+.card{
+    
+    position: relative;
+    z-index: 3;
+    background-color: var(--bg-heavy-40);
+    border-radius: 2px;
+    backdrop-filter: blur(0.5rem);
+    padding: var(--em-spacing);
+    
+    box-shadow: 0 0 0.5rem var(--bg-heavy-05);
+    border-radius: 5px 15px;
+    animation: show-up 0.4s ease-in-out;
+    &:not([class*="gap-"]){
+      --em-spacing: 0.75em;
+
+      @media (min-width: 768px){
+    
+        --em-spacing: 1.5em;
+      }
+      @media (min-width: 1280px){
+        --em-spacing: 2em;
+      }
+      @media (min-width: 1440px){
+        --em-spacing: 2.5em;
+      }
+    }
+    
+    p{
+      margin: 0;
+      & + p{
+        margin-top: 1em;
+      }
+    }
+    &[data-variant*="card-light"]{
+      background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
+      
+    }
+    
+  }
+  .clip-card{
+    &::before{
+      content: "";
+      position: absolute;
+      inset: -1px -3px -3px -1px;
+      z-index: -1;
+      border-radius: var(--clip-unit);
+      //filter: blur(0.75em);
+      background-color: var(--bg-heavy);
+      background-image: conic-gradient(
+          from var(--gradient-angle), 
+          var(--accent-light-80), 
+          var(--accent-color-80),
+          var(--accent-dark-40),
+          var(--accent-color-80),
+          var(--accent-light-80)
+          );
+          @include clip-angle(var(--clip-unit) ,calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2), calc(var(--clip-unit) / 2));
+  }
+  &::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 5px;
+      background-color: var(--bg-heavy);
+      background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
+      @include clip-angle(var(--clip-unit) ,calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2), calc(var(--clip-unit) / 2));
+  }
+}

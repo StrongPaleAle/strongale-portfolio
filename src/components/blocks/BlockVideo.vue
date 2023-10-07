@@ -13,7 +13,7 @@ const videoPlaying = ref(
   {
     playing: false,
     label: 'Play',
-    icon: 'play_circle',
+    icon: '#play_circle',
   }
 );
 
@@ -37,7 +37,7 @@ onMounted(() => {
     videoPlaying.value = {
       playing: true,
       label: 'Pause',
-      icon: 'pause_circle',
+      icon: '#pause_circle',
     };
     videoWrapper.value?.classList.add('playing');
   });
@@ -45,7 +45,7 @@ onMounted(() => {
     videoPlaying.value = {
       playing: false,
       label: 'Play',
-      icon: 'play_circle',
+      icon: '#play_circle',
     };
     videoWrapper.value?.classList.remove('playing');
   });
@@ -62,13 +62,12 @@ onMounted(() => {
     </video>
     <div class="video-controls">
       <button @click="playVideo" class="playvideo" v-if="videoOBJ">
-        <span class="material-symbols-outlined" aria-hidden="true">{{ videoPlaying.icon }}</span>
+        <svg class="icon-svg" aria-hidden="true"><use :href="videoPlaying.icon" /></svg>
+        
         <span class="visually-hidden">{{ videoPlaying.label }}</span>
       </button>
-      <span class="indicator">
-        <span class="material-symbols-outlined">
-          no_sound
-          </span>
+      <span class="indicator" data-tooltip="No sound">
+        <svg class="icon-svg" aria-hidden="true"><use href="#no_sound" /></svg>
         <span class="visually-hidden">No sound</span>
       </span>
       

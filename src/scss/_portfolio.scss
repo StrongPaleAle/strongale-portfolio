@@ -198,7 +198,12 @@
                     var(--accent-color-80),
                     var(--accent-light-80)
                     );
-                    @include clip-right-bottom;
+                    @include clip-angle(
+                        var(--clip-unit) ,
+                        calc(var(--clip-unit) / 2), 
+                        calc(var(--clip-unit) * 2), 
+                        0
+                    );
             }
             &::after{
                 content: "";
@@ -208,7 +213,12 @@
                 border-radius: 5px;
                 background-color: var(--bg-heavy);
                 background-image: linear-gradient(90deg, var(--bg-heavy-20), var(--bg-light-10));
-                @include clip-left-bottom;
+                @include clip-angle(
+                    0,
+                    var(--clip-unit) ,
+                    0, 
+                    calc(var(--clip-unit) * 2)
+                );
             }
             
             

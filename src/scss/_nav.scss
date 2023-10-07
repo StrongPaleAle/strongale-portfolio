@@ -32,7 +32,7 @@
         color: var(--text-color-08);
         transition: all 0.2s ease-in-out;
         gap: 1rem;
-        
+        filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
         &:hover{
             --flex-basis: 7em;
             --text-opacity: 1;
@@ -55,7 +55,7 @@
     }
     &__text-wrapper{
         padding: 4px;
-        background-image: linear-gradient(var(--bg-heavy-00), var(--bg-heavy-80), var(--bg-light-00));
+        
         filter: drop-shadow(3px 3px 0 var(--bg-heavy-60));
         
         opacity: var(--text-opacity);
@@ -90,6 +90,7 @@
         position: fixed;
         bottom: 4px;
         inset-inline: 4px;
+        filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
         @extend .clip-ui;
         ul{
             margin: 0;
@@ -132,7 +133,12 @@
                     height: 2px;
                     transform: scaleX(0);
                     transition: all 0.2s ease-in-out;
-                    @include clip-left-bottom;
+                    @include clip-angle(
+                        0, 
+                        1px, 
+                        0, 
+                        1px
+                    );
                 }
                 &:hover, &:focus{
                     --link-color: var(--accent-light);
@@ -162,7 +168,12 @@
                             inset: -5px 0;
                             transform: scaleX(1);
                             transition: all 0.2s ease-in-out;
-                            @include clip-left-bottom;
+                            @include clip-angle(
+                                calc(var(--clip-unit) / 2), 
+                                var(--clip-unit) , 
+                                calc(var(--clip-unit) / 2), 
+                                calc(var(--clip-unit) * 2)
+                            );
                         }
                         &::before{
                             content: "";
@@ -174,7 +185,12 @@
                             transform: scale(0);
                             
                             transition: all 0.2s ease-in-out;
-                            @include clip-left-bottom;
+                            @include clip-angle(
+                                calc(var(--clip-unit) / 2), 
+                                var(--clip-unit) , 
+                                calc(var(--clip-unit) / 2), 
+                                calc(var(--clip-unit) * 2)
+                            );
                         }
                         &:hover{
                             --link-color: var(--bg-medium);

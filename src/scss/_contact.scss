@@ -49,11 +49,12 @@
     line-height: 0;
     aspect-ratio: 1/1;
     position: relative;
+    transition: all 0.2s ease-in-out;
     &:before, &:after{
         content: '';
         position: absolute;
         inset: 0;
-        transform: translate(2px, 2px);
+        transform: translate(3px, 3px);
         background-color: var(--accent-dark);
         z-index: -1;
         border-radius: 50%;
@@ -63,15 +64,17 @@
         content: '';
         z-index: 0;
         inset: 0;
-        opacity: 0.5;
+        opacity: 0.7;
         background-color: var(--accent-light);
         filter: blur(2px);
         transform: scale(0);
         
     }
     &:hover{
+        transform: translate(2px, 2px);
         &::after{
             transform: scale(1);
+            //ransform: translate(2px, 2px);
         }
         &::before{
             transform: translate(1px, 1px);

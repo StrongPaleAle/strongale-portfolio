@@ -35,40 +35,32 @@
       display: none;
     }
 }
-@mixin clip-right-bottom{
-  clip-path: polygon(
-    0 var(--clip-unit), var(--clip-unit) 0, 
-    100% 0%, 
-    100% calc(100% - (var(--clip-unit) * 2)), calc(100% - (var(--clip-unit) * 2)) 100%, 
-    0 100%
-  );
+.items-center{
+  align-items: center;
 }
-@mixin clip-left-bottom{
-  clip-path: polygon(
-    0 0, 
-    calc(100% - var(--clip-unit)) 0, 100% var(--clip-unit), 
-    100% 100%, 
-    calc(var(--clip-unit) * 2) 100%,
-    0 calc(100% - (var(--clip-unit)* 2))
-  );
+.items-start{
+  align-items: flex-start;
 }
-@mixin clip-left-top{
-  clip-path: polygon(
-    0 calc(var(--clip-unit) * 2), calc(var(--clip-unit) * 2) 0, 
-    100% 0%, 
-    100% calc(100% - var(--clip-unit)), calc(100% - var(--clip-unit)) 100%, 
-    0 100%
-  );
+.items-end{
+  align-items: flex-end;
 }
-@mixin clip-right-top{
-  clip-path: polygon(
-    0 0, 
-    calc(100% - (var(--clip-unit) * 2)) 0, 100% calc(var(--clip-unit) * 2), 
-    100% 100%, 
-    var(--clip-unit) 100%,
-    0 calc(100% - var(--clip-unit))
-  );
+.items-stretch{
+  align-items: stretch;
 }
+
+.justify-center{
+  justify-content: center;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-end{
+  justify-content: flex-end;
+}
+.justify-between{
+  justify-content: space-between;
+}
+
 :focus-visible{
   outline: 3px solid var(--extra-color);
   outline-offset: 2px;
