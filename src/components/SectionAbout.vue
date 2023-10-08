@@ -159,15 +159,18 @@ function toggleScrolling(element: any) {
                                 ref="tabMenuItems"
                                 >
                                     
-                                <a class="button" :href="`#${tab.slug}`"  data-active="false" @click="clickedLinkHandler(index, $event)">{{ tab.title }}</a>
+                                <a class="button-show" :href="`#${tab.slug}`"  data-active="false" @click="clickedLinkHandler(index, $event)">{{ tab.title }}</a>
                             </li>
                             
                         </ul> 
                     </nav>
                     <p class="tldr">TL;DR 
-                        <a class="cv-link" href="https://cv.strongale.it" target="_blank">
+                        <a class="button" href="https://cv.strongale.it" target="_blank">
+                            <span class="button__inner">
                                 <span>Read my CV</span>
-                            </a>
+                            </span>
+                                
+                        </a>
                     </p>
                     
                 </header>

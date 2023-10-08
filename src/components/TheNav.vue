@@ -79,12 +79,22 @@ function goTop(evt: Event) {
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="https://cv.strongale.it/" target="_blank" class="main-nav__link button-link">
+                        <!-- <a href="https://cv.strongale.it/" target="_blank" class="main-nav__link button-link">
                             <span class="nav-icon"  aria-hidden="true"><svg class="icon-svg"><use href="#icon_cv" /></svg></span>
                             <span class="show-desktop">Curriculum</span>
                             <span class="show-mobile">CV</span>
                             
-                        </a>
+                        </a> -->
+                        <a class="button-link" href="https://cv.strongale.it" target="_blank">
+                                <span class="button__inner">
+                                    <span>
+                                        <span class="nav-icon"  aria-hidden="true"><svg class="icon-svg"><use href="#icon_cv" /></svg></span>
+                                        <span class="show-desktop">Curriculum</span>
+                                        <span class="show-mobile">CV</span>
+                                    </span>
+                                </span>
+                                    
+                            </a>
                     </li>
                 </ul>
                 <TheOptions />

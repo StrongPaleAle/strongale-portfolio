@@ -82,8 +82,11 @@
                             </a>
                         </li>
                         <li>
-                            <a class="cv-link" href="https://cv.strongale.it" target="_blank">
-                                <span>Read my CV</span>
+                            <a class="button text-xlarge" href="https://cv.strongale.it" target="_blank">
+                                <span class="button__inner">
+                                    <span>Read my CV</span>
+                                </span>
+                                    
                             </a>
                         </li>
                     </ul>

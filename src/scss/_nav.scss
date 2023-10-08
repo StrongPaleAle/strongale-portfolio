@@ -22,6 +22,10 @@
         width: 1.5rem;
         color: var(--accent-color);
     }
+    .button-link{
+        
+        text-transform: none;
+    }
     &__logo-link{
         --flex-basis: 0;
         --text-opacity: 0;
@@ -102,7 +106,15 @@
         li{
             font-size: var(--link-size);
             padding: 0 1em;
-            a{  
+            .nav-icon{
+                display: var(--display-icons);
+                font-size: 1.5em;
+                line-height: 1;
+                margin-inline: auto;
+                margin-bottom: 2px;
+                 
+            }
+            a:not(.button-link){  
                 --link-color:  var(--text-color);
                 color: var(--link-color);
                 text-decoration: none;
@@ -113,14 +125,7 @@
                 transition: all 0.2s ease-in-out;
                 position: relative;
                 isolation: isolate;
-                .nav-icon{
-                    display: var(--display-icons);
-                    font-size: 1.5em;
-                    line-height: 1;
-                    margin-inline: auto;
-                    margin-bottom: 2px;
-                     
-                }
+                
                 &::after{
                     --clip-unit: 1px;
                     content: "";
@@ -152,58 +157,7 @@
                         transform: scaleX(1);
                     }
                 }
-                @media (min-width: 768px){
-                    &.button-link{
-                        
-                        //color: var(--accent-color);
-                        position: relative;
-                        isolation: isolate;
-                        padding: 0 0.5em;
-                        &::after{
-                            --clip-unit: 5px;
-                            content: "";
-                            background-color: var(--extra-dark);
-                            z-index: -1;
-                            height: auto;
-                            inset: -5px 0;
-                            transform: scaleX(1);
-                            transition: all 0.2s ease-in-out;
-                            @include clip-angle(
-                                calc(var(--clip-unit) / 2), 
-                                var(--clip-unit) , 
-                                calc(var(--clip-unit) / 2), 
-                                calc(var(--clip-unit) * 2)
-                            );
-                        }
-                        &::before{
-                            content: "";
-                            background-color: var(--accent-color);
-                            position: absolute;
-                            z-index: -1;
-                            inset: -7px -2px;
-                            display: block;
-                            transform: scale(0);
-                            
-                            transition: all 0.2s ease-in-out;
-                            @include clip-angle(
-                                calc(var(--clip-unit) / 2), 
-                                var(--clip-unit) , 
-                                calc(var(--clip-unit) / 2), 
-                                calc(var(--clip-unit) * 2)
-                            );
-                        }
-                        &:hover{
-                            --link-color: var(--bg-medium);
-                            &::after{
-                                opacity: 0.5;
-                                
-                            }
-                            &::before{
-                                transform: scale(1);
-                            }
-                        }
-                    }
-                }
+                
 
             }
             @media (min-width: 768px){
@@ -262,4 +216,10 @@
         }
     }
     
+}
+@media (min-width: 768px){
+    .button-link{
+        
+        @include button;
+    }
 }
