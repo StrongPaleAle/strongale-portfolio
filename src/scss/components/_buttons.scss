@@ -71,27 +71,49 @@
     color: var(--_btn-clr, var(--text-color));
     position: relative;
     transition: all 0.2s ease-in-out 0.1s;
+    > .button__glow{
+      display: block;
+      position: absolute;
+      inset: 0 0 0 0;
+      filter: drop-shadow(0 0 0.5em var(--_btn-light));
+      opacity: var(--_btn-opacity, 0);
+      transform: scale(var(--_light-scale, 0));
+      z-index: 0;
+      transition: all 0.3s ease-in-out;
+      span{
+        display: block;
+        position: absolute;
+        inset: 0 calc(var(--clip-unit) / 1.5) calc(var(--clip-unit) / 1.5) 0;
+        transform: translate(var( --_btn-translate, 0), var( --_btn-translate, 0));
+        
+        background-color: var(--_btn-light);
+        @include clip-angle(calc(var(--clip-unit) / 2), calc(var(--clip-unit) / 2) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 1.25));
+        transition: all 0.3s ease-in-out;
+      }
+      
+      
+    }
     > .button__inner{
       z-index: 1;
       position: relative;
-      isolation: isolate;
+      
       display: inline-block;
       padding-bottom: calc(var(--clip-unit) / 1.5);
       padding-right: calc(var(--clip-unit) / 1.5);
-      background-color: var(--_btn-shadow);
+      
       @include clip-angle(calc(var(--clip-unit) / 2), var(--clip-unit) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2));
-      &::after{
-        position: absolute;
-        display: block;
-        inset: 0;
-        content: "";
-        z-index: -1;
-        background-color: var(--_btn-glow);
-        transform: scale(var(--_light-scale, 0));
-        filter: blur(2px);
-        //opacity: var(--_btn-opacity, 0);
-        transition: all 0.3s ease-in-out;
-      }
+      // &::after{
+      //   position: absolute;
+      //   display: block;
+      //   inset: 0;
+      //   content: "";
+      //   z-index: -1;
+      //   background-color: var(--_btn-glow);
+      //   transform: scale(var(--_light-scale, 0));
+      //   filter: blur(2px);
+      //   opacity: var(--_btn-opacity, 0);
+      //   transition: all 0.3s ease-in-out;
+      // }
       >span{
         display: block;
         transition: transform 0.2s ease-in-out;
@@ -126,6 +148,15 @@
       
       
     }
+    &::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      // border-top: inset calc(var(--clip-unit) / 1.5) var(--bg-medium);
+      // border-left: inset calc(var(--clip-unit) / 1.5) var(--bg-medium);
+      background-color: var(--_btn-shadow);
+      @include clip-angle(calc(var(--clip-unit) / 2), var(--clip-unit) , calc(var(--clip-unit) / 2), calc(var(--clip-unit) * 2));
+    }
     
     
     &:hover{
@@ -133,12 +164,12 @@
       --_btn-opacity: 0.5;
       --_btn-clr: var(--bg-medium);
       --_light-scale: 1;
-      filter: drop-shadow(0 0 0.25em var(--_btn-glow));
+      //filter: drop-shadow(0 0 0.25em var(--_btn-glow));
       
         
     }
   }
-  .button{
+  .button:not(.button-link){
     @include button;
   }
 

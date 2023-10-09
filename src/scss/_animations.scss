@@ -16,12 +16,62 @@
         transform: translateY(0);
     }
 }
+@keyframes rotate-in-x{
+    0%{
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+@keyframes rotate-in-y{
+    0%{
+        opacity: 1;
+        transform: rotateY(-90deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
     
 @keyframes fade-in{
     0%{
         opacity: 0;
     }
     100%{
+        opacity: 1;
+    }
+}
+@keyframes scale-in{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scale-in-x{
+    0%{
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+@keyframes scale-in-y{
+    0%{
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(1);
         opacity: 1;
     }
 }
@@ -51,6 +101,7 @@
       transform: translateY(0);
     }
 }
+
 @keyframes desappear{
     
     to{
@@ -62,4 +113,53 @@
 @keyframes spin-gradient{
   0%{--gradient-angle: 0deg;}
   100%{--gradient-angle: 360deg;}
+}
+
+@mixin animate($animation){
+    animation-name: $animation;
+    animation-duration: var(--a-duration, 0.4s);
+    animation-timing-function: var(--a-timing, ease-in-out);
+    animation-delay: var(--a-delay, 0s);
+    animation-fill-mode: var(--a-fill, forwards);
+    animation-iteration-count: var(--a-iteration, 1);
+    animation-direction: var(--a-direction, normal);
+}
+.animate{
+    @supports (animation-fill-mode: forwards){
+        
+        @media (prefers-reduced-motion: no-preference){
+            opacity: 0;
+        }
+        
+    }
+}
+.on-screen{
+
+    @supports (animation-fill-mode: forwards){
+        @media (prefers-reduced-motion: no-preference){
+            
+            .show-up{
+                @include animate(show-up);
+            }
+            .rotate-in-x{
+                @include animate(rotate-in-x);
+            }
+            .rotate-in-y{
+                @include animate(rotate-in-y);
+            }
+            .fade-in{
+                @include animate(fade-in);
+            }
+            .scale-in{
+                @include animate(scale-in);
+            }
+            .scale-in-x{
+                @include animate(scale-in-x);
+            }
+            .scale-in-y{
+                @include animate(scale-in-y);
+            }
+            
+        }
+    }
 }

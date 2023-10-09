@@ -16,20 +16,30 @@ onMounted(() => {
         <div class="section-container">
             <div class="cover-content">
                 <div class="heading | text-hero">
-                    <h1 class="cover-title | mblock-0">
-                        <span class="cover-title-first | block ws-nowrap lp-loose">Hi there!</span>
-                        <span class="cover-title-second | text-half block">My name is</span>
-                        <span class="cover-title-third | text-box " data-variant="accent-bg"><span class="carved">Alessio</span></span> 
+                    <h1 class="cover-title | mblock-0 animate fade-in">
+                        <span class="cover-title-first | block ws-nowrap lp-loose animate rotate-in-x">Hi there!</span>
+                        <span class="cover-title-second | text-half block animate rotate-in-x">My name is</span>
+                        <span class="cover-title-third | text-box animate scale-in-x" data-variant="accent-bg">
+                            
+                                <span class="carved animate scale-in-y">A</span>
+                                <span class="carved animate scale-in-y">l</span>
+                                <span class="carved animate scale-in-y">e</span>
+                                <span class="carved animate scale-in-y">s</span>
+                                <span class="carved animate scale-in-y">s</span>
+                                <span class="carved animate scale-in-y">i</span>
+                                <span class="carved animate scale-in-y">o</span>
+                            </span>
+                        
                         
                     </h1>
-                    <p class="cover-subtitle | text-half text-center mblock-0 lh-double">
+                    <p class="cover-subtitle | text-half text-center mblock-0 lh-double animate rotate-in-x">
                         <strong>Web Developer</strong> since 2014.
                     </p>
                 </div>
                 
                 
             </div>
-            <div class="cover-logo">
+            <div class="cover-logo animate scale-in">
                 
                
                <TheLogo></TheLogo>

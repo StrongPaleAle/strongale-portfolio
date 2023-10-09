@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
     <TheNav />
   <main id="wrapper">
     
-    <SectionHero />
+    <SectionHero :class="{'on-screen': options.isLoaded}"/>
     <SectionAbout />
     <SectionPortfolio/>
     <SectionContact/>

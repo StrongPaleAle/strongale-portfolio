@@ -1,7 +1,5 @@
 #hero{
-    
-    
-
+  
     .section-container{
         position: relative;
         z-index: 2;
@@ -11,8 +9,9 @@
         padding: 16px;
         justify-content: space-around;
         align-items: center;
+
         .cover-logo{
-          
+          --a-delay: 1.5s;
           //max-height: 50vh;
           #SvgLogo{
             display: none
@@ -38,12 +37,15 @@
         
         
         .cover-title{
+          --a-delay: 1.5s;
           @extend .border-t-radius-accent;
          
           text-align: center;
           filter: drop-shadow(0 0 0.125rem var(--bg-medium));
           &-first{
             text-shadow: 0 0 0.125rem var(--bg-medium);
+            --a-delay: 1.75s;
+            
           }
           &-second{
             text-shadow: 0 0 0.125rem var(--bg-medium);
@@ -51,11 +53,26 @@
             letter-spacing: 0.1em;
             line-height: 1;
             margin-bottom: 0.25em;
-            
+            --a-delay: 2s;
+              --a-duration: 0.2s;
           }
           &-third{
             font-size: 1.1em;
             display: block;
+            --a-delay: 2.25s;
+              
+            span{
+              --a-delay: 2.5s;
+              --a-duration: 0.2s;
+              display: inline-block;
+              @for $i from 1 through 7{
+                &:nth-child(#{$i}){
+                  --a-delay: calc(2.5s + #{$i} * 0.05s);
+                  
+                }
+              }
+              
+            }
             
             //text-shadow: 0 0 0.25rem var(--bg-heavy);
            
@@ -66,4 +83,14 @@
           font-weight: 500;
         }
       }
+      &.on-screen{
+        .cover-content{
+          
+          .cover-subtitle{
+            --a-delay: 3.25s;
+           
+          }
+        }
+      }
+      
 }

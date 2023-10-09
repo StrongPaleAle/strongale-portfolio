@@ -4,7 +4,7 @@ import Card from './Card.vue';
 import { Tab } from '@/types';
 import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
-
+import ButtonLink from './blocks/ButtonLink.vue';
 import AboutData from '../data/about.json';
 
 
@@ -162,15 +162,13 @@ function toggleScrolling(element: any) {
                                 <a class="button-show" :href="`#${tab.slug}`"  data-active="false" @click="clickedLinkHandler(index, $event)">{{ tab.title }}</a>
                             </li>
                             
-                        </ul> 
+                        </ul>
+                        
                     </nav>
-                    <p class="tldr">TL;DR 
-                        <a class="button" href="https://cv.strongale.it" target="_blank">
-                            <span class="button__inner">
-                                <span>Read my CV</span>
-                            </span>
-                                
-                        </a>
+                    <p class="tldr">TL;DR
+                        <ButtonLink href="https://cv.strongale.it" target="_blank">
+                            Read my CV
+                        </ButtonLink>
                     </p>
                     
                 </header>

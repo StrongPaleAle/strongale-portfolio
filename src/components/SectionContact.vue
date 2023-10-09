@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ButtonLink from './blocks/ButtonLink.vue';
 // import { onMounted } from 'vue';
 // import { options } from "../utils/options";
 
@@ -82,12 +83,9 @@
                             </a>
                         </li>
                         <li>
-                            <a class="button text-xlarge" href="https://cv.strongale.it" target="_blank">
-                                <span class="button__inner">
-                                    <span>Read my CV</span>
-                                </span>
-                                    
-                            </a>
+                            <ButtonLink class="text-xlarge" href="https://cv.strongale.it" target="_blank">
+                                Read my CV
+                            </ButtonLink>
                         </li>
                     </ul>
                 </nav>
