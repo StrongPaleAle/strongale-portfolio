@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { options } from "../utils/options";
+import { options } from "../../utils/options";
 import { MaskGroup, MaskLayer, CanvasState, CanvasAnimation } from '@/types';
-import MasksData from '../data/nnewmasks.json';
+import MasksData from '../../data/nnewmasks.json';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

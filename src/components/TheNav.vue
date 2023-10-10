@@ -3,28 +3,33 @@ import { onMounted } from "vue";
 import TheOptions from "./TheOptions.vue";
 import ButtonLink from "./blocks/ButtonLink.vue";
 
+const navSwitch = function(entries: any, observer: any) {
+    entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+            const section = entry.target;
+            const id = section.id;
+            section.classList.add('on-screen');
+            const current = document.querySelector(`.main-nav__link.active`);
+            const target = document.querySelector(`.main-nav__link[href="#${id}"]`);
+
+            current?.classList.remove('active');
+            target?.classList.add('active');
+        }
+    });
+  
+};
 const navObserver = new IntersectionObserver(navSwitch, {rootMargin: "-50% 0px -50% 0px"});
 onMounted(() => {
+    window
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => {
         navObserver.observe(section);
     });
+    
 });
 
 
-function navSwitch(element: any) {
-        
-  if (element[0].isIntersecting) {
-    const id = element[0].target.id;
-    const current = document.querySelector(`.main-nav__link.active`);
-    const target = document.querySelector(`.main-nav__link[href="#${id}"]`);
 
-    current?.classList.remove('active');
-    target?.classList.add('active');
-      
-  } 
-  
-}
 function goTop(evt: Event) {
     evt.preventDefault();
     history.pushState("", document.title, window.location.pathname);

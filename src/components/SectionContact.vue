@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ButtonLink from './blocks/ButtonLink.vue';
+import CircleLink from './blocks/CircleLink.vue';
 // import { onMounted } from 'vue';
 // import { options } from "../utils/options";
 
@@ -41,48 +42,44 @@ import ButtonLink from './blocks/ButtonLink.vue';
         <div class="section-container">
             <div>
                 <h2 class="section-title | heading uppercase text-center text-2xl" data-variant="accent-bg">
-                    <span>Need a web developer?</span>
-                    <span class="text-box text-2up" data-variant="accent-bg gradient"><span class="carved">Don't Panic!</span></span>
+                    <span class="animate rotate-in-x">Need a web developer?</span>
+                    <span class="text-box text-2up animate scale-in-x delay-1" data-variant="accent-bg gradient">
+                        <span class="carved animate scale-in-y s-delay-3 animation-list">Don't </span>
+                        <span class="carved animate scale-in-y s-delay-3 animation-list">Panic</span>
+                    </span>   
                 </h2>
-                <p class="section-subtitle | text-center text-xlarge content-text lh-loose mb-em-2">
+                <p class="section-subtitle | text-center text-xlarge content-text lh-loose mb-em-2 | animate fade-in delay-2">
                     Feel free to get in touch! <br>A painless hey is also appreciated.
                 </p>
                 <nav aria-label="Contacts">
                     <ul class="contact-links |  flex justify-center items-center gap-em-15">
-                        <li>
-                            <a href="mailto:alessio@strongale.it" class="contact-link  mlink" target="_blank" data-tooltip="Email">
-                                <span class="contact-icon circle-icon" aria-hidden="true">
-                                    <svg class="icon-svg"><use href="#alternate_email" /></svg>
+                        <li class="animate show-up s-delay-6 animation-list">
+                            <CircleLink 
+                                href="mailto:alessio@strongale.it" 
+                                icon="#alternate_email" 
+                                label="Email" 
+                                target="_blank"
+                            />
+                        </li>
+                        <li class="animate show-up s-delay-6 animation-list">
+                            <CircleLink 
+                                href="https://www.linkedin.com/in/alessio-falchi/" 
+                                icon="#icon_linkedin" 
+                                label="LinkedIn" 
+                                target="_blank"
+                            />
+        
+                        </li>
+                        <li class="animate show-up s-delay-6 animation-list">
+                            <CircleLink 
+                                href="https://github.com/StrongPaleAle" 
+                                icon="#icon_github" 
+                                label="GitHub" 
+                                target="_blank"
+                            />
                             
-                                </span>
-                                <span class="visually-hidden">Email</span>
-                                
-                            </a>
                         </li>
-                        <li>
-                            <a class="contact-link" href="https://www.linkedin.com/in/alessio-falchi/" target="_blank" data-tooltip="LinkedIn">
-                                <span class="contact-icon circle-icon" aria-hidden="true">
-                                    <svg class="icon-svg"><use href="#icon_linkedin" /></svg>
-                            
-                                </span>
-                                
-                                <span class="contact-label  visually-hidden">
-                                   LinkedIn
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="contact-link" href="https://github.com/StrongPaleAle" target="_blank" data-tooltip="GitHub">
-                                <span class="contact-icon circle-icon" aria-hidden="true">
-                                    <svg class="icon-svg"><use href="#icon_github" /></svg>
-                                </span>
-                                
-                                <span class="contact-label  visually-hidden">
-                                   GitHub
-                                </span>
-                            </a>
-                        </li>
-                        <li>
+                        <li class="animate show-up s-delay-6 animation-list">
                             <ButtonLink class="text-xlarge" href="https://cv.strongale.it" target="_blank">
                                 Read my CV
                             </ButtonLink>

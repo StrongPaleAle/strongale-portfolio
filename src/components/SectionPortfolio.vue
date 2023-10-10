@@ -136,11 +136,13 @@ function centerScreenRotate(element: any) {
         <div class="section-container">
             <header class="section-header | flex gap-em-2">
                 <h2 class="section-title | heading text-huge lh-tight">
-                    <span class="about-title-text | text-box " data-variant="accent-bg"><span class="carved">Portfolio</span></span>
+                    <span class="about-title-text | text-box | animate scale-in-x" data-variant="accent-bg">
+                        <span class="carved | animate scale-in-y delay-1">Portfolio</span>
+                    </span>
                 </h2>
 
                 <div>
-                    <p class="content-text | text-large lh-loose">
+                    <p class="content-text | text-large lh-loose | animate fade-in delay-1">
                         In my career, I worked on more than <strong>70 projects</strong>. These are some of those I think have something interesting to tell about.
                     </p>
                 </div>

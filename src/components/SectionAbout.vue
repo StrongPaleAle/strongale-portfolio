@@ -148,11 +148,13 @@ function toggleScrolling(element: any) {
             <div class="flex justify-center">
                 <header class="section-sidebar">
                     <h2 class="section-title | heading text-huge lh-tight">
-                        <span class="about-title-text | text-box " data-variant="accent-bg clip-desk-bl"><span class="carved">About me</span></span>
+                        <span class="about-title-text | text-box | animate scale-in-x" data-variant="accent-bg clip-desk-bl">
+                            <span class="carved | animate scale-in-y delay-1">About me</span>
+                        </span>
                     </h2>
-                    <nav class="tab-menu__container">
+                    <nav class="tab-menu__container | animate scale-in-y delay-1 from-top">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right" ref="tabMenu">
-                            <li class="tab-menu__item"
+                            <li class="tab-menu__item | animate scale-in-x s-delay-2 animation-list from-right "
                                 v-for="(tab, index)  in tabs"
                                 :key="index" 
                                 :data-tab="index"
@@ -165,7 +167,7 @@ function toggleScrolling(element: any) {
                         </ul>
                         
                     </nav>
-                    <p class="tldr">TL;DR
+                    <p class="tldr | animate fade-in delay-2">TL;DR
                         <ButtonLink href="https://cv.strongale.it" target="_blank">
                             Read my CV
                         </ButtonLink>
@@ -175,7 +177,7 @@ function toggleScrolling(element: any) {
                 
                 
                 <div class="section-content max-h-screen" data-variant="padded-screen" >
-                    <div class="tab-wrapper | hide-scrollbar snap-xy  max-h-screen" ref="tabsContainer" data-variant="padded-screen">
+                    <div class="tab-wrapper | hide-scrollbar snap-xy  max-h-screen | animate show-up delay-2" ref="tabsContainer" data-variant="padded-screen">
                         <div class="tab-item | h-screen lh-loose body-text" 
                             data-variant="padded-screen" 
                             v-for="(tab, index)  in tabs"

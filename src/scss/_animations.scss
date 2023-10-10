@@ -129,6 +129,34 @@
         
         @media (prefers-reduced-motion: no-preference){
             opacity: 0;
+            --s-delay: 0s;
+            @for $i from 1 through 7{
+                &.delay-#{$i}{
+                    --a-delay: calc(var(--s-delay) + #{$i  * 0.5s});
+                }
+                &.s-delay-#{$i}{
+                    --s-delay: #{$i  * 0.25s};
+                }
+            }
+            &.animation-list{
+                @for $i from 1 through 7{
+                    &:nth-child(#{$i}){
+                        --a-delay: calc(var(--s-delay) + #{$i * 0.1s});
+                    }
+                }
+            }
+            &.from-top{
+                transform-origin: top center;
+            }
+            &.from-bottom{
+                transform-origin: bottom center;
+            }
+            &.from-left{
+                transform-origin: left center;
+            }
+            &.from-right{
+                transform-origin: right center;
+            }
         }
         
     }

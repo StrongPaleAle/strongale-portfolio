@@ -36,7 +36,7 @@
         color: var(--text-color-08);
         transition: all 0.2s ease-in-out;
         gap: 1rem;
-        filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
+        
         &:hover{
             --flex-basis: 7em;
             --text-opacity: 1;
@@ -94,7 +94,7 @@
         position: fixed;
         bottom: 4px;
         inset-inline: 4px;
-        filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
+        //filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
         @extend .clip-ui;
         ul{
             margin: 0;
@@ -115,49 +115,8 @@
                  
             }
             a:not(.button-link){  
-                --link-color:  var(--text-color);
-                color: var(--link-color);
-                text-decoration: none;
-                display: block;
-                text-align: center;
-                font-size: inherit;
-                
-                transition: all 0.2s ease-in-out;
-                position: relative;
-                isolation: isolate;
-                
-                &::after{
-                    --clip-unit: 1px;
-                    content: "";
-                    position: absolute;
-                    background-color: var(--link-color);
-                    z-index: -1;
-                    bottom: -4px;
-                    inset-inline: 0;
-                    //width: 100%;
-                    height: 2px;
-                    transform: scaleX(0);
-                    transition: all 0.2s ease-in-out;
-                    @include clip-angle(
-                        0, 
-                        1px, 
-                        0, 
-                        1px
-                    );
-                }
-                &:hover, &:focus{
-                    --link-color: var(--accent-light);
-                    &::after{
-                        transform: scaleX(1);
-                    }
-                }
-                &.active{
-                    --link-color: var(--accent-color);
-                    &::after{
-                        transform: scaleX(1);
-                    }
-                }
-                
+
+               @include nav-link;
 
             }
             @media (min-width: 768px){
@@ -198,7 +157,7 @@
 
     }
     @media (min-width: 1024px){
-        --padding: 1rem 2rem 1rem 1rem;
+        --padding: 0.75rem 2rem 0.75rem 1rem;
         --link-size: 1.125rem;
         --logo-text-size: 2rem;
     }
@@ -217,9 +176,12 @@
     }
     
 }
-@media (min-width: 768px){
-    .button-link{
-        
+
+.button-link{
+    @media (max-width: 767.99px){
+        @include nav-link;
+    }
+    @media (min-width: 768px){
         @include button;
     }
 }

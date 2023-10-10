@@ -29,7 +29,7 @@ onMounted(() =>{
                 trigger: "body",
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 1.5,
+                scrub: 1,
                 
                 onUpdate: self => {
                 frameNumber = self.progress / 14 * 100 - 1; //this takes fine tuning divide your videos FPS by two. My video's FPS was 30, 14 was the sweet spot. -1 fixes an issue on safari where the video disappears at the end of the scrollTrigger

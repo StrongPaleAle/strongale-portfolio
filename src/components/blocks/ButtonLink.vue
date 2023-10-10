@@ -1,5 +1,5 @@
 <template>
-    <a class="button-link">
+    <a class="button">
         <span class="button__glow">
             <span></span>
         </span>
