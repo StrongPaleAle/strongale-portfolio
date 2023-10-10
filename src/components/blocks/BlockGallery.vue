@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Slide } from '@/types';
+import { Slide } from '../../types';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import { options } from '../../utils/options';
 import BlockPicture from './BlockPicture.vue';

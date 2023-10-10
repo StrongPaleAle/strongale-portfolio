@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mask } from '@/types';
+import { Mask } from '../../types';
 
 
 const props = defineProps<{

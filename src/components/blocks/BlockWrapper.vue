@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {BlockTypes} from '@/types';
+import {BlockTypes} from '../../types';
 
 const props = defineProps<{
   block: Partial<BlockTypes>;

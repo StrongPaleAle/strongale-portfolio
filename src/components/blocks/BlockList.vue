@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ListBlock } from '@/types';
+import { ListBlock } from '../../types';
 
 const props = defineProps<{
   block: Partial<ListBlock>;

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import type { Ref } from 'vue'
-import { Video } from '@/types';
+import { SourceVideo } from '../../types';
 
 
 const props = defineProps<{
-    video: Partial<Video>; 
+    video: Partial<SourceVideo>; 
 }>();
 const videoWrapper : Ref<HTMLElement | undefined> = ref();
 const videoOBJ : Ref<HTMLVideoElement | undefined> = ref();

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { Project } from "@/types";
+import { Project } from "../types";
 import { openDialog, closeDialog } from "../utils/dialog";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import Card from './Card.vue';
-import { Tab } from '@/types';
+import { Tab } from '../types';
 import { ref, onMounted } from "vue";
 import BlockWrapper from './blocks/BlockWrapper.vue';
 import ButtonLink from './blocks/ButtonLink.vue';

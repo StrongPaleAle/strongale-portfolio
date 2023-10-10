@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Info } from '@/types';
+import { Info } from '../../types';
 
 const props = defineProps<{
   info: Partial<Info>;

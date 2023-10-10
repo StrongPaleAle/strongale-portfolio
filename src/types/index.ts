@@ -47,7 +47,7 @@ export interface Block {
   extraClass?: string | undefined;
 }
 
-export interface Media {
+export interface SourceMedia {
   id: string;
   title?: string | undefined;
   src: string;
@@ -56,26 +56,26 @@ export interface Media {
   media?: string | undefined;
 }
 
-export interface Picture {
+export interface SourcePicture {
   id: string;
   title?: string | undefined;
-  sources: Media[];
-  img: Media;
+  sources: SourceMedia[];
+  img: SourceMedia;
   caption?: string | undefined;
   showCaption?: boolean | undefined;
   tag: 'picture' | 'img';
 }
 
-export interface Video {
+export interface SourceVideo {
   id: string;
   title?: string | undefined;
-  sources: Media[];
+  sources: SourceMedia[];
   caption?: string | undefined;
   showCaption?: boolean | undefined;
   tag: 'video';
 }
 
-export type Slide = Picture | Video; 
+export type Slide = SourcePicture | SourceVideo; 
 
 
 
@@ -88,7 +88,7 @@ export interface Info {
   hiddenLabel?: boolean
 }
 
-export interface Cover extends Picture {
+export interface Cover extends SourcePicture {
   overlay?: string | undefined;
 }
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Picture } from '@/types';
+import { SourcePicture } from '../../types';
 
 const props = defineProps<{
-    picture: Partial<Picture>; 
+    picture: Partial<SourcePicture>; 
 }>();
 </script>
 <template>

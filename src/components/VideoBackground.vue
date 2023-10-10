@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // ffmpeg -i lowfps.mov -vf scale=1920:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_1920.mp4
 
 const videoBg = ref<HTMLVideoElement | null>(null);
-let videoFile = ref<string>('landscape_1440'); 
+let videoFile = ref<string>(''); 
 
 
 onMounted(() =>{
@@ -205,13 +205,14 @@ function setFile(){
 
             } 
         }
+        videoFile.value = `/assets/video/${ videoFile.value }.mp4`;
         console.log(videoFile.value);
     }
 
 </script>
 <template>
     <div class="video-holder">
-        <video :src="`/assets/video/${ videoFile }.mp4`" playsinline="true" preload="auto" muted class="video-background" ref="videoBg"></video>
+        <video :src="videoFile" playsinline="true" preload="auto" muted class="video-background" ref="videoBg"></video>
     </div>
     
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mask } from '@/types';
+import { Mask } from '../../types';
 import { ref, onMounted } from "vue";
 import CoverLayer from './CoverLayer.vue';
 import MasksData from '../../data/masks.json';

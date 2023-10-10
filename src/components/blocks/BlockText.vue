@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {TextBlock} from '@/types';
+import {TextBlock} from '../../types';
 
 const props = defineProps<{
   block: Partial<TextBlock>;

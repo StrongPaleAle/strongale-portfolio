@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {DataBlock} from '@/types';
+import {DataBlock} from '../../types';
 import {toRefs} from 'vue';
 
 

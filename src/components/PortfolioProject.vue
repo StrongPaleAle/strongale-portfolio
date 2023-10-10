@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Project} from "@/types";
+import {Project} from "../types";
 import IconLink from "./blocks/IconLink.vue";
 import IconButton from "./blocks/IconButton.vue";
 import {openDialog} from "../utils/dialog";
@@ -21,7 +21,7 @@ const year = computed(() => {
         
         
         <div class="portfolio-item__image">
-            <a :href="`#project-${project.slug}`" class="imag-inner" @click="openDialog(`project-${project.slug}`)">
+            <a :href="`#project-${project.slug}`" class="imag-inner" :aria-label="`View ${ project.title } Details`" @click="openDialog(`project-${project.slug}`)">
                 <picture v-if="project.cover" class="portfolio-item__image-inner">
                     <source v-for="image in project.cover.sources" :srcset="image.src" :type="image.type" :media="image.media">
                     <img :src="project.cover.img.src" :alt="project.cover.img.alt" loading="lazy" decoding="async">

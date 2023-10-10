@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from "@/types";
+import { Project } from "../types";
 import PortfolioProject from "./PortfolioProject.vue";
 import SingleProject from "./SingleProject.vue";
 import Projects from "../data/projects.json";

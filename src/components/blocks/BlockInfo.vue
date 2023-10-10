@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InfoBlock } from '@/types';
+import { InfoBlock } from '../../types';
 import SingleInfo from './SingleInfo.vue';
 
 const props = defineProps<{
