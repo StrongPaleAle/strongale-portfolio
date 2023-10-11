@@ -41,18 +41,27 @@ $sh-color-light: map.get($colors, $sh-name-light);
     }
 }
 
-#canvas-cover{
-    position:fixed;
-    inset: 0;
-    z-index: -1;
-    //background-color: #333;
+.canvas-cover{
+    position:absolute;
+    inset: 0 0 auto 0;
+    //z-index: -1;
+    background-color: var(--bg-heavy);
     width: 100%;
-    height: 100%;
-    filter: contrast(110%);
+    height: 120vh;
+    //filter: contrast(110%);
+    &#canvas-foot{
+        inset: auto 0 0 0;
+    }
 }
 
-html[data-theme="light"] #canvas-cover{
+html[data-theme="light"] .canvas-cover{
     filter: invert(1);
+}
+.app-inner{
+    --app-bg: var(--dark-layer-bg-7);
+    --app-shade: var(--dark-layer-shade-7);
+    background-color: var(--dark-layer-bg-7);
+    background-image: conic-gradient(from 240deg at 50% 10%, var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade));
 }
 
 // .video-background {

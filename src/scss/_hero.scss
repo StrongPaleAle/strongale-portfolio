@@ -97,5 +97,17 @@
           }
         }
       }
+      .divider{
+        content: "";
+        position: absolute;
+        top: calc(120vh - 50vw);
+        left: 0;
+        width: 120vw;
+        height: 120vw;
+        background-color: var(--bg-medium);
+        background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+        clip-path: url(#mask-about);
+      
+      }
       
 }

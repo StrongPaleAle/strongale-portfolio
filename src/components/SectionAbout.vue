@@ -144,6 +144,7 @@ function toggleScrolling(element: any) {
 </script>
 <template>
     <section id="about" class="section-wrapper" ref="sectionWrapper">
+        <span class="divider"></span>
         <div class="section-container" >
             <div class="flex justify-center">
                 <header class="section-sidebar">

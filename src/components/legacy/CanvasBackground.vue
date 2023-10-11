@@ -13,12 +13,12 @@ onMounted(() =>{
         canvas.height = window.innerHeight;
 
         const context = canvas.getContext("2d");
-        const frameCount = 565;
+        const frameCount = 125;
        
         gsap.registerPlugin(ScrollTrigger);
-        gsap.ticker.fps(60);    
+        gsap.ticker.fps(30);    
         
-        const currentFrame = (index) => `/assets/images/bg/2560x1543/webp/${(index + 1).toString()}.webp`;
+        const currentFrame = (index) => `/assets/images/bg/${(index + 1).toString()}.jpg`;
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };
@@ -41,7 +41,11 @@ onMounted(() =>{
             snap: "frame",
             ease: "none",
             scrollTrigger: {
-                scrub: 2,
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom 30%',
+                markers: true,
+                scrub: 1.5,
                 
             },
             onUpdate: render,

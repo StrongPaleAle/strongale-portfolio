@@ -4,9 +4,10 @@ import { ref } from 'vue';
 import { options } from './utils/options';
 
 import TheNav from './components/TheNav.vue';
-
-import VideoBackground from './components/VideoBackground.vue';
-import CoverStatic from './components/CoverStatic.vue';
+// import CanvasCover from './components/legacy/CanvasCover.vue';
+// import CanvasBackground from './components/legacy/CanvasBackground.vue';
+// import VideoBackground from './components/VideoBackground.vue';
+// import CoverStatic from './components/CoverStatic.vue';
 
 import SectionHero from './components/SectionHero.vue';
 import SectionAbout from './components/SectionAbout.vue';
@@ -32,8 +33,8 @@ window.addEventListener('load', () => {
   <TheLoader />
   <div class="app-inner" :class="{blocked: !options.isLoaded}">
 
-    <VideoBackground v-if="enableVideo" />
-    <CoverStatic v-else />
+    <!-- <CanvasBackground v-if="enableVideo" />
+    <CoverStatic v-else /> -->
     <!-- <CanvasBackground /> -->
     <!-- <CanvasCover /> -->
     <TheNav />

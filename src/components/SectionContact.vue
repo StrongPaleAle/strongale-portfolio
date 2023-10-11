@@ -1,44 +1,74 @@
 <script setup lang="ts">
 import ButtonLink from './blocks/ButtonLink.vue';
 import CircleLink from './blocks/CircleLink.vue';
-// import { onMounted } from 'vue';
-// import { options } from "../utils/options";
+import { ref, onMounted } from "vue";
+import { options } from "../utils/options";
+import {gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// onMounted(() => {
-//     /* 1. define variables */
-//     const me = "alessio";
-//     const place = "strongale.it";
+const canvasFt = ref<HTMLCanvasElement | null>(null);
 
+onMounted(() =>{
+    if (canvasFt.value) {
+        const canvas = canvasFt.value;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-//     /* 2. find email link to replace */
-//     const elink = document.querySelectorAll(".mlink") as NodeListOf<HTMLAnchorElement>;
+        const context = canvas.getContext("2d");
+        const frameCount = 103;
+       
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.ticker.fps(30);    
         
-//     /* 3. replace link href with variables  */
-//     elink?.forEach((el) => {
-//         if(options.canHover){
-//             el.addEventListener('mouseenter', () => {
-//                 el.href ='mailto:' + me + "@" + place;
-//             });
-            
-//         } else {
-//             el.addEventListener('click', (evt) => {
-//                 console.log('click on link');
-//                 evt.preventDefault();
+        const currentFrame = (index) => `/assets/images/bg/foot/${(index + 1).toString()}.jpg`;
 
-//                 window.open('mailto:' + me + "@" + place, '_blank');
-//                 return false;
+        const images:HTMLImageElement[] = [];
+        let cave = { frame: 0 };
+        console.log(options.webp);
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            //console.log(currentFrame(i));
+            images.push(img);
+        }
+        
+        gsap.to(cave, {
+            frame: 0,
+            snap: "frame",
+            ease: "none",
+            onUpdate: render,
+        });
+        gsap.to(cave, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#contacts',
+                start: '-=30%',
+                end: 'bottom bottom',
+                markers: true,
+                scrub: 1.5,
                 
-//             })
-            
-//         }
-        
-//     });
-    
-// });
+            },
+            onUpdate: render,
+        });
+
+        function render() {
+            if (context !== null) {
+            context.canvas.width = images[0].width;
+            context.canvas.height = images[0].height;
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(images[cave.frame], 0, 0);
+            }
+        }
+    }
+})
 </script>
 
 <template>
 <section id="contacts" class="section-wrapper">
+        <canvas id="canvas-foot" class="canvas-cover" ref="canvasFt"></canvas>
         <div class="section-container">
             <div>
                 <h2 class="section-title | heading uppercase text-center text-2xl" data-variant="accent-bg">

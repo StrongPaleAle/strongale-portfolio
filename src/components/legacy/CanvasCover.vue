@@ -23,13 +23,13 @@ onMounted(() => {
         //const height = canvasEl.value.clientHeight;
         //const vMax = Math.max(width, height);
         //const factor = (vMax * 3.8) / 10000;
-        gsap.ticker.fps(60);
+       //gsap.ticker.fps(60);
         const canvasState = ref<CanvasState>({
             canvas: canvasEl.value,
             ctx: canvasEl.value.getContext('2d'),
             width: canvasEl.value.clientWidth,
             height: canvasEl.value.clientHeight,
-            factor: (Math.max(canvasEl.value.clientWidth, canvasEl.value.clientHeight) * 3.8) / 5000,
+            factor: (Math.max(canvasEl.value.clientWidth, canvasEl.value.clientHeight) * 2) / 5000,
             orientation: window.matchMedia("(orientation: portrait)").matches ? 90 : 0
         });
 
@@ -108,10 +108,10 @@ onMounted(() => {
                 immediateRender: false,
                 overwrite: 'auto',
                 scrollTrigger: {
-                trigger: 'body',
-                start: 'top top+=10',
-                end: 'bottom bottom-=10',
-                scrub: 1,
+                trigger: '#hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
                 markers: true,
                 onUpdate: (self) => {
                     canvasUpdate(canvasState.value, canvasAnimation.value, Layers.value);
@@ -123,14 +123,13 @@ onMounted(() => {
             {
                 scale: canvasState.value.factor,
                 rotation: 0,
-                x: 0,
-                y: 0
+                
             },
             {
+                scale: canvasState.value.factor * 1.2,
                 duration: 1,
-                rotation: 20,
-                y: canvasState.value.height * 0.55,
-                x: (canvasState.value.width / 6) * 0.05,
+                rotation: 10,
+                
                 ease: "none",
             });
         

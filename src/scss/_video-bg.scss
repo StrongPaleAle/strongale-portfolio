@@ -62,8 +62,8 @@ html[data-theme="dark"]{
 .app-inner{
     --bg-shade: color-mix(in srgb, var(--bg-light) 20%, var(--bg-medium));
     //contain: paint;
-    background-color: var(--bg-medium);
-    background-image: conic-gradient(from 240deg at 50% 10%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+    // background-color: var(--bg-medium);
+    // background-image: conic-gradient(from 240deg at 50% 10%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
 }
 .static-layer{
     object-fit: fill;

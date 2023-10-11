@@ -8,20 +8,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const videoBg = ref<HTMLVideoElement | null>(null);
 let videoFile = ref<string>(''); 
-
+setFile();
 
 onMounted(() =>{
 
-    setFile();
+    
     window.addEventListener('resize', setFile);
 
     if (videoBg.value) {
 
         gsap.registerPlugin(ScrollTrigger, SlowMo);
-
+        gsap.ticker.fps(60);
         let videoScroll = videoBg.value,
             frameNumber = 0,
-            src = videoScroll.currentSrc || videoScroll.src;
+            src = videoFile.value;
+        console.log('src: ' + src);
 
         let videoScrollTL = gsap.timeline({
             defaults: { duration: 1, ease: "slow(0.1, 0.4, false)" },
@@ -175,38 +176,10 @@ function setFile(){
             } 
 
         } else {
-            if (window.innerWidth <= 850){
-
-                videoFile.value = 'landscape_640';
-
-            } else if (window.innerWidth <= 992){
-
-                videoFile.value = 'landscape_960';
-
-            } else if (window.innerWidth <= 1152){
-
-                videoFile.value = 'landscape_1024';
-
-            } else if (window.innerWidth <= 1360){
-
-                videoFile.value = 'landscape_1280';
-
-            } else if (window.innerWidth <= 1520){
-
-                videoFile.value = 'landscape_1440';
-
-            } else if (window.innerWidth <= 1760){
-
-                videoFile.value = 'landscape_1600';
-
-            }  else {
-
-                videoFile.value = 'landscape_1920';
-
-            } 
+            videoFile.value = 'newlow2_1920';
         }
         videoFile.value = `/assets/video/${ videoFile.value }.mp4`;
-        console.log(videoFile.value);
+        
     }
 
 </script>
