@@ -39,6 +39,8 @@ $sh-color-light: map.get($colors, $sh-name-light);
         --light-layer-shade-#{$i}: #{$cover_shade_light};
 
     }
+    --app-bg: var(--dark-layer-bg-7);
+    --app-shade: var(--dark-layer-shade-7);
 }
 
 .canvas-cover{
@@ -54,16 +56,56 @@ $sh-color-light: map.get($colors, $sh-name-light);
     }
 }
 
-html[data-theme="light"] .canvas-cover{
-    filter: invert(1);
+html[data-theme="light"] {
+    --app-bg: var(--light-layer-bg-7);
+    --app-shade: var(--light-layer-shade-7);
+    .canvas-cover{
+        filter: invert(1);
+    }
 }
 .app-inner{
-    --app-bg: var(--dark-layer-bg-7);
-    --app-shade: var(--dark-layer-shade-7);
-    background-color: var(--dark-layer-bg-7);
-    background-image: conic-gradient(from 240deg at 50% 10%, var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade), var(--dark-layer-bg-7), var(--app-shade));
+    
+    background-color: var(--app-bg);
+    background-image: conic-gradient(from 240deg at 50% 10%, var(--app-shade), var(--app-bg), var(--app-shade), var(--app-bg), var(--app-shade), var(--app-bg), var(--app-shade), var(--app-bg), var(--app-shade), var(--app-bg), var(--app-shade));
 }
 
+.divider{
+    content: "";
+    position: absolute;
+    
+    
+    width: 120vmax;
+    height: 120vmax;
+    
+    &-cover{
+        background-color: var(--bg-medium);
+        background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+        clip-path: url(#mask-cover);
+        top: calc(120vh - 50vmax);
+        left: 0;
+    }
+    &-foot{
+        background-color: var(--bg-medium);
+        background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+        clip-path: url(#mask-foot);
+        top: -70vmax;
+        z-index: 2;
+        right: 0;
+    }
+    @media (prefers-reduced-motion: reduce){
+        &-cover{
+            transform: rotate(10deg) translate(-10vmax, 0);
+        }
+        &-foot{
+            transform: rotate(10deg) translate(5vmax, 0);
+            @media (orientation: landscape){
+                transform: rotate(10deg) translate(2vmax, -18vmax);
+            }
+        }
+    }
+  
+  }
+  
 // .video-background {
 //     position: fixed;
 //     top: 50%;

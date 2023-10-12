@@ -108,7 +108,7 @@
         position: absolute;
         
         z-index: 999;
-        top: 40px;
+        top: 20px;
       }
       .max-h-screen:not(.card){
         max-height: calc(100svh - 70px);
@@ -120,6 +120,23 @@
           padding-top: 130px;
           height: calc(100svh - 70px);
         }
+      }
+    }
+    &.on-screen{
+      .tab-menu__item{
+        @supports (animation-fill-mode: forwards){
+          @media (prefers-reduced-motion: no-preference){
+            transform-origin: top center;
+            @include animate(scale-in-y);
+            
+          }
+          @media (prefers-reduced-motion: no-preference) and (min-width: 1024px){
+            transform-origin: center right;
+            @include animate(scale-in-x);
+            
+          }
+        }
+
       }
     }
   }

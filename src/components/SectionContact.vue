@@ -7,24 +7,27 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const canvasFt = ref<HTMLCanvasElement | null>(null);
-
+const dividerFt = ref<HTMLElement | null>(null);
+const folderPath = `/assets/images/bg/foot/${ options.orientation}/1080/`;
+const frameCount = options.orientation === 'landscape' ? 103 : 70;
 onMounted(() =>{
+    console.log(options.prefersReducedMotion);
     if (canvasFt.value) {
         const canvas = canvasFt.value;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         const context = canvas.getContext("2d");
-        const frameCount = 103;
+        
        
         gsap.registerPlugin(ScrollTrigger);
         gsap.ticker.fps(30);    
         
-        const currentFrame = (index) => `/assets/images/bg/foot/${(index + 1).toString()}.jpg`;
+        const currentFrame = (index) => `${folderPath + (index + 1).toString()}.jpg`;
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };
-        console.log(options.webp);
+        //console.log(options.webp);
         for (let i = 0; i < frameCount; i++) {
             const img = new Image();
             img.src = currentFrame(i);
@@ -46,7 +49,6 @@ onMounted(() =>{
                 trigger: '#contacts',
                 start: '-=30%',
                 end: 'bottom bottom',
-                markers: true,
                 scrub: 1.5,
                 
             },
@@ -63,12 +65,29 @@ onMounted(() =>{
             }
         }
     }
+    if(dividerFt.value && !options.prefersReducedMotion){
+        const footDivider = dividerFt.value;
+        gsap.to(footDivider, {
+            scrollTrigger: {
+                trigger: '#contacts',
+                start: 'top-=50% bottom',
+                end: 'bottom bottom',
+                scrub: 1.5,
+                
+            },
+            x: '15vmax',
+            y: '-15vmax',
+            rotate: 10,
+            ease: "sine",
+        });
+    }
 })
 </script>
 
 <template>
-<section id="contacts" class="section-wrapper">
-        <canvas id="canvas-foot" class="canvas-cover" ref="canvasFt"></canvas>
+<section id="contacts" class="section-wrapper" :style="`background-image: url('${folderPath + frameCount.toString()}.jpg');`">
+    <span class="divider divider-foot" ref="dividerFt"></span>
+        <canvas id="canvas-foot" class="canvas-cover" ref="canvasFt" v-if="!options.prefersReducedMotion"></canvas>
         <div class="section-container">
             <div>
                 <h2 class="section-title | heading uppercase text-center text-2xl" data-variant="accent-bg">

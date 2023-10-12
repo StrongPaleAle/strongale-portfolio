@@ -90,7 +90,7 @@ onMounted(() => {
                 const itemPos = cardHeight * tabN;
                 
                 
-                console.log('hash ' + tabN);
+                //console.log('hash ' + tabN);
                 //tabsContainer.value?.scrollTo({top : itemPos });
                     selectTab(tabN , true);
                 //console.log(selectedTab.value);
@@ -114,7 +114,7 @@ function scrollTabSwitch(element: any) {
         
     if (element[0].isIntersecting) {
         if (!clickedLink.value) {
-            console.log('scrolling bug ' + clickedLink.value);
+            //console.log('scrolling bug ' + clickedLink.value);
             let tabN = Number(element[0].target.getAttribute('data-tab')) || 0;
             selectTab(tabN, false);
         }
@@ -155,7 +155,7 @@ function toggleScrolling(element: any) {
                     </h2>
                     <nav class="tab-menu__container | animate scale-in-y delay-1 from-top">
                         <ul class="tab-menu  | lateral-scroll | text-large uppercase text-right" ref="tabMenu">
-                            <li class="tab-menu__item | animate scale-in-x s-delay-2 animation-list from-right "
+                            <li class="tab-menu__item | animate s-delay-2 animation-list"
                                 v-for="(tab, index)  in tabs"
                                 :key="index" 
                                 :data-tab="index"

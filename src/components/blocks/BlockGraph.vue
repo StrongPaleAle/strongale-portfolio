@@ -18,11 +18,14 @@ const props = defineProps<{
         <div class="grow">
             <table class="skill-table text-small">
                 <tr v-for="(point, index) in block.content" :key="index">
-                    <td class="skill-table__label">{{index + 1}}.</td>
-                    <th :id="point.label.replace(/\s+/g, '-').toLowerCase">{{point.label}}</th>
+                    
+                    <th class="skill-table__label" :id="point.label.replace(/\s+/g, '-')">
+                        <span aria-hidden="true">{{index + 1}}. </span>
+                        {{point.label}}
+                    </th>
                     <td class="grow-td">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" :aria-labelledby="`#${point.label.replace(/\s+/g, '-').toLowerCase}`" :style="`width: ${point.value}%`">{{point.value}}%</div>
+                            <div class="progress-bar" role="progressbar" :aria-labelledby="`#${point.label.replace(/\s+/g, '-')}`" :style="`width: ${point.value}%`">{{point.value}}%</div>
                         </div>
                         
                     </td>

@@ -22,7 +22,7 @@ onMounted(() =>{
         let videoScroll = videoBg.value,
             frameNumber = 0,
             src = videoFile.value;
-        console.log('src: ' + src);
+        //console.log('src: ' + src);
 
         let videoScrollTL = gsap.timeline({
             defaults: { duration: 1, ease: "slow(0.1, 0.4, false)" },

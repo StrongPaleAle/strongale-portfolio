@@ -45,9 +45,9 @@ svg.symbols{
   > section {
     position: relative;
     min-height: 100svh;
-    z-index: 3;
+    
     + section {
-      margin-top: 20vh;
+      padding-block: 20vh;
     }
   }
 }
@@ -58,13 +58,16 @@ svg.symbols{
   align-items: center;
   justify-content: center;
   padding: 2rem 10px;
+  z-index: 3;
   
   
   
   .section-container{
     width: 100%;
     max-width: 90rem;
+    position: relative;
     --em-spacing: 1em;
+
   }
   
 }

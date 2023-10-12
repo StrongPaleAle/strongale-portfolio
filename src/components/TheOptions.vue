@@ -15,7 +15,7 @@ const changeTheme = useDark({
         // update the dom, call the API or something
         if (options.theme ) {
             options.theme = document.documentElement.getAttribute('data-theme') || 'dark';
-            console.log(options.theme);
+            //console.log(options.theme);
             
         }
     },

@@ -22,7 +22,7 @@ onMounted(() =>{
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };
-        console.log(options.webp);
+        //console.log(options.webp);
         for (let i = 0; i < frameCount; i++) {
             const img = new Image();
             img.src = currentFrame(i);

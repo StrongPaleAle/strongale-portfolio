@@ -26,7 +26,7 @@ const playVideo = () => {
             videoOBJ.value.pause();
         }
     }
-    console.log(videoPlaying);
+    //console.log(videoPlaying);
 }
 defineExpose({
   playVideo

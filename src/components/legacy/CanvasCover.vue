@@ -17,7 +17,7 @@ let Layers = ref<MaskLayer[]>([]);
 
 onMounted(() => {
     if (canvasEl.value) {
-        console.log(masks.value);
+        //console.log(masks.value);
         //const ctx = canvasEl.value.getContext('2d');
         // width = canvasEl.value.clientWidth;
         //const height = canvasEl.value.clientHeight;

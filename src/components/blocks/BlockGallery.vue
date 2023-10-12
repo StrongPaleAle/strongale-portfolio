@@ -28,7 +28,7 @@ const myOptions : any | undefined = {
 const gallery = ref<InstanceType<typeof Splide>>();
 
 const onMoved = (splide: any, newIndex: number, prevIndex: number, destIndex: number) => {
-  console.log('moved', destIndex, newIndex, prevIndex);
+  //console.log('moved', destIndex, newIndex, prevIndex);
   const oldSlide = splide.Components.Slides.getAt(prevIndex);
   const oldVideo = oldSlide.slide.querySelector('video');
   if (oldVideo) {

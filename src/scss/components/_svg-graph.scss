@@ -43,3 +43,12 @@
         opacity: 0.5;
     }
 }
+.skill-table{
+    &__label{
+        white-space: nowrap;
+        text-align: left;
+        span{
+            font-size: 0.8em;
+        }
+    }
+}

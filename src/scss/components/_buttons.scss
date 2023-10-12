@@ -14,7 +14,7 @@
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     position: relative;
-    
+    overflow: hidden;
     text-decoration: none;
     @include clip-angle(
         calc(var(--clip-unit) / 1.5), 
@@ -49,6 +49,9 @@
       
     }
     &:hover:not([data-active="true"]), &:focus:not([data-active="true"]){
+      
+      color: var(--text-negative);
+        
       &:before{
         transform: translateX(0);
       }

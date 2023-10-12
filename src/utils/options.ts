@@ -36,6 +36,7 @@ const canUseWebp = headers => {
 
 export const options = reactive({
     isLoaded: false,
+    orientation: window.matchMedia('(orientation: portrait)').matches ? 'portrait' : 'landscape',
     canHover: window.matchMedia('(hover: hover)').matches,
     prefersReducedData: window.matchMedia('(prefers-reduced-data: reduce)').matches,
     prefersReducedMotion: getMotionPreference(),

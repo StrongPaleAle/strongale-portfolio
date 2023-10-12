@@ -31,7 +31,7 @@ onMounted(() => {
     
     let orientation = window.matchMedia("(orientation: portrait)").matches;
     let rotationConst = orientation ? 90 : 0;
-    console.log(rotationConst);
+    //console.log(rotationConst);
     masks.value.forEach((mask) => {
         let index = mask.id;
         //console.log(index);

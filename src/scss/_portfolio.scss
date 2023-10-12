@@ -1,6 +1,9 @@
 #portfolio{
     //background-image: linear-gradient(var(--bg-heavy), transparent 90%);
-    min-height: 200vh;
+    &.section-wrapper{
+        padding-bottom: 40vh;
+    }
+    
     align-items: start;
     .section-container{
         display: flex;
@@ -45,6 +48,8 @@
         position: relative;
         padding: var(--em-spacing);
         opacity: 1;
+        max-width: 430px;
+        margin: 0 auto;
        
         &__image{
             width: 100%;
