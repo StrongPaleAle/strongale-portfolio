@@ -8,11 +8,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const canvasFt = ref<HTMLCanvasElement | null>(null);
 const dividerFt = ref<HTMLElement | null>(null);
-const folderPath = `/assets/images/bg/foot/${ options.orientation}/1080/`;
-const frameCount = options.orientation === 'landscape' ? 103 : 70;
+let folderPath = ref(`/assets/images/foot/${ options.orientation}/${options.setResolution()}/`);
+let frameCount = ref(options.orientation === 'landscape' ? 103 : 70);
 onMounted(() =>{
-    console.log(options.prefersReducedMotion);
+    window.addEventListener('resize', () => {
+        folderPath.value = `/assets/images/foot/${ options.orientation}/${options.setResolution()}/`;
+        frameCount.value = options.orientation === 'landscape' ? 103 : 70;
+    });
     if (canvasFt.value) {
+        
         const canvas = canvasFt.value;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -23,12 +27,12 @@ onMounted(() =>{
         gsap.registerPlugin(ScrollTrigger);
         gsap.ticker.fps(30);    
         
-        const currentFrame = (index) => `${folderPath + (index + 1).toString()}.jpg`;
+        const currentFrame = (index) => `${folderPath.value + (index + 1).toString()}.jpg`;
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };
         //console.log(options.webp);
-        for (let i = 0; i < frameCount; i++) {
+        for (let i = 0; i < frameCount.value; i++) {
             const img = new Image();
             img.src = currentFrame(i);
             //console.log(currentFrame(i));
@@ -42,7 +46,7 @@ onMounted(() =>{
             onUpdate: render,
         });
         gsap.to(cave, {
-            frame: frameCount - 1,
+            frame: frameCount.value - 1,
             snap: "frame",
             ease: "none",
             scrollTrigger: {

@@ -18,7 +18,7 @@ const navSwitch = function(entries: any, observer: any) {
     });
   
 };
-const navObserver = new IntersectionObserver(navSwitch, {rootMargin: "-30% 0px -30% 0px"});
+const navObserver = new IntersectionObserver(navSwitch, {rootMargin: "-25% 0px -25% 0px"});
 onMounted(() => {
     window
     const sections = document.querySelectorAll('section[id]');

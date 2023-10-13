@@ -25,7 +25,7 @@ const props = defineProps<{
                     </th>
                     <td class="grow-td">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" :aria-labelledby="`#${point.label.replace(/\s+/g, '-')}`" :style="`width: ${point.value}%`">{{point.value}}%</div>
+                            <div class="progress-bar" role="progressbar" :aria-labelledby="point.label.replace(/\s+/g, '-')" :style="`width: ${point.value}%`">{{point.value}}%</div>
                         </div>
                         
                     </td>

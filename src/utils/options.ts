@@ -16,38 +16,66 @@ function getMotionPreference() {
     
     
 }
-const canUseWebp = headers => {
-    let useWebp = false;
-    if (typeof document === 'object') {
-      // Client side rendering
-      const canvas = document.createElement('canvas');
-  
-      if (
-        canvas.getContext &&
-        canvas.getContext('2d') &&
-        canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
-      ) {
-        useWebp = true;
-      }
-    }
-    return useWebp;
-  };
 
+function setWindow(){
+    options.orientation = window.matchMedia('(orientation: portrait)').matches ? 'portrait' : 'landscape';
+    options.windowWidth = window.innerWidth;
+    options.windowHeight = window.innerHeight;
+    options.canHover = window.matchMedia('(hover: hover)').matches;
+}
+window.addEventListener('resize', setWindow);
+window.addEventListener('orientationchange', setWindow);
 
 export const options = reactive({
     isLoaded: false,
     orientation: window.matchMedia('(orientation: portrait)').matches ? 'portrait' : 'landscape',
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight,
     canHover: window.matchMedia('(hover: hover)').matches,
     prefersReducedData: window.matchMedia('(prefers-reduced-data: reduce)').matches,
     prefersReducedMotion: getMotionPreference(),
     theme: document.documentElement.getAttribute('data-theme') || 'dark',
-    webp: canUseWebp(document.documentElement.style),
     toggleReducedMotion: function () {
         this.prefersReducedMotion = !this.prefersReducedMotion;
         let stringPRM = this.prefersReducedMotion.toString();
         localStorage.setItem('prefers-reduced-motion', stringPRM);
         localStorage.setItem('prm-toggled', 'true');
         document.documentElement.setAttribute('data-prm', stringPRM);
+    },
+    setResolution: function () { 
+  
+      const vMax = this.orientation === 'portrait' ? this.windowHeight : this.windowWidth;
+      const vMin = this.orientation === 'portrait' ? this.windowWidth : this.windowHeight;
+      if (vMin >= 1200 || vMax >= 2200){
+        if (this.orientation === 'landscape'){
+          return '1440';
+        } else {
+          return '1080';
+        }
+      } else if (vMin >= 940 || vMax >= 1760){
+            
+        return '1080';
+
+      }else if (vMin >= 765 || vMax >= 1360){
+      
+        return '900';
+
+      } else if (vMin >= 650 || vMax >= 1152){
+          
+        return '720';
+
+      } else if (vMin >= 520 || vMax >= 850){
+    
+        return '576';
+
+      } if (vMin >= 390 || vMax >= 680){
+    
+        return '432';
+
+      } else {
+        return '360';
+      }
+
     }
     
 });

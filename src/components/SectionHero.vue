@@ -9,11 +9,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const sectionWrapper = ref<HTMLElement | null>(null);
 const canvasCover = ref<HTMLCanvasElement | null>(null);
 const dividerCover = ref<HTMLElement | null>(null);
-const folderPath = `/assets/images/bg/cover/${ options.orientation}/1080/`;
+let folderPath = ref(`/assets/images/cover/${ options.orientation}/${ options.setResolution() }/`);
 const frameCount = 125;
 onMounted(() => {
     
     if (canvasCover.value) {
+        window.addEventListener('resize', () => {
+            folderPath.value = `/assets/images/cover/${ options.orientation}/${ options.setResolution() }/`;
+        });
         const canvas = canvasCover.value;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -24,7 +27,7 @@ onMounted(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.ticker.fps(30);    
         
-        const currentFrame = (index) => `${folderPath + (index + 1).toString()}.jpg`;
+        const currentFrame = (index) => `${folderPath.value + (index + 1).toString()}.jpg`;
 
         const images:HTMLImageElement[] = [];
         let cave = { frame: 0 };

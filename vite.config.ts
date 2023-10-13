@@ -24,6 +24,9 @@ export default defineConfig({
           if (id.includes('gsap')) {
             return 'gsap';
           }
+          if (id.includes('three/')) {
+            return id.toString().split('three/')[1].split('/')[0].toString();
+          }
           if (id.includes('three')) {
             return 'three';
           }

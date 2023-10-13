@@ -17,20 +17,22 @@ import TheFooter from './components/TheFooter.vue';
 import TheLoader from './components/TheLoader.vue';
 import TheTooltip from './components/TheTooltip.vue';
 
-let enableVideo = ref<boolean>(!options.prefersReducedData && !options.prefersReducedMotion);
-
+//let enableVideo = ref<boolean>(!options.prefersReducedData && !options.prefersReducedMotion);
+let removeLoader = ref<boolean>(false);
 
 
 window.addEventListener('load', () => {
     options.isLoaded = true;
-    
+    setTimeout(() => {
+      removeLoader.value = true;
+    }, 500);
 });
 
 
 </script>
 
 <template>
-  <TheLoader />
+  <TheLoader :class="{hide: removeLoader}"/>
   <div class="app-inner" :class="{blocked: !options.isLoaded}">
 
     <!-- <CanvasBackground v-if="enableVideo" />

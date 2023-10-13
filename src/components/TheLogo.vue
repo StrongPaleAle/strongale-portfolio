@@ -82,7 +82,7 @@
         let ambientColor = new Color(ambientCSSColor);
 
         const loader = new GLTFLoader().setPath( '/assets/models/' );
-            loader.load( 'logo.gltf', function ( gltf ) {
+            loader.load( 'logo.glb', function ( gltf ) {
                 const model = gltf.scene;
                 let newMaterial = new MeshStandardMaterial({color: accentColor});
                 model.traverse((o:any) => {
@@ -93,8 +93,13 @@
                 gltf.scene.position.x = -0.7;
                 gltf.scene.position.z = -0.25;
                 scene.add( gltf.scene );
+                
 
                 
+
+            }, undefined, function ( error ) {
+
+                console.error( error );
 
             } );
         // //scene.add( sphere );
@@ -180,7 +185,7 @@
     function render() {
         LogoWrapper.value?.appendChild(renderer.domElement)
         renderer.render( scene, camera);
-
+        logoCanvas.value?.classList.add('loaded');
     }
 </script>
 <template>
