@@ -54,7 +54,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="block-picture" ref="videoWrapper">
-    <video ref="videoOBJ" no-controls loop muted :aria-describedby="`#${ video.id }`">
+    <video ref="videoOBJ" webkit-playsinline playsinline no-controls loop muted :aria-describedby="`#${ video.id }`">
         <source v-for="source in video.sources" :src="source.src" :type="source.type"/>
         <p>
             Your browser doesn't support HTML video.

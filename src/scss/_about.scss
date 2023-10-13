@@ -33,7 +33,8 @@
     .section-content{
       --c-spacing: 0.75em;
       max-width: calc(65ch + var(--c-spacing) * 2);
-      max-height: calc(100svh - 70px);
+      max-height: calc(100vh - 70px);
+      max-height: calc(100dvh - 70px);
 
       @media (min-width: 768px){
     
@@ -111,14 +112,16 @@
         top: 20px;
       }
       .max-h-screen:not(.card){
-        max-height: calc(100svh - 70px);
+        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
 
       }
       
       .tab-wrapper{
         > *{
           padding-top: 130px;
-          height: calc(100svh - 70px);
+          max-height: calc(100vh - 70px);
+          height: calc(100dvh - 70px);
         }
       }
     }

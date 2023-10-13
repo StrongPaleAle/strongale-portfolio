@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
+import { options } from "../utils/options";
 import {gsap} from 'gsap';
 
 const tooltip = ref<HTMLElement | null>(null);
@@ -22,11 +23,17 @@ onMounted(() => {
     tooltips.forEach((item) => {
          item.addEventListener('mouseenter', (evt) => {
               tooltipText.value = item.getAttribute('data-tooltip') || '';
-              
+              if (!options.canHover) {
+                  setTimeout(() => {
+                      tooltipText.value = '';
+                  }, 1000);
+              }
               
          });
          item.addEventListener('mouseleave', () => {
+            
                 tooltipText.value = '';
+            
          });
     });
 });

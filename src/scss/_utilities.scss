@@ -68,7 +68,7 @@
 .overflow-text{
   overflow: auto;
   max-height: calc(100vh - 200px - (var(--em-spacing) * 2));
-  max-height: calc(100svh - 200px - (var(--em-spacing) * 2));
+  max-height: calc(100dvh - 200px - (var(--em-spacing) * 2));
   
   &.is-scrolling{
     position: relative;
@@ -94,18 +94,18 @@ button.btn-link{
 
 .h-screen{
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   &[data-variant*="padded-screen"]{
     height: calc(100vh - 200px);
-    height: calc(100svh - 200px);
+    height: calc(100dvh - 200px);
   }
 }
 .max-h-screen{
   max-height: 100vh;
-  max-height: 100svh;
+  max-height: 100dvh;
   &[data-variant*="padded-screen"]{
     max-height: calc(100vh - 200px);
-    max-height: calc(100svh - 200px);
+    max-height: calc(100dvh - 200px);
   }
   
 }
