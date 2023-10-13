@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
 </script>
 
 <template>
-  <TheLoader :class="{hide: removeLoader}"/>
+  <TheLoader :class="{hidden: removeLoader}"/>
   <div class="app-inner" :class="{blocked: !options.isLoaded}">
 
     <!-- <CanvasBackground v-if="enableVideo" />

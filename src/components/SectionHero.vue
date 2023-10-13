@@ -128,6 +128,8 @@ onMounted(() => {
                 
             </div>
         </div>
-        <span class="divider divider-cover" ref="dividerCover"></span>
+        <span class="divider divider-cover" ref="dividerCover">
+            <span></span>
+        </span>
     </section>
 </template>

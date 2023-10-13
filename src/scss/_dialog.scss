@@ -22,6 +22,7 @@ body.modal-open{
     
     &:target{
         display: flex;
+        
     }
     &.closed{
         display: none;
@@ -45,7 +46,7 @@ body.modal-open{
         position: relative;
         width: clamp(320px, calc(100% - 1.5rem), 1400px);
         height: calc(100% - var(--h-modifier));
-       
+        
         padding: var(--c-top) var(--c-inline) var(--c-bottom);
         filter: drop-shadow(0 0 0.5rem var(--accent-light-60));
         @extend .clip-ui;

@@ -72,25 +72,37 @@ html[data-theme="light"] {
 .divider{
     content: "";
     position: absolute;
-    
-    
+    display: block;
+    pointer-events: none;
     width: 120vmax;
     height: 120vmax;
-    
-    &-cover{
+    span{
+        position: absolute;
+        display: block;
+        inset: 0;
         background-color: var(--bg-medium);
-        background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
-        clip-path: url(#mask-cover);
+    }
+    &-cover{
+        
         top: calc(120vh - 50vmax);
         left: 0;
+        span{
+            
+            background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+            clip-path: url(#mask-cover);
+        }
     }
     &-foot{
-        background-color: var(--bg-medium);
-        background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
-        clip-path: url(#mask-foot);
+        
+        
         top: -70vmax;
         z-index: 2;
         right: 0;
+        span{
+            
+            background-image: conic-gradient(from 240deg at 10% 150%, var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade), var(--bg-medium), var(--bg-shade));
+            clip-path: url(#mask-foot);
+        }
     }
     @media (prefers-reduced-motion: reduce){
         &-cover{

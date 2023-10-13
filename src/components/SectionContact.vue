@@ -90,7 +90,9 @@ onMounted(() =>{
 
 <template>
 <section id="contacts" class="section-wrapper" :style="`background-image: url('${folderPath + frameCount.toString()}.jpg');`">
-    <span class="divider divider-foot" ref="dividerFt"></span>
+    <span class="divider divider-foot" ref="dividerFt">
+        <span></span>
+    </span>
         <canvas id="canvas-foot" class="canvas-cover" ref="canvasFt" v-if="!options.prefersReducedMotion"></canvas>
         <div class="section-container">
             <div>
