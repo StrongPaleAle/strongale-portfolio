@@ -1,26 +1,44 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { options } from "../utils/options";
 import TheOptions from "./TheOptions.vue";
 import ButtonLink from "./blocks/ButtonLink.vue";
+//import TheLoader from "./TheLoader.vue";
 
+
+   
 const navSwitch = function(entries: any, observer: any) {
     entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
             const section = entry.target;
             const id = section.id;
-            section.classList.add('on-screen');
             const current = document.querySelector(`.main-nav__link.active`);
             const target = document.querySelector(`.main-nav__link[href="#${id}"]`);
+            
+            if (options.isLoaded){
+                section.classList.add('on-screen');
 
-            current?.classList.remove('active');
-            target?.classList.add('active');
+                current?.classList.remove('active');
+                target?.classList.add('active');
+            } else {
+                console.log('not loaded');
+                const loader = document.querySelector('.loader-wrapper');
+                
+                loader?.addEventListener('transitionend', () => {
+                    section.classList.add('on-screen');
+
+                    current?.classList.remove('active');
+                    target?.classList.add('active');
+                }, {once: true});
+            }
+            
         }
     });
   
 };
 const navObserver = new IntersectionObserver(navSwitch, {rootMargin: "-25% 0px -25% 0px"});
 onMounted(() => {
-    window
+    
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => {
         navObserver.observe(section);

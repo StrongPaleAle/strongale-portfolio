@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { options } from './utils/options';
 
 import TheNav from './components/TheNav.vue';
@@ -20,20 +20,37 @@ import TheTooltip from './components/TheTooltip.vue';
 //let enableVideo = ref<boolean>(!options.prefersReducedData && !options.prefersReducedMotion);
 let removeLoader = ref<boolean>(false);
 
-
-window.addEventListener('load', () => {
+onMounted(() => {
+    
+  window.addEventListener('load', () => {
     options.isLoaded = true;
-    setTimeout(() => {
-      removeLoader.value = true;
-    }, 500);
+    console.log(window.location.hash);
+      if(window.location.hash) {
+          
+          const target = document.querySelector(window.location.hash);
+          const targetOffset = target?.getBoundingClientRect().top;
+          console.log(target);
+          setTimeout(() => {
+              window.scrollTo({
+                  top: targetOffset,
+                  behavior: "smooth",
+              });
+          }, 100);
+      }
+      setTimeout(() => {
+        removeLoader.value = true;
+      }, 500);
+  });
+    
 });
+
 
 
 </script>
 
 <template>
   <TheLoader :class="{hidden: removeLoader}"/>
-  <div class="app-inner" :class="{blocked: !options.isLoaded}">
+  <div class="app-inner" :class="{blocked: !options.isLoaded, modalOpen: options.isModalOpen}">
 
     <!-- <CanvasBackground v-if="enableVideo" />
     <CoverStatic v-else /> -->
@@ -42,8 +59,8 @@ window.addEventListener('load', () => {
     <TheNav />
   <main id="wrapper">
     
-    <SectionHero :class="{'on-screen': options.isLoaded}"/>
-    <SectionAbout />
+    <SectionHero/>
+    <SectionAbout/>
     <SectionPortfolio/>
     <SectionContact/>
     

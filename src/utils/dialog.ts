@@ -1,3 +1,5 @@
+import {options} from './options';
+
 export function openDialog(dialog: string) {
 
     const oDialogs = document.querySelectorAll('.dialog.active');
@@ -6,7 +8,7 @@ export function openDialog(dialog: string) {
       const dialogID = oDialog.id;
       closeDialog(dialogID, false);
     });
-    console.log('opening dialog: ' + dialog);
+    //console.log('opening dialog: ' + dialog);
     const dialogElement = document.getElementById(dialog);
     
   
@@ -17,10 +19,10 @@ export function openDialog(dialog: string) {
     }
     
     
-    document.body.classList.add('modal-open');
+    
     dialogElement?.classList.add('active');
     dialogElement?.setAttribute("tabindex", "-1");
-  
+    options.isModalOpen = true;
     document.addEventListener("keydown", handleKeyDialog);
     
   }
@@ -32,7 +34,7 @@ export function openDialog(dialog: string) {
       dialogElement?.removeAttribute("tabindex");
       dialogElement?.classList.add('closed');
       dialogElement?.removeEventListener("keydown", handleKeyDialog);
-      closeModal ? document.body.classList.remove('modal-open') : null;
+      closeModal ? options.isModalOpen = false : null;
       history.replaceState("", document.title, window.location.pathname);
   }
   

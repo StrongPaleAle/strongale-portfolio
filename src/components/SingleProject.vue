@@ -15,10 +15,12 @@ const props = defineProps<{
 }>();
 
 onMounted(() => {
+    
     if (window.location.hash === `#project-${props.project.slug}`) {
         openDialog(`project-${props.project.slug}`);
     }
 });
+
 
 </script>
 <template>

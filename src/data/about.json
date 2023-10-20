@@ -12,7 +12,7 @@
                 "blocks": [
                     {   
                         "type": "BlockText",
-                        "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic UI and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
+                        "content": "<p>Inventive and passionate front-end-focused <strong>Web Developer</strong> since 2014. <br>Responsive, semantic HTML and a11y are my bread and butter. I aim to produce, as much as possible, a pleasant, captivating and practical user experience for everyone.</p><p>Born in <strong>Lucca</strong>(IT), moved to <strong>London</strong> at the end of 2020 for love.<br>I grew up developing a marked curiosity and empathy for nature, along with a DIY and problem-solving aptitude. </p><p>Interaction design, unusual interfaces, and innovative UX enjoyer. Versatile, problem solver, and quick learner. Very passionate about gamification, storytelling, and aesthetics. Addicted to music, visual arts, and games.</p><p><strong>StrongAle</strong> is my nickname. It was born in my university days, when a slightly tipsy friend, looking carefully at a bottle of beer, read aloud: \"Strong ale... That’s you!\"<br>Yeah, that’s my origin story: A night of ordinary boredom in Carrara at my flat.</p><p>My name is <strong>Alessio Falchi</strong>, but everyone calls me <strong>Ale</strong>.</p>",
                         "id": "summary1_block1"
                         
                         
@@ -106,7 +106,7 @@
                                 "value": 90
                             },
                             {
-                                "label": "VueJS",
+                                "label": "Vue.js",
                                 "value": 70
                             },
                             {
@@ -122,7 +122,7 @@
                                 "value": 100
                             },
                             {
-                                "label": "ThreeJS",
+                                "label": "Three.js",
                                 "value": 40
                             },
                             {
@@ -309,7 +309,7 @@
                         "type": "BlockList",
                         "listOrdination": "ul",
                         "content": [
-                            "High development experience in UI/UX development, using different CSS (Tailwind, Bootstrap, and Foundation), Javascript (Vue, AngularJs), and PHP(Laravel) frameworks.",
+                            "High experience in UI/UX development, using different CSS (Tailwind, Bootstrap, and Foundation), Javascript (Vue, AngularJs), and PHP(Laravel) frameworks.",
                             "Independently developed themes for different CMSs (WordPress, Drupal, Prestashop, and OctoberCMS).",
                             "Assessed UX and UI designs for technical feasibility.",
                             "Liaised with clients for reviews, and independently managed bug fixing, multi-device, and cross-browser optimisation processes.",

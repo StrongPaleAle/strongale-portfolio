@@ -175,6 +175,7 @@ function centerScreenRotate(element: any) {
                 
             </div>
         </div>
+        <div class="dialog-background"></div>
         <SingleProject
             v-for="project, index in projects" 
             :key="project.id" 

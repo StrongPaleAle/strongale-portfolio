@@ -35,6 +35,7 @@ export const options = reactive({
     prefersReducedData: window.matchMedia('(prefers-reduced-data: reduce)').matches,
     prefersReducedMotion: getMotionPreference(),
     theme: document.documentElement.getAttribute('data-theme') || 'dark',
+    isModalOpen: false,
     toggleReducedMotion: function () {
         this.prefersReducedMotion = !this.prefersReducedMotion;
         let stringPRM = this.prefersReducedMotion.toString();
