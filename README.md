@@ -1,6 +1,6 @@
 # Alessio "Strongale" Falchi's Portfolio
 
-This is my portfolio, it's a Vue 3 + TypeScript + Vite project.It'a online at [strongale.it](https://strongale.it). I'm constantly updating it. Contact me if you have any questions.
+This is my portfolio, it's a Vue 3 + TypeScript + Vite project. It's online at [strongale.it](https://strongale.it). I'm constantly updating it. Contact me if you have any questions.
 
 ## Vue 3 + TypeScript + Vite
 
